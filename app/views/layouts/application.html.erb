@@ -1,14 +1,135 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Workspace</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SamTra International</title>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+      <script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+      <script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+    <![endif]-->
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= yield %>
-
-</body>
+  <body>
+    <!-- Webview fixed navbar  -->
+    <nav class="fixedNavBar show-for-large">
+      <div class="row main">
+        <ul>
+            <li><%= link_to "Employee login", rails_admin_path %></li>
+            <li><%= link_to "Contact us", new_contact_path %></li>
+            <li><a href="#">English</a></li>
+            <li><a href="#">한글</li>
+          </ul>
+      </div>
+    </nav>
+    <div class="off-canvas-wrapper row main"><!-- Mobile nav off-canvas dropdown wrapper-->
+      <div class="title-bar hide-for-large row"><!--Mobile nav title bar-->
+        <!--button-->
+        <div class="title-bar-left small-3 columns">
+          <a class="menu-icon" type="button" data-toggle="offCanvasLeft"></a>
+        </div>
+        <!--Sitename-->
+        <div class="title-bar-title small-6 small-centered">
+          <%= link_to root_path do %>
+            <div class="logo-samtra small">SamTra</div>
+            <div class="logo-international small">International</div>
+          <% end %>
+        </div>
+      </div><!--Mobile nav title bar-->
+      <nav class="top-bar show-for-large"><!--Webview nav-->
+          <div class="top-bar-title">
+            <div class="top-bar-logo" id="top-bar-logo">
+            <%= link_to root_path do %><span class="logo-samtra">SamTra</span><br><span class="logo-international">International</span><% end %>
+            </div>
+          </div>
+          <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+              <li>
+                <%= link_to "About", about_us_path %>
+                <ul class="menu vertical">
+                  <li><%= link_to "About us", about_us_path %></li>
+                  <li><%= link_to "History", history_path %></li>
+                  <li><%= link_to "A Letter from the CEO", ceo_letter_path %></li>
+                  <li><%= link_to "Customers", customers_path %></li>
+                  <li><%= link_to "Contact Us", new_contact_path %></li>
+                </ul>
+              </li>
+              <li>
+                <%= link_to "Markets", markets_path%>
+                <ul class="menu vertical">
+                  <% @markets.each do |market| %>
+                  <li><%= link_to market.industry_name, market_path(market) %></li>
+                  <% end %>
+                </ul>
+              </li>
+              <li>
+                <%= link_to "Products", products_path %>
+                <ul class="menu vertical">
+                  <% @productTypes.each do |productType| %>
+                  <li><%= link_to productType.product_type, product_type_path(productType) %></li>
+                  <% end %>
+                </ul>
+              </li>
+              <li><%= link_to "News", articles_path %></li>
+              <li><%= link_to "Locations", locations_path %></li>
+              <li><%= link_to "Careers", careers_path %></li>
+            </ul>
+          </div><!--top bar menu-->
+        </nav><!--nav bar web view-->
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper><!--Mobile nav off canvas dropdown inner wrapper-->
+        <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+          <ul class="vertical menu" data-accordion-menu>
+            <li>
+              <a>About</a>
+              <ul class="menu vertical nested">
+                <li><%= link_to "About us", about_us_path %></i>
+                <li><%= link_to "History", history_path %></li>
+                <li><%= link_to "A Letter from the CEO", ceo_letter_path %></li>
+                <li><%= link_to "Customers", customers_path %></li>
+              </ul>
+            </li>
+            <li>
+              <a>Markets</a>
+              <ul class="menu vertical nested">
+                <li><%= link_to "All Markets", markets_path%><li>
+                <% @markets.each do |market| %>
+                <li><%= link_to market.industry_name, market_path(market) %></li>
+                <% end %>
+              </ul>
+            </li>
+            <li>
+              <a>Products</a>
+              <ul class="menu vertical nested">
+                <li><%= link_to "All products", product_types_path %></li>
+                <% @productTypes.each do |productType| %>
+                <li><%= link_to productType.product_type, product_type_path(productType) %></li>
+                <% end %>
+              </ul>
+            </li>
+            <li><%= link_to "News", articles_path %></li>
+            <li><%= link_to "Locations", locations_path %></li>
+            <li><%= link_to "Careers", careers_path %></li>
+            <li><%= link_to "Contact Us", new_contact_path %></li>
+          </ul><!--vertical menu-->
+        </div><!--off canvs position left-->
+        <div class="off-canvas-content" data-off-canvas-content><!--below this line is the canvas area -->
+          <div class="main" id="main">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+            <%= yield %>
+          </div>
+        </div><!--off canvas content-->
+      </div><!--canvas wrapper inner-->
+        <footer id="footer">
+          <div class="row main">
+            Copyright &copy; SamTra International all rights reserved<br>
+          </div>
+        </footer>
+    </div><!--canvas wrapper-->
+  </body>
 </html>

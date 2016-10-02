@@ -1,14 +1,30 @@
 Rails.application.routes.draw do
-  resources :articles
-  resources :infos
-  resources :products
-  resources :products
+  devise_for :admins
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  resources :customers, only: [:show, :index]
+  resources :markets, only: [:show, :index]
+  resources :articles, only: [:show, :index]
+  resources :products, only: [:show, :index]
+  resources :product_types, only: [:show, :index]
+  resources :contacts, only: [:new, :create]
+  
+  #resources :pages
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
+  
+  #pages routes----------------------------
+    #the code below is alternative to %get 'pages/home' => 'pages#home', as: "home"%
+    root 'pages#home'
+    get 'pages/about-us' => 'pages#aboutUs', as: "about_us"
+    get 'pages/a-letter-from-the-ceo' => 'pages#ceoLetter', as: "ceo_letter"
+    get 'pages/company-history' => 'pages#history', as: "history"
+    get 'pages/contact-us' => 'pages#contactUs', as: "contact_us"
+    get 'pages/careers' => 'pages#careers', as: "careers"
+    get 'pages/locations' => 'pages#locations', as: "locations"
+  
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

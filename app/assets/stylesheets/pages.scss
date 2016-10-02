@@ -1,0 +1,125 @@
+.photo-area.homepage {
+    padding-top: 0.5rem;
+    height: 22rem;
+    margin-bottom: 0.5rem;
+    .orbit-image {
+            width: 100%;
+            height: 22rem;
+    }
+    .orbit-bullets {
+        text-align: right;
+        padding-right: 1rem;
+        button {
+            border-radius: 0;    
+        }
+    }
+}
+.photo-area {
+    width: 100%;
+    height: 16rem;
+    margin-bottom: 1rem;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+    h1{
+        margin-top: -8rem;
+        font-size: 6rem;
+        padding-left: 2rem;
+        color: white;
+    }
+}
+.photo-area.locations {
+    height: 13rem;
+    padding: 0;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.photo-area.careers {
+    // h1{
+    //     margin-top: -8rem;
+    //     font-size: 6rem;
+    //     padding-left: 2rem;
+    //     color: white;
+    // }
+}
+.gMap-area {
+    width: 100%;
+    margin-bottom: 1rem;
+    div {
+        width: 100%;
+        height: 20rem;
+    }
+}
+
+.gMapsArea {
+   // overflow: auto;
+}
+.columns.homepage {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0rem !important;
+    padding-bottom: 0.5rem;
+}
+
+h1.location {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+    .photo-area.homepage {
+    height: 16rem;
+        .orbit-image{
+                width: 100%;
+                height: 16rem;
+        }
+    }
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    .photo-area.homepage {
+    height: 18rem;
+        .orbit-image{
+                width: 100%;
+                height: 18rem;
+        }
+    }
+}
+
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+    .photo-area.homepage {
+    height: 20rem;
+        .orbit-image{
+                width: 100%;
+                height: 20rem;
+        }
+    }
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+    .photo-area.homepage {
+    margin-top: 0.25rem;
+    height: 22rem;
+        .orbit-image{
+                width: 100%;
+                height: 22rem;
+        }
+    }
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+    .photo-area.homepage {
+    margin-top: 0.25rem;
+    height: 24rem;
+        .orbit-image{
+                width: 100%;
+                height: 24rem;
+        }
+    }
+}
