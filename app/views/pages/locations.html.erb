@@ -1,22 +1,25 @@
-<h1 class="location"> <span aria-hidden="true" data-icon="&#xec91;" class="icomoon"> Locations</span></h1>
-<div class="location">
+<div class="photo-area history">
+    <img src="http://www.geog.ucsb.edu/~cstill/GEOG3A/Geography%203A%20Main%20Page_files/globe-land_ocean_ice_2048-lct1.jpg">
+    <h1 class="locations"><%= t(".title") %></h1>
+</div>
+<div class="locations">
     <div class="small-12 large-6 column">
-        <h3>HEADQUARTER</h3>
+        <h3><%= t(".hq.title") %></h3>
         <div class="photo-area locations">
             <%= image_tag("headquarter_image.jpg")%>
         </div>
         <table class="small-12 large-12 column">
             <tr>
-                <td>ADDRESS:</td>
-                <td>Hoseo Venture Tower 1001 Ho, 70 Gasandigital 1-ro, Geumcheon-gu, Seoul 08590, Republic of Korea(SOUTH KOREA)</td>
+                <td><%= t(".addressTitle") %>:</td>
+                <td class="locations address"><%= t(".hq.address")%></td>
             </tr>
             <tr>
-                <td>TEL:</td>
-                <td><a href="tel:+82-2-2627-5625">+82-2-2627-5625</a></td>
+                <td><%= t(".telTitle") %>:</td>
+                <td><a href="tel:<%= t('.hq.tel') %>"><%= t(".hq.tel")%></a></td>
             </tr>
             <tr>
-                <td>FAX:</td>
-                <td>+82-2-2627-5629</td>
+                <td><%= t(".faxTitle") %>:</td>
+                <td><%= t(".hq.fax") %></td>
             </tr>
         </table>
         <div class="gMapsArea">
@@ -26,22 +29,22 @@
         </div>
     </div>
     <div class="small-12 large-6 column">
-        <h3>BRANCH OFFICE (BUSAN)</h3>
+        <h3><%= t(".bs.title") %></h3>
         <div class="photo-area locations">
             <%= image_tag("busan_office_image.png")%>
         </div>
         <table class="small-12 large-12 column">
             <tr>
-                <td>ADDRESS:</td>
-                <td>T-Plex Main Building 403 Ho, 41 Yutongdanji1-ro, Gangseo-gu, Busan 46721, Republic of Korea(SOUTH KOREA)</td>
+                <td><%= t(".addressTitle") %>:</td>
+                <td class="locations address"><%= t(".bs.address") %></td>
             </tr>
             <tr>
-                <td>TEL:</td>
-                <td><a href="tel:+82-51-991-3373">+82-51-991-3373</a></td>
+                <td><%= t(".telTitle") %>:</td>
+                <td><a href="tel:<%= t('.bs.tel') %>"><%= t(".bs.tel") %></a></td>
             </tr>
             <tr>
-                <td>FAX:</td>
-                <td>+82-51-796-0625</td>
+                <td><%= t(".faxTitle") %>:</td>
+                <td><%= t(".bs.fax") %></td>
             </tr>
         </table>
         <div class="gMapsArea">

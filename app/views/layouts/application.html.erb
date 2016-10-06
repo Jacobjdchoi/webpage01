@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SamTra International</title>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
       <script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
@@ -20,8 +21,13 @@
     <nav class="fixedNavBar show-for-large">
       <div class="row main">
         <ul>
-            <li><%= link_to "Employee login", rails_admin_path %></li>
-            <li><%= link_to "Contact us", new_contact_path %></li>
+            <% if admin_signed_in? %>
+            <li><%= link_to "Admin", rails_admin_path %></li>
+            <li><%= link_to "Log out", destroy_admin_session_path %></li>
+            <% else %>
+            <li><%= link_to "Employee login", new_admin_session_path %></li>
+            <% end %>
+            <li><%= link_to new_contact_path do %><%= t(".contactUs") %><% end %></li>
             <li><a href="#">English</a></li>
             <li><a href="#">한글</li>
           </ul>
@@ -50,34 +56,35 @@
           <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
               <li>
-                <%= link_to "About", about_us_path %>
+                <%= link_to about_us_path do %><%= t(".about") %><% end %>
                 <ul class="menu vertical">
-                  <li><%= link_to "About us", about_us_path %></li>
-                  <li><%= link_to "History", history_path %></li>
-                  <li><%= link_to "A Letter from the CEO", ceo_letter_path %></li>
-                  <li><%= link_to "Customers", customers_path %></li>
-                  <li><%= link_to "Contact Us", new_contact_path %></li>
+                  <li><%= link_to history_path do %><%= t(".history") %><% end %></li>
+                  <li><%= link_to ceo_letter_path do %><%= t(".ceoLetter") %><% end %></li>
+                  <li><%= link_to customers_path do %><%= t(".customers") %><% end %></li>
+                  <li><%= link_to new_contact_path do %><%= t(".contactUs") %><% end %></li>
                 </ul>
               </li>
               <li>
-                <%= link_to "Markets", markets_path%>
+                <%= link_to allMarkets_path do %><%= t(".markets.title")%><% end %>
                 <ul class="menu vertical">
-                  <% @markets.each do |market| %>
-                  <li><%= link_to market.industry_name, market_path(market) %></li>
-                  <% end %>
+                  <li><%= link_to medical_path do %><%= t(".markets.medical") %><% end %></li>
+                  <li><%= link_to military_path do %><%= t(".markets.military") %><% end %></li>
+                  <li><%= link_to automotive_path do %><%= t(".markets.automotive") %><% end %></li>
+                  <li><%= link_to industrialMachinery_path do %><%= t(".markets.industrialMachinery") %><% end %></li>
                 </ul>
               </li>
               <li>
-                <%= link_to "Products", products_path %>
+                <%= link_to allProducts_path do %><%= t(".products.title") %><% end %>
                 <ul class="menu vertical">
-                  <% @productTypes.each do |productType| %>
-                  <li><%= link_to productType.product_type, product_type_path(productType) %></li>
-                  <% end %>
+                  <li><%= link_to cables_path do %><%= t(".products.cables") %><% end %></li>
+                  <li><%= link_to connectors_path do %><%= t(".products.connectors") %><% end %></li>
+                  <li><%= link_to terminals_path do %><%= t(".products.terminals") %><% end %></li>
+                  <li><%= link_to mccs_path do %><%= t(".products.mccs") %><% end %></li>
                 </ul>
               </li>
-              <li><%= link_to "News", articles_path %></li>
-              <li><%= link_to "Locations", locations_path %></li>
-              <li><%= link_to "Careers", careers_path %></li>
+              <li><%= link_to articles_path do %><%= t(".articles") %><% end %></li>
+              <li><%= link_to locations_path do %><%= t(".locations") %><% end %></li>
+              <li><%= link_to careers_path do %><%= t(".careers") %><% end %></li>
             </ul>
           </div><!--top bar menu-->
         </nav><!--nav bar web view-->
@@ -85,36 +92,38 @@
         <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
           <ul class="vertical menu" data-accordion-menu>
             <li>
-              <a>About</a>
+              <a><%= t(".about") %></a>
               <ul class="menu vertical nested">
-                <li><%= link_to "About us", about_us_path %></i>
-                <li><%= link_to "History", history_path %></li>
-                <li><%= link_to "A Letter from the CEO", ceo_letter_path %></li>
-                <li><%= link_to "Customers", customers_path %></li>
+                <li><%= link_to about_us_path do %><%= t(".aboutUs") %><% end %></i>
+                <li><%= link_to history_path do %><%= t(".history") %><% end %></li>
+                <li><%= link_to ceo_letter_path do %><%= t(".ceoLetter") %><% end %></li>
+                <li><%= link_to customers_path do %><%= t(".customers") %><% end %></li>
               </ul>
             </li>
             <li>
-              <a>Markets</a>
+              <a><%= t(".markets.title") %></a>
               <ul class="menu vertical nested">
-                <li><%= link_to "All Markets", markets_path%><li>
-                <% @markets.each do |market| %>
-                <li><%= link_to market.industry_name, market_path(market) %></li>
-                <% end %>
+                <li><%= link_to allMarkets_path do %><%= t(".markets.allMarkets") %><% end %><li>
+                <li><%= link_to medical_path do %><%= t(".markets.medical") %><% end %></li>
+                <li><%= link_to military_path do %><%= t(".markets.military") %><% end %></li>
+                <li><%= link_to automotive_path do %><%= t(".markets.automotive") %><% end %></li>
+                <li><%= link_to industrialMachinery_path do %><%= t(".markets.industrialMachinery") %><% end %></li>
               </ul>
             </li>
             <li>
-              <a>Products</a>
+              <a><%= t(".products.title") %></a>
               <ul class="menu vertical nested">
-                <li><%= link_to "All products", product_types_path %></li>
-                <% @productTypes.each do |productType| %>
-                <li><%= link_to productType.product_type, product_type_path(productType) %></li>
-                <% end %>
+                <li><%= link_to allProducts_path do %><%= t(".products.allProducts") %><% end %></li>
+                <li><%= link_to cables_path do %><%= t(".products.cables") %><% end %></li>
+                <li><%= link_to connectors_path do %><%= t(".products.connectors") %><% end %></li>
+                <li><%= link_to terminals_path do %><%= t(".products.terminals") %><% end %></li>
+                <li><%= link_to mccs_path do %><%= t(".products.mccs") %><% end %></li>
               </ul>
             </li>
-            <li><%= link_to "News", articles_path %></li>
-            <li><%= link_to "Locations", locations_path %></li>
-            <li><%= link_to "Careers", careers_path %></li>
-            <li><%= link_to "Contact Us", new_contact_path %></li>
+            <li><%= link_to articles_path do %><%= t(".articles")%><% end %></li>
+            <li><%= link_to locations_path do %><%= t(".locations")%><% end %></li>
+            <li><%= link_to careers_path do %><%= t(".careers")%><% end %></li>
+            <li><%= link_to new_contact_path do %><%= t(".contactUs") %><% end %></li>
           </ul><!--vertical menu-->
         </div><!--off canvs position left-->
         <div class="off-canvas-content" data-off-canvas-content><!--below this line is the canvas area -->
@@ -125,11 +134,12 @@
           </div>
         </div><!--off canvas content-->
       </div><!--canvas wrapper inner-->
-        <footer id="footer">
-          <div class="row main">
-            Copyright &copy; SamTra International all rights reserved<br>
-          </div>
-        </footer>
+        
     </div><!--canvas wrapper-->
+    <footer id="footer">
+      <div class="row main">
+        Copyright &copy; SamTra International all rights reserved<br>
+      </div>
+    </footer>
   </body>
 </html>

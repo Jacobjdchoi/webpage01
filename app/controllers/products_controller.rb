@@ -1,20 +1,25 @@
 class ProductsController < ApplicationController
-  before_action :navBarParams
-  # GET /products
-  # GET /products.json
+
   def index
-    @products = Product.all
+    
   end
 
-  # GET /products/1
-  # GET /products/1.json
-  def show
+  def cables
+    
   end
   
-private
-def navBarParams
-  @productTypes = ProductType.all
-  @markets = Market.all
-end
-
+  def connectors
+    
+  end
+  
+  def terminals
+    
+  end
+  
+  #motion control components
+  def mccs
+    
+  end
+  
+  
 end

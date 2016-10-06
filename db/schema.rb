@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002094213) do
+ActiveRecord::Schema.define(version: 20161006053039) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20161002094213) do
     t.datetime "updated_at", null: false
     t.string   "title"
     t.text     "body"
+    t.string   "pics"
   end
 
   create_table "brands", force: :cascade do |t|
@@ -53,33 +54,15 @@ ActiveRecord::Schema.define(version: 20161002094213) do
     t.datetime "updated_at", null: false
     t.string   "name"
     t.string   "email"
-    t.string   "title"
-    t.string   "topic"
     t.text     "body"
+    t.string   "company"
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "importance"
-    t.integer  "wellknown"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "url"
+    t.string   "name"
   end
-
-  create_table "markets", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "industry_name"
-  end
-
-  create_table "markets_products", id: false, force: :cascade do |t|
-    t.integer "market_id",  null: false
-    t.integer "product_id", null: false
-  end
-
-  add_index "markets_products", ["market_id", "product_id"], name: "index_markets_products_on_market_id_and_product_id"
-  add_index "markets_products", ["product_id", "market_id"], name: "index_markets_products_on_product_id_and_market_id"
 
   create_table "pages", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -92,24 +75,11 @@ ActiveRecord::Schema.define(version: 20161002094213) do
     t.text     "body"
   end
 
-  create_table "product_types", force: :cascade do |t|
-    t.string   "product_type"
+  create_table "products", force: :cascade do |t|
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
-
-  create_table "product_types_products", id: false, force: :cascade do |t|
-    t.integer "product_id",      null: false
-    t.integer "product_type_id", null: false
-  end
-
-  add_index "product_types_products", ["product_id", "product_type_id"], name: "index_product_types_products_on_product_id_and_product_type_id"
-  add_index "product_types_products", ["product_type_id", "product_id"], name: "index_product_types_products_on_product_type_id_and_product_id"
-
-  create_table "products", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
     t.string   "series_name"
+    t.string   "product_type"
     t.integer  "brand_id"
   end
 

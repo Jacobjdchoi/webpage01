@@ -1,4 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<!--<div class="photo-area articles">-->
+<!--    <img src="http://www.coanews.org/liies/2014/11/01.jpg">-->
+<!--    <h1><%# t("articles.index.title") %></h1>-->
+<!--</div>-->
+<div class="content-container articles">
+    <% if admin_signed_in? %>
+        <%= link_to '수정', edit_article_path(@article) %> |
+        <%= link_to '삭제', article_path(@article), method: :DELETE, data:{ confirm: "이 뉴스를 삭제 하시겠습니까?"}%> |
+    <% end %>
+    <%= link_to t("navigation.back"), articles_path %>
+    
+    <h3 class="article-title"><%= @article.title.titleize %></h3>
+    <p class="article-date"><%= @article.updated_at.strftime("%Y-%m-%d") %></p>
+    <!--if image is not nil-->
+    
+    <div class="photo-area article">
+        <%= image_tag @article.pics_url(:large) %>
+    </div>
+    
+    <div class="article-body"><%= @article.body.html_safe %></div>
+</div>

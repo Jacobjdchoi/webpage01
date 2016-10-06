@@ -1,10 +1,8 @@
 class PagesController < ApplicationController
-  # before_action :set_page, only: [:show, :edit, :update, :destroy]
-  before_action :navBarParams
 
 #Home page
   def home
-    
+    @articles = Article.where.not(pics: nil).order(updated_at: :desc).limit(5)
   end
 
 #About us page
@@ -36,11 +34,5 @@ class PagesController < ApplicationController
   def careers
     
   end
-private
-
-def navBarParams
-  @productTypes = ProductType.all
-  @markets = Market.all
-end
 
 end

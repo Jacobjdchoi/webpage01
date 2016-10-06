@@ -1,17 +1,27 @@
-<h1>All Articles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
+<div class="photo-area articles">
+    <div class="contents">
+      <img src="http://www.coanews.org/liies/2014/11/01.jpg">
+      <h1><%= t(".title") %></h1>
+    </div>
+</div>
+<div class="content-container articles">
+  <% if admin_signed_in? %>
+    <div><%= link_to "뉴스 추가하기", new_article_path %></div>
+  <% end %>
+  <table class="articles-index">
+    <thead>
       <tr>
-        <td><%= link_to 'Show', article %>|<%= article.updated_at %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <th class="articles-th-title"><%= t('.tableTitle') %></th>
+        <th class="articles-th-date"><%= t('.tableDate') %></th>
+      <tr>
+    </thead>
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td class="articles-td-title"><%= link_to article.title.titleize, article_path(article) %></td>
+          <td class="articles-td-date"><%= article.updated_at.strftime("%Y-%m-%d") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
