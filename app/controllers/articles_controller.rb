@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_admin!, only: [:new, :create]
+  before_action :authenticate_admin!, except: [:index, :show]
   
   # GET /articles
   # GET /articles.json

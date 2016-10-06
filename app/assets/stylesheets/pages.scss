@@ -10,7 +10,26 @@
     right: 0;
   }
 }
-.photo-area.homepage {
+//all pages
+.photo-area {
+    .contents{
+        img {
+        width: 100%;
+        height: 100%;
+        }
+        .page-title, .page-title-ceoLetter{
+            color: white;
+            font-weight: bold;
+        }   
+    }
+}
+//homepage
+.columns.homepage {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0rem !important;
+    padding-bottom: 0.5rem;
+}
+.homepage {
     @include photo-ratio(45%);
     margin-bottom: 0.75rem;
     .contents{
@@ -24,7 +43,6 @@
                 a {
                     color: white;
                     size: 16px;
-                    
                 }    
             }
         }
@@ -32,28 +50,17 @@
     .orbit-bullets {
         text-align: right;
         padding-right: 1rem;
+        line-height: 1rem;
         float: right;
+        width: 45%;
         button {
             border-radius: 0;    
         }
     }
 }
-.photo-area.articles {
-    @include photo-ratio(45%);
-    .contents{
-        img {
-        width: 100%;
-        height: 100%;
-        }
-        h1{
-            margin-top: -8rem;
-            font-size: 6rem;
-            padding-left: 2rem;
-            color: white;
-        }   
-    }
-}
-.photo-area.locations {
+
+//locations page
+.locations.photo{
     img{
         width: 100%;
         height: 100%;
@@ -69,9 +76,6 @@ h1.locations {
     -webkit-user-select: text;
     -ms-user-select: text;
 }
-.photo-area.careers {
-
-}
 .gMap-area {
     width: 100%;
     margin-bottom: 1rem;
@@ -80,15 +84,82 @@ h1.locations {
         height: 20rem;
     }
 }
-
 .gMapsArea {
    // overflow: auto;
 }
-.columns.homepage {
-    margin-top: 0.5rem !important;
-    margin-bottom: 0rem !important;
-    padding-bottom: 0.5rem;
+//ceoLetter
+.ceoLetter-body {
+    margin: 1rem 0;
+    p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    strong{
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
 }
-.content-container {
-    padding: 0.5rem;
+
+//media queries (foundation limits)
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+    .photo-area{
+        @include photo-ratio(30%);
+        > .contents {
+            > .page-title-ceoLetter{
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+                margin-top: -2.5rem;
+                padding-left: 1rem;
+            }
+            > .page-title {
+                font-size: 3rem;
+                line-height: 3rem;
+                margin-top: -4rem;
+                padding-left: 1rem;
+            }
+        }
+    }
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    .photo-area{
+        @include photo-ratio(25%);
+        > .contents {
+            > .page-title-ceoLetter{
+                font-size: 3rem;
+                line-height: 3rem;
+                margin-top: -4rem;
+                padding-left: 1rem;
+            }
+            > .page-title {
+                font-size: 4rem;
+                line-height: 4rem;
+                margin-top: -5rem;
+                padding-left: 1rem;
+            }
+        }
+    }
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+    .photo-area{
+        @include photo-ratio(25%);
+        > .contents {
+            > .page-title-ceoLetter{
+                font-size: 4rem;
+                line-height: 4rem;
+                margin-top: -5rem;
+                padding-left: 1rem;
+            }
+            > .page-title {
+                font-size: 5rem;
+                line-height: 5rem;
+                margin-top: -6rem;
+                padding-left: 1rem;
+            }
+        }
+    }
 }

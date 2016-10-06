@@ -37,6 +37,10 @@ class PicsUploader < CarrierWave::Uploader::Base
     process :crop
     process resize_to_fill: [960, 432]
   end 
+  version :thumb do
+    process :crop
+    process resize_to_fill: [200,200]
+  end
   
   def crop
     if model.crop_x.present?

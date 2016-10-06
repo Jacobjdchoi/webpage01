@@ -1,11 +1,13 @@
 <div class="photo-area history">
-    <img src="http://www.geog.ucsb.edu/~cstill/GEOG3A/Geography%203A%20Main%20Page_files/globe-land_ocean_ice_2048-lct1.jpg">
-    <h1 class="locations"><%= t(".title") %></h1>
+    <div class="contents">
+        <img src="http://www.geog.ucsb.edu/~cstill/GEOG3A/Geography%203A%20Main%20Page_files/globe-land_ocean_ice_2048-lct1.jpg">
+        <p class="page-title"><%= t(".title") %></p>
+    </div>
 </div>
 <div class="locations">
     <div class="small-12 large-6 column">
         <h3><%= t(".hq.title") %></h3>
-        <div class="photo-area locations">
+        <div class="locations-photo">
             <%= image_tag("headquarter_image.jpg")%>
         </div>
         <table class="small-12 large-12 column">
@@ -30,7 +32,7 @@
     </div>
     <div class="small-12 large-6 column">
         <h3><%= t(".bs.title") %></h3>
-        <div class="photo-area locations">
+        <div class="locations-photo">
             <%= image_tag("busan_office_image.png")%>
         </div>
         <table class="small-12 large-12 column">

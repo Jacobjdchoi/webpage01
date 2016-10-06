@@ -1,10 +1,23 @@
-<% if admin_signed_in? %>
-  <%= link_to 'New Customer', new_customer_path %>
-<% end %>
-<h1>All Customers</h1>
-<div style="width:100%; height:6rem;">
-    <div style="width:25%;height:50%;padding:5px; background-color:yellow;"></div>
-    <div style="width:25%;height:50%;padding:5px; background-color:yellow;"></div>
-    <div style="width:25%;height:50%;padding:5px; background-color:yellow;"></div>
-    <div style="width:25%;height:50%;padding:5px; background-color:yellow;"></div>
+<div class="content-container">
+  <h1>Our Customers</h1>
+  <% if admin_signed_in? %>
+    <%= link_to 'New Customer', new_customer_path %>
+  <% end %>
+  <div class="customer-index-container">
+      <% @customers.each do |customer| %>
+      <div class="customer-box">
+        <div class="customer-logo">
+          <%= image_tag customer.pics_url(:thumb)%>
+        </div>
+        <div class="customer-name">
+          <%= customer.name %>  
+          <% if admin_signed_in? %>
+            <%= link_to customer_path(customer), method: :DELETE, data:{confirm: "선택하신 항목으 지우시겠습니까?"} do %>
+              <span class="icomoon" aria-hidden="true" data-icon="&#xebfd"></span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+  </div>
 </div>

@@ -1,3 +1,35 @@
 // Place all the styles related to the customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//index
+.customer-index-container {
+    width: 100%;
+    min-height: 30rem;
+    .customer-box{
+        width: 24%;
+        margin: 0.5%;
+        padding: 0.5rem;
+        border: 2px solid #bfbfbf;
+        border-radius: 5px;
+        float: left;
+        .customer-logo, .customer-name{
+            width: 100%;
+            > img {
+                width: 100%;
+            }
+        }
+        .customer-name {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+    }
+}
+
+//new action
+.customer-logo-field, .customer-name-field {
+}
+.customer-submit-field {
+
+}

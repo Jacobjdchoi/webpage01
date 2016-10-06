@@ -1,0 +1,34 @@
+<h1>이미지 사이즈 수정</h1>
+<div class="photo-crop-area">
+    <div class="cropping-area-container">
+        <div class="cropping-area" id="cropping-area">    
+            <%= image_tag @customer.pics_url(:raw), id: "cropping-image" %>
+        </div>
+        <%= form_for @customer do |f| %>
+            <% %w[x y w h].each do |attribute| %>
+                <%= f.hidden_field "crop_#{attribute}", id: "crop_#{attribute}" %>
+            <% end %>
+            <%= f.submit "등록하기"%>
+        <% end %>
+    </div>
+</div>
+
+<script>
+$(document).on('turbolinks:load', function(){
+    $("img#cropping-image").each(function(){
+        croppingImage = $(this);
+        croppingImage.Jcrop({
+            aspectRatio: 1,
+            setSelect: [0, 0, 300, 300],
+            onChange: update_crop, 
+            onSelect: update_crop
+        });
+        function update_crop(coords) {
+          $("#crop_x").val(Math.round(coords.x));
+          $("#crop_y").val(Math.round(coords.y));
+          $("#crop_w").val(Math.round(coords.w));
+          $("#crop_h").val(Math.round(coords.h));
+        };
+    });
+});
+</script>

@@ -1,5 +1,16 @@
+<h1></h1>
+<%= link_to "인덱스로 가기", customers_path %>
 <% if admin_signed_in? %>
-    <%= link_to '수정', edit_customer_path(@customer) %> |
-    <%= link_to '삭제', customer_path(@customer) %> |
+  |  <%= link_to "수정", edit_customer_path(@customer) %>
+  |  <%= link_to "삭제", customer_path(@customer), method: :DELETE, data:{confirm: "선택하신 항목으 지우시겠습니까?"} %>
 <% end %>
-    <%= link_to t("navigation.back"), customers_path %>
+<div class="customer-index-container">
+  <div class="customer-box">
+    <div class="customer-logo">
+      <%= image_tag @customer.pics_url(:thumb)%>
+    </div>
+    <div class="customer-name">
+      <%= @customer.name %>
+    </div>
+  </div>
+</div>
