@@ -40,51 +40,50 @@
           <a class="menu-icon" type="button" data-toggle="offCanvasLeft"></a>
         </div>
         <!--Sitename-->
-        <div class="title-bar-title small-6 small-centered">
+        <div class="title-bar-logo small-6 small-centered">
           <%= link_to root_path do %>
-            <div class="logo-samtra small">SamTra</div>
-            <div class="logo-international small">International</div>
+            <%= image_tag("logo.png", :class => "logo-samtra") %>
           <% end %>
         </div>
       </div><!--Mobile nav title bar-->
       <nav class="top-bar show-for-large"><!--Webview nav-->
           <div class="top-bar-title">
             <div class="top-bar-logo" id="top-bar-logo">
-            <%= link_to root_path do %><span class="logo-samtra">SamTra</span><br><span class="logo-international">International</span><% end %>
+            <%= link_to root_path do %><%= image_tag("logo.png", :class => "logo-samtra") %><% end %>
             </div>
           </div>
           <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
               <li>
-                <%= link_to about_us_path do %><%= t(".about") %><% end %>
+                <%= link_to t(".about"), about_us_path %>
                 <ul class="menu vertical">
-                  <li><%= link_to history_path do %><%= t(".history") %><% end %></li>
-                  <li><%= link_to ceo_letter_path do %><%= t(".ceoLetter") %><% end %></li>
-                  <li><%= link_to customers_path do %><%= t(".customers") %><% end %></li>
-                  <li><%= link_to new_contact_path do %><%= t(".contactUs") %><% end %></li>
+                  <li><%= link_to t(".history"), history_path %></li>
+                  <li><%= link_to t(".ceoLetter"), ceo_letter_path %></li>
+                  <li><%= link_to t(".customers"), customers_path %></li>
+                  <li><%= link_to t(".contactUs"), new_contact_path %></li>
                 </ul>
               </li>
               <li>
-                <%= link_to allMarkets_path do %><%= t(".markets.title")%><% end %>
+                <%= link_to t(".markets.title"), allMarkets_path %>
                 <ul class="menu vertical">
-                  <li><%= link_to medical_path do %><%= t(".markets.medical") %><% end %></li>
-                  <li><%= link_to military_path do %><%= t(".markets.military") %><% end %></li>
-                  <li><%= link_to automotive_path do %><%= t(".markets.automotive") %><% end %></li>
-                  <li><%= link_to industrialMachinery_path do %><%= t(".markets.industrialMachinery") %><% end %></li>
+                  <li><%= link_to t(".markets.medical"), medical_path %></li>
+                  <li><%= link_to t(".markets.military"), military_path %></li>
+                  <li><%= link_to t(".markets.automotive"), automotive_path %></li>
+                  <li><%= link_to t(".markets.industrialMachinery"), industrialMachinery_path %></li>
                 </ul>
               </li>
               <li>
-                <%= link_to allProducts_path do %><%= t(".products.title") %><% end %>
+                <%= link_to t(".products.title"), allProducts_path %>
                 <ul class="menu vertical">
-                  <li><%= link_to cables_path do %><%= t(".products.cables") %><% end %></li>
-                  <li><%= link_to connectors_path do %><%= t(".products.connectors") %><% end %></li>
-                  <li><%= link_to terminals_path do %><%= t(".products.terminals") %><% end %></li>
-                  <li><%= link_to mccs_path do %><%= t(".products.mccs") %><% end %></li>
+                  <li><%= link_to t(".products.cables"), cables_path %></li>
+                  <li><%= link_to t(".products.connectors"), connectors_path %></li>
+                  <li><%= link_to t(".products.terminals"), terminals_path %></li>
+                  <li><%= link_to t(".products.mccs"), mccs_path %></li>
                 </ul>
               </li>
-              <li><%= link_to articles_path do %><%= t(".articles") %><% end %></li>
-              <li><%= link_to locations_path do %><%= t(".locations") %><% end %></li>
-              <li><%= link_to careers_path do %><%= t(".careers") %><% end %></li>
+              <li><%= link_to t(".articles"), articles_path %></li>
+              <li><%= link_to t(".locations"), locations_path %></li>
+              <li><%= link_to t(".careers"), careers_path %></li>
             </ul>
           </div><!--top bar menu-->
         </nav><!--nav bar web view-->
@@ -94,36 +93,36 @@
             <li>
               <a><%= t(".about") %></a>
               <ul class="menu vertical nested">
-                <li><%= link_to about_us_path do %><%= t(".aboutUs") %><% end %></i>
-                <li><%= link_to history_path do %><%= t(".history") %><% end %></li>
-                <li><%= link_to ceo_letter_path do %><%= t(".ceoLetter") %><% end %></li>
-                <li><%= link_to customers_path do %><%= t(".customers") %><% end %></li>
+                <li><%= link_to t(".aboutUs"), about_us_path %></i>
+                <li><%= link_to t(".history"), history_path %></li>
+                <li><%= link_to t(".ceoLetter"), ceo_letter_path %></li>
+                <li><%= link_to t(".customers"), customers_path %></li>
               </ul>
             </li>
             <li>
               <a><%= t(".markets.title") %></a>
               <ul class="menu vertical nested">
-                <li><%= link_to allMarkets_path do %><%= t(".markets.allMarkets") %><% end %><li>
-                <li><%= link_to medical_path do %><%= t(".markets.medical") %><% end %></li>
-                <li><%= link_to military_path do %><%= t(".markets.military") %><% end %></li>
-                <li><%= link_to automotive_path do %><%= t(".markets.automotive") %><% end %></li>
-                <li><%= link_to industrialMachinery_path do %><%= t(".markets.industrialMachinery") %><% end %></li>
+                <li><%= link_to t(".markets.allMarkets"), allMarkets_path %><li>
+                <li><%= link_to t(".markets.medical"), medical_path %></li>
+                <li><%= link_to t(".markets.military"), military_path %></li>
+                <li><%= link_to t(".markets.automotive"), automotive_path %></li>
+                <li><%= link_to t(".markets.industrialMachinery"), industrialMachinery_path %></li>
               </ul>
             </li>
             <li>
               <a><%= t(".products.title") %></a>
               <ul class="menu vertical nested">
-                <li><%= link_to allProducts_path do %><%= t(".products.allProducts") %><% end %></li>
-                <li><%= link_to cables_path do %><%= t(".products.cables") %><% end %></li>
-                <li><%= link_to connectors_path do %><%= t(".products.connectors") %><% end %></li>
-                <li><%= link_to terminals_path do %><%= t(".products.terminals") %><% end %></li>
-                <li><%= link_to mccs_path do %><%= t(".products.mccs") %><% end %></li>
+                <li><%= link_to t(".products.allProducts"), allProducts_path %></li>
+                <li><%= link_to t(".products.cables"), cables_path %></li>
+                <li><%= link_to t(".products.connectors"), connectors_path %></li>
+                <li><%= link_to t(".products.terminals"), terminals_path %></li>
+                <li><%= link_to t(".products.mccs"), mccs_path %></li>
               </ul>
             </li>
-            <li><%= link_to articles_path do %><%= t(".articles")%><% end %></li>
-            <li><%= link_to locations_path do %><%= t(".locations")%><% end %></li>
-            <li><%= link_to careers_path do %><%= t(".careers")%><% end %></li>
-            <li><%= link_to new_contact_path do %><%= t(".contactUs") %><% end %></li>
+            <li><%= link_to t(".articles"), articles_path %></li>
+            <li><%= link_to t(".locations"), locations_path %></li>
+            <li><%= link_to t(".careers"), careers_path %></li>
+            <li><%= link_to t(".contactUs"), new_contact_path %></li>
           </ul><!--vertical menu-->
         </div><!--off canvs position left-->
         <div class="off-canvas-content" data-off-canvas-content><!--below this line is the canvas area -->

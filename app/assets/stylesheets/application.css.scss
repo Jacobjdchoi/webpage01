@@ -82,6 +82,9 @@
         padding: 0.5rem;
         .top-bar-logo{
             height: 5rem;
+            a .logo-samtra{
+                height: 100%;
+            }
         }
     }
     .top-bar-left {
@@ -112,9 +115,13 @@ ul.menu li a, ul.menu li ul li a{
             vertical-align: bottom;
         }
     }
-    .title-bar-title {
+    .title-bar-logo {
         text-align: center;
         line-height: 1rem;
+        height: 100%;
+        a .logo-samtra{
+            height: 100%;
+        }
     }
 }
 footer {
