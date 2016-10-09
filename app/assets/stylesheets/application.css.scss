@@ -109,6 +109,9 @@ ul.menu li a, ul.menu li ul li a{
     width: 100%;
     height: 3rem;
     border-bottom: 1px solid gray;
+    position: fixed;
+    top: 0;
+    z-index: 999;
     .title-bar-left {
         line-height: 1.5rem;
         .menu-icon {

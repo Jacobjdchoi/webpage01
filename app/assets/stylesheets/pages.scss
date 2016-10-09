@@ -10,12 +10,15 @@
     right: 0;
   }
 }
+@mixin widthAndHeight($width, $height) {
+    width: $width !important;
+    height: $height !important;
+}
 //all pages
 .photo-area {
     .contents{
         img {
-        width: 100%;
-        height: 100%;
+            @include widthAndHeight(100%,100%);
         }
         .page-title, .page-title-ceoLetter{
             color: white;
@@ -35,8 +38,7 @@
     .contents{
         li {
             img.orbit-image {
-                width: 100% !important;
-                height: 100% !important;   
+                @include widthAndHeight(100%, 100%);
             }
             div{
                 
@@ -48,13 +50,14 @@
         }
     }
     .orbit-bullets {
+        @include widthAndHeight(45%, 50px);
         text-align: right;
         padding-right: 1rem;
-        line-height: 1rem;
+        line-height: 50px;
         float: right;
-        width: 45%;
         button {
-            border-radius: 0;    
+            border-radius: 0;
+            vertical-align: middle;
         }
     }
 }
@@ -62,8 +65,7 @@
 //locations page
 .locations.photo{
     img{
-        width: 100%;
-        height: 100%;
+        @include widthAndHeight(100%, 100%);
     }
 }
 h1.locations {
@@ -80,8 +82,7 @@ h1.locations {
     width: 100%;
     margin-bottom: 1rem;
     div {
-        width: 100%;
-        height: 20rem;
+        @include widthAndHeight(100%, 20rem);
     }
 }
 .gMapsArea {

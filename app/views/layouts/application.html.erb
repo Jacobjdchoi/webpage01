@@ -34,7 +34,7 @@
       </div>
     </nav>
     <div class="off-canvas-wrapper row main"><!-- Mobile nav off-canvas dropdown wrapper-->
-      <div class="title-bar hide-for-large row"><!--Mobile nav title bar-->
+      <div class="title-bar hide-for-large row" id="title-bar"><!--Mobile nav title bar-->
         <!--button-->
         <div class="title-bar-left small-3 columns">
           <a class="menu-icon" type="button" data-toggle="offCanvasLeft"></a>
@@ -126,7 +126,7 @@
           </ul><!--vertical menu-->
         </div><!--off canvs position left-->
         <div class="off-canvas-content" data-off-canvas-content><!--below this line is the canvas area -->
-          <div class="main" id="main">
+          <div class="main" id="pageYield">
             <p class="notice"><%= notice %></p>
             <p class="alert"><%= alert %></p>
             <%= yield %>
