@@ -58,12 +58,14 @@
         button {
             border-radius: 0;
             vertical-align: middle;
+            border-radius: 2px;
         }
     }
 }
 
 //locations page
-.locations.photo{
+.locations-photo{
+    @include widthAndHeight(100%, 15rem);
     img{
         @include widthAndHeight(100%, 100%);
     }

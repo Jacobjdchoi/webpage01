@@ -18,21 +18,61 @@
 
   <body>
     <!-- Webview fixed navbar  -->
-    <nav class="fixedNavBar show-for-large">
-      <div class="row main">
-        <ul>
-            <% if admin_signed_in? %>
-            <li><%= link_to "Admin", rails_admin_path %></li>
-            <li><%= link_to "Log out", destroy_admin_session_path %></li>
-            <% else %>
-            <li><%= link_to "Employee login", new_admin_session_path %></li>
-            <% end %>
-            <li><%= link_to new_contact_path do %><%= t(".contactUs") %><% end %></li>
+    <div class="header" id="header">
+      <nav class="top-bar show-for-large main"><!--Webview nav-->
+        <div class="top-bar-title">
+          <div class="top-bar-logo" id="top-bar-logo">
+          <%= link_to root_path do %><%= image_tag("logo.png", :class => "logo-samtra") %><% end %>
+          </div>
+        </div>
+        <div class="top-bar-left">
+          <ul class="language menu" id="language-menu">
             <li><a href="#">English</a></li>
-            <li><a href="#">한글</li>
+            <li class="divider-vertical"></li>
+            <li><a href="#">한글</a></li>
           </ul>
-      </div>
-    </nav>
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li>
+              <%= link_to t(".about"), about_us_path %>
+              <ul class="menu vertical" id="top-bar-dropdown-menu">
+                <li><%= link_to t(".history"), history_path %></li>
+                <li><%= link_to t(".ceoLetter"), ceo_letter_path %></li>
+                <li><%= link_to t(".customers"), customers_path %></li>
+                <li><%= link_to t(".contactUs"), new_contact_path %></li>
+              </ul>
+            </li>
+            <li class="divider-vertical"></li>
+            <li>
+              <%= link_to t(".markets.title"), allMarkets_path %>
+              <ul class="menu vertical" id="top-bar-dropdown-menu">
+                <li><%= link_to t(".markets.medical"), medical_path %></li>
+                <li><%= link_to t(".markets.military"), military_path %></li>
+                <li><%= link_to t(".markets.automotive"), automotive_path %></li>
+                <li><%= link_to t(".markets.industrialMachinery"), industrialMachinery_path %></li>
+              </ul>
+            </li>
+            <li class="divider-vertical"></li>
+            <li>
+              <%= link_to t(".products.title"), allProducts_path %>
+              <ul class="menu vertical" id="top-bar-dropdown-menu">
+                <li><%= link_to t(".products.cables"), cables_path %></li>
+                <li><%= link_to t(".products.connectors"), connectors_path %></li>
+                <li><%= link_to t(".products.terminals"), terminals_path %></li>
+                <li><%= link_to t(".products.mccs"), mccs_path %></li>
+              </ul>
+            </li>
+            <li class="divider-vertical"></li>
+            <li><%= link_to t(".articles"), articles_path %></li>
+            <li class="divider-vertical"></li>
+            <li><%= link_to t(".locations"), locations_path %></li>
+            <li class="divider-vertical"></li>
+            <li><%= link_to t(".careers"), careers_path %></li>
+            <li class="divider-vertical"></li>
+            <li><%= link_to new_contact_path do %><%= t(".contact") %><% end %></li>
+          </ul>
+        </div><!--top bar menu-->
+      </nav><!--nav bar web view-->
+    </div>
     <div class="off-canvas-wrapper row main"><!-- Mobile nav off-canvas dropdown wrapper-->
       <div class="title-bar hide-for-large row" id="title-bar"><!--Mobile nav title bar-->
         <!--button-->
@@ -46,47 +86,6 @@
           <% end %>
         </div>
       </div><!--Mobile nav title bar-->
-      <nav class="top-bar show-for-large"><!--Webview nav-->
-          <div class="top-bar-title">
-            <div class="top-bar-logo" id="top-bar-logo">
-            <%= link_to root_path do %><%= image_tag("logo.png", :class => "logo-samtra") %><% end %>
-            </div>
-          </div>
-          <div class="top-bar-left">
-            <ul class="dropdown menu" data-dropdown-menu>
-              <li>
-                <%= link_to t(".about"), about_us_path %>
-                <ul class="menu vertical">
-                  <li><%= link_to t(".history"), history_path %></li>
-                  <li><%= link_to t(".ceoLetter"), ceo_letter_path %></li>
-                  <li><%= link_to t(".customers"), customers_path %></li>
-                  <li><%= link_to t(".contactUs"), new_contact_path %></li>
-                </ul>
-              </li>
-              <li>
-                <%= link_to t(".markets.title"), allMarkets_path %>
-                <ul class="menu vertical">
-                  <li><%= link_to t(".markets.medical"), medical_path %></li>
-                  <li><%= link_to t(".markets.military"), military_path %></li>
-                  <li><%= link_to t(".markets.automotive"), automotive_path %></li>
-                  <li><%= link_to t(".markets.industrialMachinery"), industrialMachinery_path %></li>
-                </ul>
-              </li>
-              <li>
-                <%= link_to t(".products.title"), allProducts_path %>
-                <ul class="menu vertical">
-                  <li><%= link_to t(".products.cables"), cables_path %></li>
-                  <li><%= link_to t(".products.connectors"), connectors_path %></li>
-                  <li><%= link_to t(".products.terminals"), terminals_path %></li>
-                  <li><%= link_to t(".products.mccs"), mccs_path %></li>
-                </ul>
-              </li>
-              <li><%= link_to t(".articles"), articles_path %></li>
-              <li><%= link_to t(".locations"), locations_path %></li>
-              <li><%= link_to t(".careers"), careers_path %></li>
-            </ul>
-          </div><!--top bar menu-->
-        </nav><!--nav bar web view-->
       <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper><!--Mobile nav off canvas dropdown inner wrapper-->
         <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
           <ul class="vertical menu" data-accordion-menu>
@@ -137,7 +136,19 @@
     </div><!--canvas wrapper-->
     <footer id="footer">
       <div class="row main">
-        Copyright &copy; SamTra International all rights reserved<br>
+        <div class="copyright">
+        Copyright &copy; SamTra International all rights reserved
+        </div>
+        <div class="misc menu">
+          <ul>
+            <% if admin_signed_in? %>
+            <li><%= link_to "Admin", rails_admin_path %></li>
+            <li><%= link_to "Log out", destroy_admin_session_path %></li>
+            <% else %>
+            <li><%= link_to "Employee login", new_admin_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </footer>
   </body>

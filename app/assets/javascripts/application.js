@@ -15,5 +15,17 @@ $(document).on('turbolinks:load', function() {
   if ($('#title-bar').css('display') !== "none"){
     var titleBarHeight = $("#title-bar").outerHeight();
     $("#pageYield, #offCanvasLeft").css('padding-top', titleBarHeight);
+  } else {
+    var headerHeight = $('#header').outerHeight();
+    $("#pageYield").css('padding-top', headerHeight);
+  }
+});
+$(document).on('scroll', function(){
+  if (document.body.scrollTop > 0) {
+    $('#header').addClass('scrolldown-header');
+    $('#language-menu').fadeOut(500);
+  } else {
+    $('#header').removeClass('scrolldown-header');
+    $('#language-menu').fadeIn(500);
   }
 });
