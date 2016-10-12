@@ -52,15 +52,7 @@
               </ul>
             </li>
             <li class="divider-vertical"></li>
-            <li>
-              <%= link_to t(".products.title"), allProducts_path %>
-              <ul class="menu vertical" id="top-bar-dropdown-menu">
-                <li><%= link_to t(".products.cables"), cables_path %></li>
-                <li><%= link_to t(".products.connectors"), connectors_path %></li>
-                <li><%= link_to t(".products.terminals"), terminals_path %></li>
-                <li><%= link_to t(".products.mccs"), mccs_path %></li>
-              </ul>
-            </li>
+            <li><%= link_to t(".products.title"), product_types_path %></li>
             <li class="divider-vertical"></li>
             <li><%= link_to t(".articles"), articles_path %></li>
             <li class="divider-vertical"></li>
@@ -108,16 +100,7 @@
                 <li><%= link_to t(".markets.industrialMachinery"), industrialMachinery_path %></li>
               </ul>
             </li>
-            <li>
-              <a><%= t(".products.title") %></a>
-              <ul class="menu vertical nested">
-                <li><%= link_to t(".products.allProducts"), allProducts_path %></li>
-                <li><%= link_to t(".products.cables"), cables_path %></li>
-                <li><%= link_to t(".products.connectors"), connectors_path %></li>
-                <li><%= link_to t(".products.terminals"), terminals_path %></li>
-                <li><%= link_to t(".products.mccs"), mccs_path %></li>
-              </ul>
-            </li>
+            <li><%= link_to t(".products.title"), product_types_path %></li>
             <li><%= link_to t(".articles"), articles_path %></li>
             <li><%= link_to t(".locations"), locations_path %></li>
             <li><%= link_to t(".careers"), careers_path %></li>
@@ -140,14 +123,24 @@
         Copyright &copy; SamTra International all rights reserved
         </div>
         <div class="misc menu">
-          <ul>
-            <% if admin_signed_in? %>
-            <li><%= link_to "Admin", rails_admin_path %></li>
-            <li><%= link_to "Log out", destroy_admin_session_path %></li>
-            <% else %>
-            <li><%= link_to "Employee login", new_admin_session_path %></li>
-            <% end %>
-          </ul>
+          <div class="quick_links">
+            <ul class="quick_links_menu">
+              <% if admin_signed_in? %>
+              <span>Quick Links</span>
+              <li><%= link_to "제품 추가", new_product_path %></li>
+              <li><%= link_to "제품 리스트", products_path %></li>
+              <li><%= link_to "제품 타입 추가", new_product_type_path %></li>
+              <li><%= link_to "제품 타입 리스트", product_types_path %></li>
+              <li><%= link_to "브랜드 추가", new_brand_path %></li>
+              <li><%= link_to "브랜드 리스트", brands_path %></li>
+              <li><%= link_to "기사 추가", new_article_path %></li>
+              <li><%= link_to "Admin", rails_admin_path %></li>
+              <li><%= link_to "Log out", destroy_admin_session_path %></li>
+              <% else %>
+              <li><%= link_to "Employee login", new_admin_session_path %></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>

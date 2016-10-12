@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010154751) do
+ActiveRecord::Schema.define(version: 20161012094343) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -39,22 +39,22 @@ ActiveRecord::Schema.define(version: 20161010154751) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "brand_product_types", force: :cascade do |t|
+    t.integer  "brand_id"
+    t.integer  "product_type_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "brand_product_types", ["brand_id"], name: "index_brand_product_types_on_brand_id"
+  add_index "brand_product_types", ["product_type_id"], name: "index_brand_product_types_on_product_type_id"
+
   create_table "brands", force: :cascade do |t|
     t.string   "name"
-    t.integer  "product_id"
+    t.string   "pics"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "brands", ["product_id"], name: "index_brands_on_product_id"
-
-  create_table "brands_product_types", id: false, force: :cascade do |t|
-    t.integer "product_type_id", null: false
-    t.integer "brand_id",        null: false
-  end
-
-  add_index "brands_product_types", ["brand_id", "product_type_id"], name: "index_brands_product_types_on_brand_id_and_product_type_id"
-  add_index "brands_product_types", ["product_type_id", "brand_id"], name: "index_brands_product_types_on_product_type_id_and_brand_id"
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -85,11 +85,11 @@ ActiveRecord::Schema.define(version: 20161010154751) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer  "brand_id"
+    t.string   "name"
+    t.string   "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "brand_id"
   end
-
-  add_index "products", ["brand_id"], name: "index_products_on_brand_id"
 
 end

@@ -1,0 +1,2 @@
+      invoke  active_record
+      remove    db/migrate/20161012075415_brand_product_type.rb

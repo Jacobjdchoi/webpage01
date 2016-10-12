@@ -1,0 +1,16 @@
+// Place all the styles related to the product_types controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.product_types_index {
+    width: 23.5%;
+    margin: 0.5%;
+    padding: 5px;
+    height: 300px;
+    display: inline-block;
+    box-shadow: rgb(222, 222, 222) 0 0 5px;
+    border-radius: 5px;
+    transition: box-shadow 0.2s;
+    &:hover{
+        box-shadow: rgb(111,111,111) 0 0 5px;
+    }
+}

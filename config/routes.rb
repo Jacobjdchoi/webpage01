@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  
+  resources :products
+  resources :brands
+  resources :products
+  resources :product_types
   resources :customers
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -22,13 +27,6 @@ Rails.application.routes.draw do
     get 'markets/military' => 'markets#military', as: 'military'
     get 'markets/automotive' => 'markets#automotive', as: 'automotive'
     get 'markets/industrial-machinery' => 'markets#industrialMachinery', as: 'industrialMachinery'
-    
-  #product
-    get 'products/all-products' => 'products#index', as: 'allProducts'
-    get 'products/cables' => 'products#cables', as: 'cables'
-    get 'products/connectors' => 'products#connectors', as: 'connectors'
-    get 'products/terminals' => 'products#terminals', as: 'terminals'
-    get 'products/motion-control-components' => 'products#mccs', as: 'mccs'
-    
+  
   
 end

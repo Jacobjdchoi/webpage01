@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<% if admin_signed_in? %>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<% end %>
+<%= link_to 'view all products', products_path %>
+
+<div>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</div>
+<div>
+  <%= link_to "Full SCREEN MODE", @product.attachment.url, :target => "_blank" %>
+  <iframe src="<%= @product.attachment %>" alt="<%= @product.attachment %>" style="width:300px; height: 500px"></iframe>
+</div>

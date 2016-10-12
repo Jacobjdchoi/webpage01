@@ -1,8 +1,17 @@
 class Brand < ActiveRecord::Base
     has_many :products
-    has_and_belongs_to_many :product_types
+    has_many :brand_product_types, :dependent => :destroy
+    has_many :product_types, :through => :brand_product_types
+    attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+    mount_uploader :pics, PicsUploader
+    validates :name, :pics, :presence => true
+    after_update :crop_pics
+    
+    def crop_pics
+        pics.recreate_versions! if crop_x.present?
+    end
+    
     def title
         self.name
     end
 end
-

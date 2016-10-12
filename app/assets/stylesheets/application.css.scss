@@ -43,7 +43,7 @@ body{
 }
 .header {
     background-color: white;
-    box-shadow: rgb(222, 222, 222) 0px 0px 16px;
+    box-shadow: rgb(222, 222, 222) 0px 0px 5px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -75,6 +75,17 @@ body{
                 position: absolute;
                 bottom: 1rem;
                 right: 0;
+                transition: bottom 0.5s;
+                li #top-bar-dropdown-menu{
+                    margin-top: 1rem;
+                    transition: margin-top 0.5s;
+                    li a {
+                        &:hover {
+                            color: #111111 !important;
+                            background: linear-gradient(#ffffff,#fafafa,#e0e0e0);
+                        }
+                    }
+                }
             }
             ul.language.menu {
                 position: absolute;
@@ -86,8 +97,18 @@ body{
 }
 .scrolldown-header {
     height: 4rem;
-    .top-bar .top-bar-title {
-        padding: 0.5rem 0.5rem 0.5rem 0;
+    .top-bar {
+        .top-bar-title {
+            padding: 0.5rem 0.5rem 0.5rem 0;
+        }
+        .top-bar-left {
+            ul.dropdown.menu {
+                bottom: 1.5rem;
+                li #top-bar-dropdown-menu {
+                    margin-top: 1.5rem;
+                }
+            }
+        }
     }
 }
 //Capitalize dropdown menus in general
@@ -108,15 +129,7 @@ ul.language.menu li a {
     color: gray !important;
     padding: 0 1rem;
 }
-#top-bar-dropdown-menu{
-    margin-top: 1rem;
-    li a {
-        &:hover {
-            color: #111111 !important;
-            background: linear-gradient(#ffffff,#fafafa,#e0e0e0);
-        }
-    }
-}
+
 .divider-vertical {
     width: 1;
     height: 100%;
@@ -148,6 +161,32 @@ footer {
     height: 5rem;
     background-color: #001641;
     color: white;
+    .row.main {
+        .copyright {
+            float: left;
+        }
+        .misc.menu {
+            float: right;
+            .quick_links{
+                float: right;
+                .quick_links_menu{
+                    width: 24rem;
+                    height: 5rem;
+                    span {
+                        width: 100%;
+                        float: left;
+                    }
+                    li {
+                        width: 33.3%;
+                        float: left;
+                        a{
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 a:hover {
     background-color: transparent;
@@ -195,4 +234,7 @@ a:hover {
 //global
 .content-container {
     padding: 0.5rem;
+}
+#text_field {
+    user-select: initial;
 }
