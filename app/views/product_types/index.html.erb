@@ -1,28 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Product Categories</h1>
+<h1>Products Browser</h1>
+
 <% if admin_signed_in? %>
 <p>
   <%= link_to 'New Product type', new_product_type_path %>
 </p>
 <% end %>
-<% @product_types.each do |product_type| %>
+
+<div class="products_browser_container">
   <div class="product_types_index">
-    <% if admin_signed_in? %>
-    <p>
-      <%= link_to 'Edit', edit_product_type_path(product_type) %> | 
-      <%= link_to 'Destroy', product_type, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </p>
-    <% end %>
-    <div><%= link_to product_type.name, product_type_path(product_type) %></div>
-    <% product_type.brands.each do |brand| %>
-    <div class="brand-card">
-      <%= link_to brand_path(brand) do %>
-        <div class="brand-logo"><%= image_tag brand.pics_url(:logo) %></div>
-        <div class="brand-name"><%= brand.name %></div>
-      <% end %>
-    </div>
+    <% @product_types.each do |product_type| %>
+      <div class="product_types_list">
+        <% if admin_signed_in? %>
+          <%= link_to 'Edit', edit_product_type_path(product_type) %> |
+          <%= link_to 'Destroy', product_type_path(product_type), method: :delete, data: { confirm: '해당 제품 타입을 삭제하면 관련된 브랜드도 지워집니다.' } %>
+        <% end %>
+        <%= link_to product_type_path(product_type), class: "product_types_items items-buttons" ,remote: true do %>
+          <%= product_type.name %>
+        <% end %>
+      </div>
     <% end %>
   </div>
-<% end %>
+  <div class="brands_products_container" id="brands_products_container"></div>
+</div>
 

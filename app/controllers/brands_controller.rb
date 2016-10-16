@@ -12,6 +12,10 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.json
   def show
+    @products = @brand.products
+    respond_to do |format|
+      format.js
+    end
   end
 
   # GET /brands/new
@@ -52,7 +56,7 @@ class BrandsController < ApplicationController
       end
   end
   def crop
-  
+
   end
   # DELETE /brands/1
   # DELETE /brands/1.json
@@ -74,9 +78,9 @@ class BrandsController < ApplicationController
     def brand_params
       params.require(:brand).permit(:name, :pics, :crop_x, :crop_y, :crop_w, :crop_h, product_type_ids: [])
     end
-    
+
     def productTypeAll
       @productTypeAll = ProductType.all
     end
-    
+
 end

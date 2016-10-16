@@ -1,0 +1,14 @@
+<div class="brands_index">
+<% @brands.each do |brand| %>
+  <div class="brands_list">
+    <% if admin_signed_in? %>
+      <%= link_to 'Edit', edit_brand_path(brand) %> |
+      <%= link_to 'Destroy', brand_path(brand), method: :delete, data: { confirm: '해당 브랜드를 삭제하면 관련된 제품들도 지워집니다.' } %>
+    <% end %>
+    <%= link_to brand_path(brand), class: "brands_items items-buttons" ,remote: true do %>
+      <%= brand.name %>
+    <% end %>
+  </div>
+<% end %>
+</div>
+<div class="products_container" id="products_container"></div>

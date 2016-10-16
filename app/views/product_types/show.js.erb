@@ -1,0 +1,5 @@
+$('.products_browser_container').addClass('product_type_activated');
+$('#brands_products_container').html("<%= j render(:partial => "show_brands")%>");
+if ($('.brands_products_container').hasClass('brand_activated')){
+  $('.brands_products_container').removeClass('brand_activated');
+}

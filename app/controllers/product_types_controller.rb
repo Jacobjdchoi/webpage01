@@ -11,6 +11,10 @@ class ProductTypesController < ApplicationController
   # GET /product_types/1
   # GET /product_types/1.json
   def show
+    @brands = @product_type.brands
+    respond_to do |format|
+      format.js
+    end
   end
 
   # GET /product_types/new

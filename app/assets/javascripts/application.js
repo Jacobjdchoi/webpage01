@@ -11,13 +11,15 @@ $(document).on('turbolinks:load', function() {
   $(function(){ $(document).foundation(); });
   tinymce.remove();
   tinymce.init({ selector:'textarea#newsBody', height:"800px" });
-  
+
   if ($('#title-bar').css('display') !== "none"){
+    $('#header').css('display', 'none');
     var titleBarHeight = $("#title-bar").outerHeight();
     $("#pageYield, #offCanvasLeft").css('padding-top', titleBarHeight);
   } else {
     var headerHeight = $('#header').outerHeight();
     $("#pageYield").css('padding-top', headerHeight);
+    $('#header').css('display', 'initial');
   }
 });
 $(document).on('scroll', function(){
