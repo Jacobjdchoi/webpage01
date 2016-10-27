@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, except: [:index, :show]
+  before_action :to_crop_obj, only: [:edit, :update]
+
 
   # GET /products
   # GET /products.json
@@ -32,8 +34,13 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
+        if @product.photos.present?
+          @crop_obj = @product
+          render "shared/crop"
+        else
+          format.html { redirect_to @product, notice: 'Product was successfully created.' }
+          format.json { render :show, status: :created, location: @product }
+        end
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -46,8 +53,12 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { render :show, status: :ok, location: @product }
+        if @product.photos.present?
+          render "shared/crop"
+        else
+          format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+          format.json { render :show, status: :ok, location: @product }
+        end
       else
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -71,8 +82,11 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
+    def to_crop_obj
+      @crop_obj = @product
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :attachment, :brand_id)
+      params.require(:product).permit(:name, :attachment, :brand_id, photos_attributes: [:id, :pics, :_destroy, :product_id])
     end
 end

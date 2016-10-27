@@ -7,7 +7,7 @@ gem 'rails', '4.2.5'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0'
-#compass
+# Compass
 gem 'compass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -35,30 +35,32 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  #gem 'spring'
-  
+  # Gem 'spring'
   gem 'faker'
-  
+  gem 'pry-rails'
 end
 
-#zurb foundation css/js framework
+# Zurb foundation css/js framework
 gem 'foundation-rails'
 
-#automatically add vendor specific prefixers
+# Automatically add vendor specific prefixers
 gem "autoprefixer-rails"
 
-#rails admin
+# Rails admin
 gem 'rails_admin', '~> 1.0'
 
-#devise authentication
+# Devise authentication
 gem 'devise'
 
-#file upload
+# File upload
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 
-#Rmagick
+# Rmagick
 gem 'rmagick'
 
+# Environment variables
 gem 'dotenv-rails'
+
+# Nested form
+gem 'nested_form'

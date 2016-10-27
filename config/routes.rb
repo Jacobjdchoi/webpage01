@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   resources :products
   resources :brands
   resources :products
@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :customers, only: [:show, :index]
   resources :articles
   resources :contacts, only: [:new, :create]
-  
+  resources :photos
+
   #pages routes----------------------------
     #the code below is alternative to %get 'pages/home' => 'pages#home', as: "home"%
     root 'pages#home'
@@ -20,13 +21,13 @@ Rails.application.routes.draw do
     get 'pages/contact-us' => 'pages#contactUs', as: 'contact_us'
     get 'pages/careers' => 'pages#careers', as: 'careers'
     get 'pages/locations' => 'pages#locations', as: 'locations'
-    
+
   #markets
     get 'markets/all-markets' => 'markets#index', as: 'allMarkets'
     get 'markets/medical' => 'markets#medical', as: 'medical'
     get 'markets/military' => 'markets#military', as: 'military'
     get 'markets/automotive' => 'markets#automotive', as: 'automotive'
     get 'markets/industrial-machinery' => 'markets#industrialMachinery', as: 'industrialMachinery'
-  
-  
+
+
 end

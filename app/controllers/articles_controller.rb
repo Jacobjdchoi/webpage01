@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
-  
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :to_crop_obj, only: [:edit, :update]
   # GET /articles
   # GET /articles.json
   def index
@@ -10,18 +11,18 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    @article = Article.find(article_params)
   end
-  
+
   def new
     @article = Article.new
   end
-  
+
   def create
     @article = Article.new(new_article_params)
       if @article.save
-        if params[:article][:pics].present?
-          render :crop
+        if @article.photos.present?
+          @crop_obj = @article
+          render "shared/crop"
         else
           redirect_to @article
         end
@@ -29,20 +30,18 @@ class ArticlesController < ApplicationController
         render :new
       end
   end
-  
+
   def crop
-    
+
   end
-  
+
   def edit
-    @article = Article.find(article_params)
   end
-  
+
   def update
-    @article = Article.find(article_params)
       if @article.update(new_article_params)
-        if params[:article][:pics].present?
-          render :crop
+        if @article.photos.present?
+          render "shared/crop"
         else
           redirect_to @article
         end
@@ -52,20 +51,22 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(article_params)
     @article.destroy
-
     respond_to do |format|
       format.html { redirect_to articles_url }
     end
   end
-  
+
 private
-  def article_params
-    params[:id]
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  def to_crop_obj
+    @crop_obj = @article
   end
 
   def new_article_params
-    params.require(:article).permit(:title, :body, :pics, :crop_x, :crop_y, :crop_w, :crop_h )
+    params.require(:article).permit(:title, :body, photos_attributes: [:id, :pics, :_destroy, :article_id])
   end
 end

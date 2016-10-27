@@ -1,5 +1,6 @@
 class BrandsController < ApplicationController
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
+  before_action :to_crop_obj, only: [:edit, :update]
   before_action :authenticate_admin!, except: [:show, :index]
   before_action :productTypeAll, only: [:new, :edit]
 
@@ -32,8 +33,9 @@ class BrandsController < ApplicationController
   def create
     @brand = Brand.new(brand_params)
       if @brand.save
-        if params[:brand][:pics].present?
-          render :crop
+        if @brand.photos.present?
+          @crop_obj = @brand
+          render "shared/crop"
         else
           redirect_to @brand
         end
@@ -46,8 +48,8 @@ class BrandsController < ApplicationController
   # PATCH/PUT /brands/1.json
   def update
       if @brand.update(brand_params)
-        if params[:brand][:pics].present?
-          render :crop
+        if @brand.photos.present?
+          render "shared/crop"
         else
           redirect_to @brand
         end
@@ -74,9 +76,13 @@ class BrandsController < ApplicationController
       @brand = Brand.find(params[:id])
     end
 
+    def to_crop_obj
+      @crop_obj = @brand
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def brand_params
-      params.require(:brand).permit(:name, :pics, :crop_x, :crop_y, :crop_w, :crop_h, product_type_ids: [])
+      params.require(:brand).permit(:name, photos_attributes: [:id, :pics, :_destroy, :brand_id], product_type_ids: [])
     end
 
     def productTypeAll

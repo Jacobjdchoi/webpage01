@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161012094343) do
+ActiveRecord::Schema.define(version: 20161027103540) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20161012094343) do
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.string   "pics"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,7 +50,6 @@ ActiveRecord::Schema.define(version: 20161012094343) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
-    t.string   "pics"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -60,7 +58,6 @@ ActiveRecord::Schema.define(version: 20161012094343) do
     t.string   "name"
     t.string   "email"
     t.string   "company"
-    t.string   "pics"
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -68,7 +65,6 @@ ActiveRecord::Schema.define(version: 20161012094343) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "name"
-    t.string   "pics"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -76,6 +72,16 @@ ActiveRecord::Schema.define(version: 20161012094343) do
   create_table "pages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "pics"
+    t.integer  "article_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "product_id"
+    t.integer  "customer_id"
+    t.integer  "brand_id"
   end
 
   create_table "product_types", force: :cascade do |t|

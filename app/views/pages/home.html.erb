@@ -4,7 +4,7 @@
     <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
     <% @articles.each do |article| %>
       <li class="orbit-slide">
-        <%= image_tag article.pics_url(:large), class: "orbit-image" %>
+        <%= image_tag article.photos.first.pics.url(:large), class: "orbit-image" %>
         <div class="orbit-caption is-active"><%= link_to article.title.titleize, article_path(article) %></div>
       </li>
     <% end %>

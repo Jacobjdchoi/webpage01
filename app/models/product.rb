@@ -1,5 +1,8 @@
 class Product < ActiveRecord::Base
-    belongs_to :brand, :dependent => :destroy
+    has_many :photos, dependent: :destroy
+    accepts_nested_attributes_for :photos, allow_destroy: true
+
+    belongs_to :brand
     belongs_to :product_type
     mount_uploader :attachment, AttachmentUploader
     #add presence validation for attachment b4 deploying
