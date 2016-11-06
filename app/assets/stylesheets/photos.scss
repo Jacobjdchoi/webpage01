@@ -1,3 +1,25 @@
 // Place all the styles related to the photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+fieldset.image_fieldset {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+.active_fieldset {
+  display: block !important;
+}
+.nav_button {
+  width: 100px;
+  height: auto;
+  background: #eeeeee;
+  border: 1px solid black;
+  cursor: pointer;
+}
+input.val_input {
+  width: 25%;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  float: left;
+}

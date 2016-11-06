@@ -1,0 +1,11 @@
+<div class="tab product_types">
+  <% @product_types.each do |product_type| %>
+    <div class="tab_item product_types">
+      <%= link_to pb_pt_path(product_type), class: "items-buttons product_types" do %>
+        <div class="tab_name product_types">
+          <%= product_type.name %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

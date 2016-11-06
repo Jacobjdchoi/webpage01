@@ -1,0 +1,23 @@
+<%= render 'browser_title_link' %>
+<div class="browser_container">
+  <div class="tab_container">
+    <%= render 'product_types_tab' %>
+    <%= render 'brands_tab' %>
+  </div>
+  <div class="index_container brands">
+    <ul class="accordion products_index" data-accordion id="product_accordion" data-allow-all-closed="true">
+      <% @brand.products.each.with_index do |product, index| %>
+        <li class="accordion-item" data-accordion-item>
+          <a class="accordion-title products_items"><%= product.name %></a>
+          <div class="accordion-content" data-tab-content>
+              <p>
+              <strong><%= product.name %></strong><br>
+              Heritage: <%= raw product.heritage_list.map {|h| link_to h, heritage_path(h) }.join(", ") %> <br>
+              <%= link_to "Full SCREEN MODE", product.attachment.url, :target => "_blank" %>
+              </p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

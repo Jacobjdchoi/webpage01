@@ -7,7 +7,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    if params[:heritage]
+      @products = Product.tagged_with(params[:heritage])
+    else
+      @products = Product.all
+    end
   end
 
   # GET /products/1
@@ -15,6 +19,7 @@ class ProductsController < ApplicationController
   def show
     respond_to do |format|
       format.js
+      format.html
     end
   end
 
@@ -87,6 +92,6 @@ class ProductsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :attachment, :brand_id, photos_attributes: [:id, :pics, :_destroy, :product_id])
+      params.require(:product).permit(:name, :attachment, :brand_id, :heritage_list, photos_attributes: [:id, :pics, :_destroy, :product_id])
     end
 end

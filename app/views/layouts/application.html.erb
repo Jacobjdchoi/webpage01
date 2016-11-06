@@ -17,6 +17,7 @@
   </head>
 
   <body>
+  <%# console %>
     <!-- Webview fixed navbar  -->
     <div class="header" id="header">
       <nav class="top-bar show-for-large main"><!--Webview nav-->
@@ -27,9 +28,9 @@
         </div>
         <div class="top-bar-left">
           <ul class="language menu" id="language-menu">
-            <li><a href="#">English</a></li>
+            <li><%= link_to "한글", locale: "ko" %></li>
             <li class="divider-vertical"></li>
-            <li><a href="#">한글</a></li>
+            <li><%= link_to "English", locale: "en" %></li>
           </ul>
           <ul class="dropdown menu" data-dropdown-menu>
             <li>
@@ -45,14 +46,14 @@
             <li>
               <%= link_to t(".markets.title"), allMarkets_path %>
               <ul class="menu vertical" id="top-bar-dropdown-menu">
-                <li><%= link_to t(".markets.medical"), medical_path %></li>
-                <li><%= link_to t(".markets.military"), military_path %></li>
                 <li><%= link_to t(".markets.automotive"), automotive_path %></li>
                 <li><%= link_to t(".markets.industrialMachinery"), industrialMachinery_path %></li>
+                <li><%= link_to t(".markets.medical"), medical_path %></li>
+                <li><%= link_to t(".markets.military"), military_path %></li>
               </ul>
             </li>
             <li class="divider-vertical"></li>
-            <li><%= link_to t(".products.title"), product_types_path %></li>
+            <li><%= link_to t(".products.title"), pb_path %></li>
             <li class="divider-vertical"></li>
             <li><%= link_to t(".articles"), articles_path %></li>
             <li class="divider-vertical"></li>
@@ -72,10 +73,17 @@
           <a class="menu-icon" type="button" data-toggle="offCanvasLeft"></a>
         </div>
         <!--Sitename-->
-        <div class="title-bar-logo small-6 small-centered">
+        <div class="title-bar-logo small-6 columns small-centered">
           <%= link_to root_path do %>
             <%= image_tag("logo.png", :class => "logo-samtra") %>
           <% end %>
+        </div>
+        <div class="title-bar-right small-3 columns">
+          <ul class="language menu mobile">
+            <li><%= link_to "한글", locale: "ko" %></li>
+            <li class="divider-vertical"></li>
+            <li><%= link_to "ENG", locale: "en" %></li>
+          </ul>
         </div>
       </div><!--Mobile nav title bar-->
       <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper><!--Mobile nav off canvas dropdown inner wrapper-->
@@ -94,13 +102,13 @@
               <a><%= t(".markets.title") %></a>
               <ul class="menu vertical nested">
                 <li><%= link_to t(".markets.allMarkets"), allMarkets_path %><li>
-                <li><%= link_to t(".markets.medical"), medical_path %></li>
-                <li><%= link_to t(".markets.military"), military_path %></li>
                 <li><%= link_to t(".markets.automotive"), automotive_path %></li>
                 <li><%= link_to t(".markets.industrialMachinery"), industrialMachinery_path %></li>
+                <li><%= link_to t(".markets.medical"), medical_path %></li>
+                <li><%= link_to t(".markets.military"), military_path %></li>
               </ul>
             </li>
-            <li><%= link_to t(".products.title"), product_types_path %></li>
+            <li><%= link_to t(".products.title"), pb_path %></li>
             <li><%= link_to t(".articles"), articles_path %></li>
             <li><%= link_to t(".locations"), locations_path %></li>
             <li><%= link_to t(".careers"), careers_path %></li>
@@ -115,7 +123,7 @@
           </div>
         </div><!--off canvas content-->
       </div><!--canvas wrapper inner-->
-        
+
     </div><!--canvas wrapper-->
     <footer id="footer">
       <div class="row main">
@@ -130,7 +138,7 @@
               <li><%= link_to "제품 추가", new_product_path %></li>
               <li><%= link_to "제품 리스트", products_path %></li>
               <li><%= link_to "제품 타입 추가", new_product_type_path %></li>
-              <li><%= link_to "제품 타입 리스트", product_types_path %></li>
+              <li><%= link_to "제품 타입 리스트", admin_product_types_path %></li>
               <li><%= link_to "브랜드 추가", new_brand_path %></li>
               <li><%= link_to "브랜드 리스트", brands_path %></li>
               <li><%= link_to "기사 추가", new_article_path %></li>

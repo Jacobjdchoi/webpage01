@@ -1,0 +1,11 @@
+<div class="tab brands">
+  <% @brands.each do |brand| %>
+    <div class="tab_item brands">
+      <%= link_to pb_b_path(brand), class: "items-buttons brands" do %>
+        <div class="tab_name brands">
+          <%= brand.name %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

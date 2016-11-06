@@ -1,0 +1,16 @@
+<%= render 'browser_title_link' %>
+<div class="browser_container">
+  <div class="index_container browser">
+    <div class="product_types_index">
+      <% @product_types.each do |product_type| %>
+        <div class="product_types_list">
+          <%= link_to pb_pt_path(product_type), class: "product_types_items items-buttons" do %>
+            <div class="product_type_name">
+              <%= product_type.name %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

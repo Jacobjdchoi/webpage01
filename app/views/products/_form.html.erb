@@ -23,6 +23,10 @@
     <%= f.label :brand_id, "해당 브랜드" %>
     <%= f.collection_select :brand_id, Brand.all, :id, :name %>
   </div>
+  <div class="field">
+    <%= f.label :heritage_list, "헤리티지 [코마(,)를 사용하여 여러개 등록 가능]" %>
+    <%= f.text_field :heritage_list %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

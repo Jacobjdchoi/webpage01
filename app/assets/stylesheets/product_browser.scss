@@ -1,0 +1,197 @@
+// Place all the styles related to the product_browser controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// large view!!
+@media only screen and (min-width: 64.063em) {
+  .browser_container{
+    width: 100%;
+    height: 500px;
+    //product_type activated------
+    .index_container{
+      width: 80%;
+      height: 100%;
+      display: inline-block;
+      .product_types_index {
+        width: 100%;
+        height: 100%;
+        .product_types_list{
+          display: initial;
+          a.product_types_items {
+            width: 23.5%;
+            height: 300px;
+            margin: 0.5%;
+            padding: 5px;
+            border-radius: 5px;
+            .product_type_name{
+              transform: translateY(-50%);
+              top: 50%;
+              position: relative;
+            }
+          }
+        }
+      }
+      .brands_index {
+        width: 100%;
+        height: 100%;
+        float: left;
+        padding: 0.5%;
+        .brands_list{
+            display: initial;
+            a.brands_items{
+              width: 23.5%;
+              height: 200px;
+              margin: 0.5%;
+              padding: 5px;
+              border-radius: 5px;
+              .brand_name_and_logo{
+                transform: translateY(-50%);
+                top: 50%;
+                position: relative;
+                img {
+                  width: 100%;
+                }
+              }
+          }
+        }
+      }
+      &.browser{
+        width: 100%;
+      }
+      &.product_types{
+        width: 90%;
+      }
+      &.brands{
+        //overflow-y: auto;
+        .products_index{
+          //height: 500px;
+          //overflow-y: auto;
+        }
+      }
+    }
+    .tab_container{
+      width: 20%;
+      float: left;
+      height: 500px;
+      .tab {
+        margin: 0;
+        border-radius: 0;
+        width: 50%;
+        float: left;
+        display: inline-block;
+        height: 100%;
+        .tab_item {
+          width: 100%;
+          height: 30px;
+          float: left;
+          a.items-buttons {
+            width: 100%;
+            height: 100%;
+            .tab_name {
+              transform: translateY(-50%);
+              top: 50%;
+              position: relative;
+            }
+          }
+        }
+      }
+      &.product_types{
+        width: 10%;
+        .tab.product_types{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+
+// mobile view!!!!
+@media only screen and (max-width: 64rem){
+  .index_container{
+    width: 100%;
+    display: inline-block;
+    min-height: 500px;
+    .product_types_index {
+      width: 100%;
+      display: inline-block;
+      .product_types_list{
+        width: 47%;
+        margin: 1.5%;
+        height: 100px;
+        float: left;
+        a.product_types_items{
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+          display: inline-block;
+          text-align: center;
+          .product_type_name{
+            transform: translateY(-50%);
+            top: 50%;
+            position: relative;
+            font-size: 25px;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+    .brands_index {
+      width: 100%;
+      height: 200px;
+      .brands_list{
+        width: 47%;
+        margin: 1.5%;
+        float: left;
+        height: 46%;
+        a.brands_items{
+          width: 100%;
+          height: 100%;
+          .brand_name_and_logo{
+            transform: translateY(-50%);
+            top: 50%;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+  .tab_container{
+    width: 100%;
+    height: 60px;
+    .tab {
+      width: 100%;
+      height: 30px;
+      display: block;
+      margin: 0;
+      border-radius: 0;
+      clear: both;
+      .tab_item {
+        width: 25%;
+        height: 100%;
+        float: left;
+        a.items-buttons {
+          width: 100%;
+          height: 100%;
+          .tab_name {
+            transform: translateY(-50%);
+            top: 50%;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+
+.product_browser_title{
+  text-align: center;
+}
+.items-buttons {
+    box-shadow: rgb(222, 222, 222) 0 0 5px;
+    display: inline-block;
+    text-align: center;
+    &:hover{
+        box-shadow: rgb(111,111,111) 0 0 5px;
+    }
+}

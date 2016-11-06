@@ -9,22 +9,38 @@
           </ul>
         </div>
     <% end %>
-    <div>
-        <%= f.label :title, "제목" %>
-        <%= f.text_field :title %>
+    <div class="translationForm">
+        <div class="koreanForm">
+            <h3>한글</h3>
+            <div>
+                <%= f.label :title_ko, "한글 제목" %>
+                <%= f.text_field :title_ko %>
+            </div>
+            <div>
+                <label for="body">한글 내용</label>
+                <%= f.text_area :body_ko, class: "articleBody" %>
+            </div>
+        </div>
+        <div class="enlgishForm">
+            <h3>영문</h3>
+            <div>
+                <%= f.label :title_en, "영문 제목" %>
+                <%= f.text_field :title_en %>
+            </div>
+            <div>
+                <label for="body">영문 내용</label>
+                <%= f.text_area :body_en, class: "articleBody" %>
+            </div>
+        </div>
     </div>
-    <div>
-        <%= f.label :photos, "부수 사진 (사진 추가시 등록후 사이즈 조정 페이지로 넘어감.)" %>
+    <div class="photoForm">
+        <h3>부수 사진</h3>
+        <i>사진추가시 등록이후 아미지 사이즈 조정 페이지로 넘어감.</i>
         <%= f.fields_for :photos do |pf| %>
-            <%= pf.file_field :pics %>
-            <%= pf.link_to_remove "삭제하기" %>
+            <%= pf.file_field :pics, class: "photoInfo" %>
+            <%= pf.link_to_remove "삭제하기", class: "photoButton", type: "remove" %>
         <% end %>
-        <%= f.link_to_add "추가하기", :photos %>
-
-    </div>
-    <div>
-        <label for="body">내용</label>
-        <%= f.text_area :body, id: "newsBody" %>
+        <%= f.link_to_add "추가하기", :photos, class: "photoButton", type: "add" %>
     </div>
     <div>
         <%= f.submit "등록하기" %>

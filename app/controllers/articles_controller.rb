@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :to_crop_obj, only: [:edit, :update]
+  before_action :crop_ratio, only: [:create, :update]
   # GET /articles
   # GET /articles.json
   def index
@@ -66,7 +67,11 @@ private
     @crop_obj = @article
   end
 
+  def crop_ratio
+    @crop_ratio = 2.2222
+  end
+
   def new_article_params
-    params.require(:article).permit(:title, :body, photos_attributes: [:id, :pics, :_destroy, :article_id])
+    params.require(:article).permit(*Article.globalize_attribute_names, photos_attributes: [:id, :pics, :_destroy, :article_id])
   end
 end

@@ -8,14 +8,17 @@
       <div class="cropping_values">
         <%= form_for photo, remote: true do |f| %>
           <% %w[x y w h].each do |coord| %>
-            <%= f.text_field "crop_#{coord}", class: "val_input"%>
+            <%= f.text_field "crop_#{coord}", class: "val_input", readonly: true %>
           <% end %>
-          <% if index == 0 %>
-            <%= f.submit "적용 후 다음 이미지로", class: "coords_submit nav_button", type: "next" %>
-          <% elsif index + 1 == @crop_obj.photos.count  %>
+          <% if @crop_obj.photos.count == 1 %>
+            <%= f.submit "적용", class: "coords_submit" %>
+            <%= link_to("완료", @crop_obj) %>
+          <% elsif index + 1 == @crop_obj.photos.count %>
             <div class="nav_button" type="prev">이전 이미지로</div>
             <%= f.submit "적용", class: "coords_submit" %>
             <%= link_to("완료", @crop_obj) %>
+          <% elsif index == 0 %>
+            <%= f.submit "적용 후 다음 이미지로", class: "coords_submit nav_button", type: "next" %>
           <% else %>
             <div class="nav_button" type="prev">이전 이미지로</div>
             <%= f.submit "적용 후 다음 이미지로", class: "coords_submit nav_button", type: "next" %>
@@ -24,94 +27,10 @@
       </div>
     </fieldset>
   <% end %>
-  <!-- <div class="crop_nav">
-    <div class="nav_button" type="prev">이전 이미지로</div>
-    <div class="nav_button" type="next">다음 이미지로</div>
-
-  </div> -->
 </div>
-<style>
-  fieldset.image_fieldset {
-    width: 100%;
-    height: auto;
-    display: none;
-  }
-  .active_fieldset {
-    display: block !important;
-  }
-  .nav_button {
-    width: 100px;
-    height: auto;
-    background: #eeeeee;
-    border: 1px solid black;
-    cursor: pointer;
-  }
-  input.val_input {
-    width: 25%;
-    margin: 0;
-    padding: 0;
-    height: auto;
-    float: left;
-  }
-  /*input.coords_submit[type="submit"] {
-    height: 2rem;
-    width: 100%;
-    font-weight: bold;
-    font-size: 20px;
-  }*/
-</style>
+
 <script>
 $(document).on("turbolinks:load", function(){
-  var nextBtn = $(".nav_button[type=next]"),
-      prevBtn = $(".nav_button[type=prev]"),
-      fieldsets = $(".image_fieldset"), // array value
-      fieldsetCount = 0, // default value
-      maxFieldsetCount = <%= @crop_obj.photos.count - 1 %>,
-      initialFieldset = $(fieldsets[0]),
-      initialCroppingImage = initialFieldset.find('#cropping_image_' + fieldsetCount),
-      initialCroppingValue = initialFieldset.find('.val_input'); // array value
-
-  // fieldset navigation
-  nextBtn.on("click", upFieldsetCount);
-  prevBtn.on("click", downFieldsetCount);
-  multi_crop();
-  initialFieldset.addClass('active_fieldset');
-
-  //functions used
-  function upFieldsetCount() {
-    if (fieldsetCount < maxFieldsetCount ){
-      fieldsetCount += 1;
-      multi_crop();
-    }
-    $(this).submit();
-  }
-  function downFieldsetCount() {
-    if (fieldsetCount > 0 ){
-      fieldsetCount -= 1;
-      multi_crop();
-    }
-  }
-
-  function multi_crop(){
-    var targetedFieldset = $(fieldsets[fieldsetCount]),
-        otherFieldsets = fieldsets.not(targetedFieldset),
-        targetedCroppingImage = $(targetedFieldset).find('#cropping_image_' + fieldsetCount),
-        targetedCroppingValue = $(targetedFieldset).find(".val_input");
-    targetedCroppingImage.Jcrop({
-      setSelect: [0,0,100,100],
-      aspectRatio: 2.222222,
-      onChange: update_coords,
-      onSelect: update_coords
-    })
-    function update_coords(c) {
-      $(targetedCroppingValue[0]).val(c.x);
-      $(targetedCroppingValue[1]).val(c.y);
-      $(targetedCroppingValue[2]).val(c.w);
-      $(targetedCroppingValue[3]).val(c.h);
-    }
-    targetedFieldset.addClass('active_fieldset');
-    otherFieldsets.removeClass('active_fieldset');
-  }
-
+  crop_images(<%= @crop_obj.photos.count - 1 %>, <%= @crop_ratio %>);
 });
 </script>

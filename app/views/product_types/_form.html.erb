@@ -12,8 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, id: "text_field" %>
+    <h4>한글 제품타입 이름</h4>
+    <%= f.text_field :name_ko, class: "text_field" %>
+  </div>
+  <div class="field">
+    <h4>영문 제품타입 이름</h4>
+    <%= f.text_field :name_en, class: "text_field" %>
   </div>
   <div class="actions">
     <%= f.submit %>

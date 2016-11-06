@@ -1,14 +1,34 @@
 <div class="brands_index">
-<% @brands.each do |brand| %>
-  <div class="brands_list">
-    <% if admin_signed_in? %>
-      <%= link_to 'Edit', edit_brand_path(brand) %> |
-      <%= link_to 'Destroy', brand_path(brand), method: :delete, data: { confirm: '해당 브랜드를 삭제하면 관련된 제품들도 지워집니다.' } %>
-    <% end %>
-    <%= link_to brand_path(brand), class: "brands_items items-buttons" ,remote: true do %>
-      <%= brand.name %>
-    <% end %>
-  </div>
-<% end %>
+  <% @brands.each do |brand| %>
+    <div class="brands_list">
+      <%= link_to brand_path(brand), class: "brands_items items-buttons" ,remote: true do %>
+        <div class="brand_name_and_logo">
+          <% brand.photos.each do |photo| %>
+            <%= image_tag photo.pics.url(:logo) %>
+          <% end %>
+          <%= brand.name %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
-<div class="products_container" id="products_container"></div>
+<div class="products_container" id="products_container">
+  <ul class="accordion" data-accordion id="product_accordion" data-allow-all-closed="true">
+    <% @products.each.with_index do |product, index| %>
+      <% if index == 0 %>
+        <li class="accordion-item is-active" data-accordion-item>
+      <% else %>
+        <li class="accordion-item" data-accordion-item>
+      <% end %>
+        <a class="accordion-title products_items items-buttons"><%= product.name %></a>
+        <div class="accordion-content" data-tab-content>
+            <p>
+            <strong><%= product.name %></strong><br>
+            Heritage: <%= raw product.heritage_list.map {|h| link_to h, heritage_path(h) }.join(", ") %> <br>
+            <%= link_to "Full SCREEN MODE", product.attachment.url, :target => "_blank" %>
+            </p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,6 +1,7 @@
 class BrandsController < ApplicationController
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
   before_action :to_crop_obj, only: [:edit, :update]
+  before_action :crop_ratio, only: [:create, :update]
   before_action :authenticate_admin!, except: [:show, :index]
   before_action :productTypeAll, only: [:new, :edit]
 
@@ -16,6 +17,7 @@ class BrandsController < ApplicationController
     @products = @brand.products
     respond_to do |format|
       format.js
+      format.html
     end
   end
 
@@ -78,6 +80,10 @@ class BrandsController < ApplicationController
 
     def to_crop_obj
       @crop_obj = @brand
+    end
+
+    def crop_ratio
+      @crop_ratio = 0
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

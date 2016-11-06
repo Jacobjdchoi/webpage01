@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, except: [:index, :show]
   before_action :to_crop_obj, only: [:edit, :update]
+  before_action :crop_ratio, only: [:create, :update]
 
 
   def index
@@ -62,6 +63,10 @@ class CustomersController < ApplicationController
 
     def to_crop_obj
       @crop_obj = @customer
+    end
+
+    def crop_ratio
+      @crop_ratio = 1
     end
 
     def customer_params

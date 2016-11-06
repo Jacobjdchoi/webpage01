@@ -4,8 +4,8 @@
 <!--</div>-->
 <div class="content-container articles">
     <% if admin_signed_in? %>
-        <%= link_to '수정', edit_article_path(@article) %> |
-        <%= link_to '삭제', article_path(@article), method: :DELETE, data:{ confirm: "이 뉴스를 삭제 하시겠습니까?"}%> |
+        <%= link_to '삭제하기', article_path(@article), method: :DELETE, data:{ confirm: "이 뉴스를 삭제 하시겠습니까?"}%> |
+        <%= link_to '수정하기', edit_article_path(@article) %> |
     <% end %>
     <%= link_to t("navigation.back"), articles_path %>
 

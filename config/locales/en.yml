@@ -1,6 +1,6 @@
-en: 
-  layouts: 
-    application: 
+en:
+  layouts:
+    application:
       about: "About"
       aboutUs: "About us"
       articles: "News"
@@ -11,30 +11,30 @@ en:
       customers: "Customers"
       history: "History"
       locations: "Locations"
-      markets: 
+      markets:
         allMarkets: "All markets"
         automotive: "Automotive"
         industrialMachinery: "Industrial Machinery"
         medical: "Medical"
         military: "Military"
         title: "Markets"
-      products: 
+      products:
         allProducts: "All products"
         cables: "Cables"
         connectors: "Connectors"
         mccs: "Motion Control Components"
         terminals: "Terminals"
         title: "Products"
-  pages: 
+  pages:
     locations:
       title: "Locations"
       addressTitle: "ADDRESS"
-      bs: 
+      bs:
         address: "T-Plex Main Building 403 Ho, 41 Yutongdanji1-ro, Gangseo-gu, Busan 46721, Republic of Korea(SOUTH KOREA)"
         fax: "+82-51-796-0625"
         tel: "+82-51-991-3373"
         title: "BRANCH OFFICE (BUSAN)"
-      hq: 
+      hq:
         address: "Hoseo Venture Tower 1001 Ho, 70 Gasandigital 1-ro, Geumcheon-gu, Seoul 08590, Republic of Korea(SOUTH KOREA)"
         fax: "+82-2-2627-5629"
         tel: "+82-2-2627-5625"
@@ -45,6 +45,31 @@ en:
       title: "Careers"
     ceoLetter:
       title: "A Letter from the CEO"
+      letterBody: "<p>
+         SamTra International was established as a privately owned trading company in Seoul Korea on March 17, 1995, specialized
+        in selling various type of cables, connectors and cable assemblies.
+        </p>
+        <p>
+        Various extreme cable interconnection problems in terms of flexibility, flex life, EMI, signal loss, temperature, space and weight in various Korean military programs have been solved through our professional consultancy sales with innovative
+        technical expertise.
+        </p>
+        <p>
+        In response to our clients' continuous suggestions and/or repeated requests, we have also supplied other various mil-spec
+        part-numbered components to various military programs, in addition to the cable related products from Axon' Cable SAS and
+        the connectors from AirBorn Inc.
+        </p>
+        <p>
+        In recent years, we have also been more and more successfully involved in the business areas of test &amp; measurements,
+        medical electronics, automotive electronics, Wifi applications, robotic and semiconductor equipment cables and harnesses.
+        </p>
+        <p>
+        We are very proud of being a sales engineering-based trading company, specialized in listening to our customers exact
+        needs and providing perfect technical solutions and/or components, rather than taking easy orders.
+        </p>
+        <p>
+        Sincerely Yours,
+        </p>"
+      letterSign: " Sammy Yeunsung Choi "
     history:
       title: "History"
     home:
@@ -70,3 +95,9 @@ en:
       tableDate: "Date"
   navigation:
     back: "Back"
+  product_browser:
+    browser_title_link:
+      title: "Product browser"
+  brands:
+    show_products:
+      instruction: "Click product name to view its contents"

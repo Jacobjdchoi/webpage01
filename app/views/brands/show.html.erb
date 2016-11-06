@@ -1,0 +1,12 @@
+<%= link_to("브랜드 리스트로 가기", brands_path) %> |
+<% if admin_signed_in? %>
+  <%= link_to("수정", edit_brand_path(@brand)) %> |
+  <%= link_to("삭제", brand_path(@brand) , data: {confirm: "해당 브랜드를 정말 삭제 하시겠습니까?"}) %>
+<% end %>
+
+<fieldset>
+  <h3><%= @brand.name %></h3>
+  <% @brand.photos.each do |photo| %>
+    <%= image_tag photo.pics.url(:logo) %>
+  <% end %>
+</fieldset>

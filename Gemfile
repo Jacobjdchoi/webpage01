@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
@@ -64,3 +63,15 @@ gem 'dotenv-rails'
 
 # Nested form
 gem 'nested_form'
+
+# tags
+gem 'acts-as-taggable-on', '~> 4.0'
+
+# translate database
+gem 'globalize', '~> 5.0.0'
+
+# forms with translations
+gem 'globalize-accessors'
+
+# devise
+gem 'devise-i18n'

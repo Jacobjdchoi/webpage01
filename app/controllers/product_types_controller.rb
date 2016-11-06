@@ -8,11 +8,16 @@ class ProductTypesController < ApplicationController
     @product_types = ProductType.all
   end
 
+  def admin_index
+    @pt = ProductType.all
+  end
+
   # GET /product_types/1
   # GET /product_types/1.json
   def show
     @brands = @product_type.brands
     respond_to do |format|
+      format.html
       format.js
     end
   end
@@ -74,6 +79,6 @@ class ProductTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_type_params
-      params.require(:product_type).permit(:name)
+      params.require(:product_type).permit(*ProductType.globalize_attribute_names)
     end
 end

@@ -1,0 +1,80 @@
+ko:
+  layouts:
+    application:
+      about: "회사개요"
+      aboutUs: "회사 소개"
+      articles: "뉴스"
+      careers: "채용정보"
+      ceoLetter: "CEO인사말"
+      contact: "Contact"
+      contactUs: "Contact us"
+      customers: "고객"
+      history: "역사"
+      locations: "위치"
+      markets:
+        allMarkets: "회사위치"
+        automotive: "오토모티브"
+        industrialMachinery: "산업기계"
+        medical: "의료"
+        military: "군수"
+        title: "시장"
+      products:
+        allProducts: "모든 제품"
+        cables: "케이블"
+        connectors: "커넥터"
+        mccs: "모션컨트롤제품"
+        terminals: "터미널"
+        title: "제품"
+  pages:
+    locations:
+      title: "회사위치"
+      bs:
+        address: "부산광역시 강서구 유통단지1로 41 티플렉스 메인빌딩 403호, 우편번호-46721"
+        fax: "051-796-0625"
+        tel: "051-991-3373"
+        title: "부산지점"
+      hq:
+        address: "서울특별시 금천구 가산디지털1로 70 호서대벤처타워 1001호, 우편번호-08590"
+        fax: "02-2627-5629"
+        tel: "02-2627-5625"
+        title: "본사"
+      addressTitle: "주소"
+      telTitle: "전화번호"
+      faxTitle: "팩스번호"
+    careers:
+      title: "채용정보"
+    ceoLetter:
+      title: "CEO인사말"
+      letterBody: "<p>제작중>>>>>>>>>>>>>>>>>>>>></p>"
+      letterSign: "최연성"
+    history:
+      title: "역사"
+    home:
+      title:
+    aboutUs:
+      title: "회사소개"
+  contacts:
+    new:
+      title: "Contact us"
+      callUs: "전화"
+      telInfo: "전화번호"
+      email:
+        leaveAnEmail: "또는 이메일 남기기"
+        name: "존함"
+        company: "회사이름"
+        email: "연락 받으실 이메일 주소"
+        message: "무엇을 도와드릴까요?"
+        submitButton: "전송하기"
+  articles:
+    index:
+      title: "뉴스"
+      tableTitle: "제목"
+      tableDate: "날짜"
+  navigation:
+    back: "뒤로가기"
+  product_browser:
+    browser_title_link:
+      title: "제품 브라우저"
+  brands:
+    show_products:
+      instruction: "제품이름을 선택하시면 세부정보를 보실 수 있습니다."

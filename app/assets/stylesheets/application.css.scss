@@ -4,7 +4,7 @@
  *= require_self
  *= require foundation_and_overrides
  */
- 
+
 *{
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -130,6 +130,8 @@ ul.language.menu li a {
     padding: 0 1rem;
 }
 
+
+
 .divider-vertical {
     width: 1;
     height: 100%;
@@ -144,6 +146,8 @@ ul.language.menu li a {
     z-index: 999;
     .title-bar-left {
         line-height: 1.5rem;
+        display: inline-block;
+        height: 100%;
         .menu-icon {
             vertical-align: bottom;
         }
@@ -152,8 +156,23 @@ ul.language.menu li a {
         text-align: center;
         line-height: 1rem;
         height: 100%;
+        display: inline-block;
         a .logo-samtra{
             height: 100%;
+        }
+    }
+    .title-bar-right {
+        text-align: right;
+        display: inline-block;
+        height: 100%;
+        ul.language.menu.mobile {
+            display: inline-block;
+            transform: translateY(-50%);
+            top: 50%;
+            position: relative;
+            li a {
+                padding: 0 0.25rem
+            }
         }
     }
 }
@@ -237,4 +256,19 @@ a:hover {
 }
 #text_field {
     user-select: initial;
+}
+.flash_message{
+    width: 100%;
+    height: 50px;
+    background: black;
+    color: white;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    opacity: 0.7;
+    font-weight: bold;
+    z-index: 1000;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0;
 }
