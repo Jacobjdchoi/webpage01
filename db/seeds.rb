@@ -7,8 +7,7 @@
 #
 #   cities = City.create([ {name: 'Chicago' }, {} name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Admin.create(id: 1, email: ENV['JACOB_EMAIL'], password: ENV['JACOB_PASSWORD'],
-             password_confirmation: ENV['ADMIN_PASSWORD'])
+Admin.create(id: 1, email: ENV['JACOB_EMAIL'], password: ENV['JACOB_PASSWORD'], password_confirmation: ENV['ADMIN_PASSWORD'])
 ProductType.create(id: 1, name_en: 'Cables', name_ko: '케이블')
 ProductType.create(id: 2, name_en: 'Connectors', name_ko: '커넥터')
 ProductType.create(id: 3, name_en: 'Terminals', name_ko: '터미널')
