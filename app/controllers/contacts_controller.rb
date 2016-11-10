@@ -4,27 +4,24 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
-
-  # POST /contacts
-  # POST /contacts.json
   def create
-    @contact = Contact.new(params[:contact])
-    @contact.request = request
-    if @contact.deliver
-        flash.now[:notice] = "Your message was successfully sent!"
+    @contact = Contact.new(contact_params)
+    #@contact.request = request
+    if @contact.save
+      render 'contacts/saved'
+      ContactMailer.contact_created(@contact).deliver_now
     else
-        flash.now[:error] = 'Cannot send message'
-        render :new
+      flash.now[:notice] = 'Cannot send message'
+      render :new
     end
   end
-    # respond_to do |format|
-    #   if @contact.save
-    #     format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
-    #     format.json { render :show, status: :created, location: @contact }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @contact.errors, status: :unprocessable_entity }
-    #   end
-    # end
-    
+
+private
+  def set_contact
+    @contact = Contact.find(params[:id])
+  end
+
+  def contact_params
+    params.require(:contact).permit(:name, :email, :company, :body)
+  end
 end

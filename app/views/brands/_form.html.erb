@@ -31,8 +31,8 @@
     <%= f.collection_check_boxes :product_type_ids, @productTypeAll, :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :attachment %>
-    <%= f.file_field :attachment, multiple: true %>
+    <%= f.label :attachments %>
+    <%= f.file_field :attachments, multiple: true %>
   </div>
   <div class="actions">
     <%= f.submit %>

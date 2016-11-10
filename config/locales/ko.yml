@@ -12,7 +12,7 @@ ko:
       history: "역사"
       locations: "위치"
       markets:
-        allMarkets: "회사위치"
+        allMarkets: "활동시장"
         automotive: "오토모티브"
         industrialMachinery: "산업기계"
         medical: "의료"
@@ -65,6 +65,9 @@ ko:
         email: "연락 받으실 이메일 주소"
         message: "무엇을 도와드릴까요?"
         submitButton: "전송하기"
+    saved:
+      title: "이메일이 성공적으로 발송 되었습니다."
+      message: "문의해 주셔서 감사합니다. 최대한 빠른 시일 내에 답변을 드리겠습니다."
   articles:
     index:
       title: "뉴스"
@@ -75,6 +78,9 @@ ko:
   product_browser:
     browser_title_link:
       title: "제품 브라우저"
+  customers:
+    index:
+      title: "고객들"
   brands:
     show_products:
       instruction: "제품이름을 선택하시면 세부정보를 보실 수 있습니다."

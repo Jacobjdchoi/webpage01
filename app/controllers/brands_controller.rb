@@ -14,7 +14,6 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.json
   def show
-    @products = @brand.products
     respond_to do |format|
       format.js
       format.html
@@ -88,7 +87,7 @@ class BrandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brand_params
-      params.require(:brand).permit(:name, :summary, attachment:[], photos_attributes: [:id, :pics, :_destroy, :brand_id], product_type_ids: [])
+      params.require(:brand).permit(:name, :summary, {photos_attributes: [:id, :pics, :_destroy, :brand_id]}, {product_type_ids: []}, {attachments:[]})
     end
 
     def productTypeAll

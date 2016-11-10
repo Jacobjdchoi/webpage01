@@ -4,4 +4,9 @@ class Customer < ActiveRecord::Base
 
   validates :name, :presence => true
   validates :name, :uniqueness => true
+
+  # globalize
+  translates :name, :string
+  # globalize form attr
+  globalize_accessors attribute: [:name]
 end

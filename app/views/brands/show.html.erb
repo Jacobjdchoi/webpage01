@@ -9,4 +9,12 @@
   <% @brand.photos.each do |photo| %>
     <%= image_tag photo.pics.url(:logo) %>
   <% end %>
+  <p>
+  <%= @brand.summary %><br>
+  <% @brand.attachments.each do |attachment| %>
+    <p>
+    <%= link_to File.basename(attachment.path), attachment.url, target: '_blank' %><br>
+    </p>
+  <% end %>
+  </p>
 </fieldset>

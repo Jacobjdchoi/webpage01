@@ -10,5 +10,6 @@ class Photo < ActiveRecord::Base
 
   def crop_pics
     pics.recreate_versions! if crop_x.present?
+    puts 'pics recreated'
   end
 end

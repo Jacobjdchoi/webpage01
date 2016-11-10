@@ -88,6 +88,9 @@ en:
         email: "Your E-mail address"
         message: "Message"
         submitButton: "Submit!"
+    saved:
+      title: "Email has been successfully sent!"
+      message: "Thank you for contacting us. We will get back to you soon."
   articles:
     index:
       title: "News"
@@ -98,6 +101,9 @@ en:
   product_browser:
     browser_title_link:
       title: "Product browser"
+  customers:
+    index:
+      title: "Our Customers"
   brands:
     show_products:
       instruction: "Click product name to view its contents"

@@ -7,9 +7,9 @@
 <div class="customer-index-container">
   <div class="customer-box">
     <div class="customer-logo">
-    <% @customer.photos.each do |photo| %>
-      <%= image_tag photo.pics.url(:logo)%>
-    <% end %>
+      <% @customer.photos.each do |photo| %>
+        <%= image_tag photo.pics.url(:logo) %>
+      <% end %>
     </div>
     <div class="customer-name">
       <%= @customer.name %>

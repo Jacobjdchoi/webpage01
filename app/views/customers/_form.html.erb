@@ -1,9 +1,8 @@
 <div class="content-container">
-  <%= form_for(@customer) do |f| %>
+  <%= nested_form_for(@customer) do |f| %>
     <% if @customer.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
-  
         <ul>
         <% @customer.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -12,11 +11,18 @@
       </div>
     <% end %>
     <div class="customer-logo-field">
-      <%= f.file_field :pics%>
+      <%= f.label :photos, "부수 사진" %>
+      <%= f.fields_for :photos do |pf| %>
+        <%= pf.file_field :pics, class: "photoInfo" %>
+        <%= pf.link_to_remove "삭제하기", class: "photoButton", type: "remove" %>
+      <% end %>
+      <%= f.link_to_add "추가하기", :photos, class: "photoButton", type: "add" %>
     </div>
     <div class="customer-name-field">
-      <label for="name">이름</label>
-      <%= f.text_field :name %>
+      <%= f.label :name_ko, "한글 이름" %>
+      <%= f.text_field :name_ko %>
+      <%= f.label :name_en, "영문 이름" %>
+      <%= f.text_field :name_en %>
     </div>
     <div class="customer-submit-field">
       <%= f.submit "등록하기" %>

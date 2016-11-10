@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :edit, :update, :destroy]
+  before_action :set_customer, only: [:show, :admin_show, :edit, :update, :destroy]
   before_action :authenticate_admin!, except: [:index, :show]
   before_action :to_crop_obj, only: [:edit, :update]
   before_action :crop_ratio, only: [:create, :update]
@@ -9,7 +9,15 @@ class CustomersController < ApplicationController
     @customers = Customer.all
   end
 
+  def admin_index
+    @customers = Customer.all
+  end
+
   def show
+  end
+
+  def admin_show
+
   end
 
   def new
@@ -26,7 +34,7 @@ class CustomersController < ApplicationController
           @crop_obj = @customer
           render "shared/crop"
         else
-          redirect_to @customer
+          render :admin_show
         end
       else
         render :new
@@ -41,7 +49,7 @@ class CustomersController < ApplicationController
         if @customer.photos.present?
           render "shared/crop"
         else
-          redirect_to @customer
+          render :admin_show
         end
       else
         render :edit
@@ -66,10 +74,10 @@ class CustomersController < ApplicationController
     end
 
     def crop_ratio
-      @crop_ratio = 1
+      @crop_ratio = 0
     end
 
     def customer_params
-      params.require(:customer).permit(:name, photos_attributes: [:id, :pics, :_destroy, :customer_id])
+      params.require(:customer).permit(*ProductType.globalize_attribute_names, photos_attributes: [:id, :pics, :_destroy, :customer_id])
     end
 end

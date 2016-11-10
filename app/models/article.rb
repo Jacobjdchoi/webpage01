@@ -7,6 +7,6 @@ class Article < ActiveRecord::Base
   # globalize
   translates :title, :string
   translates :body, :text
-
+  # globalize form attr
   globalize_accessors attributes: [:title, :body]
 end

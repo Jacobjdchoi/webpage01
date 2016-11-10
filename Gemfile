@@ -55,8 +55,8 @@ gem 'rails_admin-i18n'
 # Devise authentication
 gem 'devise'
 
-# File upload
-gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+# File upload must use the master branch to enable multiple uploads
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 # Rmagick
 gem 'rmagick'

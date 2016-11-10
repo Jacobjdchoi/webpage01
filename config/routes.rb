@@ -6,11 +6,15 @@ Rails.application.routes.draw do
     resources :customers
     devise_for :admins
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-    resources :customers, only: [:show, :index]
+    resources :customers
+    get 'customers_admin' => 'customers#admin_index', as: 'admin_customers'
+    get 'customer_admin' => 'customers#admin_show', ad: 'admin_customer'
     resources :articles
-    resources :contacts, only: [:new, :create]
     resources :photos
 
+    #contact
+    get 'contacts/new' => 'contacts#new', as: 'new_contact'
+    post 'contacts' => 'contacts#create', as: 'contacts'
     # product browser
     get 'product_browser' => 'product_browser#browser', as: 'pb'
     get 'product_browser/product_type/:id' => 'product_browser#product_types', as: 'pb_pt'

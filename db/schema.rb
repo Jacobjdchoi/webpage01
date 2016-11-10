@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108083854) do
+ActiveRecord::Schema.define(version: 20161110080908) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -62,10 +62,10 @@ ActiveRecord::Schema.define(version: 20161108083854) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "summary"
-    t.string   "attachment"
+    t.string   "attachments"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -76,6 +76,17 @@ ActiveRecord::Schema.define(version: 20161108083854) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "customer_translations", force: :cascade do |t|
+    t.integer  "customer_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+  end
+
+  add_index "customer_translations", ["customer_id"], name: "index_customer_translations_on_customer_id"
+  add_index "customer_translations", ["locale"], name: "index_customer_translations_on_locale"
 
   create_table "customers", force: :cascade do |t|
     t.string   "name"

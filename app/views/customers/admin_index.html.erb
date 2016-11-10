@@ -1,0 +1,29 @@
+<div class="content-container">
+  <h1>고객들</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>이름(링크)</th>
+        <th>로고</th>
+        <th>수정</th>
+        <th>삭제</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @customers.each do |customer| %>
+        <tr>
+          <td><%= customer.name %></td>
+          <% unless customer.photos.empty? %>
+            <% customer.photos.each do |photo| %>
+              <td><%= image_tag photo.pics.url(:logo) %></td>
+            <% end %>
+          <% else %>
+            <td>사진 없음</td>
+          <% end %>
+          <td><%= link_to("수정", edit_customer_path(customer)) %></td>
+          <td><%= link_to("삭제", customer_path(customer) , method: :DELETE, data:{confirm: '정말로 삭제 하시겠습니까?'}) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,8 +1,8 @@
 class Brand < ActiveRecord::Base
     has_many :photos, dependent: :destroy
     accepts_nested_attributes_for :photos, allow_destroy: true
-
-    mount_uploaders :attachment, AttachmentUploader
+    serialize :attachments, Array # crucial for multi-upload
+    mount_uploaders :attachments, AttachmentUploader
 
     has_many :products, dependent: :destroy
     has_many :brand_product_types, dependent: :destroy
