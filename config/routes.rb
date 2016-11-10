@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
-    resources :products
     resources :brands
-    resources :products
     resources :product_types
     get 'admin_product_types' => 'product_types#admin_index', as: 'admin_product_types'
     resources :customers
@@ -17,7 +15,6 @@ Rails.application.routes.draw do
     get 'product_browser' => 'product_browser#browser', as: 'pb'
     get 'product_browser/product_type/:id' => 'product_browser#product_types', as: 'pb_pt'
     get 'product_browser/brand/:id' => 'product_browser#brands', as: 'pb_b'
-    get 'product_browser/product/:id' => 'product_browser#products', as: 'pb_p'
 
 
     # pages

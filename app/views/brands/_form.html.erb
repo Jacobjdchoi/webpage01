@@ -24,7 +24,15 @@
     <%= f.link_to_add "추가하기", :photos %>
   </div>
   <div class="field">
+    <%= f.label :summary %>
+    <%= f.text_field :summary %>
+  </div>
+  <div class="field">
     <%= f.collection_check_boxes :product_type_ids, @productTypeAll, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :attachment %>
+    <%= f.file_field :attachment, multiple: true %>
   </div>
   <div class="actions">
     <%= f.submit %>

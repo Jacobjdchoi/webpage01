@@ -49,6 +49,9 @@ gem "autoprefixer-rails"
 # Rails admin
 gem 'rails_admin', '~> 1.0'
 
+# rails admin translation
+gem 'rails_admin-i18n'
+
 # Devise authentication
 gem 'devise'
 
@@ -63,9 +66,6 @@ gem 'dotenv-rails'
 
 # Nested form
 gem 'nested_form'
-
-# tags
-gem 'acts-as-taggable-on', '~> 4.0'
 
 # translate database
 gem 'globalize', '~> 5.0.0'
