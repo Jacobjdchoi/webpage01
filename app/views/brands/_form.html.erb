@@ -18,10 +18,10 @@
   <div class="field">
     <%= f.label :photos, "부수 사진 (사진 추가시 등록후 사이즈 조정 페이지로 넘어감.)" %>
     <%= f.fields_for :photos do |pf| %>
-      <%= pf.file_field :pics %>
-      <%= pf.link_to_remove "삭제하기" %>
+      <%= pf.file_field :pics, class: "photoInfo" %>
+      <%= pf.link_to_remove "삭제하기", class: "photoButton button", type: "remove" %>
     <% end %>
-    <%= f.link_to_add "추가하기", :photos %>
+    <%= f.link_to_add "추가하기", :photos, class: "photoButton button", type: "remove" %>
   </div>
   <div class="field">
     <%= f.label :summary %>
@@ -31,10 +31,10 @@
     <%= f.collection_check_boxes :product_type_ids, @productTypeAll, :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :attachments %>
+    <%= f.label :attachments,"부수 파일 (여러개 선택 가능)" %>
     <%= f.file_field :attachments, multiple: true %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "등록하기", class: "button" %>
   </div>
 <% end %>

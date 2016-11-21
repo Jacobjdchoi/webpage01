@@ -50,3 +50,11 @@
 //
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+// photos button
+.photoButton {
+  @extend .button
+}
+input[type=submit]{
+  @extend .button
+}

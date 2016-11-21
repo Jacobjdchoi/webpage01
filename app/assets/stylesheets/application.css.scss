@@ -36,6 +36,12 @@ body{
 }
 .main {
     max-width: 60rem;
+    &#pageYield{
+        padding-right: 0.25rem;
+        padding-left: 0.25rem;
+        height: auto;
+        overflow: hidden;
+    }
 }
 .title-bar.hide-for-large.row {
     margin-left: 0;

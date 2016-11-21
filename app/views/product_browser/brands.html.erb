@@ -5,15 +5,21 @@
     <%= render 'brands_tab' %>
   </div>
   <div class="index_container brands">
+    <div class="brand_name">
+      <%= @brand.name %>
+    </div>
     <% @brand.photos.each do |photo| %>
-      <%= image_tag photo.pics.url(:logo) %>
+      <div class="brand_logo">
+        <%= image_tag photo.pics.url(:logo) %>
+      </div>
     <% end %>
-    <p>
+    <div class="brand_summary">
       <%= @brand.summary %>
-      <br>
+    </div>
+    <div class="brand_attachments">
       <% @brand.attachments.each do |attachment| %>
         <%= link_to File.basename(attachment.path), attachment.url , target: "_blank" %><br>
       <% end %>
-    </p>
+    </div>
   </div>
 </div>

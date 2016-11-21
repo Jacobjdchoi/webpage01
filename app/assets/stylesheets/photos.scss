@@ -23,3 +23,9 @@ input.val_input {
   height: auto;
   float: left;
 }
+.fields{
+  border: 1px solid gray;
+  .photoInfo {
+    width: 50%;
+  }
+}
