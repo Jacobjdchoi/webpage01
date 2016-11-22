@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161110080908) do
+ActiveRecord::Schema.define(version: 20161122143431) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -60,12 +60,24 @@ ActiveRecord::Schema.define(version: 20161110080908) do
   add_index "brand_product_types", ["brand_id"], name: "index_brand_product_types_on_brand_id"
   add_index "brand_product_types", ["product_type_id"], name: "index_brand_product_types_on_product_type_id"
 
+  create_table "brand_translations", force: :cascade do |t|
+    t.integer  "brand_id",   null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "summary"
+  end
+
+  add_index "brand_translations", ["brand_id"], name: "index_brand_translations_on_brand_id"
+  add_index "brand_translations", ["locale"], name: "index_brand_translations_on_locale"
+
   create_table "brands", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "summary"
     t.string   "attachments"
+    t.string   "url"
   end
 
   create_table "contacts", force: :cascade do |t|

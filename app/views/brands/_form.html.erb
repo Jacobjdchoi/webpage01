@@ -24,8 +24,16 @@
     <%= f.link_to_add "추가하기", :photos, class: "photoButton button", type: "remove" %>
   </div>
   <div class="field">
-    <%= f.label :summary %>
-    <%= f.text_field :summary %>
+    <%= f.label :summary_ko, "한글 설명" %>
+    <%= f.text_area :summary_ko %>
+  </div>
+  <div class="field">
+    <%= f.label :summary_en, "영문 설명" %>
+    <%= f.text_area :summary_en %>
+  </div>
+  <div class="field">
+    <%= f.label :url, "웹사이트 주소" %>
+    <%= f.text_field :url %>
   </div>
   <div class="field">
     <%= f.collection_check_boxes :product_type_ids, @productTypeAll, :id, :name %>

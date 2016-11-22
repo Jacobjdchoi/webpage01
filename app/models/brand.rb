@@ -4,6 +4,8 @@ class Brand < ActiveRecord::Base
     serialize :attachments, Array # crucial for multi-upload
     mount_uploaders :attachments, AttachmentUploader
 
+    translates :summary, :text
+    globalize_accessors attributes: [:summary]
     has_many :products, dependent: :destroy
     has_many :brand_product_types, dependent: :destroy
     has_many :product_types, through: :brand_product_types

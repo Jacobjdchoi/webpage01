@@ -66,12 +66,8 @@
         width: 90%;
       }
       &.brands{
-        box-shadow: rgb(222, 222, 222) 0 0 5px;
+        box-shadow: rgb(148, 148, 148) 0 0 5px;
         padding: 1rem;
-        .products_index{
-          //height: 500px;
-          //overflow-y: auto;
-        }
       }
     }
     .tab_container{
@@ -194,7 +190,7 @@
   text-align: center;
 }
 .items-buttons {
-    box-shadow: rgb(222, 222, 222) 0 0 5px;
+    box-shadow: rgb(148, 148, 148) 0 0 5px;
     display: inline-block;
     text-align: center;
     &:hover{
