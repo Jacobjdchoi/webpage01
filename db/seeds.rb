@@ -15,7 +15,7 @@ ProductType.create(id: 4, name_en: 'Motion Control Components', name_ko: '모션
 Brand.create(id: 1, name: 'Axon', summary_en: 'change this', summary_ko: '수정 하십시오', url: 'http://www.odu-usa.com/')
 Brand.create(id: 2, name: 'ODU', summary_en: 'change this', summary_ko: '수정 하십시오', url: 'http://www.axon-cable.com/en/00_home/00_start/00/index.aspx')
 Brand.create(id: 3, name: 'STOCKO', summary_en: 'change this', summary_ko: '수정 하십시오', url: 'http://www.stocko-contact.com/en/index.php')
-Brand.create(id: 4, name: 'MOOG Components Group', summary_en: 'change this', summary_ko: '수정 하십시오', url: 'http://www.moog.com/about-us/components-group.html')
+Brand.create(id: 4, name: 'MOOG', summary_en: 'change this', summary_ko: '수정 하십시오', url: 'http://www.moog.com/about-us/components-group.html')
 Brand.create(id: 5, name: 'AirBorn', summary_en: 'change this', summary_ko: '수정 하십시오', url: 'http://www.airborn.com/')
 Brand.create(id: 6, name: 'FOCAL', summary_en: 'change this', summary_ko: '수정 하십시오', url: '')
 # brands 2 product types associations
