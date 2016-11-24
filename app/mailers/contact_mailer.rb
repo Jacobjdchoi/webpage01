@@ -14,4 +14,5 @@ class ContactMailer < ApplicationMailer
       # body:
     )
   end
+  
 end
