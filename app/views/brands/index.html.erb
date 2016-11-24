@@ -5,22 +5,23 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Pics</th>
-      <th colspan="3"></th>
+      <th>이름</th>
+      <th>로고</th>
+      <th colspan="2">액션</th>
     </tr>
   </thead>
 
   <tbody>
     <% @brands.each do |brand| %>
       <tr>
-        <td><%= brand.name %></td>
+        <td><%= link_to brand.name, brand %></td>
         <td>
-          <% brand.photos.each do |photo| %>
-          <%= image_tag photo.pics.url(:logo) %>
+          <% if brand.photos.present? %>
+            유
+          <% else %>
+            무
           <% end %>
         </td>
-        <td><%= link_to 'Show', brand %></td>
         <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
         <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

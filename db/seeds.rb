@@ -1,19 +1,10 @@
-# This file should contain all the record creation needed to seed the database
-# with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db
-# with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([ {name: 'Chicago' }, {} name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 Admin.create(id: 1, email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], password_confirmation: ENV['ADMIN_PASSWORD'])
 ProductType.create(id: 1, name_en: 'Cables', name_ko: '케이블')
 ProductType.create(id: 2, name_en: 'Connectors', name_ko: '커넥터')
 ProductType.create(id: 3, name_en: 'Terminals', name_ko: '터미널')
 ProductType.create(id: 4, name_en: 'Motion Control Components', name_ko: '모션컨트롤제품')
-Brand.create(id: 1, name: 'Axon', summary_en: 'change this', summary_ko: '수정 하십시오', url: 'http://www.odu-usa.com/')
-Brand.create(id: 2, name: 'ODU', summary_en: 'change this', summary_ko: '수정 하십시오', url: 'http://www.axon-cable.com/en/00_home/00_start/00/index.aspx')
+Brand.create(id: 1, name: 'Axon', summary_en: 'change this', summary_ko: '수정 하십시오', url: 'http://www.axon-cable.com/en/00_home/00_start/00/index.aspx')
+Brand.create(id: 2, name: 'ODU', summary_en: 'change this', summary_ko: '수정 하십시오', url: 'http://www.odu-usa.com/')
 Brand.create(id: 3, name: 'STOCKO', summary_en: 'change this', summary_ko: '수정 하십시오', url: 'http://www.stocko-contact.com/en/index.php')
 Brand.create(id: 4, name: 'MOOG', summary_en: 'change this', summary_ko: '수정 하십시오', url: 'http://www.moog.com/about-us/components-group.html')
 Brand.create(id: 5, name: 'AirBorn', summary_en: 'change this', summary_ko: '수정 하십시오', url: 'http://www.airborn.com/')
@@ -26,4 +17,15 @@ BrandProductType.create(id: 4, brand_id: 4, product_type_id: 1)
 Customer.create(id: 1, name_en: 'LG Electronics', name_ko: 'LG전자')
 Customer.create(id: 2, name_en: 'Korea Aerospace Industries Ltd.', name_ko: '한국항공우주산업(주)')
 Customer.create(id: 3, name_en: 'HYUNDAI Motors', name_ko: '현대자동차')
-Customer.create(id: 4, name_en: 'Stark Industries Inc.', name_ko: '스타크산업(주)')
+Customer.create(id: 4, name_en: 'FIRSTEC CO. LTD.', name_ko: '퍼스텍')
+Customer.create(id: 5, name_en: 'Agency for Defense Department', name_ko: '국방과학연구소')
+Customer.create(id: 6, name_en: 'Hanwha System', name_ko: '한화시스템')
+Customer.create(id: 7, name_en: 'LIG NEX1', name_ko: 'LIG  넥스원')
+Customer.create(id: 8, name_en: 'KARI', name_ko: '한국항공연구소')
+Customer.create(id: 9, name_en: 'HYUNDAI Rotem', name_ko: '현대로템')
+Customer.create(id: 10, name_en: 'HYUNDAI Heavy Industries', name_ko: '현대**')
+Customer.create(id: 11, name_en: 'SK Innovation', name_ko: 'SK 이노베이션')
+Customer.create(id: 12, name_en: 'HYUNDAI STEEL', name_ko: '현대철강')
+Customer.create(id: 13, name_en: 'YURA', name_ko: '유라')
+Customer.create(id: 14, name_en: 'SAMSUNG Electronics', name_ko: '삼성전자')
+Customer.create(id: 15, name_en: 'SEMIKRON', name_ko: '세미크론')

@@ -9,10 +9,15 @@
         <div class="brands_list">
           <%= link_to pb_b_path(brand), class: "brands_items items-buttons" do %>
             <div class="brand_name_and_logo">
-              <% brand.photos.each do |photo| %>
-                <%= image_tag photo.pics.url(:logo) %>
+              <% if brand.photos.present?%>
+                <% brand.photos.each do |photo| %>
+                  <%= image_tag photo.pics.url(:logo), class: "logo" %>
+                <% end %>
+              <% else %>
+                <div class="name">
+                  <%= brand.name %>
+                </div>
               <% end %>
-              <%= brand.name %>
             </div>
           <% end %>
         </div>

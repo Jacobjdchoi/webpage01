@@ -23,57 +23,82 @@
             width: 100%;
             height: 300px;
             margin: 0.5%;
-            padding: 5px;
+            padding: 2%;
             border-radius: 5px;
+            position: relative;
             .product_type_name{
-              transform: translateY(-50%);
-              top: 50%;
-              position: relative;
+              position: absolute;
+              bottom: 0.25rem;
+              width: 96%;
+            }
+            img.product_type_icon{
+              width: 96%;
             }
           }
         }
       }
       .brands_index {
         width: 100%;
-        height: 100%;
+        height: auto;
         float: left;
         padding: 0 0.25rem;
         display: flex;
+        flex-wrap: wrap;
         .brands_list{
-            flex: 1;
-            margin: 0 0.25rem;
+            margin: 0.25rem;
+            width: 24%;
+            position: relative;
+            padding-top: 24%;
+            height: 0;
             a.brands_items{
               width: 100%;
-              height: 200px;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              left: 0;
+              bottom: 0;
               margin: 0.5%;
               padding: 5px;
               border-radius: 5px;
               .brand_name_and_logo{
-                transform: translateY(-50%);
-                top: 50%;
-                position: relative;
-                img {
+                width: 100%;
+                height: 100%;
+                img.logo {
                   width: 100%;
+                  transform: translateY(-50%);
+                  top: 50%;
+                  position: relative;
+                  
+                }
+                .name {
+                  
                 }
               }
+            }
           }
         }
-      }
-      &.browser{
-        width: 100%;
-      }
-      &.product_types{
-        width: 90%;
-      }
-      &.brands{
-        box-shadow: rgb(148, 148, 148) 0 0 5px;
-        padding: 1rem;
-      }
+        &.browser{
+          width: 100%;
+        }
+        &.product_types{
+          width: 90%;
+        }
+        &.brands{
+          box-shadow: rgb(148, 148, 148) 0 0 5px;
+          padding: 1rem;
+          margin-top: 0.25rem;
+          .brand_name {
+            font-size: 30px;
+            line-height: 30px;
+          }
+        }
     }
     .tab_container{
       width: 20%;
       float: left;
       height: 500px;
+      margin-top: 0.25rem;
       .tab {
         margin: 0;
         border-radius: 0;
@@ -88,6 +113,7 @@
           a.items-buttons {
             width: 100%;
             height: 100%;
+            border-radius: 2px;
             .tab_name {
               transform: translateY(-50%);
               top: 50%;
@@ -120,7 +146,7 @@
       .product_types_list{
         width: 47%;
         margin: 1.5%;
-        height: 100px;
+        height: 10rem;
         float: left;
         a.product_types_items{
           width: 100%;
@@ -128,35 +154,73 @@
           cursor: pointer;
           display: inline-block;
           text-align: center;
+          position: relative;
+          padding: 2%;
+          border-radius: 5px;
           .product_type_name{
-            transform: translateY(-50%);
-            top: 50%;
-            position: relative;
+            position: absolute;
+            width: 96%;
+            bottom: 0.25rem;
             font-size: 25px;
             line-height: 25px;
+          }
+          img.product_type_icon {
+            max-width: 96%;
+            max-height: 81%;
           }
         }
       }
     }
     .brands_index {
-      width: 100%;
-      height: 200px;
-      .brands_list{
-        width: 47%;
-        margin: 1.5%;
+        width: 100%;
+        height: auto;
         float: left;
-        height: 46%;
-        a.brands_items{
-          width: 100%;
-          height: 100%;
-          .brand_name_and_logo{
-            transform: translateY(-50%);
-            top: 50%;
+        padding: 0 0.25rem;
+        display: flex;
+        flex-wrap: wrap;
+        .brands_list{
+            margin: 1.5%;
+            width: 47%;
             position: relative;
+            padding-top: 47%;
+            height: 0;
+            a.brands_items{
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              left: 0;
+              bottom: 0;
+              margin: 0.5%;
+              padding: 5px;
+              border-radius: 5px;
+              .brand_name_and_logo{
+                width: 100%;
+                height: 100%;
+                img.logo {
+                  width: 100%;
+                  transform: translateY(-50%);
+                  top: 50%;
+                  position: relative;
+                  
+                }
+                .name {
+                  
+                }
+              }
+            }
           }
         }
-      }
-    }
+        &.brands{
+          box-shadow: rgb(148, 148, 148) 0 0 5px;
+          padding: 1rem;
+          margin-top: 0.25rem;
+          .brand_name {
+            font-size: 30px;
+            line-height: 30px;
+          }
+        }
   }
   .tab_container{
     width: 100%;

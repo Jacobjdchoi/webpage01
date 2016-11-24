@@ -1,5 +1,5 @@
 <h1></h1>
-<%= link_to "인덱스로 가기", customers_path %>
+<%= link_to "고객리스트로 가기", customers_admin_path %>
 <% if admin_signed_in? %>
   |  <%= link_to "수정", edit_customer_path(@customer) %>
   |  <%= link_to "삭제", customer_path(@customer), method: :DELETE, data:{confirm: "선택하신 항목으 지우시겠습니까?"} %>

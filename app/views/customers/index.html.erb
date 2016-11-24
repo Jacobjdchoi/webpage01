@@ -3,13 +3,13 @@
   <div class="customer-index-container">
       <% @customers.each do |customer| %>
       <div class="customer-box">
-        <div class="customer-logo">
-        <% customer.photos.each do |photo| %>
-          <%= image_tag photo.pics.url(:logo) %>
-        <% end %>
-        </div>
-        <div class="customer-name">
-          <%= customer.name %>
+        <div class="customer-logo-and-name">
+          <% customer.photos.each do |photo| %>
+            <%= image_tag photo.pics.url(:logo), class: 'customer-logo' %>
+          <% end %>
+          <div class="customer-name">
+            <%= customer.name %>
+          </div>
         </div>
       </div>
       <% end %>

@@ -33,30 +33,30 @@ class BrandsController < ApplicationController
   # POST /brands.json
   def create
     @brand = Brand.new(brand_params)
-      if @brand.save
-        if @brand.photos.present?
-          @crop_obj = @brand
-          render "shared/crop"
-        else
-          redirect_to @brand
-        end
+    if @brand.save
+      if @brand.photos.present?
+        @crop_obj = @brand
+        render "shared/crop"
       else
-        render :new
+        redirect_to @brand
       end
+    else
+      render :new
+    end
   end
 
   # PATCH/PUT /brands/1
   # PATCH/PUT /brands/1.json
   def update
-      if @brand.update(brand_params)
-        if @brand.photos.present?
-          render "shared/crop"
-        else
-          redirect_to @brand
-        end
+    if @brand.update(brand_params)
+      if @brand.photos.present?
+        render "shared/crop"
       else
-        render :edit
+        redirect_to @brand
       end
+    else
+      render :edit
+    end
   end
   def crop
 
@@ -87,7 +87,7 @@ class BrandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brand_params
-      params.require(:brand).permit(:name, :summary, {photos_attributes: [:id, :pics, :_destroy, :brand_id]}, {product_type_ids: []}, {attachments:[]})
+      params.require(:brand).permit(:name, :url, *Brand.globalize_attribute_names, {photos_attributes: [:id, :pics, :_destroy, :brand_id]}, {product_type_ids: []}, {attachments:[]})
     end
 
     def productTypeAll

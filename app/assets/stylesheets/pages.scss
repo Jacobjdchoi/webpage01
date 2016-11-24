@@ -27,12 +27,16 @@
     }
 }
 //homepage
-.columns.homepage {
-    margin-top: 0.5rem !important;
-    margin-bottom: 0rem !important;
-    padding-bottom: 0.5rem;
+.info_area.homepage {
+    display: inherit;
+    .columns.homepage {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0rem !important;
+        padding-bottom: 0.5rem;
+        
+    }    
 }
-.homepage {
+.orbit.homepage {
     @include photo-ratio(45%);
     margin-bottom: 0.75rem;
     .contents{
