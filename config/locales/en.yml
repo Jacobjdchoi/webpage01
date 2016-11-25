@@ -11,6 +11,7 @@ en:
       customers: "Customers"
       history: "History"
       locations: "Locations"
+      downloads: "Downloads"
       markets:
         allMarkets: "All markets"
         automotive: "Automotive"

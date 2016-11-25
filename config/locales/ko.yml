@@ -11,6 +11,7 @@ ko:
       customers: "고객"
       history: "역사"
       locations: "위치"
+      downloads: "다운로드"
       markets:
         allMarkets: "활동시장"
         automotive: "오토모티브"
@@ -60,9 +61,9 @@ ko:
       telInfo: "전화번호"
       email:
         leaveAnEmail: ""
-        name: "존함"
-        company: "회사이름"
-        email: "연락 받으실 이메일 주소"
+        name: "성명"
+        company: "회사"
+        email: "이메일"
         message: "문의사항"
         submitButton: "전송하기"
     saved:

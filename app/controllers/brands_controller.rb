@@ -3,7 +3,7 @@ class BrandsController < ApplicationController
   before_action :to_crop_obj, only: [:edit, :update]
   before_action :crop_ratio, only: [:create, :update]
   before_action :authenticate_admin!, except: [:show, :index]
-  before_action :productTypeAll, only: [:new, :edit]
+  before_action :all_product_types, only: [:new, :edit]
 
   # GET /brands
   # GET /brands.json
@@ -87,10 +87,10 @@ class BrandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brand_params
-      params.require(:brand).permit(:name, :url, *Brand.globalize_attribute_names, {photos_attributes: [:id, :pics, :_destroy, :brand_id]}, {product_type_ids: []}, {attachments:[]})
+      params.require(:brand).permit(:name, :url, *Brand.globalize_attribute_names, {photos_attributes: [:id, :pics, :_destroy, :brand_id]}, {product_type_ids: []})
     end
 
-    def productTypeAll
+    def all_product_types
       @productTypeAll = ProductType.all
     end
 

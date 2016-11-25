@@ -35,4 +35,8 @@ class PagesController < ApplicationController
 
   end
 
+  def downloads
+
+  end
+
 end

@@ -1,19 +1,31 @@
 <%= render 'browser_title_link' %>
 <div class="browser_container">
   <div class="index_container browser">
-    <div class="product_types_index">
-      <% @product_types.each do |product_type| %>
-        <div class="product_types_list">
-          <%= link_to pb_pt_path(product_type), class: "product_types_items items-buttons" do %>
-            <% product_type.photos.each do |photo| %>
-              <%= image_tag photo.pics.url(:logo), class: 'product_type_icon'; %>
-            <% end %>
-            <div class="product_type_name">
-              <%= product_type.name %>
+    <accordion class="brands_index">
+      <% @brands.each.with_index do |brand, index| %>
+        <section class="brand_items" id="<%= index %>">
+          <div class="brand_logo_and_name">
+            <div class="brand_logo">
+              <% brand.photos.each do |photo| %>
+                <%= image_tag photo.pics.url(:logo) %>
+              <% end %>
             </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+            <div class="brand_name">
+              <%= brand.name %>
+            </div>
+          </div>
+          <div class="product_types_list_area">
+            <ul class="product_type_list">
+              <% brand.product_types.limit(5).each do |product_type| %>
+                <li class="product_type_items"><%= product_type.name %></li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="products_picture">
+
+          </div>
+        </section>
+      <% end%>
+    </accordion>
   </div>
 </div>

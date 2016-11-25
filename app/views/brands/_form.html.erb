@@ -16,7 +16,7 @@
     <%= f.text_field :name, id: "text_field" %>
   </div>
   <div class="field">
-    <%= f.label :photos, "부수 사진 (사진 추가시 등록후 사이즈 조정 페이지로 넘어감.)" %>
+    <%= f.label :photos, "로고 사진 (사진 추가시 등록후 사이즈 조정 페이지로 넘어감.)" %>
     <%= f.fields_for :photos do |pf| %>
       <%= pf.file_field :pics, class: "photoInfo" %>
       <%= pf.link_to_remove "삭제하기", class: "photoButton button", type: "remove" %>
@@ -32,15 +32,8 @@
     <%= f.text_area :summary_en, class: "articleBody" %>
   </div>
   <div class="field">
-    <%= f.label :url, "웹사이트 주소" %>
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.collection_check_boxes :product_type_ids, @productTypeAll, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :attachments,"부수 파일 (여러개 선택 가능)" %>
-    <%= f.file_field :attachments, multiple: true %>
+    <%# f.label :attachments,"부수 파일 (여러개 선택 가능)" %>
+    <%# f.file_field :attachments, multiple: true %>
   </div>
   <div class="actions">
     <%= f.submit "등록하기", class: "button" %>

@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     get 'pages/contact-us' => 'pages#contactUs', as: 'contact_us'
     get 'pages/careers' => 'pages#careers', as: 'careers'
     get 'pages/locations' => 'pages#locations', as: 'locations'
+    get 'pages/downloads' => 'pages#downloads', as: 'downloads'
 
     # markets
     get 'markets/all-markets' => 'markets#index', as: 'allMarkets'

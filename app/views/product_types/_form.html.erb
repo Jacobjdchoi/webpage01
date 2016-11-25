@@ -27,6 +27,9 @@
     <% end %>
     <%= f.link_to_add "추가하기", :photos, class: "photoButton", type: "add" %>
   </div>
+  <div class="field">
+    <%= f.collection_check_boxes :brand_ids, @brands, :id, :name %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124020450) do
+ActiveRecord::Schema.define(version: 20161125115928) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -50,6 +50,12 @@ ActiveRecord::Schema.define(version: 20161124020450) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "attachments", force: :cascade do |t|
+    t.string   "path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "brand_product_types", force: :cascade do |t|
     t.integer  "brand_id"
     t.integer  "product_type_id"
@@ -73,11 +79,9 @@ ActiveRecord::Schema.define(version: 20161124020450) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "summary"
-    t.string   "attachments"
-    t.string   "url"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -113,14 +117,10 @@ ActiveRecord::Schema.define(version: 20161124020450) do
 
   create_table "photos", force: :cascade do |t|
     t.string   "pics"
-    t.integer  "article_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "product_id"
-    t.integer  "customer_id"
-    t.integer  "brand_id"
-    t.integer  "product_types"
-    t.integer  "product_type_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "images_id"
+    t.string   "images_type"
   end
 
   create_table "product_type_translations", force: :cascade do |t|
@@ -138,6 +138,14 @@ ActiveRecord::Schema.define(version: 20161124020450) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "product_type_id"
   end
 
 end

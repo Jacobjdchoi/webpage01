@@ -2,8 +2,8 @@ class ProductBrowserController < ApplicationController
   before_action :set_product_type, only: [:product_types]
   before_action :set_brand, only: [:brands]
   before_action :set_product, only: [:products]
-  before_action :product_types_tab, only: [:browser, :product_types, :brands, :products]
-  before_action :brands_tab, only: [:brands, :products]
+  before_action :all_product_types, only: [:browser, :product_types, :brands, :products]
+  before_action :all_brands, only: [:browser ,:brands, :products]
 
   def browser
   end
@@ -27,11 +27,11 @@ private
     @product = Product.find(params[:id])
   end
 
-  def product_types_tab
+  def all_product_types
     @product_types = ProductType.all
   end
 
-  def brands_tab
+  def all_brands
     @brands = Brand.all
   end
 end

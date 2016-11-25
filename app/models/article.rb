@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
   # photo
-  has_many :photos, dependent: :destroy
+  has_many :photos, as: :images ,dependent: :destroy
   accepts_nested_attributes_for :photos, allow_destroy: true
   # validation
   validates :title, :body, presence: true

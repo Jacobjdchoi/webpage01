@@ -1,9 +1,5 @@
 class Photo < ActiveRecord::Base
-  belongs_to :article
-  belongs_to :brand
-  belongs_to :customer
-  belongs_to :product
-  belongs_to :product_type
+  belongs_to :images, polymorphic: :true
 
   mount_uploader :pics, PicsUploader
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h

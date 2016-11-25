@@ -2,264 +2,111 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // large view!!
-@media only screen and (min-width: 64.063em) {
-  .browser_container{
-    width: 100%;
-    height: 500px;
-    //product_type activated------
-    .index_container{
-      width: 80%;
-      height: 100%;
-      display: inline-block;
-      .product_types_index {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        .product_types_list{
-          //display: initial;
-          flex: 1;
-          padding: 0 0.25rem;
-          a.product_types_items {
-            width: 100%;
-            height: 300px;
-            margin: 0.5%;
-            padding: 2%;
-            border-radius: 5px;
-            position: relative;
-            .product_type_name{
-              position: absolute;
-              bottom: 0.25rem;
-              width: 96%;
-              font-size: 25px;
-              line-height: 25px;
-            }
-            img.product_type_icon{
-              width: 96%;
-            }
-          }
-        }
-      }
-      .brands_index {
-        width: 100%;
-        height: auto;
-        float: left;
-        padding: 0 0.25rem;
-        display: flex;
-        flex-wrap: wrap;
-        .brands_list{
-            margin: 0.25rem;
-            width: 24%;
-            position: relative;
-            padding-top: 24%;
-            height: 0;
-            a.brands_items{
-              width: 100%;
-              height: 100%;
-              position: absolute;
-              top: 0;
-              right: 0;
-              left: 0;
-              bottom: 0;
-              margin: 0.5%;
-              padding: 5px;
-              border-radius: 5px;
-              .brand_name_and_logo{
-                width: 100%;
-                height: 100%;
-                img.logo {
-                  width: 100%;
-                  transform: translateY(-50%);
-                  top: 50%;
-                  position: relative;
-                  
-                }
-                .name {
-                  
-                }
-              }
-            }
-          }
-        }
-        &.browser{
-          width: 100%;
-        }
-        &.product_types{
-          width: 90%;
-        }
-        &.brands{
-          box-shadow: rgb(148, 148, 148) 0 0 5px;
-          padding: 1rem;
-          margin-top: 0.25rem;
-          .brand_name {
-            font-size: 30px;
-            line-height: 30px;
-          }
-        }
-    }
-    .tab_container{
-      width: 20%;
-      float: left;
-      height: 500px;
-      margin-top: 0.25rem;
-      .tab {
-        margin: 0;
-        border-radius: 0;
-        width: 50%;
-        float: left;
-        display: inline-block;
-        height: 100%;
-        .tab_item {
-          width: 100%;
-          height: 55px;
-          float: left;
-          a.items-buttons {
-            width: 100%;
-            height: 100%;
-            border-radius: 5px;
-            .tab_name {
-              transform: translateY(-50%);
-              top: 50%;
-              position: relative;
-            }
-          }
-        }
-      }
-      &.product_types{
-        width: 10%;
-        .tab.product_types{
-          width: 100%;
-        }
-      }
-    }
-  }
+$box-shadow: rgb(148, 148, 148) 0 0 5px;
+$box-shadow-hover: rgb(111,111,111) 0 0 5px;
+@mixin wah($width:auto, $height:auto){
+  width: unquote($width);
+  height: unquote($height);
 }
-
-
-
-// mobile view!!!!
-@media only screen and (max-width: 64rem){
-  .index_container{
-    width: 100%;
-    display: inline-block;
-    min-height: 500px;
-    .product_types_index {
-      width: 100%;
-      display: inline-block;
-      .product_types_list{
-        width: 47%;
-        margin: 1.5%;
-        height: 10rem;
-        float: left;
-        a.product_types_items{
-          width: 100%;
-          height: 100%;
-          cursor: pointer;
-          display: inline-block;
-          text-align: center;
-          position: relative;
-          padding: 2%;
-          border-radius: 5px;
-          .product_type_name{
-            position: absolute;
-            width: 96%;
-            bottom: 0.25rem;
-            font-size: 25px;
-            line-height: 25px;
-          }
-          img.product_type_icon {
-            max-width: 96%;
-            max-height: 81%;
-          }
-        }
-      }
-    }
-    .brands_index {
-        width: 100%;
-        height: auto;
-        float: left;
-        padding: 0 0.25rem;
-        display: flex;
-        flex-wrap: wrap;
-        .brands_list{
-            margin: 1.5%;
-            width: 47%;
-            position: relative;
-            padding-top: 47%;
-            height: 0;
-            a.brands_items{
-              width: 100%;
-              height: 100%;
-              position: absolute;
-              top: 0;
-              right: 0;
-              left: 0;
-              bottom: 0;
-              margin: 0.5%;
-              padding: 5px;
-              border-radius: 5px;
-              .brand_name_and_logo{
-                width: 100%;
-                height: 100%;
-                img.logo {
-                  width: 100%;
-                  transform: translateY(-50%);
-                  top: 50%;
-                  position: relative;
-                  
-                }
-                .name {
-                  
-                }
-              }
-            }
-          }
-        }
-        &.brands{
-          box-shadow: rgb(148, 148, 148) 0 0 5px;
-          padding: 1rem;
-          margin-top: 0.25rem;
-          .brand_name {
-            font-size: 30px;
-            line-height: 30px;
-          }
-        }
-  }
-  .tab_container{
-    width: 100%;
-    height: 60px;
-    .tab {
-      width: 100%;
-      height: 30px;
-      display: block;
-      margin: 0;
-      border-radius: 0;
-      clear: both;
-      .tab_item {
-        width: 25%;
-        height: 100%;
-        float: left;
-        a.items-buttons {
-          width: 100%;
-          height: 100%;
-          .tab_name {
-            transform: translateY(-50%);
-            top: 50%;
-            position: relative;
-          }
-        }
-      }
-    }
-  }
-}
-
 .product_browser_title{
   text-align: center;
 }
-.items-buttons {
-    box-shadow: rgb(148, 148, 148) 0 0 5px;
-    display: inline-block;
-    text-align: center;
-    &:hover{
-        box-shadow: rgb(111,111,111) 0 0 5px;
+// Web view
+@media only screen and (min-width: 64.063em) {
+  .browser_container{
+    @include wah(100%, 450px);
+    margin-bottom: 1rem;
+    //product_type activated------
+    .index_container{
+      @include wah(100%,100%);
+      display: inline-block;
+      accordion.brands_index {
+        @include wah(100%, 100%);
+        float: left;
+        padding: 0 0.25rem;
+        display: flex;
+        section.brand_items{
+          flex-grow: 1;
+          @include wah($height: 100%);
+          padding: 5px;
+          transition: all 1s;
+          .brand_logo_and_name{
+            .brand_logo{
+            }
+            .brand_name{
+              font-size: 1.5rem;
+            }
+          }
+          .product_types_list_area{
+            ul.product_type_list{
+              list-style: none;
+              opacity: 1;
+              line-height: 3rem;
+              transition:all 1s;
+              .product_type_items{
+              }
+            }
+          }
+          &:hover{
+            flex-grow: 3;
+            .product_types_list_area{
+              ul.product_type_list{
+                opacity: 1;
+              }
+            }
+          }
+          border: 1px solid black;
+          &#0{background-color: gray;}
+          &#1{background-color: blue;}
+          &#2{background-color: skyblue;}
+          &#3{background-color: pink;}
+          &#4{background-color: gold;}
+        }
+      }
     }
+  }
+}
+
+// Mobile view
+@media only screen and (max-width: 64rem){
+  .browser_container{
+    @include wah(100%, 500px);
+    //product_type activated------
+    .index_container{
+      @include wah(100%,100%);
+      display: inline-block;
+      .brands_index {
+        @include wah(100%, auto);
+        float: left;
+        padding: 0 0.25rem;
+        display: flex;
+        // flex-wrap: wrap;
+        .brand_items{
+          //width: 24%;
+          flex: 1;
+          @include wah($height: 10rem);
+          //position: absolute;
+          //top: 0;
+          //right: 0;
+          //left: 0;
+          //bottom: 0;
+          margin: 0.5%;
+          padding: 5px;
+          border-radius: 5px;
+          .brand_logo_and_name{
+            .brand_logo{
+            }
+            .brand_name{
+            }
+          }
+          .product_type_list_area{
+            .product_type_list{
+              .product_type_items{
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

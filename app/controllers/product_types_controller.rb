@@ -3,6 +3,7 @@ class ProductTypesController < ApplicationController
   before_action :authenticate_admin!, except: [:show, :index]
   before_action :to_crop_obj, only: [:edit, :update]
   before_action :crop_ratio, only: [:create, :update]
+  before_action :all_brands, only: [:new, :edit]
 
   # GET /product_types
   # GET /product_types.json
@@ -62,11 +63,11 @@ class ProductTypesController < ApplicationController
       render :edit
     end
   end
-  
+
   def crop
-    
+
   end
-  
+
   # DELETE /product_types/1
   # DELETE /product_types/1.json
   def destroy
@@ -82,7 +83,7 @@ class ProductTypesController < ApplicationController
     def set_product_type
       @product_type = ProductType.find(params[:id])
     end
-    
+
     def to_crop_obj
       @crop_obj = @product_type
     end
@@ -93,5 +94,9 @@ class ProductTypesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_type_params
       params.require(:product_type).permit(*ProductType.globalize_attribute_names,  {photos_attributes: [:id, :pics, :_destroy, :product_type_id]})
+    end
+
+    def all_brands
+      @brands = Brand.all
     end
 end
