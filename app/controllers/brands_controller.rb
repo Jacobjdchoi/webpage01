@@ -82,7 +82,7 @@ class BrandsController < ApplicationController
     end
 
     def crop_ratio
-      @crop_ratio = 0
+      @crop_ratio = 1
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

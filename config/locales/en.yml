@@ -1,7 +1,7 @@
 en:
   layouts:
     application:
-      about: "About"
+      about: "Overview"
       aboutUs: "About us"
       articles: "News"
       careers: "Careers"
@@ -17,7 +17,7 @@ en:
         industrialMachinery: "Industrial Machinery"
         medical: "Medical"
         military: "Military"
-        title: "Markets"
+        title: "Applications"
       products:
         allProducts: "All products"
         cables: "Cables"

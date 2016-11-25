@@ -1,53 +1,97 @@
 // Place all the styles related to the customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-//index
-.content-container{
-    width: 100%;
-    min-height: 30rem;
-    .customer-index-container {
+@media only screen and (min-width: 64.063em){
+    //index
+    .content-container{
         width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        .customer-box{
-            width: 19%;
-            padding-top: 19%;
-            margin: 0.5%;
-            border: 2px solid #bfbfbf;
-            border-radius: 5px;
-            height: 0;
-            position: relative;
-            .customer-logo-and-name {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                padding: 2%;
-                img.customer-logo {
-                    width: 96%;
+        min-height: 30rem;
+        .customer-index-container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            .customer-box{
+                width: 19%;
+                padding-top: 19%;
+                margin: 0.5%;
+                border: 2px solid #bfbfbf;
+                border-radius: 5px;
+                height: 0;
+                position: relative;
+                .customer-logo-and-name {
                     position: absolute;
-                    transform: translateY(-50%);
-                    top: 50%;
-                } 
-                .customer-name {
-                    width: 96%;
-                    text-align: center;
-                    margin-top: 0.5rem;
-                    font-weight: bold;
-                    position: absolute;
+                    top: 0;
+                    right: 0;
                     bottom: 0;
+                    left: 0;
+                    padding: 2%;
+                    img.customer-logo {
+                        width: 96%;
+                        position: absolute;
+                        transform: translateY(-50%);
+                        top: 50%;
+                    } 
+                    .customer-name {
+                        width: 96%;
+                        text-align: center;
+                        margin-top: 0.5rem;
+                        font-weight: bold;
+                        position: absolute;
+                        bottom: 0;
+                    }
                 }
             }
         }
     }
 }
 
-
 //new action
 .customer-logo-field, .customer-name-field {
 }
 .customer-submit-field {
 
+}
+
+@media only screen and (max-width: 64rem){
+    //index
+    .content-container{
+        width: 100%;
+        min-height: 30rem;
+        .customer-index-container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            .customer-box{
+                width: 32.33%;
+                padding-top: 32.33%;
+                margin: 0.5%;
+                border: 2px solid #bfbfbf;
+                border-radius: 5px;
+                height: 0;
+                position: relative;
+                .customer-logo-and-name {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    padding: 2%;
+                    img.customer-logo {
+                        width: 96%;
+                        position: absolute;
+                        transform: translateY(-50%);
+                        top: 50%;
+                    } 
+                    .customer-name {
+                        width: 96%;
+                        text-align: center;
+                        margin-top: 0.5rem;
+                        font-weight: bold;
+                        position: absolute;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+    }
 }

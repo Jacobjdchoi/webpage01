@@ -6,8 +6,8 @@ ko:
       articles: "뉴스"
       careers: "채용정보"
       ceoLetter: "CEO인사말"
-      contact: "Contact"
-      contactUs: "Contact us"
+      contact: "견적문의"
+      contactUs: "견적문의"
       customers: "고객"
       history: "역사"
       locations: "위치"
@@ -55,11 +55,11 @@ ko:
       title: "회사소개"
   contacts:
     new:
-      title: "Contact us"
+      title: "견적문의"
       callUs: "전화"
       telInfo: "전화번호"
       email:
-        leaveAnEmail: "또는 이메일 남기기"
+        leaveAnEmail: ""
         name: "존함"
         company: "회사이름"
         email: "연락 받으실 이메일 주소"

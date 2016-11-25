@@ -1,3 +1,18 @@
 // Place all the styles related to the Contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.contact.row{
+    padding: 0 0.75rem;
+    div.specs {
+        fieldset {
+            display: none;
+        }
+    }
+    div.contact.actions {
+        text-align: center;
+    }
+}
+
+.show {
+    display: inline-block !important;
+}
