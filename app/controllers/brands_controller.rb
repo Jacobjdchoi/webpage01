@@ -82,12 +82,12 @@ class BrandsController < ApplicationController
     end
 
     def crop_ratio
-      @crop_ratio = 1
+      @crop_ratio = 0
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brand_params
-      params.require(:brand).permit(:name, :url, *Brand.globalize_attribute_names, {photos_attributes: [:id, :pics, :_destroy, :brand_id]}, {product_type_ids: []})
+      params.require(:brand).permit(:name, :url, :background_pic, *Brand.globalize_attribute_names, {photos_attributes: [:id, :pics, :_destroy, :brand_id]}, {product_type_ids: []})
     end
 
     def all_product_types

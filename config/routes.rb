@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get 'customer_admin' => 'customers#admin_show', ad: 'admin_customer'
     resources :articles
     resources :photos
+    resources :products
 
     #contact
     get 'contacts/new' => 'contacts#new', as: 'new_contact'
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
     get 'product_browser' => 'product_browser#browser', as: 'pb'
     get 'product_browser/product_type/:id' => 'product_browser#product_types', as: 'pb_pt'
     get 'product_browser/brand/:id' => 'product_browser#brands', as: 'pb_b'
+
 
 
     # pages

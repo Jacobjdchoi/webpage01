@@ -24,16 +24,16 @@
     <%= f.link_to_add "추가하기", :photos, class: "photoButton button", type: "remove" %>
   </div>
   <div class="field">
+    <%= f.label :background_pic,"바탕 사진" %>
+    <%= f.file_field :background_pic %>
+  </div>
+  <div class="field">
     <%= f.label :summary_ko, "한글 설명" %>
     <%= f.text_area :summary_ko, class: "articleBody" %>
   </div>
   <div class="field">
     <%= f.label :summary_en, "영문 설명" %>
     <%= f.text_area :summary_en, class: "articleBody" %>
-  </div>
-  <div class="field">
-    <%# f.label :attachments,"부수 파일 (여러개 선택 가능)" %>
-    <%# f.file_field :attachments, multiple: true %>
   </div>
   <div class="actions">
     <%= f.submit "등록하기", class: "button" %>

@@ -13,6 +13,7 @@ $box-shadow-hover: rgb(111,111,111) 0 0 5px;
 }
 // Web view
 @media only screen and (min-width: 64.063em) {
+  // Browser page
   .browser_container{
     @include wah(100%, 450px);
     margin-bottom: 1rem;
@@ -65,6 +66,34 @@ $box-shadow-hover: rgb(111,111,111) 0 0 5px;
       }
     }
   }
+  // Product Type page
+  .brand_name_title{
+    border-bottom: 1px solid;
+  }
+  .tab_menu{
+    width: 20%;
+    display: inline-block;
+    float: left;
+    .product_type_list{
+      list-style: none;
+      margin: 0 0 0 0.5rem;
+      .product_type_items{
+        height: 1.5rem;
+        border-bottom: 1px solid;
+        padding-left: 0.5rem;
+        a {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  .products_index {
+    width: 80%;
+    display: inline-block;
+    float: left;
+    padding: 0 1rem;
+  }
+
 }
 
 // Mobile view

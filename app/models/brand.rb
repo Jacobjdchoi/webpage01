@@ -9,6 +9,8 @@ class Brand < ActiveRecord::Base
     has_many :products, through: :product_types
     validates :name, presence: true
 
+    mount_uploader :background_pic, PicsUploader
+    attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
     def title
         self.name
     end

@@ -1,0 +1,16 @@
+<h4 class="brand_name_title"><%= @brand.name %></h4>
+<div class="tab_menu">
+  <ul class="product_type_list">
+    <% @brand.product_types.each do |product_type| %>
+      <li class="product_type_items"><%= link_to product_type.name, pb_pt_path(product_type) %></li>
+    <% end %>
+  </ul>
+</div>
+<div class="products_index">
+  <% @product_type.products.each do |product| %>
+    <fieldset>
+      <h5><%= product.name %></h5>
+      <p><%= link_to 'visit website', product.url, target: '_blank' %></p>
+    </fieldset>
+  <% end %>
+</div>
