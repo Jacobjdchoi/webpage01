@@ -62,7 +62,7 @@ ko:
       email:
         leaveAnEmail: ""
         name: "성명"
-        company: "회사"
+        company: "회사명"
         email: "이메일"
         message: "문의사항"
         submitButton: "전송하기"
