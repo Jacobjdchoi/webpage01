@@ -63,8 +63,10 @@
             <li><%= link_to t(".articles"), articles_path %></li>
             <li class="divider-vertical"></li>
             <li><%= link_to new_contact_path do %><%= t(".contact") %><% end %></li>
+          <% if request.path.include?('/ko') %>
             <li class="divider-vertical"></li>
             <li><%= link_to t(".downloads"), downloads_path %></li>
+          <% end %>
           </ul>
         </div><!--top bar menu-->
       </nav><!--nav bar web view-->
@@ -116,7 +118,9 @@
             <li><%= link_to t(".locations"), locations_path %></li>
             <li><%= link_to t(".careers"), careers_path %></li>
             <li><%= link_to t(".contactUs"), new_contact_path %></li>
+          <% if request.path.include?('/ko') %>
             <li><%= link_to t(".downloads"), downloads_path %></li>
+          <% end %>
           </ul><!--vertical menu-->
         </div><!--off canvs position left-->
         <div class="off-canvas-content" data-off-canvas-content><!--below this line is the canvas area -->
