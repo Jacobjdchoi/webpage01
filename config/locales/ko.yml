@@ -1,8 +1,8 @@
 ko:
   layouts:
     application:
-      about: "회사개요"
-      aboutUs: "회사 소개"
+      about: "회사소개"
+      aboutUs: "회사소개"
       articles: "뉴스"
       careers: "채용정보"
       ceoLetter: "CEO인사말"

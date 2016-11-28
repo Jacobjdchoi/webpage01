@@ -1,4 +1,14 @@
-<h4 class="brand_name_title"><%= @brand.name %></h4>
+<p class="product_browser_navigation">
+  <% @brands.each do |brand| %>
+    <%= link_to brand.name, pb_pt_path(brand.product_types.first) %>
+  <% end %>
+</p>
+<h4 class="brand_name_title">
+  <%= @brand.name %>
+  <% @brand.photos.each do |photo| %>
+    <%= image_tag photo.pics.url(:logo) %>
+  <% end %>
+</h4>
 <div class="tab_menu">
   <ul class="product_type_list">
     <% @brand.product_types.each do |product_type| %>
