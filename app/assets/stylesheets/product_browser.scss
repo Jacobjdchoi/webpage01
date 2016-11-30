@@ -11,6 +11,12 @@ $box-shadow-hover: rgb(111,111,111) 0 0 5px;
 .product_browser_title{
   text-align: center;
 }
+.open-horizontal{
+  width: 40% !important;
+}
+.close-horizontal{
+  width: 15% !important;
+}
 // Web view
 @media only screen and (min-width: 64.063em) {
   // Browser page
@@ -25,14 +31,18 @@ $box-shadow-hover: rgb(111,111,111) 0 0 5px;
         @include wah(100%, 100%);
         float: left;
         padding: 0 0.25rem;
-        display: flex;
         section.brand_items{
-          flex-grow: 1;
-          @include wah($height: 100%);
+          //flex-grow: 1;
+          display: block;
+          float: left;
+          @include wah($width: 20%,$height: 100%);
           padding: 5px;
           transition: all 1s;
           .brand_logo_and_name{
             .brand_logo{
+              img {
+                height: 2.25rem;
+              }
             }
             .brand_name{
               font-size: 1.5rem;
@@ -92,8 +102,25 @@ $box-shadow-hover: rgb(111,111,111) 0 0 5px;
     display: inline-block;
     float: left;
     padding: 0 1rem;
+    min-height: 500px;
+    fieldset{
+      h5 {
+        border-bottom: 1px solid #a9a9a9;
+      }
+      img.product_image {
+        width: 20%;
+        height: 9rem;
+        border: 1px solid blue;
+        float: left;
+      }
+      div.product_details {
+        width: 80%;
+        height: 9rem;
+        border: 1px solid red;
+        float: left;
+      }
+    }
   }
-
 }
 
 // Mobile view

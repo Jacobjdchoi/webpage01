@@ -64,7 +64,7 @@ private
     @products = Product.all
   end
   def product_params
-    params.require(:product).permit(:name, :url, :product_type_id)
+    params.require(:product).permit(*Article.globalize_attribute_names, :url, :product_type_id)
   end
 
 end

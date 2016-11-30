@@ -11,33 +11,37 @@
             display: flex;
             flex-wrap: wrap;
             .customer-box{
-                width: 19%;
-                padding-top: 19%;
-                margin: 0.5%;
-                border: 2px solid #bfbfbf;
-                border-radius: 5px;
-                height: 0;
+                width: 14%;
+                //padding-top: 19%;
+                display:block;
+                content: '';
                 position: relative;
-                .customer-logo-and-name {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
-                    padding: 2%;
-                    img.customer-logo {
-                        width: 96%;
+                div {
+                    padding-top: 94%;
+                    margin: 3%;
+                    border: 2px solid #bfbfbf;
+                    border-radius: 5px;
+                    .customer-logo-and-name {
                         position: absolute;
-                        transform: translateY(-50%);
-                        top: 50%;
-                    } 
-                    .customer-name {
-                        width: 96%;
-                        text-align: center;
-                        margin-top: 0.5rem;
-                        font-weight: bold;
-                        position: absolute;
+                        top: 0;
+                        right: 0;
                         bottom: 0;
+                        left: 0;
+                        padding: 2%;
+                        img.customer-logo {
+                            width: 96%;
+                            position: absolute;
+                            transform: translateY(-50%);
+                            top: 50%;
+                        }
+                        .customer-name {
+                            width: 96%;
+                            text-align: center;
+                            margin-top: 0.5rem;
+                            font-weight: bold;
+                            position: absolute;
+                            bottom: 0;
+                        }
                     }
                 }
             }
@@ -81,7 +85,7 @@
                         position: absolute;
                         transform: translateY(-50%);
                         top: 50%;
-                    } 
+                    }
                     .customer-name {
                         width: 96%;
                         text-align: center;

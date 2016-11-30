@@ -9,9 +9,9 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-  //foundation
+  // foundation
   $(function(){ $(document).foundation(); });
-  //text editor
+  // text editor
   tinymce.remove();
   tinymce.init({
     selector:'.articleBody',
@@ -25,14 +25,16 @@ $(document).on('turbolinks:load', function() {
     ],
     toolbar: "undo redo | fontsizeselect | forecolor backcolor | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
     });
-  //body padding adjustment according to the size of the nav bar.
+  // body's padding-top adjusts according to the size of the nav bar.
   if ($('#title-bar').css('display') !== "none"){
+    // mobile
     $('#header').css('display', 'none');
     var titleBarHeight = $("#title-bar").outerHeight();
     $("#pageYield, #offCanvasLeft").css('padding-top', titleBarHeight);
   } else {
+    // webview
     var headerHeight = $('#header').outerHeight();
-    $("#pageYield").css('padding-top', headerHeight);
+    $("#pageYield").css('padding-top', headerHeight + 16);
     $('#header').css('display', 'initial');
   }
 });

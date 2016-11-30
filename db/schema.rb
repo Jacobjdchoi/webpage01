@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126060314) do
+ActiveRecord::Schema.define(version: 20161130090150) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -126,6 +126,18 @@ ActiveRecord::Schema.define(version: 20161126060314) do
     t.string   "images_type"
   end
 
+  create_table "product_translations", force: :cascade do |t|
+    t.integer  "product_id", null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "summary"
+    t.string   "name"
+  end
+
+  add_index "product_translations", ["locale"], name: "index_product_translations_on_locale"
+  add_index "product_translations", ["product_id"], name: "index_product_translations_on_product_id"
+
   create_table "product_type_translations", force: :cascade do |t|
     t.integer  "product_type_id", null: false
     t.string   "locale",          null: false
@@ -149,6 +161,7 @@ ActiveRecord::Schema.define(version: 20161126060314) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "product_type_id"
+    t.text     "summary"
   end
 
 end

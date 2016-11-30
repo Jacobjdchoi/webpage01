@@ -15,7 +15,7 @@
                 <% end %>
               </div>
               <div class="brand_name">
-                <%= brand.name %>
+                <%# brand.name %>
               </div>
             <% end %>
           </div>
@@ -26,11 +26,23 @@
               <% end %>
             </ul>
           </div>
-          <div class="products_picture">
-
-          </div>
         </section>
       <% end%>
     </accordion>
   </div>
 </div>
+<script>
+  $(document).on('mouseenter', '.brand_items', function(){
+    var target = $(this),
+        not_target = $('.brand_items').not(target);
+      target.addClass('open-horizontal');
+      not_target.addClass('close-horizontal');
+  });
+  $(document).on('mouseleave', '.brand_items', function(){
+    var target = $(this),
+        not_target = $('.brand_items').not(target);
+      target.removeClass('open-horizontal');
+      not_target.removeClass('close-horizontal');
+  });
+
+</script>

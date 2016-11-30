@@ -34,6 +34,9 @@
 body{
     background-color: #eeeeee;
 }
+.alert, .notice {
+    float: left;
+}
 .main {
     max-width: 60rem;
     &#pageYield{
@@ -183,10 +186,15 @@ ul.language.menu li a {
     }
 }
 footer {
-    height: 5rem;
+    height: 6rem;
     background-color: #001641;
     color: white;
     .row.main {
+        .the_best_taxpayer{
+            width: 6rem;
+            float: left;
+            padding: 0.5rem;
+        }
         .copyright {
             float: left;
         }

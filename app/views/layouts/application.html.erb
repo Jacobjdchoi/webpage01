@@ -135,14 +135,17 @@
     </div><!--canvas wrapper-->
     <footer id="footer">
       <div class="row main">
+        <div class="the_best_taxpayer">
+          <%= image_tag 'the_best_taxpayer.png', class: 'the_best_taxpayer_emblem' %>
+        </div>
         <div class="copyright">
         Copyright &copy; SamTra International all rights reserved
         </div>
         <div class="misc menu">
           <div class="quick_links">
             <ul class="quick_links_menu">
-              <% if admin_signed_in? %>
               <span>Quick Links</span>
+              <% if admin_signed_in? %>
               <li><%= link_to "제품 타입 추가", new_product_type_path %></li>
               <li><%= link_to "제품 타입 리스트", admin_product_types_path %></li>
               <li><%= link_to "브랜드 추가", new_brand_path %></li>
