@@ -1,15 +1,29 @@
-<h1>All Markets</h1>
-<div style="width:100%; height:6rem;">
-    <div class="small-6 large-3 columns" style="height:400px;padding:5px;background:gold;border:1px solid black">
-        <%= link_to "Automotive", automotive_path %>
-    </div>
-    <div class="small-6 large-3 columns" style="height:400px;padding:5px;background:gold;border:1px solid black">
-        <%= link_to "Medical", medical_path %>
-    </div>
-    <div class="small-6 large-3 columns" style="height:400px;padding:5px;background:gold;border:1px solid black">
-        <%= link_to "Industrial Machinery", industrialMachinery_path %>
-    </div>
-    <div class="small-6 large-3 columns" style="height:400px;padding:5px;background:gold;border:1px solid black">
-        <%= link_to "Military", military_path %>
-    </div>
-</div>
+<h1>Markets</h1>
+<accordion class="markets_index">
+    <section class="market_items">
+        <h5>Aerospace&Defense</h5>
+    </section>
+    <section class="market_items">
+        <h5>Industrial</h5>
+    </section>
+    <section class="market_items">
+        <h5>Automotive</h5>
+    </section>
+    <section class="market_items">
+        <h5>Medical</h5>
+    </section>
+</accordion>
+<script>
+    $(document).on('mouseenter', '.market_items', function(){
+        var target = $(this),
+            not_target = $('.market_items').not(target);
+        target.addClass('open-horizontal-market');
+        not_target.addClass('close-horizontal-market');
+    });
+    $(document).on('mouseleave', '.market_items', function(){
+        var target = $(this),
+            not_target = $('.market_items').not(target);
+        target.removeClass('open-horizontal-market');
+        not_target.removeClass('close-horizontal-market');
+    });
+</script>

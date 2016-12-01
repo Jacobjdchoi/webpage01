@@ -1,85 +1,91 @@
 <h1><%= t(".title") %></h1>
 <div class="contact row">
     <h3><%= notice %></h3>
-    <%= form_for(@contact) do |f| %>
-        <div class="large-12 columns">    
-            <% if @contact.errors.any? %>
-                <div id="error_explanation">
-                  <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-    
-                  <ul>
-                  <% @contact.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                  <% end %>
-                  </ul>
-                </div>
-            <% end %>
-        </div>
-        <div class="large-12 columns">
-            <label>Select Menu
-              <select>
-                <option value="Select">Please Select One</option>
-                <option value="Slipring">Slipring</option>
-                <option value="Motor">Motor</option>
-                <option value="Blower">Blower</option>
-                <option value="Actuator">Actuator</option>
-                <option value="Terminal">Terminal</option>
-                <option value="Cable">Cable</option>
-                <option value="Connector">Connector</option>
-              </select>
-            </label>
-        </div>
-        <div class="large-12 columns specs">
-            <fieldset class="slipring">
-              <input type="text" class="slipringname" placeholder="slipringname">
-            </fieldset>
-            <fieldset class="motor">
-              <input type="text" class="motorname" placeholder="motorname">
-            </fieldset>
-            <fieldset class="blower">
-              <input type="text" class="blowername" placeholder="blowername">
-            </fieldset>
-            <fieldset class="actuator">
-              <input type="text" class="actuatorname" placeholder="actuatorname">
-            </fieldset>
-            <fieldset class="terminal">
-              <input type="text" class="terminalname" placeholder="terminalname">
-            </fieldset>
-            <fieldset class="cable">
-              <input type="text" class="cablename" placeholder="cablename">
-            </fieldset>
-            <fieldset class="connector">
-              <input type="text" class="connectorname" placeholder="connectorname">
-            </fieldset>
-        </div>
-        <div class="large-4 columns">
-            <div>
-                <label for="name"><%= t(".email.name") %></label>
-                <%= f.text_field :name %>
-            </div>
-        </div>
-        <div class="large-4 columns">
-            <div>
-                <label for="company"><%= t(".email.company") %></label>
-                <%= f.text_field :company %>
-            </div>
-        </div>
-        <div class="large-4 columns">
-            <div>
-                <label for="email"><%= t(".email.email") %></label>
-                <%= f.email_field :email %>
-            </div>
-        </div>
-        <div class="large-12 columns">
-            <div>
-                <label for="body"><%= t(".email.message") %></label>
-                <%= f.text_area :body %>
-            </div>
-            <div class="contact actions">
-                <%= f.submit "#{t('.email.submitButton')}", :class => "button" %>
-            </div>
-        </div>
-    <% end %>
+    <div class="large-8 columns">
+      <%= form_for(@contact) do |f| %>
+          <div class="large-12 columns">
+              <% if @contact.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+                    <ul>
+                    <% @contact.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+              <% end %>
+          </div>
+          <div class="large-12 columns">
+              <label>Select Menu
+                <select>
+                  <option value="Select">Please Select One</option>
+                  <option value="Slipring">Slipring</option>
+                  <option value="Motor">Motor</option>
+                  <option value="Blower">Blower</option>
+                  <option value="Actuator">Actuator</option>
+                  <option value="Terminal">Terminal</option>
+                  <option value="Cable">Cable</option>
+                  <option value="Connector">Connector</option>
+                </select>
+              </label>
+          </div>
+          <div class="large-12 columns specs">
+              <fieldset class="slipring">
+                <input type="text" class="slipringname" placeholder="slipringname">
+              </fieldset>
+              <fieldset class="motor">
+                <input type="text" class="motorname" placeholder="motorname">
+              </fieldset>
+              <fieldset class="blower">
+                <input type="text" class="blowername" placeholder="blowername">
+              </fieldset>
+              <fieldset class="actuator">
+                <input type="text" class="actuatorname" placeholder="actuatorname">
+              </fieldset>
+              <fieldset class="terminal">
+                <input type="text" class="terminalname" placeholder="terminalname">
+              </fieldset>
+              <fieldset class="cable">
+                <input type="text" class="cablename" placeholder="cablename">
+              </fieldset>
+              <fieldset class="connector">
+                <input type="text" class="connectorname" placeholder="connectorname">
+              </fieldset>
+          </div>
+          <div class="large-4 columns">
+              <div>
+                  <label for="name"><%= t(".email.name") %></label>
+                  <%= f.text_field :name %>
+              </div>
+          </div>
+          <div class="large-4 columns">
+              <div>
+                  <label for="company"><%= t(".email.company") %></label>
+                  <%= f.text_field :company %>
+              </div>
+          </div>
+          <div class="large-4 columns">
+              <div>
+                  <label for="email"><%= t(".email.email") %></label>
+                  <%= f.email_field :email %>
+              </div>
+          </div>
+          <div class="large-12 columns">
+              <div>
+                  <label for="body"><%= t(".email.message") %></label>
+                  <%= f.text_area :body %>
+              </div>
+              <div class="contact actions">
+                  <%= f.submit "#{t('.email.submitButton')}", :class => "button" %>
+              </div>
+          </div>
+      <% end %>
+    </div>
+    <div class="large-4 columns">
+      <p>전화번호</p>
+      <q>이메일주소</q>
+    </div>
 </div>
 <script>
     $(document).on('change', 'select', function() {

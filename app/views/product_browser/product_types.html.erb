@@ -1,8 +1,8 @@
-<p class="product_browser_navigation">
+<ul class="navWIPages">
   <% @brands.each do |brand| %>
-    <%= link_to brand.name, pb_pt_path(brand.product_types.first) %>
+    <li><%= link_to_unless_current brand.name, pb_pt_path(brand.product_types.first) %></li>
   <% end %>
-</p>
+</ul>
 <h4 class="brand_name_title">
   <%= @brand.name %>
   <% @brand.photos.each do |photo| %>
@@ -17,9 +17,10 @@
   </ul>
 </div>
 <div class="products_index">
+  <h5><%= @product_type.name %></h5>
   <% @product_type.products.each do |product| %>
     <fieldset>
-      <h5><%= product.name %></h5>
+      <h6><%= product.name %></h6>
       <img class="product_image" alt="product_image">
       <div class="product_details">Product_Details</div>
       <p><%= link_to 'visit website', product.url, target: '_blank' %></p>
