@@ -3,12 +3,9 @@
     <li><%= link_to_unless_current brand.name, pb_pt_path(brand.product_types.first) %></li>
   <% end %>
 </ul>
-<h4 class="brand_name_title">
+<h3 class="brand_name_title">
   <%= @brand.name %>
-  <% @brand.photos.each do |photo| %>
-    <%# image_tag photo.pics.url(:logo) %>
-  <% end %>
-</h4>
+</h3>
 <div class="tab_menu">
   <ul class="product_type_list">
     <% @brand.product_types.each do |product_type| %>
@@ -17,13 +14,17 @@
   </ul>
 </div>
 <div class="products_index">
-  <h5><%= @product_type.name %></h5>
+  <h4><%= @product_type.name %></h4>
   <% @product_type.products.each do |product| %>
     <fieldset>
-      <h6><%= product.name %></h6>
-      <img class="product_image" alt="product_image">
+      <h5><%= product.name %></h5>
+      <div class="product_image_area">
+        <% if product.photos.present? %>
+        <%= image_tag product.photos.first.pics.url(:logo), class: 'product_image' %>
+        <% end %>
+      </div>
       <div class="product_details">Product_Details</div>
-      <p><%= link_to 'visit website', product.url, target: '_blank' %></p>
+      <p class="product_links"><%= link_to 'Learn more ->', product.url, target: '_blank' %></p>
     </fieldset>
   <% end %>
 </div>

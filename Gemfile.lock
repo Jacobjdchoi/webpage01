@@ -266,6 +266,7 @@ DEPENDENCIES
   dotenv-rails
   execjs
   faker
+  font-awesome-rails
   foundation-rails
   globalize (~> 5.0.0)
   globalize-accessors

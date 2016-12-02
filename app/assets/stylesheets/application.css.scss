@@ -4,6 +4,7 @@
  *= require_self
  *= require foundation_and_overrides
  */
+@import "font-awesome";
 
 *{
     box-sizing: border-box;
@@ -124,7 +125,7 @@ body{
 ul.dropdown li a, #top-bar-dropdown-menu li a {
     text-transform: uppercase;
     color: gray !important;
-    font-size: 0.9rem;
+    font-size: 15px;
 }
 ul.dropdown li {
     a {

@@ -74,6 +74,7 @@ $box-shadow-hover: rgb(111,111,111) 0 0 5px;
               line-height: 2rem;
               transition:all 1s;
               padding-left: 2rem;
+              overflow: hidden;
               .product_type_items{
                 opacity: 0;
                 transition: all 0.5s;
@@ -93,7 +94,7 @@ $box-shadow-hover: rgb(111,111,111) 0 0 5px;
               }
             }
           }
-          border: 1px solid black;
+          //border: 1px solid black;
           &#0{background-color: gray;}
           &#1{background-color: blue;}
           &#2{background-color: skyblue;}
@@ -104,9 +105,6 @@ $box-shadow-hover: rgb(111,111,111) 0 0 5px;
     }
   }
   // Product Type page
-  .brand_name_title{
-    border-bottom: 1px solid;
-  }
   .tab_menu{
     width: 25%;
     display: inline-block;
@@ -124,6 +122,10 @@ $box-shadow-hover: rgb(111,111,111) 0 0 5px;
       }
     }
   }
+  .brand_name_title{
+    border-bottom: 1px solid;
+    margin: 0.5rem;
+  }
   .products_index {
     width: 75%;
     display: inline-block;
@@ -134,17 +136,25 @@ $box-shadow-hover: rgb(111,111,111) 0 0 5px;
       h5 {
         border-bottom: 1px solid #a9a9a9;
       }
-      img.product_image {
-        width: 20%;
-        height: 9rem;
-        border: 1px solid blue;
-        float: left;
+      div.product_image_area{
+        img.product_image {
+          width: 20%;
+          height: 9rem;
+          //border: 1px solid blue;
+          float: left;
+        }
       }
       div.product_details {
         width: 80%;
-        height: 9rem;
-        border: 1px solid red;
+        height: 8rem;
+        //border: 1px solid red;
         float: left;
+      }
+      .product_links {
+        font-size: 14px;
+        line-height: 1rem;
+        height: 1rem;
+        float: right;
       }
     }
   }

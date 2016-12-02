@@ -7,7 +7,6 @@
 .close-horizontal-market {
   width: 20% !important;
 }
-
 accordion.markets_index{
   width: 100%;
   height: 460px;
@@ -17,9 +16,8 @@ accordion.markets_index{
     height: 450px;
     display: block;
     float: left;
-    background-color: gold;
     border: 1px solid black;
-    transition: all 0.2s;
+    transition: all 0.5s;
     h5 {
       padding: 0.25rem;
     }

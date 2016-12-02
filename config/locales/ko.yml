@@ -8,7 +8,7 @@ ko:
       ceoLetter: "CEO인사말"
       contact: "견적문의"
       contactUs: "견적문의"
-      customers: "고객"
+      customers: "주요고객"
       history: "역사"
       locations: "위치"
       downloads: "다운로드"
@@ -18,14 +18,14 @@ ko:
         industrialMachinery: "산업기계"
         medical: "의료"
         military: "군수"
-        title: "시장"
+        title: "주요시장"
       products:
         allProducts: "모든 제품"
         cables: "케이블"
         connectors: "커넥터"
         mccs: "모션컨트롤제품"
         terminals: "터미널"
-        title: "제품"
+        title: "제품소개"
   pages:
     locations:
       title: "회사위치"
