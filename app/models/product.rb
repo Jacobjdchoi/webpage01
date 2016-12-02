@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
   belongs_to :brand
   has_many :photos, as: :images, dependent: :destroy
   has_many :attachments, as: :file, dependent: :destroy
+  has_many :subproducts
 
   # globalize
   translates :name, :string

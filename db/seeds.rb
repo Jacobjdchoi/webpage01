@@ -178,28 +178,28 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
 
   # ODU
     # Push-Pull Circular Connectors
-    @oduPushPullCircularConnectors.products.create(name: "ODU MINI-SNAP®", url:"http://www.odu-usa.com/products-solutions/push-pull-circular-connectors/odu-mini-snap.html")
-    @oduPushPullCircularConnectors.products.create(name: "ODU AMC®", url:"http://www.odu-usa.com/products-solutions/push-pull-circular-connectors/odu-amc.html")
-    @oduPushPullCircularConnectors.products.create(name: "ODU AMC® HIGH-DENSITY", url:"http://www.odu-usa.com/products-solutions/push-pull-circular-connectors/odu-amc/odu-amc-high-density.html")
-    @oduPushPullCircularConnectors.products.create(name: "ODU MEDI-SNAP®", url:"http://www.odu-usa.com/products-solutions/push-pull-circular-connectors/odu-medi-snap.html")
-    @oduPushPullCircularConnectors.products.create(name: "ODU MINI-SNAP® PC", url:"http://www.odu-usa.com/products-solutions/push-pull-circular-connectors/odu-mini-snap-pc.html")
-    @oduPushPullCircularConnectors.products.create(name: "ODU MINI-MED®", url:"http://www.odu-usa.com/products-solutions/push-pull-circular-connectors/odu-mini-med.html")
+    @oduPushPullCircularAMC = @oduPushPullCircularConnectors.products.create(name: "ODU AMC®", url:"http://www.odu-usa.com/products-solutions/push-pull-circular-connectors/odu-amc.html")
+    @oduPushPullCircularAMCHD = @oduPushPullCircularConnectors.products.create(name: "ODU AMC® HIGH-DENSITY", url:"http://www.odu-usa.com/products-solutions/push-pull-circular-connectors/odu-amc/odu-amc-high-density.html")
+    @oduPushPullCircularMiniMED = @oduPushPullCircularConnectors.products.create(name: "ODU MINI-MED®", url:"http://www.odu-usa.com/products-solutions/push-pull-circular-connectors/odu-mini-med.html")
+    @oduPushPullCircularMediSNAP = @oduPushPullCircularConnectors.products.create(name: "ODU MEDI-SNAP®", url:"http://www.odu-usa.com/products-solutions/push-pull-circular-connectors/odu-medi-snap.html")
+    @oduPushPullCircularMiniSNAP = @oduPushPullCircularConnectors.products.create(name: "ODU MINI-SNAP®", url:"http://www.odu-usa.com/products-solutions/push-pull-circular-connectors/odu-mini-snap.html")
+    @oduPushPullCircularMiniSNAPPC = @oduPushPullCircularConnectors.products.create(name: "ODU MINI-SNAP® PC", url:"http://www.odu-usa.com/products-solutions/push-pull-circular-connectors/odu-mini-snap-pc.html")
     # ODU-MAC Modular Connectors
-    @oduODUMACModularConnectors.products.create(name: "ODU-MAC®", url:"http://www.odu-usa.com/products-solutions/odu-mac-modular-connectors/odu-mac.html")
+    @oduODUMAC = @oduODUMACModularConnectors.products.create(name: "ODU-MAC®", url:"http://www.odu-usa.com/products-solutions/odu-mac-modular-connectors/odu-mac.html")
     # Docking and Robotic System Connectors
-    @oduDockingandRoboticSystemConnectors.products.create(name: "ODU DOCK", url:"http://www.odu-usa.com/products-solutions/docking-and-robotic-system-connectors/odu-dock.html")
-    @oduDockingandRoboticSystemConnectors.products.create(name: "ODU ROB", url:"http://www.odu-usa.com/products-solutions/docking-and-robotic-system-connectors/odu-rob.html")
+    @oduDockRobDOCK = @oduDockingandRoboticSystemConnectors.products.create(name: "ODU DOCK", url:"http://www.odu-usa.com/products-solutions/docking-and-robotic-system-connectors/odu-dock.html")
+    @oduDockRobROB = @oduDockingandRoboticSystemConnectors.products.create(name: "ODU ROB", url:"http://www.odu-usa.com/products-solutions/docking-and-robotic-system-connectors/odu-rob.html")
     # Printed Circuit Boards Connectors
-    @oduPrintedCircuitBoardsConnectors.products.create(name: "ODU FLAKAFIX", url:"http://www.odu-usa.com/products-solutions/printed-circuit-boards-connectors/odu-flakafix.html")
-    @oduPrintedCircuitBoardsConnectors.products.create(name: "ODU MINI-FLAKAFIX®", url:"http://www.odu-usa.com/products-solutions/printed-circuit-boards-connectors/odu-mini-flakafix.html")
-    @oduPrintedCircuitBoardsConnectors.products.create(name: "ODU CARD", url:"http://www.odu-usa.com/products-solutions/printed-circuit-boards-connectors/odu-card.html")
-    @oduPrintedCircuitBoardsConnectors.products.create(name: "ODU MINI-CARD®", url:"http://www.odu-usa.com/products-solutions/printed-circuit-boards-connectors/odu-mini-card.html")
+    @oduPCBFLAKAFIX = @oduPrintedCircuitBoardsConnectors.products.create(name: "ODU FLAKAFIX", url:"http://www.odu-usa.com/products-solutions/printed-circuit-boards-connectors/odu-flakafix.html")
+    @oduPCBMiniFLAKAFIX = @oduPrintedCircuitBoardsConnectors.products.create(name: "ODU MINI-FLAKAFIX®", url:"http://www.odu-usa.com/products-solutions/printed-circuit-boards-connectors/odu-mini-flakafix.html")
+    @oduPCBCard = @oduPrintedCircuitBoardsConnectors.products.create(name: "ODU CARD", url:"http://www.odu-usa.com/products-solutions/printed-circuit-boards-connectors/odu-card.html")
+    @oduPCBMiniCard = @oduPrintedCircuitBoardsConnectors.products.create(name: "ODU MINI-CARD®", url:"http://www.odu-usa.com/products-solutions/printed-circuit-boards-connectors/odu-mini-card.html")
     # Single Contact Connectors
-    @oduSingleContactConnectors.products.create(name: "ODU SPRINGTAC®", url:"http://www.odu-usa.com/products-solutions/single-contact-connectors/odu-springtac.html")
-    @oduSingleContactConnectors.products.create(name: "ODU LAMTAC®", url:"http://www.odu-usa.com/products-solutions/single-contact-connectors/odu-lamtac.html")
-    @oduSingleContactConnectors.products.create(name: "ODU SPRINGTAC® FLATSOCKET", url:"http://www.odu-usa.com/products-solutions/single-contact-connectors/odu-springtac-flatsocket.html")
+    @oduSingleContactSPRINGTAC = @oduSingleContactConnectors.products.create(name: "ODU SPRINGTAC®", url:"http://www.odu-usa.com/products-solutions/single-contact-connectors/odu-springtac.html")
+    @oduSingleContactLAMTAC = @oduSingleContactConnectors.products.create(name: "ODU LAMTAC®", url:"http://www.odu-usa.com/products-solutions/single-contact-connectors/odu-lamtac.html")
+    @oduSingleContactFLAT = @oduSingleContactConnectors.products.create(name: "ODU SPRINGTAC® FLATSOCKET", url:"http://www.odu-usa.com/products-solutions/single-contact-connectors/odu-springtac-flatsocket.html")
     # Others
-    @oduOthers.products.create(name: "Heavy Duty Connectors", url:"http://www.odu-usa.com/products-solutions/heavy-duty-connectors.html")
+    @oduOthersHeavy = @oduOthers.products.create(name: "Heavy Duty Connectors", url:"http://www.odu-usa.com/products-solutions/heavy-duty-connectors.html")
   # STOCKO
     # Multi-way connector systems
     @stockoMultiwayconnectorsystems.products.create(name: "pitch 2.5 mm", url:"https://www.yumpu.com/xx/document/fullscreen/55565154/steckverbindersystem-raster-25-mm")
@@ -391,7 +391,31 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
       # AXON' Others
       @axonOthersEMI.photos.create(pics: File.open(File.join(Rails.root,'public/product_photos/axon/others/EMI.jpg')))
       @axonOthersTest.photos.create(pics: File.open(File.join(Rails.root,'public/product_photos/axon/others/test.jpg')))
-
+    # Airborn
+    # ODU
+      # Push-Pull Circular Connectors
+      @oduPushPullCircularAMC.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/PushPulls/amc.jpg')))
+      @oduPushPullCircularAMCHD.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/PushPulls/amchd.jpg')))
+      @oduPushPullCircularMediSNAP.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/PushPulls/medi.jpg')))
+      @oduPushPullCircularMiniMED.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/PushPulls/minimed.jpg')))
+      @oduPushPullCircularMiniSNAP.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/PushPulls/minisnap.jpg')))
+      @oduPushPullCircularMiniSNAPPC.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/PushPulls/minisnappc.jpg')))
+      # ODU-MAC Modular Connectors
+      @oduODUMAC.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/MACs/mac.jpg')))
+      # Docking and Robotic System Connectors
+      @oduDockRobDOCK.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/DockingRobotics/dock.jpg')))
+      @oduDockRobROB.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/DockingRobotics/rob.jpg')))
+      # Printed Circuit Boards Connectors
+      @oduPCBFLAKAFIX.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/PCBs/flakafix.jpg')))
+      @oduPCBMiniFLAKAFIX.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/PCBs/miniflakafix.jpg')))
+      @oduPCBCard.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/PCBs/card.jpg')))
+      @oduPCBMiniCard.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/PCBs/minicard.jpg')))
+      # Single Contact Connectors
+      @oduSingleContactSPRINGTAC.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/SingleContacts/springtac.jpg')))
+      @oduSingleContactLAMTAC.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/SingleContacts/lamtac.jpg')))
+      @oduSingleContactFLAT.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/SingleContacts/flat.jpg')))
+      # Others
+      @oduOthersHeavy.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/others/heavyduty.jpg')))
 
 
 

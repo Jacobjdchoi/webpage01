@@ -4,6 +4,7 @@
 // large view!!
 $box-shadow: rgb(148, 148, 148) 0 0 5px;
 $box-shadow-hover: rgb(111,111,111) 0 0 5px;
+$imp: !important;
 @mixin wah($width:auto, $height:auto){
   width: unquote($width);
   height: unquote($height);
@@ -12,23 +13,39 @@ $box-shadow-hover: rgb(111,111,111) 0 0 5px;
   text-align: center;
 }
 .open-horizontal{
-  width: 40% !important;
+  width: 40% $imp;
+  .brand_logo_and_name{
+    .brand_logo{
+      img{
+        left: 5% $imp;
+        transform: translateX(0) $imp;
+      }
+    }
+  }
   .product_types_list_area{
-    background-color: rgba(0,0,0,0.5) !important;
+    background-color: rgba(0,0,0,0.5) $imp;
     .product_type_list {
       .product_type_items{
-        opacity: 1 !important;
+        opacity: 1 $imp;
       }
     }
   }
 }
 .close-horizontal{
-  width: 15% !important;
+  width: 15% $imp;
+  .brand_logo_and_name{
+    .brand_logo{
+      img{
+        left: 50% $imp;
+        transform: translateX(-50%) $imp;
+      }
+    }
+  }
   .product_types_list_area{
-    background-color: rgba(0,0,0,0) !important;
+    background-color: rgba(0,0,0,0) $imp;
     .product_type_list {
       .product_type_items{
-        opacity: 0 !important;
+        opacity: 0 $imp;
       }
     }
   }
@@ -54,14 +71,30 @@ $box-shadow-hover: rgb(111,111,111) 0 0 5px;
           @include wah($width: 20%,$height: 100%);
           transition: all 0.5s;
           .brand_logo_and_name{
-            .brand_logo{
-              img {
-                height: 2.5rem;
-                padding: 0.2rem;
+            @include wah(100%, 2.5rem);
+            position: relative;
+            a {
+              @include wah(100%, 100%);
+              display: inline-block;
+              .brand_logo{
+                //text-align: center;
+                @include wah(100%, 100%);
+                border-top: 1px solid;
+                border-left: 1px solid;
+                border-color: lightgray;
+                position: relative;
+                img {
+                  height: 100%;
+                  position: absolute;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  padding: 0.2rem;
+                  transition: all 0.5s;
+                }
               }
-            }
-            .brand_name{
-              font-size: 1.5rem;
+              .brand_name{
+                font-size: 1.5rem;
+              }
             }
           }
           .product_types_list_area{
@@ -94,12 +127,7 @@ $box-shadow-hover: rgb(111,111,111) 0 0 5px;
               }
             }
           }
-          //border: 1px solid black;
-          &#0{background-color: gray;}
-          &#1{background-color: blue;}
-          &#2{background-color: skyblue;}
-          &#3{background-color: pink;}
-          &#4{background-color: gold;}
+
         }
       }
     }

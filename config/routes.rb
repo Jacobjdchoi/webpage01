@@ -17,9 +17,9 @@ Rails.application.routes.draw do
     get 'contacts/new' => 'contacts#new', as: 'new_contact'
     post 'contacts' => 'contacts#create', as: 'contacts'
     # product browser
-    get 'product_browser' => 'product_browser#browser', as: 'pb'
-    get 'product_browser/product_type/:id' => 'product_browser#product_types', as: 'pb_pt'
-    get 'product_browser/brand/:id' => 'product_browser#brands', as: 'pb_b'
+    get 'product-browser' => 'product_browser#browser', as: 'pb'
+    get 'product-browser/product-type/:id' => 'product_browser#product_types', as: 'pb_pt'
+    get 'product-browser/brand/:id' => 'product_browser#brands', as: 'pb_b'
 
 
 
@@ -35,11 +35,7 @@ Rails.application.routes.draw do
     get 'pages/downloads' => 'pages#downloads', as: 'downloads'
 
     # markets
-    get 'markets/all-markets' => 'markets#index', as: 'allMarkets'
-    get 'markets/medical' => 'markets#medical', as: 'medical'
-    get 'markets/military' => 'markets#military', as: 'military'
-    get 'markets/automotive' => 'markets#automotive', as: 'automotive'
-    get 'markets/industrial-machinery' => 'markets#industrialMachinery', as: 'industrialMachinery'
+    get 'markets/markets' => 'markets#index', as: 'allMarkets'
 
     # heritages link
     get 'heritages/:heritage' => 'products#index', as: :heritage
