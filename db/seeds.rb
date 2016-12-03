@@ -202,16 +202,16 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
     @oduOthersHeavy = @oduOthers.products.create(name: "Heavy Duty Connectors", url:"http://www.odu-usa.com/products-solutions/heavy-duty-connectors.html")
   # STOCKO
     # Multi-way connector systems
-    @stockoMultiwayconnectorsystems.products.create(name: "pitch 2.5 mm", url:"https://www.yumpu.com/xx/document/fullscreen/55565154/steckverbindersystem-raster-25-mm")
-    @stockoMultiwayconnectorsystems.products.create(name: "pitch 2.54 mm", url:"https://www.yumpu.com/xx/document/fullscreen/55600572/steckverbindersystem-raster-254-mm")
-    @stockoMultiwayconnectorsystems.products.create(name: "Special Versions / Pin Strips", url:"https://www.yumpu.com/xx/document/fullscreen/55600616/steckverbinder-sonderprogramm")
-    @stockoMultiwayconnectorsystems.products.create(name: "High-Current ", url:"https://www.yumpu.com/xx/document/fullscreen/55600713/steckverbinder-leistungsbereich")
-    @stockoMultiwayconnectorsystems.products.create(name: "S-FIT 4.20", url:"https://www.yumpu.com/xx/document/fullscreen/55565235/steckverbindersystem-s-fit")
-    @stockoMultiwayconnectorsystems.products.create(name: "S-LOCK 6.35", url:"https://www.yumpu.com/xx/document/fullscreen/55601444/steckverbindersystem-s-lock")
+    @stockoMultiwayconnectorsystemsPitch25 = @stockoMultiwayconnectorsystems.products.create(name: "Pitch 2.5 mm", url:"https://www.yumpu.com/xx/document/fullscreen/55565154/steckverbindersystem-raster-25-mm")
+    @stockoMultiwayconnectorsystemsPitch254 = @stockoMultiwayconnectorsystems.products.create(name: "Pitch 2.54 mm", url:"https://www.yumpu.com/xx/document/fullscreen/55600572/steckverbindersystem-raster-254-mm")
+    @stockoMultiwayconnectorsystemsSpecial = @stockoMultiwayconnectorsystems.products.create(name: "Special Versions / Pin Strips", url:"https://www.yumpu.com/xx/document/fullscreen/55600616/steckverbinder-sonderprogramm")
+    @stockoMultiwayconnectorsystemsHighCurrent = @stockoMultiwayconnectorsystems.products.create(name: "High-Current ", url:"https://www.yumpu.com/xx/document/fullscreen/55600713/steckverbinder-leistungsbereich")
+    @stockoMultiwayconnectorsystemsSFit = @stockoMultiwayconnectorsystems.products.create(name: "S-FIT 4.20", url:"https://www.yumpu.com/xx/document/fullscreen/55565235/steckverbindersystem-s-fit")
+    @stockoMultiwayconnectorsystemsSLock = @stockoMultiwayconnectorsystems.products.create(name: "S-LOCK 6.35", url:"https://www.yumpu.com/xx/document/fullscreen/55601444/steckverbindersystem-s-lock")
     # Other
-    @stockoOthers.products.create(name: "Solderless terminals", url:"https://www.yumpu.com/xx/document/fullscreen/55601453/loetfreie-verbindungen")
-    @stockoOthers.products.create(name: "Crimp contacts", url:"https://www.yumpu.com/xx/document/fullscreen/55601476/crimpkontakte-de-en")
-    @stockoOthers.products.create(name: "HVAC Industry Products", url:"https://www.yumpu.com/en/document/fullscreen/55601938/heizungsindustrie-en")
+    @stockoOthersSolderless = @stockoOthers.products.create(name: "Solderless terminals", url:"https://www.yumpu.com/xx/document/fullscreen/55601453/loetfreie-verbindungen")
+    @stockoOthersCrimp = @stockoOthers.products.create(name: "Crimp contacts", url:"https://www.yumpu.com/xx/document/fullscreen/55601476/crimpkontakte-de-en")
+    @stockoOthersHVAC = @stockoOthers.products.create(name: "HVAC Industry Products", url:"https://www.yumpu.com/en/document/fullscreen/55601938/heizungsindustrie-en")
 
 
 
@@ -416,6 +416,17 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
       @oduSingleContactFLAT.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/SingleContacts/flat.jpg')))
       # Others
       @oduOthersHeavy.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/others/heavyduty.jpg')))
-
+    # STOCKO
+      # Multi-way connector systems
+      @stockoMultiwayconnectorsystemsPitch25.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/multiways/pitch25.jpg')))
+      @stockoMultiwayconnectorsystemsPitch254.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/multiways/pitch254.jpg')))
+      @stockoMultiwayconnectorsystemsSpecial.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/multiways/special.jpg')))
+      @stockoMultiwayconnectorsystemsHighCurrent.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/multiways/highcurrent.jpg')))
+      @stockoMultiwayconnectorsystemsSFit.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/multiways/sfit.jpg')))
+      @stockoMultiwayconnectorsystemsSLock.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/multiways/slock.jpg')))
+      # Other
+      @stockoOthersSolderless.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/others/solderless.jpg')))
+      @stockoOthersCrimp.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/others/crimp.jpg')))
+      @stockoOthersHVAC.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/others/hvac.jpg')))
 
 
