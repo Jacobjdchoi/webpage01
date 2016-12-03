@@ -1,11 +1,11 @@
 # Admin ids
 Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], password_confirmation: ENV['ADMIN_PASSWORD'])
 # Brands (1-5)
-@moog = Brand.create(id: 1, name: 'MOOG')
-@axon = Brand.create(id: 2, name: "Axon'")
-@airborn = Brand.create(id: 3, name: 'AirBorn')
-@odu = Brand.create(id: 4, name: 'ODU')
-@stocko = Brand.create(id: 5, name: 'STOCKO')
+@moog = Brand.create(id: 1, name: 'MOOG', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/moog.jpg')))
+@axon = Brand.create(id: 2, name: "Axon'", background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/axon.jpg')))
+@airborn = Brand.create(id: 3, name: 'AirBorn', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/airborn.jpg')))
+@odu = Brand.create(id: 4, name: 'ODU', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/odu.jpg')))
+@stocko = Brand.create(id: 5, name: 'STOCKO', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/stocko.jpg')))
 # Product Types
   # Moog (1-5)
   @moogSlipRing = @moog.product_types.create(name: 'Slip Rings')

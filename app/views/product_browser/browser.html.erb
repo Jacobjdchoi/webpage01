@@ -11,11 +11,9 @@
                   <%= image_tag photo.pics.url(:logo) %>
                 <% end %>
               </div>
-              <div class="brand_name">
-                <%# brand.name %>
-              </div>
             <% end %>
           </div>
+          <%= image_tag brand.background_pic.url(:raw), class: 'background_pics' %>
           <div class="product_types_list_area">
             <ul class="product_type_list">
               <% brand.product_types.each do |product_type| %>
