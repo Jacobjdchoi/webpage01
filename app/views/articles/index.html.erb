@@ -1,9 +1,4 @@
-<div class="photo-area articles">
-    <div class="contents">
-      <img src="http://www.coanews.org/liies/2014/11/01.jpg">
-      <p class="page-title"><%= t(".title") %></p>
-    </div>
-</div>
+<h2 class="page-title"><%= t(".title") %></h2>
 <div class="content-container articles">
   <% if admin_signed_in? %>
     <div><%= link_to "뉴스 추가하기", new_article_path %></div>

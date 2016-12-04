@@ -77,7 +77,7 @@ ko:
   navigation:
     back: "뒤로가기"
   product_browser:
-    browser_title_link:
+    browser:
       title: "제품 브라우저"
   customers:
     index:

@@ -100,7 +100,7 @@ en:
   navigation:
     back: "Back"
   product_browser:
-    browser_title_link:
+    browser:
       title: "Product browser"
   customers:
     index:

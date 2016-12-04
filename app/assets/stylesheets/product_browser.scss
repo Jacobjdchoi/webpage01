@@ -23,7 +23,7 @@ $imp: !important;
     }
   }
   .product_types_list_area{
-    background-color: rgba(0,0,0,0.5) $imp;
+    background-color: rgba(0,0,0,0.7) $imp;
     .product_type_list {
       .product_type_items{
         opacity: 1 $imp;
@@ -70,6 +70,8 @@ $imp: !important;
           float: left;
           @include wah($width: 20%,$height: 100%);
           transition: all 0.5s;
+          position: relative;
+          overflow: hidden;
           .brand_logo_and_name{
             @include wah(100%, 2.5rem);
             position: relative;
@@ -97,10 +99,18 @@ $imp: !important;
               }
             }
           }
+          img.background_pics {
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 378px;
+            height: 410px;
+            max-width: none;
+          }
           .product_types_list_area{
             height: 91%;
             background-color: rgba(0,0,0,0);
             transition: all 1.5s;
+            position: relative;
             ul.product_type_list{
               list-style: none;
               opacity: 1;
@@ -129,6 +139,20 @@ $imp: !important;
           }
 
         }
+      }
+    }
+  }
+  .brands_nav_area {
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    margin: 0.5rem;
+    li {
+      display: inline;
+      &.brand_links {
+        border: 1px solid;
+        margin: 0 1rem;
+        padding: 0 1rem;
       }
     }
   }
