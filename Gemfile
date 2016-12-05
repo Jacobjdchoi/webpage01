@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '>= 5.0.0', '< 5.1'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -58,7 +59,7 @@ gem 'rails_admin-i18n'
 gem 'devise'
 
 # File upload must use the master branch to enable multiple uploads
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 
 # Rmagick
 gem 'rmagick'
@@ -70,8 +71,9 @@ gem 'dotenv-rails'
 gem 'nested_form'
 
 # translate database
-gem 'globalize', '~> 5.0.0'
-
+# gem 'globalize', '~> 5.0.0'
+gem 'globalize', github: 'globalize/globalize'
+gem 'activemodel-serializers-xml'
 # forms with translations
 gem 'globalize-accessors'
 

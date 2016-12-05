@@ -1,1 +1,19 @@
 <h2 class="page-title"><%= t(".title") %></h2>
+<div class="12-large columns">
+  <table>
+    <thead>
+      <tr>
+        <th>File Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @attachments.each do |attachment| %>
+        <tr>
+          <td><%= attachment.file_path %></td>
+          <td><%= link_to attachment.file_path %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

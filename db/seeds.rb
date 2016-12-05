@@ -653,3 +653,7 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
     @oduSingleContactLAMTAC.save
     @oduSingleContactFLAT.save
     @oduOthersHeavy.save
+# Attachment
+  Dir.glob("#{Rails.root}/public/catalogues/*.pdf") do |filepath|
+    Attachment.create(file_path: File.open(filepath))
+  end

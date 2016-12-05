@@ -77,6 +77,8 @@ en:
       title:
     aboutUs:
       title: "About us"
+    downloads:
+      title: "Downloads"
   contacts:
     new:
       title: "Contact us"

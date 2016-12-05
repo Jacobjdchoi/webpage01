@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205051635) do
+ActiveRecord::Schema.define(version: 20161205090538) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,10 +25,9 @@ ActiveRecord::Schema.define(version: 20161205051635) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
-
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "article_translations", force: :cascade do |t|
     t.integer  "article_id", null: false
@@ -38,10 +36,9 @@ ActiveRecord::Schema.define(version: 20161205051635) do
     t.datetime "updated_at", null: false
     t.string   "title"
     t.text     "body"
+    t.index ["article_id"], name: "index_article_translations_on_article_id"
+    t.index ["locale"], name: "index_article_translations_on_locale"
   end
-
-  add_index "article_translations", ["article_id"], name: "index_article_translations_on_article_id"
-  add_index "article_translations", ["locale"], name: "index_article_translations_on_locale"
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -51,9 +48,7 @@ ActiveRecord::Schema.define(version: 20161205051635) do
   end
 
   create_table "attachments", force: :cascade do |t|
-    t.string   "path"
-    t.integer  "file_id"
-    t.string   "file_type"
+    t.string   "file_path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,10 +58,9 @@ ActiveRecord::Schema.define(version: 20161205051635) do
     t.integer  "product_type_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["brand_id"], name: "index_brand_product_types_on_brand_id"
+    t.index ["product_type_id"], name: "index_brand_product_types_on_product_type_id"
   end
-
-  add_index "brand_product_types", ["brand_id"], name: "index_brand_product_types_on_brand_id"
-  add_index "brand_product_types", ["product_type_id"], name: "index_brand_product_types_on_product_type_id"
 
   create_table "brand_translations", force: :cascade do |t|
     t.integer  "brand_id",   null: false
@@ -74,10 +68,9 @@ ActiveRecord::Schema.define(version: 20161205051635) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "summary"
+    t.index ["brand_id"], name: "index_brand_translations_on_brand_id"
+    t.index ["locale"], name: "index_brand_translations_on_locale"
   end
-
-  add_index "brand_translations", ["brand_id"], name: "index_brand_translations_on_brand_id"
-  add_index "brand_translations", ["locale"], name: "index_brand_translations_on_locale"
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
@@ -108,10 +101,9 @@ ActiveRecord::Schema.define(version: 20161205051635) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "name"
+    t.index ["customer_id"], name: "index_customer_translations_on_customer_id"
+    t.index ["locale"], name: "index_customer_translations_on_locale"
   end
-
-  add_index "customer_translations", ["customer_id"], name: "index_customer_translations_on_customer_id"
-  add_index "customer_translations", ["locale"], name: "index_customer_translations_on_locale"
 
   create_table "customers", force: :cascade do |t|
     t.string   "name"
@@ -139,10 +131,9 @@ ActiveRecord::Schema.define(version: 20161205051635) do
     t.datetime "updated_at", null: false
     t.text     "summary"
     t.string   "name"
+    t.index ["locale"], name: "index_product_translations_on_locale"
+    t.index ["product_id"], name: "index_product_translations_on_product_id"
   end
-
-  add_index "product_translations", ["locale"], name: "index_product_translations_on_locale"
-  add_index "product_translations", ["product_id"], name: "index_product_translations_on_product_id"
 
   create_table "product_types", force: :cascade do |t|
     t.string   "name"

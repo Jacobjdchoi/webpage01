@@ -36,7 +36,7 @@ class PagesController < ApplicationController
   end
 
   def downloads
-
+    @attachments = Attachment.all
   end
 
 end

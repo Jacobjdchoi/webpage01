@@ -54,6 +54,8 @@ ko:
       title:
     aboutUs:
       title: "회사소개"
+    downloads:
+      title: "다운로드"
   contacts:
     new:
       title: "견적문의"
