@@ -4,14 +4,16 @@
     <thead>
       <tr>
         <th>File Name</th>
-        <th>Action</th>
+        <th>Open With New Tab</th>
+        <th>Download</th>
       </tr>
     </thead>
     <tbody>
       <% @attachments.each do |attachment| %>
         <tr>
-          <td><%= attachment.file_path %></td>
-          <td><%= link_to attachment.file_path %></td>
+          <td><%= attachment.file_path.to_s.split('/').last %></td>
+          <td><%= link_to 'open with new tab', attachment.file_path.url, target: '_blank' %></td>
+          <td><%= link_to 'Download', attachment.file_path.url, download: attachment.file_path.to_s.split('/').last %> </td>
         </tr>
       <% end %>
     </tbody>

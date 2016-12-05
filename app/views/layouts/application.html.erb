@@ -55,7 +55,7 @@
             <li><%= link_to t(".articles"), articles_path %></li>
             <li class="divider-vertical"></li>
             <li><%= link_to new_contact_path do %><%= t(".contact") %><% end %></li>
-          <% if request.path.include?('/ko') %>
+          <% unless request.path.include?('/en') %>
             <li class="divider-vertical"></li>
             <li><%= link_to t(".downloads"), downloads_path %></li>
           <% end %>
