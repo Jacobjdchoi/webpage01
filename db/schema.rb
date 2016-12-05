@@ -138,17 +138,6 @@ ActiveRecord::Schema.define(version: 20161202161755) do
   add_index "product_translations", ["locale"], name: "index_product_translations_on_locale"
   add_index "product_translations", ["product_id"], name: "index_product_translations_on_product_id"
 
-  create_table "product_type_translations", force: :cascade do |t|
-    t.integer  "product_type_id", null: false
-    t.string   "locale",          null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "name"
-  end
-
-  add_index "product_type_translations", ["locale"], name: "index_product_type_translations_on_locale"
-  add_index "product_type_translations", ["product_type_id"], name: "index_product_type_translations_on_product_type_id"
-
   create_table "product_types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false

@@ -93,7 +93,7 @@ class ProductTypesController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_type_params
-      params.require(:product_type).permit(*ProductType.globalize_attribute_names,  {photos_attributes: [:id, :pics, :_destroy, :product_type_id]})
+      params.require(:product_type).permit(:name,  {photos_attributes: [:id, :pics, :_destroy, :product_type_id]})
     end
 
     def all_brands

@@ -7,6 +7,6 @@ class ProductType < ActiveRecord::Base
 
     validates :name, presence: true
 
-    translates :name
-    globalize_accessors attribute: [:name]
+    # translates :name
+    # globalize_accessors attribute: [:name]
 end
