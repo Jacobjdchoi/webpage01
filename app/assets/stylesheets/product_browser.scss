@@ -189,15 +189,20 @@ $imp: !important;
         border-bottom: 1px solid #a9a9a9;
       }
       div.product_image_area{
+        position: relative;
+        width: 18.5%;
+        padding-top: 20%;
+        margin: 0 0.75%;
+        float: left;
         img.product_image {
-          width: 20%;
-          height: 9rem;
-          //border: 1px solid blue;
-          float: left;
+          position: absolute;
+          top: 0; right: 0;
+          bottom: 0; left: 0;
         }
       }
       div.product_details {
-        width: 80%;
+        width: 78.5%;
+        margin: 0 0.75%;
         height: 8rem;
         //border: 1px solid red;
         float: left;

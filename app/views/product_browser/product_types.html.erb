@@ -24,7 +24,9 @@
         <%= image_tag product.photos.first.pics.url(:logo), class: 'product_image' %>
         <% end %>
       </div>
-      <div class="product_details">Product_Details</div>
+      <div class="product_details">
+        <%= product.summary %>
+      </div>
       <p class="product_links"><%= link_to 'Learn more ->', product.url, target: '_blank' %></p>
     </fieldset>
   <% end %>
