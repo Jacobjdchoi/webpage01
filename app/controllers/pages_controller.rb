@@ -39,5 +39,4 @@ class PagesController < ApplicationController
     @attachments = Attachment.all
   end
 
-
 end
