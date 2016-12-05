@@ -17,64 +17,66 @@
               <% end %>
           </div>
           <div class="large-12 columns">
-              <label>Select Menu
-                <select>
-                  <option value="Select">Please Select One</option>
-                  <option value="Slipring">Slipring</option>
-                  <option value="Motor">Motor</option>
-                  <option value="Blower">Blower</option>
-                  <option value="Actuator">Actuator</option>
-                  <option value="Terminal">Terminal</option>
-                  <option value="Cable">Cable</option>
-                  <option value="Connector">Connector</option>
-                </select>
+              <label><%= t('.select_menu') %>
+                <%= f.grouped_collection_select :topic, Brand.all, :product_types, :name, :name, :name, include_blank: true %>
               </label>
           </div>
-          <div class="large-12 columns specs">
-              <fieldset class="slipring">
-                <input type="text" class="slipringname" placeholder="slipringname">
-              </fieldset>
-              <fieldset class="motor">
-                <input type="text" class="motorname" placeholder="motorname">
-              </fieldset>
-              <fieldset class="blower">
-                <input type="text" class="blowername" placeholder="blowername">
-              </fieldset>
-              <fieldset class="actuator">
-                <input type="text" class="actuatorname" placeholder="actuatorname">
-              </fieldset>
-              <fieldset class="terminal">
-                <input type="text" class="terminalname" placeholder="terminalname">
-              </fieldset>
-              <fieldset class="cable">
-                <input type="text" class="cablename" placeholder="cablename">
-              </fieldset>
-              <fieldset class="connector">
-                <input type="text" class="connectorname" placeholder="connectorname">
-              </fieldset>
-          </div>
+          <fieldset class="large-12 columns slipring_options">
+            <p>Slip Ring Design Option Request</p>
+            <div class="large-4 columns">
+              <%= f.label :amp %>
+              <%= f.text_field :amp %>
+            </div>
+            <div class="large-4 columns">
+              <%= f.label :ckts %>
+              <%= f.text_field :ckts %>
+            </div>
+            <div class="large-4 columns">
+              <%= f.label :rpm %>
+              <%= f.text_field :rpm %>
+            </div>
+            <div class="large-4 columns">
+              <%= f.label :bore, "Bore?" %>
+              <%= f.check_box :bore %>
+            </div>
+            <div class="large-8 columns">
+              <label for="ethernet">Ethernet?
+              <div class="ethernet options">
+                <label for="100BaseT">100 Base T
+                <input data-value="100BaseT" id="100BaseT" type="checkbox" name="100BaseT">
+                </label>
+              </div>
+              <div class="ethernet options">
+                <label for="1000BaseT">1000 Base T
+                <input data-value="1000BaseT" id="1000BaseT" type="checkbox" name="1000BaseT">
+                </label>
+              </div>
+              </label>
+              <%= f.hidden_field :ethernet %>
+            </div>
+          </fieldset>
           <div class="large-4 columns">
               <div>
                   <label for="name"><%= t(".email.name") %></label>
-                  <%= f.text_field :name %>
+                  <%= f.text_field :name, required: true %>
               </div>
           </div>
           <div class="large-4 columns">
               <div>
                   <label for="company"><%= t(".email.company") %></label>
-                  <%= f.text_field :company %>
+                  <%= f.text_field :company, required: true %>
               </div>
           </div>
           <div class="large-4 columns">
               <div>
                   <label for="email"><%= t(".email.email") %></label>
-                  <%= f.email_field :email %>
+                  <%= f.email_field :email, required: true %>
               </div>
           </div>
           <div class="large-12 columns">
               <div>
                   <label for="body"><%= t(".email.message") %></label>
-                  <%= f.text_area :body %>
+                  <%= f.text_area :body, required: true %>
               </div>
               <div class="contact actions">
                   <%= f.submit "#{t('.email.submitButton')}", :class => "button" %>
@@ -89,17 +91,22 @@
 </div>
 <script>
     $(document).on('change', 'select', function() {
-      var options = ['slipring', 'motor', 'blower', 'actuator', 'terminal', 'cable', 'connector'];
       var value = $(this).val().toLowerCase();
-      for (i = 0; i < options.length; i++) {
-      	var target = $('fieldset.' + options[i]),
-        notTarget = $('fieldset').not(target);
-        switch (value) {
-          case options[i]:
-            target.addClass('show');
-            notTarget.removeClass('show');
-            break;
-        }
+      if( value == "slip rings" ){
+        $('fieldset.slipring_options').addClass('show');
+      } else {
+        $('fieldset.slipring_options').removeClass('show');
       }
+    });
+    $(document).on('turbolinks:load', function(){
+      $('form#new_contact').submit(function(e){
+          if ($('input:checkbox[id=100BaseT]').is(':checked')) {
+            $('#contact_ethernet').val($('#contact_ethernet').val() + "100 Base T;");
+          }
+          if ($('input:checkbox[id=1000BaseT]').is(':checked')) {
+            $('#contact_ethernet').val($('#contact_ethernet').val() + "1000 Base T;");
+          }
+      return true;
+      });
     });
 </script>

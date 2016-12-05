@@ -4,7 +4,14 @@ class ContactMailer < ApplicationMailer
   def contact_created(contact)
     mail(to: ENV['ADMIN_EMAIL'],
       subject: '샘트라 웹페이지 컨택',
-      body: "[성명: #{contact.name}]\n[소속회사: #{contact.company}]\n[이메일주소: #{contact.email}]\n내용:\n #{contact.body}"
+      body: "[성명: #{contact.name}]\n
+      [소속회사: #{contact.company}]\n
+      [이메일주소: #{contact.email}]\n
+      [문의주제: #{contact.topic}]\n
+      [amp:#{contact.amp}][ckts:#{contact.ckts}][rpm:#{contact.rpm}]\n
+      [bore?:#{contact.bore}][ehthernet?:#{contact.ethernet}]\n
+      문의사항:\n
+      #{contact.body}"
     )
   end
 
@@ -14,5 +21,5 @@ class ContactMailer < ApplicationMailer
       # body:
     )
   end
-  
+
 end

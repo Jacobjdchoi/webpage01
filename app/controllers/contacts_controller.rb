@@ -22,6 +22,6 @@ private
   end
 
   def contact_params
-    params.require(:contact).permit(:name, :email, :company, :body)
+    params.require(:contact).permit(:name, :email, :company, :body, :topic, :ckts, :amp, :rpm, :bore, :ethernet)
   end
 end

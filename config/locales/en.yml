@@ -82,16 +82,17 @@ en:
       title: "Contact us"
       callUs: "Call us"
       telInfo: "Telephone number"
+      select_menu: "Please Select Topic"
       email:
         leaveAnEmail: "Or Leave an E-Mail"
-        name: "Your name"
-        company: "Your company"
-        email: "Your E-mail address"
-        message: "Message"
+        name: "Full Name"
+        company: "Company Name"
+        email: "E-mail Address"
+        message: "How may we help you?"
         submitButton: "Submit!"
     saved:
-      title: "Email has been successfully sent!"
-      message: "Thank you for contacting us. We will get back to you soon."
+      title: "The message has been sent successfully!"
+      message: "Thank you for contacting us. We will get back to you as soon as possible."
   articles:
     index:
       title: "News"

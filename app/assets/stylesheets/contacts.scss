@@ -12,7 +12,12 @@ div.contact.row{
         text-align: center;
     }
 }
-
+#contact_body{
+    height: 7rem;
+}
+fieldset.slipring_options {
+    display: none;
+}
 .show {
     display: inline-block !important;
 }
