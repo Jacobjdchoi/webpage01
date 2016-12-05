@@ -86,27 +86,6 @@
     </div>
     <div class="large-4 columns">
       <p>전화번호</p>
-      <q>이메일주소</q>
+      <p>이메일주소</p>
     </div>
 </div>
-<script>
-    $(document).on('change', 'select', function() {
-      var value = $(this).val().toLowerCase();
-      if( value == "slip rings" ){
-        $('fieldset.slipring_options').addClass('show');
-      } else {
-        $('fieldset.slipring_options').removeClass('show');
-      }
-    });
-    $(document).on('turbolinks:load', function(){
-      $('form#new_contact').submit(function(e){
-          if ($('input:checkbox[id=100BaseT]').is(':checked')) {
-            $('#contact_ethernet').val($('#contact_ethernet').val() + "100 Base T;");
-          }
-          if ($('input:checkbox[id=1000BaseT]').is(':checked')) {
-            $('#contact_ethernet').val($('#contact_ethernet').val() + "1000 Base T;");
-          }
-      return true;
-      });
-    });
-</script>
