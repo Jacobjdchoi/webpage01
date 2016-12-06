@@ -46,11 +46,11 @@
               </ul>
             </li>
             <li class="divider-vertical"></li>
+            <li><%= link_to t(".products.title"), pb_path %></li>
+            <li class="divider-vertical"></li>
             <li><%= link_to t(".markets.title"), allMarkets_path %></li>
             <li class="divider-vertical"></li>
             <li><%= link_to t(".customers"), customers_path %></li>
-            <li class="divider-vertical"></li>
-            <li><%= link_to t(".products.title"), pb_path %></li>
             <li class="divider-vertical"></li>
             <li><%= link_to t(".articles"), articles_path %></li>
             <li class="divider-vertical"></li>
@@ -60,7 +60,12 @@
             <li><%= link_to t(".downloads"), downloads_path %></li>
           <% end %>
             <li class="divider-vertical"></li>
-            <li><a><i class="fa fa-search" aria-hidden="true"></i></a></li>
+            <li>
+            <a><i class="fa fa-search web_search_button" aria-hidden="true"></i></a>
+            </li>
+            <%= form_tag search_path, method: :get, class: "top_bar_search_from" do %>
+              <%= text_field_tag :query, params[:query], class: "top_bar_search_input" %>
+            <% end %>
           </ul>
         </div><!--top bar menu-->
       </nav><!--nav bar web view-->
@@ -94,18 +99,25 @@
                 <li><%= link_to t(".aboutUs"), about_us_path %></i>
                 <li><%= link_to t(".history"), history_path %></li>
                 <li><%= link_to t(".ceoLetter"), ceo_letter_path %></li>
-                <li><%= link_to t(".customers"), customers_path %></li>
+                <li><%= link_to t(".locations"), locations_path %></li>
+                <li><%= link_to t(".careers"), careers_path %></li>
               </ul>
             </li>
-            <li><%= link_to t(".markets.title"), allMarkets_path %></li>
             <li><%= link_to t(".products.title"), pb_path %></li>
+            <li><%= link_to t(".markets.title"), allMarkets_path %></li>
+            <li><%= link_to t(".customers"), customers_path %></li>
             <li><%= link_to t(".articles"), articles_path %></li>
-            <li><%= link_to t(".locations"), locations_path %></li>
-            <li><%= link_to t(".careers"), careers_path %></li>
             <li><%= link_to t(".contactUs"), new_contact_path %></li>
           <% if request.path.include?('/ko') %>
             <li><%= link_to t(".downloads"), downloads_path %></li>
           <% end %>
+            <li>
+              <%= form_tag search_path, method: :get, class: "mobile_search_form" do %>
+                <%= text_field_tag :query, params[:query], class: "mobile_search_input" %>
+                <input class="mobile_search_button" type="submit" value="" class="mobile_search_button" >
+                <i class="fa fa-search "></i>
+              <% end %>
+            </li>
           </ul><!--vertical menu-->
         </div><!--off canvs position left-->
         <div class="off-canvas-content" data-off-canvas-content><!--below this line is the canvas area -->

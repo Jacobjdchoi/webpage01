@@ -4,7 +4,7 @@
     <thead>
       <tr>
         <th>File Name</th>
-        <th>Open With New Tab</th>
+        <th>Open In New Tab</th>
         <th>Download</th>
       </tr>
     </thead>
@@ -12,8 +12,16 @@
       <% @attachments.each do |attachment| %>
         <tr>
           <td><%= attachment.file_path.to_s.split('/').last %></td>
-          <td><%= link_to 'open with new tab', attachment.file_path.url, target: '_blank' %></td>
-          <td><%= link_to 'Download', attachment.file_path.url, download: attachment.file_path.to_s.split('/').last %> </td>
+          <td>
+            <%= link_to attachment.file_path.url, target: '_blank' do %>
+              <i class="fa fa-external-link" aria-hidden="true"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to attachment.file_path.url, download: attachment.file_path.to_s.split('/').last do%>
+              <i class="fa fa-download" aria-hidden="true"></i>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>

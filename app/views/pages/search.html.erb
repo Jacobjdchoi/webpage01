@@ -1,0 +1,67 @@
+<h2>Search results for <%= @query %></h2>
+<div class="12-large columns search_results_area">
+  <% if @brands.present? %>
+    <div class="search_result brands">
+      <h4>Brands</h4>
+      <% @brands.each do |brand| %>
+        <p><%= link_to brand.name, pb_pt_path(brand.product_types.first) %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @product_types.present? %>
+    <div class="search_result product_types">
+      <h5>Product Categories</h5>
+      <% @product_types.each do |product_type| %>
+        <p><%= link_to product_type.name, pb_pt_path(product_type) %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @products.present? %>
+    <div class="search_result products">
+      <h4>Products</h4>
+      <% @products.each do |product| %>
+        <p><%= link_to product.name, pb_pt_path(product.product_type) %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @attachments.present? %>
+    <div class="search_result attachments">
+      <h4>Attachments</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>File Name</th>
+            <th>Open In New Tab</th>
+            <th>Download</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @attachments.each do |attachment| %>
+          <tr>
+              <td><%= attachment.file_path.to_s.split('/').last %></td>
+              <td>
+                <%= link_to attachment.file_path.url, target: '_blank' do %>
+                  <i class="fa fa-external-link" aria-hidden="true"></i>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to attachment.file_path.url, download: attachment.file_path.to_s.split('/').last do%>
+                  <i class="fa fa-download" aria-hidden="true"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  <% end %>
+  <% if @articles.present? %>
+    <div class="search_result articles">
+      <h4>Articles</h4>
+      <% @articles.each do |article| %>
+        <p><%= link_to article.title, article_path(article) %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     get 'pages/careers' => 'pages#careers', as: 'careers'
     get 'pages/locations' => 'pages#locations', as: 'locations'
     get 'pages/downloads' => 'pages#downloads', as: 'downloads'
+    get 'pages/search' => 'pages#search', as: 'search'
 
     # markets
     get 'markets/markets' => 'markets#index', as: 'allMarkets'

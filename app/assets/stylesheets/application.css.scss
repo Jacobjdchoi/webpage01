@@ -185,6 +185,14 @@ ul.language.menu li a {
         }
     }
 }
+.mobile_search_form{
+    .mobile_search_input {
+        width: 90% ;
+        margin: 0 5%;
+        border-radius: 1.5rem;
+        padding: 0 1rem;
+    }
+}
 footer {
     height: 6rem;
     background-color: #001641;
