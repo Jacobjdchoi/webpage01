@@ -5,13 +5,14 @@
       <% @brands.each.with_index do |brand, index| %>
         <section class="brand_items" id="<%= index %>">
           <div class="brand_logo_and_name">
-            <%= link_to pb_pt_path(brand.product_types.first) do  %>
+            <a>
               <div class="brand_logo">
                 <% brand.photos.each do |photo| %>
                   <%= image_tag photo.pics.url(:logo) %>
                 <% end %>
               </div>
-            <% end %>
+              <i class="fa fa-chevron-down hide-for-large drop_sign" aria-hidden="true"></i>
+            </a>
           </div>
           <%= image_tag brand.background_pic.url(:raw), class: 'background_pics' %>
           <div class="product_types_list_area">
@@ -26,17 +27,3 @@
     </accordion>
   </div>
 </div>
-<script>
-  $(document).on('mouseenter', '.brand_items', function(){
-    var target = $(this),
-        not_target = $('.brand_items').not(target);
-      target.addClass('open-horizontal');
-      not_target.addClass('close-horizontal');
-  });
-  $(document).on('mouseleave', '.brand_items', function(){
-    var target = $(this),
-        not_target = $('.brand_items').not(target);
-      target.removeClass('open-horizontal');
-      not_target.removeClass('close-horizontal');
-  });
-</script>

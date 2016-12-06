@@ -12,46 +12,47 @@ $imp: !important;
 .product_browser_title{
   text-align: center;
 }
-.open-horizontal{
-  width: 40% $imp;
-  .brand_logo_and_name{
-    .brand_logo{
-      img{
-        left: 10px $imp;
-        transform: translateX(0) $imp;
-      }
-    }
-  }
-  .product_types_list_area{
-    background-color: rgba(0,0,0,0.7) $imp;
-    .product_type_list {
-      .product_type_items{
-        opacity: 1 $imp;
-      }
-    }
-  }
-}
-.close-horizontal{
-  width: 15% $imp;
-  .brand_logo_and_name{
-    .brand_logo{
-      img{
-        left: 50% $imp;
-        transform: translateX(-50%) $imp;
-      }
-    }
-  }
-  .product_types_list_area{
-    background-color: rgba(0,0,0,0) $imp;
-    .product_type_list {
-      .product_type_items{
-        opacity: 0 $imp;
-      }
-    }
-  }
-}
+
 // Web view
 @media only screen and (min-width: 64.063em) {
+  .open-horizontal{
+    width: 40% $imp;
+    .brand_logo_and_name{
+      .brand_logo{
+        img{
+          left: 10px $imp;
+          transform: translateX(0) $imp;
+        }
+      }
+    }
+    .product_types_list_area{
+      background-color: rgba(0,0,0,0.7) $imp;
+      .product_type_list {
+        .product_type_items{
+          opacity: 1 $imp;
+        }
+      }
+    }
+  }
+  .close-horizontal{
+    width: 15% $imp;
+    .brand_logo_and_name{
+      .brand_logo{
+        img{
+          left: 50% $imp;
+          transform: translateX(-50%) $imp;
+        }
+      }
+    }
+    .product_types_list_area{
+      background-color: rgba(0,0,0,0) $imp;
+      .product_type_list {
+        .product_type_items{
+          opacity: 0 $imp;
+        }
+      }
+    }
+  }
   // Browser page
   .browser_container{
     @include wah(100%, 450px);
@@ -220,39 +221,84 @@ $imp: !important;
 
 // Mobile view
 @media only screen and (max-width: 64rem){
+  .open-vertical {
+    height: 15rem !important;
+  }
   .browser_container{
-    @include wah(100%, 500px);
+    @include wah(100%, auto);
     //product_type activated------
     .index_container{
-      @include wah(100%,100%);
+      @include wah(100%, auto);
       display: inline-block;
-      .brands_index {
+      accordion.brands_index {
         @include wah(100%, auto);
         float: left;
         padding: 0 0.25rem;
-        display: flex;
-        // flex-wrap: wrap;
-        .brand_items{
-          //width: 24%;
-          flex: 1;
-          @include wah($height: 10rem);
-          //position: absolute;
-          //top: 0;
-          //right: 0;
-          //left: 0;
-          //bottom: 0;
-          margin: 0.5%;
-          padding: 5px;
-          border-radius: 5px;
+        section.brand_items{
+          @include wah($height: 5rem);
+          padding: 0.5rem;
+          margin: 0.5rem 0;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid gray;
+          transition: all 0.5s;
           .brand_logo_and_name{
-            .brand_logo{
-            }
-            .brand_name{
+            @include wah(100%, 4rem);
+            // border-top: solid 1px gray; border-right:;
+            // border-left: ;
+            position: relative;
+            a{
+              display: block;
+              @include wah(100%, 100%);
+              .brand_logo{
+                position: absolute;
+                top: 0;
+                left: 0;
+                // transform: translateX(-50%);
+                height: 100%;
+                img {
+                  height: 100%;
+                  width: auto;
+                }
+              }
+              i.drop_sign{
+                font-size: 2.5rem;
+                position: absolute;
+                right: 0;
+                top: 0.6rem;
+                width: 2.5rem;
+                height: 2.5rem;
+                vertical-align: bottom;
+                color: gray;
+                &:before {
+                  transition: all 0.5s;
+                }
+              }
             }
           }
+          img.background_pics {
+            display: none;
+          }
           .product_type_list_area{
+            background-color: rgba(0,0,0,0.7);
+            height: 9.5rem;
+            width: 100%;
+            margin-top: 0.5rem;
             .product_type_list{
+              list-style: none;
+              display: block;
+              width: 100%;
+              margin: 0;
+              height: 100%;
+              padding: 1rem;
               .product_type_items{
+                float: left;
+                display: block;
+                width: 50%;
+                margin: 1px 0;
+                a{
+                  color: white;
+                }
               }
             }
           }

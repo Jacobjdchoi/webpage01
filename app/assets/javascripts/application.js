@@ -27,12 +27,12 @@ $(document).on('turbolinks:load', function() {
     });
   // body's padding-top adjusts according to the size of the nav bar.
   if ($('#title-bar').css('display') !== "none"){
-    // mobile
+// mobile
     $('#header').css('display', 'none');
     var titleBarHeight = $("#title-bar").outerHeight();
     $("#pageYield, #offCanvasLeft").css('padding-top', titleBarHeight + 16);
   } else {
-    // webview
+// webview
     var headerHeight = $('#header').outerHeight();
     $("#pageYield").css('padding-top', headerHeight + 16);
     $('#header').css('display', 'initial');
