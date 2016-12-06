@@ -27,33 +27,16 @@
   <% if @attachments.present? %>
     <div class="search_result attachments">
       <h4>Attachments</h4>
-      <table>
+      <table class="attachments-table">
         <thead>
           <tr>
-            <th>File Name</th>
-            <th>Open In New Tab</th>
-            <th>Download</th>
+            <th class="attachments-file-name">File Name</th>
+            <th class="attachments-actions">Open In New Tab</th>
+            <th class="attachments-actions">Download</th>
           </tr>
         </thead>
-        <tbody>
-          <% @attachments.each do |attachment| %>
-          <tr>
-              <td><%= attachment.file_path.to_s.split('/').last %></td>
-              <td>
-                <%= link_to attachment.file_path.url, target: '_blank' do %>
-                  <i class="fa fa-external-link" aria-hidden="true"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to attachment.file_path.url, download: attachment.file_path.to_s.split('/').last do%>
-                  <i class="fa fa-download" aria-hidden="true"></i>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
+        <%= render '/shared/attachments_body.html.erb' %>
       </table>
-
     </div>
   <% end %>
   <% if @articles.present? %>

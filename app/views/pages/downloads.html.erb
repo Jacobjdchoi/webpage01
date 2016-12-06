@@ -1,29 +1,19 @@
 <h2 class="page-title"><%= t(".title") %></h2>
-<div class="12-large columns">
-  <table>
+<div class="12-large columns downloads_page">
+  <%= form_tag downloads_search_path, method: :get, class: "downloads_search_form", remote: true do %>
+    <%= text_field_tag :query, params[:query], class: "downloads_search_input" %>
+    <button class="downloads_search_submit">
+      <i class="fa fa-search"></i>
+    </button>
+  <% end %>
+  <table class="attachments-table">
     <thead>
       <tr>
-        <th>File Name</th>
-        <th>Open In New Tab</th>
-        <th>Download</th>
+        <th class="attachments-file-name">File Name</th>
+        <th class="attachments-actions">Open In New Tab</th>
+        <th class="attachments-actions">Download</th>
       </tr>
     </thead>
-    <tbody>
-      <% @attachments.each do |attachment| %>
-        <tr>
-          <td><%= attachment.file_path.to_s.split('/').last %></td>
-          <td>
-            <%= link_to attachment.file_path.url, target: '_blank' do %>
-              <i class="fa fa-external-link" aria-hidden="true"></i>
-            <% end %>
-          </td>
-          <td>
-            <%= link_to attachment.file_path.url, download: attachment.file_path.to_s.split('/').last do%>
-              <i class="fa fa-download" aria-hidden="true"></i>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
+    <%= render '/shared/attachments_body.html.erb' %>
   </table>
 </div>

@@ -1,0 +1,4 @@
+$('form.downloads_search_form').bind('ajax:success', function(){
+  var tbody = $('tbody');
+  tbody.replaceWith("<%= j render('/shared/attachments_body.html.erb')%>");
+});

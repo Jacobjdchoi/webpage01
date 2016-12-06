@@ -38,26 +38,40 @@ class PagesController < ApplicationController
   def downloads
     @attachments = Attachment.all
   end
+  def downloads_search
+    @query = params[:query]
+    @attachments_array = []
+    unless params[:query].strip.blank?
+      @query.split(' ').map{|q| "%#{q}%"}.each do |split_query|
+        Attachment.where("file_path LIKE ?",split_query).each {|obj| @attachments_array << obj}
+      end
+    else
+      @attachments_array = Attachment.all
+    end
+    @attachments = @attachments_array.uniq
+    respond_to do |format|
+      format.js
+    end
+  end
 
   def search
     @query = params[:query]
-    @q = "%#{@query}%"
     @product_types_array = []
     @brands_array = []
     @products_array = []
     @attachments_array = []
     @articles_array = []
     # first filter
-    @q.split(' ').each do |split_query|
-      ProductType.where("name LIKE ?", "%#{split_query}%").each {|obj| @product_types_array << obj }
-      Brand.where("name LIKE ?", "%#{split_query}%").each {|obj| @brands_array << obj}
+    @query.split(' ').map{|q| "%#{q}%"}.each do |split_query|
+      ProductType.where("name LIKE ?", split_query).each {|obj| @product_types_array << obj }
+      Brand.where("name LIKE ?", split_query).each {|obj| @brands_array << obj}
       Product.includes(:translations).
         where(product_translations: {locale: params[:locale]}).
-        where("product_translations.name LIKE ?", "%#{split_query}%").each {|obj| @products_array << obj}
-      Attachment.where("file_path LIKE ?", "%#{split_query}%").each {|obj| @attachments_array << obj}
+        where("product_translations.name LIKE ?", split_query).each {|obj| @products_array << obj}
+      Attachment.where("file_path LIKE ?", split_query).each {|obj| @attachments_array << obj}
       Article.includes(:translations).
         where(article_translations: {locale: params[:locale]}).
-        where("article_translations.title LIKE ?", "%#{split_query}%").each {|obj| @articles_array << obj}
+        where("article_translations.title LIKE ?", split_query).each {|obj| @articles_array << obj}
     end
     # outcome
     @product_types = @product_types_array.uniq

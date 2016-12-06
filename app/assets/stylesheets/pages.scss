@@ -14,6 +14,72 @@
     width: $width !important;
     height: $height !important;
 }
+// Search page
+.search_results_area {
+    min-height: 500px;
+}
+// Download page serach form
+.downloads_page{
+    min-height: 500px;
+}
+.downloads_search_form {
+    width: 100%; height: 3rem;
+    padding: 0.5rem 0;
+    position: relative;
+    .downloads_search_input{
+        width: 100%; height: 2rem;
+        border-radius: 1rem;
+        padding: 0 1rem;
+        position: absolute;
+        top: 0.5rem; right: 0;
+        bottom: 0.5rem; left: 0;
+    }
+    .downloads_search_submit {
+        width: 2rem; height: 2rem;
+        position: absolute;
+        top: 0.5rem; right: 0.5rem;
+        bottom: 0.5rem;
+    }
+}
+
+// Attachments table style
+.attachments-table {
+    width: 100%; height: auto;
+    thead{
+        tr {
+            .attachments-file-name{ width: 80%;}
+            .attachments-actions { width: 10%; text-align: center;}
+        }
+    }
+    tbody{
+        .attachments-items {
+            .attachments-file-name{
+                width: 80%;
+                text-align: left;
+                text-indent: 0.5rem;
+            }
+            .attachments-actions {
+                width: 10%;
+                text-align: center;
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &:hover {
+                background: #003092;
+                color: white;
+                font-weight: bold;
+                .attachments-actions{
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
 //all pages
 .photo-area {
     .contents{
@@ -23,7 +89,7 @@
         .page-title, .page-title-ceoLetter{
             color: white;
             font-weight: bold;
-        }   
+        }
     }
 }
 //homepage
@@ -33,8 +99,8 @@
         margin-top: 0.5rem !important;
         margin-bottom: 0rem !important;
         padding-bottom: 0.5rem;
-        
-    }    
+
+    }
 }
 .orbit.homepage {
     @include photo-ratio(45%);
@@ -45,11 +111,11 @@
                 @include widthAndHeight(100%, 100%);
             }
             div{
-                
+
                 a {
                     color: white;
                     size: 16px;
-                }    
+                }
             }
         }
     }
