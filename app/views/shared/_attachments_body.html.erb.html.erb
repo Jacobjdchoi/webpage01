@@ -1,7 +1,9 @@
 <tbody>
   <% @attachments.each do |attachment| %>
     <tr  class="attachments-items">
-      <td class="attachments-file-name"><%= attachment.file_path.to_s.split('/').last %></td>
+      <td class="attachments-file-name">
+        <%= attachment.file_path.to_s.split('/').last.gsub!(/_/, ' ') %>
+      </td>
       <td class="attachments-actions">
         <%= link_to attachment.file_path.url, target: '_blank' do %>
           <i class="fa fa-external-link" aria-hidden="true"></i>

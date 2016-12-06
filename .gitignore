@@ -19,5 +19,5 @@
 .env
 
 /public/uploads/*
-
+/public/catalogues
 .DS_Store

@@ -16,4 +16,7 @@
     </thead>
     <%= render '/shared/attachments_body.html.erb' %>
   </table>
+  <div id="paginator">
+    <%= paginate @attachments, remote: true %>
+  </div>
 </div>

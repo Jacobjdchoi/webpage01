@@ -1,4 +1,6 @@
 $('form.downloads_search_form').bind('ajax:success', function(){
-  var tbody = $('tbody');
+  var tbody = $('tbody'),
+      paginator = $('#paginator');
   tbody.replaceWith("<%= j render('/shared/attachments_body.html.erb')%>");
+  paginator.html('<%= j (paginate(@attachments, :remote => true).to_s) %>');
 });

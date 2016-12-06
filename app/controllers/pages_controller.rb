@@ -36,19 +36,29 @@ class PagesController < ApplicationController
   end
 
   def downloads
-    @attachments = Attachment.all
+    @attachments = Attachment.all.page(params[:page]).per(10)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   def downloads_search
     @query = params[:query]
     @attachments_array = []
     unless params[:query].strip.blank?
+      #first filter
+
+      #second filter
       @query.split(' ').map{|q| "%#{q}%"}.each do |split_query|
         Attachment.where("file_path LIKE ?",split_query).each {|obj| @attachments_array << obj}
       end
     else
       @attachments_array = Attachment.all
     end
-    @attachments = @attachments_array.uniq
+    @attachments_array.sort_by! do |obj|
+      -(obj.file_path.to_s.downcase.tap{|str| str.slice!(".pdf")}.split('/').last.split('_').map{|str| str.singularize} & @query.downcase.split(" ").map{|str| str.singularize}).count
+    end
+    @attachments = Kaminari.paginate_array(@attachments_array.uniq).page(params[:page]).per(10)
     respond_to do |format|
       format.js
     end

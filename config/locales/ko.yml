@@ -87,3 +87,10 @@ ko:
   brands:
     show_products:
       instruction: "제품이름을 선택하시면 세부정보를 보실 수 있습니다."
+  views:
+    pagination:
+      truncate: "…"
+      next: "다음 페이지"
+      last: "마지막 페이지"
+      previous: "이전 페이지"
+      first: "첫 페이지"

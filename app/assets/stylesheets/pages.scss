@@ -19,6 +19,17 @@
     min-height: 500px;
 }
 // Download page serach form
+#paginator{
+    width: 100%;
+    nav.pagination{
+        display: table;
+        width: 100%;
+        text-align: center;
+        span {
+            display: inline-block;
+        }
+    }
+}
 .downloads_page{
     min-height: 500px;
 }
