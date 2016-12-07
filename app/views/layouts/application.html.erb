@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SamTra International</title>
     <%= favicon_link_tag 'favicon.png' %>
-    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
     <!--[if lt IE 9]>
+      <%= stylesheet_link_tag    "foundation-ie8-grid" %>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
       <script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
       <script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
     <![endif]-->
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
   </head>
 
   <body>
@@ -64,12 +65,12 @@
           <% end %>
             <li class="divider-vertical"></li>
             <li class="menu_items">
-              <a class="web_search_button" id="web_search_button"><i class="fa fa-search" aria-hidden="true"></i></a>
+              <a class="web_search_button" id="web_search_button"><span class="icomoon" data-icon="&#xeb36;"></span></a>
             </li>
             <%= form_tag search_path, method: :get, class: "top_bar_search_form" do %>
               <%= text_field_tag :query, params[:query], class: "top_bar_search_input" %>
               <button type="submit", class="top_bar_search_submit">
-                <i class="fa fa-search"></i>
+                <span class="icomoon" data-icon="&#xeb36;"></span>
               </button>
             <% end %>
           </ul>
@@ -121,7 +122,7 @@
               <%= form_tag search_path, method: :get, class: "mobile_search_form" do %>
                 <%= text_field_tag :query, params[:query], class: "mobile_search_input" %>
                 <button class="mobile_search_submit" type="submit">
-                  <i class="fa fa-search "></i>
+                  <span class="icomoon" data-icon="&#xeb36;"></span>
                 </button>
               <% end %>
             </li>
@@ -167,5 +168,6 @@
         </div>
       </div>
     </footer>
+    <%= javascript_include_tag "rem.min", 'data-turbolinks-track' => true %>
   </body>
 </html>

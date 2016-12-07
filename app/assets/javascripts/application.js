@@ -5,8 +5,9 @@
 //= require foundation
 //= require turbolinks
 //= require jquery.Jcrop
-//= require_tree ../../../vendor/assets/rempolyfill/js
+
 //= require_tree .
+//= stub rem.min
 
 $(document).on('turbolinks:load', function() {
   // foundation

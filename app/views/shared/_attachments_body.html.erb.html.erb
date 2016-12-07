@@ -6,12 +6,13 @@
       </td>
       <td class="attachments-actions">
         <%= link_to attachment.file_path.url, target: '_blank' do %>
-          <i class="fa fa-external-link" aria-hidden="true"></i>
+          <span class="icomoon" data-icon="&#xeec9;"></span>
         <% end %>
       </td>
       <td class="attachments-actions">
         <%= link_to attachment.file_path.url, download: attachment.file_path.to_s.split('/').last do%>
           <i class="fa fa-download" aria-hidden="true"></i>
+          <span class="icomoon" data-icon="&#xec8b;"></span>
         <% end %>
       </td>
     </tr>
