@@ -30,7 +30,8 @@ $(document).on('turbolinks:load', function() {
 // mobile
     $('#header').css('display', 'none');
     var titleBarHeight = $("#title-bar").outerHeight();
-    $("#pageYield, #offCanvasLeft").css('padding-top', titleBarHeight + 16);
+    $("#pageYield").css('padding-top', titleBarHeight + 16);
+    $("#offCanvasLeft").css('padding-top', titleBarHeight);
   } else {
 // webview
     var headerHeight = $('#header').outerHeight();

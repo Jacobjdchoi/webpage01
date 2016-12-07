@@ -17,6 +17,7 @@
     -ms-user-select: none;
     user-select: none;
     outline: none;
+    font-family: 'sans-serif';
 }
 @font-face {
     font-family: 'IcoMoon-Ultimate';
@@ -96,10 +97,15 @@ body{
                     transition: margin-top 0.5s;
                     text-align: left !important;
                     li.submenu_items {
-                        height: 1.5rem;
-                        line-height: 1.5rem;
-                        display: table-cell;
+                        height: 2rem;
+                        line-height: 2rem;
+                        display: block;
                         a {
+                            display: block;
+                            text-align: left;
+                            line-height: 2rem;
+                            width: 100%;
+                            height: 100%;
                             &:hover {
                                 color: #111111 !important;
                                 background: linear-gradient(#ffffff,#fafafa,#e0e0e0);
@@ -182,7 +188,7 @@ body{
             ul.dropdown.menu {
                 bottom: 0.5rem;
                 li #top-bar-dropdown-menu {
-                    margin-top: 1.5rem;
+                    margin-top: 1.25rem;
                 }
             }
         }
