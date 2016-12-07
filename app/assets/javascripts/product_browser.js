@@ -1,6 +1,6 @@
-$(document).one('turbolinks:load', function() {
+var readyPB;
+readyPB = function (){
   var windowWidth = $(window).outerWidth();
-
   if ( windowWidth <= 1024 ){
   // mobile
   //console.log('small');
@@ -30,5 +30,7 @@ $(document).one('turbolinks:load', function() {
       not_target.removeClass('close-horizontal');
     });
   }
-});
-
+};
+$(document).one('turbolinks:load', readyPB);
+$(document).one('page:load', readyPB);
+$(document).ready(readyPB);

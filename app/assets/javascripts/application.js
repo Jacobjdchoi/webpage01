@@ -5,11 +5,10 @@
 //= require foundation
 //= require turbolinks
 //= require jquery.Jcrop
-
 //= require_tree .
-//= stub rem.min
-
-$(document).on('turbolinks:load', function() {
+//= stub rem
+var ready;
+ready = function(){
   // foundation
   $(function(){ $(document).foundation(); });
   // text editor
@@ -38,20 +37,22 @@ $(document).on('turbolinks:load', function() {
     var headerHeight = $('#header').outerHeight();
     $("#pageYield").css('padding-top', headerHeight + 16);
     $('#header').css('display', 'initial');
-    // hide and show language list on top-bar on scroll
-    $(document).on('scroll', function(){
-      if ($(this).scrollTop() > 0) {
-        $('#header').addClass('scrolldown-header');
-        $('#language-menu').fadeOut(500);
-      } else {
-        $('#header').removeClass('scrolldown-header');
-        $('#language-menu').fadeIn(500);
-      }
-    });
+  }
+}
+$(document).on('turbolinks:load', ready);
+$(document).on('page:load', ready);
+$(document).ready(ready);
+
+// hide and show language list on top-bar on scroll
+$(document).on('scroll', function(){
+  if ($(this).scrollTop() > 0) {
+    $('#header').addClass('scrolldown-header');
+    $('#language-menu').fadeOut(500);
+  } else {
+    $('#header').removeClass('scrolldown-header');
+    $('#language-menu').fadeIn(500);
   }
 });
-
-
 // Web Search
 $(document).on('click', '#web_search_button', function(){
   $('form.top_bar_search_form').addClass('show_search');

@@ -168,6 +168,9 @@
         </div>
       </div>
     </footer>
-    <%= javascript_include_tag "rem.min", 'data-turbolinks-track' => true %>
+    <!--[if lt IE 9]>
+    <%= javascript_include_tag "rem", 'data-turbolinks-track' => true %>
+    <![endif]-->
+    <!--<script src="https://rawgit.com/doctyper/flexie/master/src/flexie.js"></script>-->
   </body>
 </html>
