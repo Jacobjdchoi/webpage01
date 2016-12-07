@@ -80,6 +80,4 @@ gem 'globalize-accessors'
 # devise
 gem 'devise-i18n'
 
-gem "font-awesome-rails"
-
 gem "kaminari"

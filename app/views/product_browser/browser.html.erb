@@ -11,7 +11,9 @@
                   <%= image_tag photo.pics.url(:logo) %>
                 <% end %>
               </div>
-              <span class="icomoon hide-for-large drop_sign" data-icon="&#xedc0;"></span>
+              <div class="drop_sign_area hide-for-large">
+                <span class="icomoon drop_sign" data-icon="&#xedc0;"></span>
+              </div>
             </a>
           </div>
           <%= image_tag brand.background_pic.url(:raw), class: 'background_pics' %>

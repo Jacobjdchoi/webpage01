@@ -5,7 +5,6 @@
  *= require_self
  *= require foundation_and_overrides
  */
-@import "font-awesome";
 
 *{
     box-sizing: border-box;
@@ -24,7 +23,7 @@
     font-family: 'IcoMoon-Ultimate';
     src: font-url('/assets/IcoMoon-Ultimate.eot'); /* ie */
     src: font-url('/assets/IcoMoon-Ultimate.eot?#iefix'), /* ie 9+ */
-         font-url('/assets/IcoMoon-Ultimate.ttf') format("truetype"); 
+         font-url('/assets/IcoMoon-Ultimate.ttf') format("truetype");
 }
 .icomoon:before{
     font-family: 'IcoMoon-Ultimate';
