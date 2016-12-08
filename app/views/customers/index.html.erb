@@ -6,7 +6,7 @@
         <div>
           <div class="customer-logo-and-name" data-style="display: flex;">
             <% customer.photos.each do |photo| %>
-              <%= image_tag photo.pics.url(:logo), class: 'customer-logo' %>
+              <%= image_tag photo.pics.url(:logo), class: 'customer-logo', style: "-ms-transform: translateY(-50%);" %>
             <% end %>
           </div>
         </div>

@@ -42,10 +42,37 @@ ready = function(){
     $("#pageYield").css('padding-top', headerHeight + 16);
     $('#header').css('display', 'initial');
   }
-}
+  var windowWidth = $(window).outerWidth();
+  if ( windowWidth <= 1024 ){
+  // mobile
+    $(document.body).on('click', '.brand_logo_and_name a', function(){
+      console.log("clicked");
+      var target = $(this).closest('section.brand_items'),
+          not_target = $('section').not(target);
+      target.toggleClass('open-vertical');
+      not_target.removeClass('open-vertical');
+    });
+  }
+  if ( windowWidth > 1024 ) {
+  //web
+    $(document.body).on('mouseenter', '.brand_items', function(){
+      console.log('mouse entered');
+      var target = $(this),
+          not_target = $('.brand_items').not(target);
+      target.addClass('open-horizontal');
+      not_target.addClass('close-horizontal');
+    });
+    $(document.body).on('mouseleave', '.brand_items', function(){
+      console.log('mouse left');
+      var target = $(this),
+          not_target = $('.brand_items').not(target);
+      target.removeClass('open-horizontal');
+      not_target.removeClass('close-horizontal');
+    });
+  }
+};
 $(document).on('turbolinks:load', ready);
-$(document).on('page:load', ready);
-$(document).ready(ready);
+$(document).on('page:load ready', ready);
 
 // hide and show language list on top-bar on scroll
 $(document).on('scroll', function(){

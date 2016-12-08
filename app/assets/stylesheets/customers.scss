@@ -34,6 +34,7 @@
                         img.customer-logo {
                             width: 89.5%;
                             position: absolute;
+                            -ms-transform: translateY(-50%);
                             transform: translateY(-50%);
                             top: 50% !important;
                             height: auto !important;

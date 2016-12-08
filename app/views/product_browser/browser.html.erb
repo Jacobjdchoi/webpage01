@@ -8,7 +8,7 @@
             <a>
               <div class="brand_logo">
                 <% brand.photos.each do |photo| %>
-                  <%= image_tag photo.pics.url(:logo) %>
+                  <%= image_tag photo.pics.url(:logo), style: "-ms-transform: translateX(-50%);" %>
                 <% end %>
               </div>
               <div class="drop_sign_area hide-for-large">
@@ -29,3 +29,8 @@
     </accordion>
   </div>
 </div>
+<!--[if lte IE 9]>
+  <style>
+    .open-horizontal .brand_logo_and_name .brand_logo img {-ms-transform: translateX(0) !important;}
+  </style>
+<![endif]-->
