@@ -93,7 +93,6 @@ ready = function() {
 };
 $(document).on('turbolinks:load', ready);
 
-
 // contact us page select
 $(document.body).delegate('select', 'change', function() {
     var value = $(this).val().toLowerCase();
