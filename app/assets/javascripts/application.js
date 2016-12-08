@@ -7,8 +7,12 @@
 //= require jquery.Jcrop
 //= require_tree .
 //= stub rem
+
+
 var ready;
 ready = function(){
+  flexibility(document.body);
+  
   // foundation
   $(function(){ $(document).foundation(); });
   // text editor

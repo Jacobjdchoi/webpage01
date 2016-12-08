@@ -8,18 +8,15 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-      <%= stylesheet_link_tag    "foundation-ie8-grid" %>
+    <!--[if lte IE 9]>
+      <%= stylesheet_link_tag "foundation-ie8-grid" %>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
       <script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
       <script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
     <![endif]-->
-    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
   </head>
-
   <body>
-  <%# console %>
     <!-- Webview fixed navbar  -->
     <div class="header" id="header">
       <nav class="top-bar show-for-large main"><!--Webview nav-->
@@ -69,7 +66,7 @@
             </li>
             <%= form_tag search_path, method: :get, class: "top_bar_search_form" do %>
               <%= text_field_tag :query, params[:query], class: "top_bar_search_input" %>
-              <button type="submit", class="top_bar_search_submit">
+              <button type="submit" class="top_bar_search_submit">
                 <span class="icomoon" data-icon="&#xeb36;"></span>
               </button>
             <% end %>
@@ -103,7 +100,7 @@
             <li>
               <a><%= t(".about") %></a>
               <ul class="menu vertical nested">
-                <li><%= link_to t(".aboutUs"), about_us_path %></i>
+                <li><%= link_to t(".aboutUs"), about_us_path %></li>
                 <li><%= link_to t(".history"), history_path %></li>
                 <li><%= link_to t(".ceoLetter"), ceo_letter_path %></li>
                 <li><%= link_to t(".locations"), locations_path %></li>
@@ -168,9 +165,8 @@
         </div>
       </div>
     </footer>
-    <!--[if lt IE 9]>
-    <%= javascript_include_tag "rem", 'data-turbolinks-track' => true %>
+    <!--[if lte IE 9]>
+      <%= javascript_include_tag "rem", 'data-turbolinks-track' => true %>
     <![endif]-->
-    <!--<script src="https://rawgit.com/doctyper/flexie/master/src/flexie.js"></script>-->
   </body>
 </html>

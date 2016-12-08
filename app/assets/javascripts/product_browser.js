@@ -30,6 +30,7 @@ readyPB = function (){
       not_target.removeClass('close-horizontal');
     });
   }
+  
 };
 $(document).one('turbolinks:load', readyPB);
 $(document).one('page:load', readyPB);

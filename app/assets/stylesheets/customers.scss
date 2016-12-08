@@ -8,8 +8,8 @@
         min-height: 30rem;
         .customer-index-container {
             width: 100%;
+            -js-display: flex;
             display: flex;
-            
             flex-wrap: wrap;
             .customer-box{
                 width: 14%;
@@ -21,18 +21,24 @@
                     margin: 3%;
                     border: 2px solid #bfbfbf;
                     border-radius: 5px;
+                    height: 0 !important;
                     .customer-logo-and-name {
-                        position: absolute;
+                        position: absolute !important;
                         top: 0;
                         right: 0;
                         bottom: 0;
                         left: 0;
+                        height: auto !important;
+                        width: auto !important;
+                        border: none !important;
                         padding: 2%;
                         img.customer-logo {
                             width: 96%;
                             position: absolute;
                             transform: translateY(-50%);
-                            top: 50%;
+                            top: 50% !important;
+                            height: auto !important;
+                            margin-top: 0 !important;
                         }
                         .customer-name {
                             width: 96%;
@@ -63,6 +69,7 @@
         min-height: 30rem;
         .customer-index-container {
             width: 100%;
+            -js-display: flex;
             display: flex;
             flex-wrap: wrap;
             .customer-box{
@@ -75,12 +82,16 @@
                     margin: 3%;
                     border: 2px solid #bfbfbf;
                     border-radius: 5px;
+                    height: 0 !important;
                     .customer-logo-and-name {
-                        position: absolute;
+                        position: absolute !important;
                         top: 0;
                         right: 0;
                         bottom: 0;
                         left: 0;
+                        height: auto !important;
+                        width: auto !important;
+                        border: none !important;
                         padding: 2%;
                         img.customer-logo {
                             width: 96%;
