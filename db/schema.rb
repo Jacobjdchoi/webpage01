@@ -124,17 +124,6 @@ ActiveRecord::Schema.define(version: 20161205090538) do
     t.string   "images_type"
   end
 
-  create_table "product_translations", force: :cascade do |t|
-    t.integer  "product_id", null: false
-    t.string   "locale",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "summary"
-    t.string   "name"
-    t.index ["locale"], name: "index_product_translations_on_locale"
-    t.index ["product_id"], name: "index_product_translations_on_product_id"
-  end
-
   create_table "product_types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false

@@ -13,11 +13,6 @@ ko:
       locations: "위치"
       downloads: "다운로드"
       markets:
-        allMarkets: "활동시장"
-        automotive: "오토모티브"
-        industrialMachinery: "산업기계"
-        medical: "의료"
-        military: "군수"
         title: "주요시장"
       products:
         allProducts: "모든 제품"
@@ -94,3 +89,16 @@ ko:
       last: "마지막 페이지"
       previous: "이전 페이지"
       first: "첫 페이지"
+  product_browser:
+    product_types:
+      learnmore: "더 보기"
+  markets:
+    index:
+      marketHeader1: "우주항공 & 군수"
+      marketHeader2: "공업 & 산업"
+      marketHeader3: "자동차"
+      marketHeader4: "의료"
+      marketSummary1: ""
+      marketSummary2: ""
+      marketSummary3: ""
+      marketSummary4: ""

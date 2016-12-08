@@ -1,29 +1,35 @@
-<h1>Markets</h1>
+<h2 class="page-title"><%= t(".title") %></h2>
 <accordion class="markets_index">
     <section class="market_items">
-        <h5>Aerospace&Defense</h5>
+        <h5 class="market_header"><%= t(".marketHeader1") %></h5>
+        <div class="market_summary_area">
+            <div class="market_summary">
+                <%= t('.marketSummary1') %>
+            </div>
+        </div>
     </section>
     <section class="market_items">
-        <h5>Industrial</h5>
+        <h5 class="market_header"><%= t(".marketHeader2") %></h5>
+        <div class="market_summary_area">
+            <div class="market_summary">
+                <%= t('.marketSummary2') %>
+            </div>
+        </div>
     </section>
     <section class="market_items">
-        <h5>Automotive</h5>
+        <h5 class="market_header"><%= t(".marketHeader3") %></h5>
+        <div class="market_summary_area">
+            <div class="market_summary">
+                <%= t('.marketSummary3') %>
+            </div>
+        </div>
     </section>
     <section class="market_items">
-        <h5>Medical</h5>
+        <h5 class="market_header"><%= t(".marketHeader4") %></h5>
+        <div class="market_summary_area">
+            <div class="market_summary">
+                <%= t('.marketSummary4') %>
+            </div>
+        </div>
     </section>
 </accordion>
-<script>
-    $(document).on('mouseenter', '.market_items', function(){
-        var target = $(this),
-            not_target = $('.market_items').not(target);
-        target.addClass('open-horizontal-market');
-        not_target.addClass('close-horizontal-market');
-    });
-    $(document).on('mouseleave', '.market_items', function(){
-        var target = $(this),
-            not_target = $('.market_items').not(target);
-        target.removeClass('open-horizontal-market');
-        not_target.removeClass('close-horizontal-market');
-    });
-</script>

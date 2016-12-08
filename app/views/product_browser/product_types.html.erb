@@ -25,11 +25,11 @@
         <% end %>
       </div>
       <div class="product_details">
-        <%= product.summary %>
+        <%= product.summary.html_safe %>
       </div>
       <p class="product_links">
         <%= link_to product.url, target: '_blank' do %>
-          Learn More <i class="fa fa-external-link"></i>
+          <%= t(".learnmore") %> <span class="icomoon" data-icon="&#xeec9;"></span>
         <% end %>
       </p>
     </fieldset>

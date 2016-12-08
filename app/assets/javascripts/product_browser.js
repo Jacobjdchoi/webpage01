@@ -3,7 +3,6 @@ readyPB = function (){
   var windowWidth = $(window).outerWidth();
   if ( windowWidth <= 1024 ){
   // mobile
-  //console.log('small');
     $(document).on('click', '.brand_logo_and_name a', function(){
       console.log("clicked");
       var target = $(this).closest('section.brand_items'),
@@ -14,7 +13,6 @@ readyPB = function (){
   }
   if ( windowWidth > 1024 ) {
   //web
-  //console.log("large");
     $(document).on('mouseenter', '.brand_items', function(){
       console.log('mouse entered');
       var target = $(this),
@@ -30,8 +28,6 @@ readyPB = function (){
       not_target.removeClass('close-horizontal');
     });
   }
-  
 };
-$(document).one('turbolinks:load', readyPB);
-$(document).one('page:load', readyPB);
-$(document).ready(readyPB);
+$(document).on('turbolinks:load', readyPB);
+// $(document).on('ready page:load', readyPB);

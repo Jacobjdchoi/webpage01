@@ -75,9 +75,7 @@ class PagesController < ApplicationController
     @query.split(' ').map{|q| "%#{q}%"}.each do |split_query|
       ProductType.where("name LIKE ?", split_query).each {|obj| @product_types_array << obj }
       Brand.where("name LIKE ?", split_query).each {|obj| @brands_array << obj}
-      Product.includes(:translations).
-        where(product_translations: {locale: params[:locale]}).
-        where("product_translations.name LIKE ?", split_query).each {|obj| @products_array << obj}
+      Product.where("name LIKE ?", split_query).each {|obj| @products_array << obj}
       Attachment.where("file_path LIKE ?", split_query).each {|obj| @attachments_array << obj}
       Article.includes(:translations).
         where(article_translations: {locale: params[:locale]}).

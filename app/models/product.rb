@@ -4,9 +4,9 @@ class Product < ActiveRecord::Base
   has_many :photos, as: :images, dependent: :destroy
   has_many :subproducts
 
-  # globalize
-  translates :name, :string
-  translates :summary, :text
-  # globalize form attr
-  globalize_accessors attributes: [:name, :summary]
+  # # globalize
+  # translates :name, :string
+  # translates :summary, :text
+  # # globalize form attr
+  # globalize_accessors attributes: [:name, :summary]
 end

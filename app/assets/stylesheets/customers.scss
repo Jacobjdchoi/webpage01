@@ -31,14 +31,14 @@
                         height: auto !important;
                         width: auto !important;
                         border: none !important;
-                        padding: 2%;
                         img.customer-logo {
-                            width: 96%;
+                            width: 89.5%;
                             position: absolute;
                             transform: translateY(-50%);
                             top: 50% !important;
                             height: auto !important;
                             margin-top: 0 !important;
+                            padding: 5%;
                         }
                         .customer-name {
                             width: 96%;
@@ -53,13 +53,6 @@
             }
         }
     }
-}
-
-//new action
-.customer-logo-field, .customer-name-field {
-}
-.customer-submit-field {
-
 }
 
 @media only screen and (max-width: 64rem){
@@ -92,20 +85,21 @@
                         height: auto !important;
                         width: auto !important;
                         border: none !important;
-                        padding: 2%;
                         img.customer-logo {
-                            width: 96%;
+                            width: 89.5%;
                             position: absolute;
                             transform: translateY(-50%);
-                            top: 50%;
+                            top: 50% !important;
+                            padding: 5%;
                         }
                         .customer-name {
-                            width: 96%;
+                            width: 89%;
                             text-align: center;
                             margin-top: 0.5rem;
                             font-weight: bold;
                             position: absolute;
                             bottom: 0;
+                            padding: 5%;
                         }
                     }
                 }
