@@ -1,27 +1,30 @@
 @mixin photo-ratio($ratio) {
-  width: 100%;
-  padding-top: $ratio;
-  position: relative;
-  > .contents {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
+    width: 100%;
+    padding-top: $ratio;
+    position: relative;
+    > .contents {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
 }
+
 @mixin widthAndHeight($width, $height) {
     width: $width !important;
     height: $height !important;
 }
+
 // Search page
 .search_results_area {
     min-height: 500px;
 }
+
 // Download page serach form
-#paginator{
+#paginator {
     width: 100%;
-    nav.pagination{
+    nav.pagination {
         display: table;
         width: 100%;
         text-align: center;
@@ -30,41 +33,55 @@
         }
     }
 }
-.downloads_page{
+
+.downloads_page {
     min-height: 500px;
 }
+
 .downloads_search_form {
-    width: 100%; height: 3rem;
+    width: 100%;
+    height: 3rem;
     padding: 0.5rem 0;
     position: relative;
-    .downloads_search_input{
-        width: 100%; height: 2rem;
+    .downloads_search_input {
+        width: 100%;
+        height: 2rem;
         border-radius: 1rem;
         padding: 0 1rem;
         position: absolute;
-        top: 0.5rem; right: 0;
-        bottom: 0.5rem; left: 0;
+        top: 0.5rem;
+        right: 0;
+        bottom: 0.5rem;
+        left: 0;
     }
     .downloads_search_submit {
-        width: 2rem; height: 2rem;
+        width: 2rem;
+        height: 2rem;
         position: absolute;
-        top: 0.5rem; right: 0.5rem;
+        top: 0.5rem;
+        right: 0.5rem;
         bottom: 0.5rem;
     }
 }
 
 // Attachments table style
 .attachments-table {
-    width: 100%; height: auto;
-    thead{
+    width: 100%;
+    height: auto;
+    thead {
         tr {
-            .attachments-file-name{ width: 80%;}
-            .attachments-actions { width: 10%; text-align: center;}
+            .attachments-file-name {
+                width: 80%;
+            }
+            .attachments-actions {
+                width: 10%;
+                text-align: center;
+            }
         }
     }
-    tbody{
+    tbody {
         .attachments-items {
-            .attachments-file-name{
+            .attachments-file-name {
                 width: 80%;
                 text-align: left;
                 text-indent: 0.5rem;
@@ -82,7 +99,7 @@
                 background: #003092;
                 color: white;
                 font-weight: bold;
-                .attachments-actions{
+                .attachments-actions {
                     a {
                         color: white;
                     }
@@ -91,18 +108,21 @@
         }
     }
 }
+
 //all pages
 .photo-area {
-    .contents{
+    .contents {
         img {
-            @include widthAndHeight(100%,100%);
+            @include widthAndHeight(100%, 100%);
         }
-        .page-title, .page-title-ceoLetter{
+        .page-title,
+        .page-title-ceoLetter {
             color: white;
             font-weight: bold;
         }
     }
 }
+
 //homepage
 .info_area.homepage {
     display: inherit;
@@ -110,19 +130,18 @@
         margin-top: 0.5rem !important;
         margin-bottom: 0rem !important;
         padding-bottom: 0.5rem;
-
     }
 }
+
 .orbit.homepage {
     @include photo-ratio(45%);
     margin-bottom: 0.75rem;
-    .contents{
+    .contents {
         li {
             img.orbit-image {
                 @include widthAndHeight(100%, 100%);
             }
-            div{
-
+            div {
                 a {
                     color: white;
                     size: 16px;
@@ -145,22 +164,25 @@
 }
 
 //locations page
-.locations-photo{
+.locations-photo {
     @include widthAndHeight(100%, 15rem);
-    img{
+    img {
         @include widthAndHeight(100%, 100%);
     }
 }
+
 h1.locations {
     padding-left: 0.625rem;
     padding-right: 0.625rem;
 }
+
 .locations.address {
     user-select: text;
     -moz-user-select: text;
     -webkit-user-select: text;
     -ms-user-select: text;
 }
+
 .gMap-area {
     width: 100%;
     margin-bottom: 1rem;
@@ -168,9 +190,11 @@ h1.locations {
         @include widthAndHeight(100%, 20rem);
     }
 }
+
 .gMapsArea {
-   // overflow: auto;
+    // overflow: auto;
 }
+
 //ceoLetter
 .ceoLetter-body {
     margin: 1rem 0;
@@ -178,19 +202,21 @@ h1.locations {
         font-size: 1rem;
         line-height: 1.5rem;
     }
-    strong{
+    strong {
         font-size: 1rem;
         line-height: 1.5rem;
     }
 }
 
 //media queries (foundation limits)
+
 /* Small only */
+
 @media screen and (max-width: 39.9375em) {
-    .photo-area{
+    .photo-area {
         @include photo-ratio(30%);
         > .contents {
-            > .page-title-ceoLetter{
+            > .page-title-ceoLetter {
                 font-size: 1.5rem;
                 line-height: 1.5rem;
                 margin-top: -2.5rem;
@@ -206,12 +232,14 @@ h1.locations {
     }
 }
 
+
 /* Medium only */
+
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-    .photo-area{
+    .photo-area {
         @include photo-ratio(25%);
         > .contents {
-            > .page-title-ceoLetter{
+            > .page-title-ceoLetter {
                 font-size: 3rem;
                 line-height: 3rem;
                 margin-top: -4rem;
@@ -227,12 +255,14 @@ h1.locations {
     }
 }
 
+
 /* Large and up */
+
 @media screen and (min-width: 64em) {
-    .photo-area{
+    .photo-area {
         @include photo-ratio(25%);
         > .contents {
-            > .page-title-ceoLetter{
+            > .page-title-ceoLetter {
                 font-size: 4rem;
                 line-height: 4rem;
                 margin-top: -5rem;

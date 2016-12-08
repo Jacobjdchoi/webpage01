@@ -6,7 +6,7 @@
  *= require foundation_and_overrides
  */
 
-*{
+* {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -19,13 +19,13 @@
     outline: none;
     font-family: 'sans-serif';
 }
+
 @font-face {
     font-family: 'IcoMoon-Ultimate';
-    src: font-url('/assets/IcoMoon-Ultimate.eot'); /* ie */
-    src: font-url('/assets/IcoMoon-Ultimate.eot?#iefix'), /* ie 9+ */
-         font-url('/assets/IcoMoon-Ultimate.ttf') format("truetype");
+    src: font-url('/assets/IcoMoon-Ultimate.ttf') format("truetype");
 }
-.icomoon:before{
+
+.icomoon:before {
     font-family: 'IcoMoon-Ultimate';
     content: attr(data-icon);
     speak: none;
@@ -35,25 +35,31 @@
     -webkit-font-smoothing: antialiased;
     color: inherit;
 }
-body{
+
+body {
     background-color: #eeeeee;
 }
-.alert, .notice {
+
+.alert,
+.notice {
     float: left;
 }
+
 .main {
     max-width: 60rem;
-    &#pageYield{
+    &#pageYield {
         padding-right: 0.25rem;
         padding-left: 0.25rem;
         height: auto;
         overflow: hidden;
     }
 }
+
 .title-bar.hide-for-large.row {
     margin-left: 0;
     margin-right: 0;
 }
+
 .header {
     background-color: white;
     box-shadow: rgb(222, 222, 222) 0px 0px 5px;
@@ -72,9 +78,9 @@ body{
             height: 100%;
             margin: 0;
             transition: padding 0.5s;
-            .top-bar-logo{
+            .top-bar-logo {
                 height: 100%;
-                a .logo-samtra{
+                a .logo-samtra {
                     height: 100%;
                 }
             }
@@ -82,7 +88,7 @@ body{
         .top-bar-left {
             width: 70%;
             height: 100%;
-            float:right;
+            float: right;
             position: relative;
             ul.dropdown.menu {
                 position: absolute;
@@ -93,7 +99,7 @@ body{
                 transition: bottom 0.5s;
                 text-align: right;
                 display: table;
-                li ul.vertical.submenu{
+                li ul.vertical.submenu {
                     margin-top: 0.75rem;
                     transition: margin-top 0.5s;
                     text-align: left !important;
@@ -109,18 +115,17 @@ body{
                             height: 100%;
                             &:hover {
                                 color: #111111 !important;
-                                background: linear-gradient(#ffffff,#fafafa,#e0e0e0);
+                                background: linear-gradient(#ffffff, #fafafa, #e0e0e0);
                             }
                         }
                     }
-
                 }
                 li.menu_items {
                     height: 1.5rem;
-                    line-height:1.5rem;
+                    line-height: 1.5rem;
                     display: table-cell;
                     text-align: center;
-                    a{
+                    a {
                         height: inherit;
                         line-height: inherit;
                         padding: 0 0.8rem;
@@ -130,17 +135,18 @@ body{
                         }
                     }
                 }
-                .top_bar_search_form{
+                .top_bar_search_form {
                     width: 100%;
                     height: 100%;
                     padding: 0.5rem 0;
                     position: absolute;
-                    top: 0; right: 0;
+                    top: 0;
+                    right: 0;
                     bottom: 0;
                     z-index: -10;
                     opacity: 0;
                     transition: all 1s;
-                    .top_bar_search_input{
+                    .top_bar_search_input {
                         height: 100% !important;
                         width: 99% !important;
                         float: left;
@@ -182,6 +188,7 @@ body{
         }
     }
 }
+
 .scrolldown-header {
     height: 4rem;
     .top-bar {
@@ -198,11 +205,14 @@ body{
         }
     }
 }
+
 //Capitalize dropdown menus in general
-ul.dropdown li a, #top-bar-dropdown-menu li a {
+ul.dropdown li a,
+#top-bar-dropdown-menu li a {
     color: gray !important;
     font-size: 15px;
 }
+
 ul.dropdown li {
     a {
         padding: 0 1rem;
@@ -211,24 +221,25 @@ ul.dropdown li {
         padding: 0.75rem;
     }
 }
+
 ul.language.menu li a {
     color: gray !important;
     padding: 0 1rem;
 }
-
-
 
 .divider-vertical {
     width: 1px !important;
     height: 100% !important;
     border-right: 1px solid #dddddd;
 }
+
 .divider-horizontal {
     height: 1px !important;
     width: 100% !important;
     display: block !important;
     border-bottom: 1px solid #dddddd;
 }
+
 .title-bar {
     width: 100%;
     height: 3rem;
@@ -249,7 +260,7 @@ ul.language.menu li a {
         line-height: 1rem;
         height: 100%;
         display: inline-block;
-        a .logo-samtra{
+        a .logo-samtra {
             height: 100%;
         }
     }
@@ -268,31 +279,38 @@ ul.language.menu li a {
         }
     }
 }
-.mobile_search_form{
+
+.mobile_search_form {
     position: relative;
-    width: 100%; height: 3rem;
+    width: 100%;
+    height: 3rem;
     padding: 0.5rem 0;
     .mobile_search_input {
-        width: 90%; height: 2rem;
+        width: 90%;
+        height: 2rem;
         margin: 0 5%;
         border-radius: 1.5rem;
         padding: 0 1rem;
         position: absolute;
-        left: 0; right: 0;
+        left: 0;
+        right: 0;
     }
-    .mobile_search_submit{
+    .mobile_search_submit {
         position: absolute;
-        width: 2rem; height: 2rem;
-        top: 0.5rem; right: 1rem;
+        width: 2rem;
+        height: 2rem;
+        top: 0.5rem;
+        right: 1rem;
         bottom: 0.5rem;
     }
 }
+
 footer {
     height: 6rem;
     background-color: #001641;
     color: white;
     .row.main {
-        .the_best_taxpayer{
+        .the_best_taxpayer {
             width: 6rem;
             float: left;
             padding: 0.5rem;
@@ -302,9 +320,9 @@ footer {
         }
         .misc.menu {
             float: right;
-            .quick_links{
+            .quick_links {
                 float: right;
-                .quick_links_menu{
+                .quick_links_menu {
                     width: 24rem;
                     height: 5rem;
                     span {
@@ -314,7 +332,7 @@ footer {
                     li {
                         width: 33.3%;
                         float: left;
-                        a{
+                        a {
                             color: white;
                         }
                     }
@@ -323,38 +341,47 @@ footer {
         }
     }
 }
+
 a:hover {
     background-color: transparent;
     color: black;
 }
-.logo-samtra, .logo-international {
+
+.logo-samtra,
+.logo-international {
     font-family: "Times New Roman";
 }
+
 .logo-samtra {
     font-size: 50px;
     line-height: 50px;
     color: #0044cc;
     font-weight: bold;
 }
+
 .logo-international {
     font-size: 33.5px;
     color: black;
 }
+
 .logo-samtra.small {
     font-size: 31.5px;
     line-height: 16px;
     color: #0044cc;
     font-weight: bold;
 }
+
 .logo-international.small {
     font-size: 19px;
     color: black;
 }
+
 .off-canvas-content {
     margin-top: -1rem;
 }
+
 //navigation withing pages (markets/products)
-.navWIPages{
+.navWIPages {
     list-style: none;
     width: 100%;
     text-align: left;
@@ -365,18 +392,23 @@ a:hover {
         }
     }
 }
-.show_search{
+
+.show_search {
     z-index: 10 !important;
     opacity: 1 !important;
 }
+
 //global
 .content-container {
     padding: 0.5rem;
 }
+
 #text_field {
     user-select: initial;
 }
-input, textarea {
+
+input,
+textarea {
     user-select: text;
     -webkit-webkit-user-select: text;
     -moz-webkit-user-select: text;
@@ -384,7 +416,8 @@ input, textarea {
     -o-webkit-user-select: text;
     webkit-user-select: text;
 }
-.flash_message{
+
+.flash_message {
     width: 100%;
     height: 50px;
     background: black;

@@ -1,22 +1,25 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 //articles index
 .content-container.articles {
-    table.articles-index{
+    table.articles-index {
         margin: 0.5rem 0;
-        tbody tr .articles-td-title, tbody tr .articles-td-date {
+        tbody tr .articles-td-title,
+        tbody tr .articles-td-date {
             width: 75%;
         }
-        thead tr .articles-th-title, thead th .articles-th-date {
+        thead tr .articles-th-title,
+        thead th .articles-th-date {
             width: 25%;
         }
     }
 }
+
 //article show
 .content-container.articles {
-    .article-title, .article-date {
+    .article-title,
+    .article-date {
         margin: 0.5rem 0;
     }
     .article-title {
@@ -26,5 +29,4 @@
         font-style: italic;
         color: gray;
     }
-    
 }

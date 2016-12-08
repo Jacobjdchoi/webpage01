@@ -1,9 +1,7 @@
-// Place all the styles related to the customers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-@media only screen and (min-width: 64.063em){
+
+@media only screen and (min-width: 64.063em) {
     //index
-    .content-container{
+    .content-container {
         width: 100%;
         min-height: 30rem;
         .customer-index-container {
@@ -11,9 +9,9 @@
             -js-display: flex;
             display: flex;
             flex-wrap: wrap;
-            .customer-box{
+            .customer-box {
                 width: 14%;
-                display:block;
+                display: block;
                 content: '';
                 position: relative;
                 div {
@@ -56,9 +54,9 @@
     }
 }
 
-@media only screen and (max-width: 64rem){
+@media only screen and (max-width: 64rem) {
     //index
-    .content-container{
+    .content-container {
         width: 100%;
         min-height: 30rem;
         .customer-index-container {
@@ -66,9 +64,9 @@
             -js-display: flex;
             display: flex;
             flex-wrap: wrap;
-            .customer-box{
+            .customer-box {
                 width: 33%;
-                display:block;
+                display: block;
                 content: '';
                 position: relative;
                 div {

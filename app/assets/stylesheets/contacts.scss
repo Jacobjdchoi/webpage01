@@ -1,7 +1,5 @@
-// Place all the styles related to the Contacts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-div.contact.row{
+
+div.contact.row {
     padding: 0 0.75rem;
     div.specs {
         fieldset {
@@ -12,12 +10,15 @@ div.contact.row{
         text-align: center;
     }
 }
-#contact_body{
+
+#contact_body {
     height: 7rem;
 }
+
 fieldset.slipring_options {
     display: none;
 }
+
 .show {
     display: inline-block !important;
 }

@@ -3,617 +3,325 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // large view!!
 $box-shadow: rgb(148, 148, 148) 0 0 5px;
-$box-shadow-hover: rgb(111,111,111) 0 0 5px;
+$box-shadow-hover: rgb(111, 111, 111) 0 0 5px;
 $imp: !important;
-@mixin wah($width: auto, $height: auto){
-  width: unquote($width);
-  height: unquote($height);
+@mixin wah($width: auto, $height: auto) {
+    width: unquote($width);
+    height: unquote($height);
 }
-.product_browser_title{
-  text-align: center;
+
+.product_browser_title {
+    text-align: center;
 }
 // Web view
 @media only screen and (min-width: 64.063em) {
-  .open-horizontal{
-    width: 40% $imp;
-    .brand_logo_and_name{
-      .brand_logo{
-        img{
-          left: 10px $imp;
-          transform: translateX(0) $imp;
+    .open-horizontal {
+        width: 40% $imp;
+        .brand_logo_and_name {
+            .brand_logo {
+                img {
+                    left: 10px $imp;
+                    transform: translateX(0) $imp;
+                }
+            }
         }
-      }
-    }
-    .product_types_list_area{
-      background-color: rgba(0,0,0,0.7) $imp;
-      .product_type_list {
-        .product_type_items{
-          opacity: 1 $imp;
+        .product_types_list_area {
+            background-color: rgba(0, 0, 0, 0.7) $imp;
+            .product_type_list {
+                .product_type_items {
+                    opacity: 1 $imp;
+                }
+            }
         }
-      }
     }
-  }
-  .close-horizontal{
-    width: 15% $imp;
-    .brand_logo_and_name{
-      .brand_logo{
-        img{
-          left: 50% $imp;
-          transform: translateX(-50%) $imp;
+    .close-horizontal {
+        width: 15% $imp;
+        .brand_logo_and_name {
+            .brand_logo {
+                img {
+                    left: 50% $imp;
+                    transform: translateX(-50%) $imp;
+                }
+            }
         }
-      }
-    }
-    .product_types_list_area{
-      background-color: rgba(0,0,0,0) $imp;
-      .product_type_list {
-        .product_type_items{
-          opacity: 0 $imp;
+        .product_types_list_area {
+            background-color: rgba(0, 0, 0, 0) $imp;
+            .product_type_list {
+                .product_type_items {
+                    opacity: 0 $imp;
+                }
+            }
         }
-      }
     }
-  }
-  // Browser page
-  .browser_container{
-    @include wah(100%, 450px);
-    margin-bottom: 1rem;
-    //product_type activated------
-    .index_container{
-      @include wah(100%,100%);
-      display: inline-block;
-      accordion.brands_index {
-        @include wah(100%, 100%);
-        float: left;
-        padding: 0 0.25rem;
-        section.brand_items{
-          //flex-grow: 1;
-          display: block;
-          float: left;
-          @include wah($width: 20%,$height: 100%);
-          transition: all 0.5s;
-          position: relative;
-          overflow: hidden;
-          .brand_logo_and_name{
-            @include wah(100%, 2.5rem);
-            position: relative;
-            a {
-              @include wah(100%, 100%);
-              display: inline-block;
-              .brand_logo{
-                //text-align: center;
+    // Browser page
+    .browser_container {
+        @include wah(100%, 450px);
+        margin-bottom: 1rem;
+        //product_type activated------
+        .index_container {
+            @include wah(100%, 100%);
+            display: inline-block;
+            accordion.brands_index {
                 @include wah(100%, 100%);
-                border-top: 1px solid;
-                border-left: 1px solid;
-                border-color: lightgray;
-                position: relative;
-                img {
-                  height: 100%;
-                  position: absolute;
-                  left: 50%;
-                  transform: translateX(-50%);
-                  padding: 0.2rem;
-                  transition: all 0.5s;
+                float: left;
+                padding: 0 0.25rem;
+                section.brand_items {
+                    //flex-grow: 1;
+                    display: block;
+                    float: left;
+                    @include wah($width: 20%, $height: 100%);
+                    transition: all 0.5s;
+                    position: relative;
+                    overflow: hidden;
+                    .brand_logo_and_name {
+                        @include wah(100%, 2.5rem);
+                        position: relative;
+                        a {
+                            @include wah(100%, 100%);
+                            display: inline-block;
+                            .brand_logo {
+                                //text-align: center;
+                                @include wah(100%, 100%);
+                                border-top: 1px solid;
+                                border-left: 1px solid;
+                                border-color: lightgray;
+                                position: relative;
+                                img {
+                                    height: 100%;
+                                    position: absolute;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    padding: 0.2rem;
+                                    transition: all 0.5s;
+                                }
+                            }
+                            .brand_name {
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+                    img.background_pics {
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 378px;
+                        height: 410px;
+                        max-width: none;
+                    }
+                    .product_types_list_area {
+                        height: 91%;
+                        background-color: rgba(0, 0, 0, 0);
+                        transition: all 0.5s;
+                        position: relative;
+                        ul.product_type_list {
+                            list-style: none;
+                            opacity: 1;
+                            line-height: 2rem;
+                            transition: all 1s;
+                            padding-left: 2rem;
+                            overflow: hidden;
+                            .product_type_items {
+                                opacity: 0;
+                                transition: all 0.5s;
+                                width: 20rem;
+                                overflow: hidden;
+                                a {
+                                    color: white;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                    &:hover {
+                        flex-grow: 3;
+                        .product_types_list_area {
+                            ul.product_type_list {
+                                opacity: 1;
+                            }
+                        }
+                    }
                 }
-              }
-              .brand_name{
-                font-size: 1.5rem;
-              }
             }
-          }
-          img.background_pics {
-            position: absolute;
-            left: 0; bottom: 0;
-            width: 378px;
-            height: 410px;
-            max-width: none;
-          }
-          .product_types_list_area{
-            height: 91%;
-            background-color: rgba(0,0,0,0);
-            transition: all 0.5s;
-            position: relative;
-            ul.product_type_list{
-              list-style: none;
-              opacity: 1;
-              line-height: 2rem;
-              transition:all 1s;
-              padding-left: 2rem;
-              overflow: hidden;
-              .product_type_items{
-                opacity: 0;
-                transition: all 0.5s;
-                width: 20rem;
-                overflow: hidden;
-                a {
-                  color: white;
-                  font-weight: bold;
-                }
-              }
-            }
-          }
-          &:hover{
-            flex-grow: 3;
-            .product_types_list_area{
-              ul.product_type_list{
-                opacity: 1;
-              }
-            }
-          }
+        }
+    }
+}
 
-        }
-      }
-    }
-  }
-  // Product Type page
-  .brands_nav_area {
-    list-style: none;
-    width: 100%;
-    text-align: right;
-    margin: 0.5rem 0;
-    position: absolute;
-    li {
-      display: inline;
-      &.brand_links {
-        background-color: #ecf2ff;
-        margin: 0.25rem 1rem;
-        padding: 0.25rem 1rem;
-      }
-    }
-  }
-  .brand_logo_header{
-    border-bottom: 3px solid #222222;
-    margin: 0.5rem; padding: 0.4rem 0;
-    .brand_logo {
-      height: 3rem;
-    }
-  }
-  .tab_menu{
-    width: 25%;
-    display: inline-block;
-    float: left;
-    .product_type_list{
-      list-style: none;
-      margin: 0 0 0 0.5rem;
-      .product_type_items{
-        height: auto;
-        border-bottom: 1px solid #333333;
-        padding-left: 0.5rem;
-        font-weight: bold;
-        a {
-          vertical-align: middle;
-          width: 100%;
-          height: 100%;
-          display: block;
-          font-weight: 300;
-          color: #333333;
-        }
-      }
-    }
-  }
-  .products_index {
-    width: 75%;
-    display: inline-block;
-    float: left;
-    padding: 0 1rem;
-    min-height: 500px;
-    .product_type_header{
-      border-bottom: 2px solid #444444;
-      color: #444444;
-      font-weight: 300;
-    }
-    fieldset{
-      h5 {
-        border-bottom: 1px solid #666666;
-        color: #444444;
-        font-weight: 300;
-      }
-      div.product_image_area{
-        position: relative;
-        width: 18.5%;
-        padding-top: 20%;
-        margin: 0 0.75%;
-        float: left;
-        img.product_image {
-          position: absolute;
-          top: 0; right: 0;
-          bottom: 0; left: 0;
-        }
-      }
-      div.product_details {
-        width: 78.5%;
-        margin: 0 0.75%;
-        height: auto;
-        float: left;
-      }
-      .product_links {
-        font-size: 14px;
-        line-height: 1rem;
-        height: 1rem;
-        float: right;
-        a{
-          color: #333333;
-          font-weight: bold;
-        }
-      }
-    }
-  }
-}
-// small screen
-@media only screen and (max-width: 25rem){
-  .open-vertical{
-    height: 23rem !important;
-  }
-  .browser_container{
-    @include wah(100%, auto);
-    //product_type activated------
-    .index_container{
-      @include wah(100%, auto);
-      display: inline-block;
-      accordion.brands_index {
-        @include wah(100%, auto);
-        float: left;
-        padding: 0 0.25rem;
-        section.brand_items{
-          @include wah($height: 5rem);
-          padding: 0.5rem;
-          margin: 0.5rem 0;
-          position: relative;
-          overflow: hidden;
-          border: 1px solid gray;
-          transition: all 0.5s;
-          .brand_logo_and_name{
-            @include wah(100%, 4rem);
-            // border-top: solid 1px gray; border-right:;
-            // border-left: ;
-            position: relative;
-            a{
-              display: block;
-              @include wah(100%, 100%);
-              .brand_logo{
-                position: absolute;
-                top: 0;
-                left: 0;
-                // transform: translateX(-50%);
-                height: 100%;
-                width: 80%;
-                img {
-                  height: 100%;
-                  width: auto;
-                }
-              }
-              .drop_sign_area{
-                width: 2rem;
-                height: 2rem;
-                position: absolute;
-                right: 0;
-                top: 1rem;
-                .drop_sign{
-                  font-size: 2rem;
-                  width: 100%;
-                  height: 100%;
-                  vertical-align: bottom;
-                  color: gray;
-                }
-              }
-            }
-          }
-          img.background_pics {
-            display: none;
-          }
-          .product_types_list_area{
-            background-color: rgba(0,0,0,0.7);
-            height: 17.5rem;
-            width: 100%;
-            margin-top: 0.5rem;
-            .product_type_list{
-              list-style: none;
-              display: block;
-              width: 100%;
-              margin: 0;
-              height: 100%;
-              padding: 1rem;
-              .product_type_items{
-                float: left;
-                display: block;
-                width: 50%;
-                margin: 1px 0;
-                a{
-                  color: white;
-                  font-weight: bold;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  // product types page
-  .brands_nav_area {
-    list-style: none;
-    width: 100%;
-    text-align: center;
-    margin: 0.5rem 0;
-    position: relative;
-    height: 4rem;
-    li {
-      display: block;
-      float: left;
-      height: 1.5rem;
-      &.brand_links_description{
-        display: none;
-      }
-      &.brand_links {
-        background-color: #ecf2ff;
-        margin: 0.25rem 1%;
-        padding: 0.25rem 1rem;
-        width: 31%;
-      }
-    }
-  }
-  .brand_logo_header{
-    border-bottom: 3px solid #222222;
-    margin: 0.5rem; padding: 0.4rem 0;
-    .brand_logo {
-      height: 3rem;
-    }
-  }
-  .tab_menu{
-    width: 100%;
-    display: inline-block;
-    float: left;
-    .product_type_list{
-      list-style: none;
-      margin: 0 0.5rem;
-      .product_type_items{
-        height: auto;
-        border-bottom: 1px solid #333333;
-        padding-left: 0.5rem;
-        font-weight: bold;
-        a {
-          vertical-align: middle;
-          width: 100%;
-          height: 100%;
-          display: block;
-          font-weight: 300;
-          color: #333333;
-        }
-      }
-    }
-  }
-  .products_index {
-    width: 100%;
-    display: inline-block;
-    float: left;
-    padding: 0 1rem;
-    min-height: 500px;
-    .product_type_header{
-      border-bottom: 2px solid #444444;
-      color: #444444;
-      font-weight: 500;
-    }
-    fieldset{
-      h5 {
-        border-bottom: 1px solid #666666;
-        color: #444444;
-        font-weight: 400;
-      }
-      div.product_image_area{
-        position: relative;
-        width: 100%;
-        padding-top: 7.8125rem;
-        margin: 0 0.75% 0.5rem 0.75%;
-        float: left;
-        img.product_image {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          height: 7.8125rem;
-        }
-      }
-      div.product_details {
-        width: 100%;
-        height: auto;
-        float: left;
-      }
-      .product_links {
-        font-size: 14px;
-        line-height: 1rem;
-        height: 1rem;
-        float: right;
-        a{
-          color: #333333;
-          font-weight: bold;
-        }
-      }
-    }
-  }
-}
 // Mobile medium view
-@media only screen and (min-width: 25.01rem) and (max-width: 64rem){
-  .open-vertical {
-    height: 15rem !important;
-  }
-  .browser_container{
-    @include wah(100%, auto);
-    //product_type activated------
-    .index_container{
-      @include wah(100%, auto);
-      display: inline-block;
-      accordion.brands_index {
+@media only screen and (min-width: 25.01rem) and (max-width: 64rem) {
+    .open-vertical {
+        height: 15rem !important;
+    }
+    .browser_container {
         @include wah(100%, auto);
-        float: left;
-        padding: 0 0.25rem;
-        section.brand_items{
-          @include wah($height: 5rem);
-          padding: 0.5rem;
-          margin: 0.5rem 0;
-          position: relative;
-          overflow: hidden;
-          border: 1px solid gray;
-          transition: all 0.5s;
-          .brand_logo_and_name{
-            @include wah(100%, 4rem);
-            position: relative;
-            a{
-              display: block;
-              @include wah(100%, 100%);
-              .brand_logo{
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                img {
-                  height: 100%;
-                  width: auto;
-                }
-              }
-              .drop_sign_area{
-                width: 2.5rem;
-                height: 2.5rem;
-                position: absolute;
-                right: 0;
-                top: 1rem;
-                .drop_sign{
-                  font-size: 2.5rem;
-                  width: 100%;
-                  height: 100%;
-                  vertical-align: bottom;
-                  color: gray;
-                }
-              }
-            }
-          }
-          img.background_pics {
-            display: none;
-          }
-          .product_types_list_area{
-            background-color: rgba(0,0,0,0.7);
-            height: 9.5rem;
-            width: 100%;
-            margin-top: 0.5rem;
-            .product_type_list{
-              list-style: none;
-              display: block;
-              width: 100%;
-              margin: 0;
-              height: 100%;
-              padding: 1rem;
-              .product_type_items{
+        //product_type activated------
+        .index_container {
+            @include wah(100%, auto);
+            display: inline-block;
+            accordion.brands_index {
+                @include wah(100%, auto);
                 float: left;
-                display: block;
-                width: 50%;
-                margin: 1px 0;
-                a{
-                  color: white;
-                  font-weight: bold;
+                padding: 0 0.25rem;
+                section.brand_items {
+                    @include wah($height: 5rem);
+                    padding: 0.5rem;
+                    margin: 0.5rem 0;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid gray;
+                    transition: all 0.5s;
+                    .brand_logo_and_name {
+                        @include wah(100%, 4rem);
+                        position: relative;
+                        a {
+                            display: block;
+                            @include wah(100%, 100%);
+                            .brand_logo {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                img {
+                                    height: 100%;
+                                    width: auto;
+                                }
+                            }
+                            .drop_sign_area {
+                                width: 2.5rem;
+                                height: 2.5rem;
+                                position: absolute;
+                                right: 0;
+                                top: 1rem;
+                                .drop_sign {
+                                    font-size: 2.5rem;
+                                    width: 100%;
+                                    height: 100%;
+                                    vertical-align: bottom;
+                                    color: gray;
+                                }
+                            }
+                        }
+                    }
+                    img.background_pics {
+                        display: none;
+                    }
+                    .product_types_list_area {
+                        background-color: rgba(0, 0, 0, 0.7);
+                        height: 9.5rem;
+                        width: 100%;
+                        margin-top: 0.5rem;
+                        .product_type_list {
+                            list-style: none;
+                            display: block;
+                            width: 100%;
+                            margin: 0;
+                            height: 100%;
+                            padding: 1rem;
+                            .product_type_items {
+                                float: left;
+                                display: block;
+                                width: 50%;
+                                margin: 1px 0;
+                                a {
+                                    color: white;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
         }
-      }
     }
-  }
-  // product types page
-  .brands_nav_area {
-    list-style: none;
-    width: 100%;
-    text-align: center;
-    margin: 0.5rem 0;
-    position: relative;
-    height: 2rem;
-    li {
-      display: block;
-      float: left;
-      height: 1.5rem;
-      &.brand_links_description{
-        display: none;
-      }
-      &.brand_links {
-        background-color: #ecf2ff;
-        margin: 0.25rem 1%;
-        padding: 0.25rem 1rem;
-        width: 18%;
-      }
+}
+
+// small screen
+@media only screen and (max-width: 25rem) {
+    .open-vertical {
+        height: 23rem !important;
     }
-  }
-  .brand_logo_header{
-    border-bottom: 3px solid #222222;
-    margin: 0.5rem; padding: 0.4rem 0;
-    .brand_logo {
-      height: 3rem;
-    }
-  }
-  .tab_menu{
-    width: 25%;
-    display: inline-block;
-    float: left;
-    .product_type_list{
-      list-style: none;
-      margin: 0 0 0 0.5rem;
-      .product_type_items{
-        height: auto;
-        border-bottom: 1px solid #333333;
-        padding-left: 0.5rem;
-        font-weight: bold;
-        a {
-          vertical-align: middle;
-          width: 100%;
-          height: 100%;
-          display: block;
-          font-weight: 300;
-          color: #333333;
+    .browser_container {
+        @include wah(100%, auto);
+        //product_type activated------
+        .index_container {
+            @include wah(100%, auto);
+            display: inline-block;
+            accordion.brands_index {
+                @include wah(100%, auto);
+                float: left;
+                padding: 0 0.25rem;
+                section.brand_items {
+                    @include wah($height: 5rem);
+                    padding: 0.5rem;
+                    margin: 0.5rem 0;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid gray;
+                    transition: all 0.5s;
+                    .brand_logo_and_name {
+                        @include wah(100%, 4rem);
+                        // border-top: solid 1px gray; border-right:;
+                        // border-left: ;
+                        position: relative;
+                        a {
+                            display: block;
+                            @include wah(100%, 100%);
+                            .brand_logo {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                // transform: translateX(-50%);
+                                height: 100%;
+                                width: 80%;
+                                img {
+                                    height: 100%;
+                                    width: auto;
+                                }
+                            }
+                            .drop_sign_area {
+                                width: 2rem;
+                                height: 2rem;
+                                position: absolute;
+                                right: 0;
+                                top: 1rem;
+                                .drop_sign {
+                                    font-size: 2rem;
+                                    width: 100%;
+                                    height: 100%;
+                                    vertical-align: bottom;
+                                    color: gray;
+                                }
+                            }
+                        }
+                    }
+                    img.background_pics {
+                        display: none;
+                    }
+                    .product_types_list_area {
+                        background-color: rgba(0, 0, 0, 0.7);
+                        height: 17.5rem;
+                        width: 100%;
+                        margin-top: 0.5rem;
+                        .product_type_list {
+                            list-style: none;
+                            display: block;
+                            width: 100%;
+                            margin: 0;
+                            height: 100%;
+                            padding: 1rem;
+                            .product_type_items {
+                                float: left;
+                                display: block;
+                                width: 50%;
+                                margin: 1px 0;
+                                a {
+                                    color: white;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
-  .products_index {
-    width: 75%;
-    display: inline-block;
-    float: left;
-    padding: 0 1rem;
-    min-height: 500px;
-    .product_type_header{
-      border-bottom: 2px solid #444444;
-      color: #444444;
-      font-weight: 500;
-    }
-    fieldset{
-      h5 {
-        border-bottom: 1px solid #666666;
-        color: #444444;
-        font-weight: 400;
-      }
-      div.product_image_area{
-        position: relative;
-        width: 18.5%;
-        padding-top: 20%;
-        margin: 0 0.75%;
-        float: left;
-        img.product_image {
-          position: absolute;
-          top: 0; right: 0;
-          bottom: 0; left: 0;
-        }
-      }
-      div.product_details {
-        width: 78.5%;
-        margin: 0 0.75%;
-        height: auto;
-        float: left;
-      }
-      .product_links {
-        font-size: 14px;
-        line-height: 1rem;
-        height: 1rem;
-        float: right;
-        a{
-          color: #333333;
-          font-weight: bold;
-        }
-      }
-    }
-  }
 }

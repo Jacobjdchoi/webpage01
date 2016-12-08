@@ -167,6 +167,19 @@
     </footer>
     <!--[if lte IE 9]>
       <%= javascript_include_tag "rem", 'data-turbolinks-track' => true %>
+      <style>
+        @font-face {
+          font-family: 'IcoMoon-Ultimate';
+          src: font-url('/assets/IcoMoon-Ultimate.eot'); /* ie */
+          src: font-url('/assets/IcoMoon-Ultimate.eot?#iefix'), /* ie 9 */
+        }
+        .open-horizontal .brand_logo_and_name .brand_logo img {
+          -ms-transform: translateX(0) !important;
+        }
+      </style>
+      <script>
+        $(document).on('page:load ready', ready);
+      </script>
     <![endif]-->
   </body>
 </html>
