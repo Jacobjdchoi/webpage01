@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     get 'pages/search' => 'pages#search', as: 'search'
 
     # markets
-    get 'markets/markets' => 'markets#index', as: 'allMarkets'
+    get 'markets/' => 'markets#index', as: 'allMarkets'
 
     # heritages link
     get 'heritages/:heritage' => 'products#index', as: :heritage

@@ -22,4 +22,15 @@ accordion.markets_index {
             padding: 0.25rem;
         }
     }
+    .market_summary_area{
+        ul.marketapps_list{
+            list-style: none;
+            margin: 0;
+            li.marketapps_items{
+                width: 50%;
+                float: left;
+                padding: 1rem;
+            }
+        }
+    }
 }

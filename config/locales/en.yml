@@ -116,11 +116,4 @@ en:
       learnmore: "Learn More"
   markets:
     index:
-      marketHeader1: "Aerospace&Defense"
-      marketHeader2: "Industrial"
-      marketHeader3: "Automotive"
-      marketHeader4: "Medical"
-      marketSummary1: ""
-      marketSummary2: ""
-      marketSummary3: ""
-      marketSummary4: ""
+      title: "Applications"

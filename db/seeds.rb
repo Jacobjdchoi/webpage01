@@ -240,14 +240,16 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
     @customerFIRSTEC = Customer.create(id: 13, name_en: 'FIRSTEC CO. LTD.', name_ko: '퍼스텍')
     @customerYURATech = Customer.create(id: 14, name_en: 'YURA Tech', name_ko: '유라테크')
     @customerSEMIKRON = Customer.create(id: 15, name_en: 'SEMIKRON', name_ko: '세미크론')
-
-
-
-
-
-
-
-
+# Markets
+  @aeromilitrayMarket = Market.create(name_en: "Aerospace & Military", name_ko: "우주항공 & 군수")
+  @industrialMarket = Market.create(name_en: "Industrial", name_ko: "공업 & 산업")
+  @automotiveMarket = Market.create(name_en: "Automotive", name_ko: "자동차")
+  @medicalMarket = Market.create(name_en: "Medical", name_ko: "의료")
+# MarketApps
+  5.times{@aeromilitrayMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}
+5.times{  @industrialMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}
+5.times{  @automotiveMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}
+5.times{  @medicalMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}
 
 
 

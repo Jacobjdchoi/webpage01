@@ -1,35 +1,15 @@
 <h2 class="page-title"><%= t(".title") %></h2>
 <accordion class="markets_index">
+  <% @markets.each do |market| %>
     <section class="market_items">
-        <h5 class="market_header"><%= t(".marketHeader1") %></h5>
-        <div class="market_summary_area">
-            <div class="market_summary">
-                <%= t('.marketSummary1') %>
-            </div>
-        </div>
+      <h5 class="market_header"><%= market.name %></h5>
+      <div class="market_summary_area">
+        <ul class="marketapps_list">
+          <% market.marketapps.each do |app| %>
+            <li class="marketapps_items"><%= app.name %></li>
+          <% end %>
+        </ul>
+      </div>
     </section>
-    <section class="market_items">
-        <h5 class="market_header"><%= t(".marketHeader2") %></h5>
-        <div class="market_summary_area">
-            <div class="market_summary">
-                <%= t('.marketSummary2') %>
-            </div>
-        </div>
-    </section>
-    <section class="market_items">
-        <h5 class="market_header"><%= t(".marketHeader3") %></h5>
-        <div class="market_summary_area">
-            <div class="market_summary">
-                <%= t('.marketSummary3') %>
-            </div>
-        </div>
-    </section>
-    <section class="market_items">
-        <h5 class="market_header"><%= t(".marketHeader4") %></h5>
-        <div class="market_summary_area">
-            <div class="market_summary">
-                <%= t('.marketSummary4') %>
-            </div>
-        </div>
-    </section>
+  <% end %>
 </accordion>

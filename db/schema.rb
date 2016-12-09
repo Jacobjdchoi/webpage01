@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205090538) do
+ActiveRecord::Schema.define(version: 20161209121659) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -106,6 +106,39 @@ ActiveRecord::Schema.define(version: 20161205090538) do
   end
 
   create_table "customers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "market_translations", force: :cascade do |t|
+    t.integer  "market_id",  null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.index ["locale"], name: "index_market_translations_on_locale"
+    t.index ["market_id"], name: "index_market_translations_on_market_id"
+  end
+
+  create_table "marketapp_translations", force: :cascade do |t|
+    t.integer  "marketapp_id", null: false
+    t.string   "locale",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "name"
+    t.index ["locale"], name: "index_marketapp_translations_on_locale"
+    t.index ["marketapp_id"], name: "index_marketapp_translations_on_marketapp_id"
+  end
+
+  create_table "marketapps", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "market_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "markets", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

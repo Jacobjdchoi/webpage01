@@ -94,11 +94,5 @@ ko:
       learnmore: "더 보기"
   markets:
     index:
-      marketHeader1: "우주항공 & 군수"
-      marketHeader2: "공업 & 산업"
-      marketHeader3: "자동차"
-      marketHeader4: "의료"
-      marketSummary1: ""
-      marketSummary2: ""
-      marketSummary3: ""
-      marketSummary4: ""
+      title: "주요 시장"
+
