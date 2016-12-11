@@ -21,7 +21,7 @@ $imp: !important;
             .brand_logo {
                 img {
                     left: 10px $imp;
-                    transform: translateX(0) $imp;
+                    transform: none $imp;
                 }
             }
         }
@@ -70,7 +70,7 @@ $imp: !important;
                     display: block;
                     float: left;
                     @include wah($width: 20%, $height: 100%);
-                    transition: all 0.5s;
+                    transition: all 1s;
                     position: relative;
                     overflow: hidden;
                     .brand_logo_and_name {
@@ -93,6 +93,9 @@ $imp: !important;
                                     transform: translateX(-50%);
                                     padding: 0.2rem;
                                     transition: all 0.5s;
+                                }
+                                &.last {
+                                    border-right: 1px solid lightgray;
                                 }
                             }
                             .brand_name {

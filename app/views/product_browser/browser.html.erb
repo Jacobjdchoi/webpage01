@@ -6,7 +6,11 @@
         <section class="brand_items" id="<%= index %>">
           <div class="brand_logo_and_name">
             <a>
+            <% if index == @brands.count - 1 %>
+              <div class="brand_logo last">
+            <% else %>
               <div class="brand_logo">
+            <% end %>
                 <% brand.photos.each do |photo| %>
                   <%= image_tag photo.pics.url(:logo), style: "-ms-transform: translateX(-50%);" %>
                 <% end %>

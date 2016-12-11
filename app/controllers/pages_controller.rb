@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 #Home page
   def home
     @articles = Article.all.includes(:photos).order(created_at: :desc).limit(5)
+    @products = Product.all.includes(:photos)
   end
 
 #About us page

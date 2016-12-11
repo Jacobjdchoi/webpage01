@@ -23,14 +23,38 @@
   <% end %>
   </nav>
 </div><!--orbit-->
-<div class="info_area homepage">
-  <div class="large-6 medium-12 columns homepage" style="border: 1px solid black; height:200px; margin: 30px 0; padding: 0 10px;">
-    column 1
-  </div>
-  <div class="large-3 medium-6 columns homepage" style="border: 1px solid black; height:200px; margin: 30px 0; padding: 0 10px;">
-    column 2
-  </div>
-  <div class="large-3 medium-6 columns homepage" style="border: 1px solid black; height:200px; margin: 30px 0; padding: 0 10px;">
-    column 3
+<div class="marquee-area">
+  <div class="marquee" id="marquee">
+    <% @products.each do |product| %>
+      <%= link_to pb_pt_path(product.product_type), class: "marquee-links" do %>
+        <%= image_tag product.photos.first.pics.url(:logo), class: "marquee-photos" %>
+        <div class="marquee-name-area">
+          <span class="marquee-name">
+            <%= product.name %>
+          </span>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
+<!--[if lte IE 9]>
+<script>
+var readyHome;
+readyHome = function(){
+  $("#marquee").animate({"left":"-18720px"}, 200000);
+};
+$(document).on('page:load ready turbolinks:load', readyHome);
+$(document).delegate('#marquee', 'mouseenter', function(){
+  $(this).stop();
+});
+$(document).delegate('#marquee','mouseleave', readyHome);
+</script>
+<style>
+.marquee-area { position: relative !important;}
+.marquee {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0;
+}
+</style>
+<![endif]-->

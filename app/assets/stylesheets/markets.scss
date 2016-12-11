@@ -1,35 +1,75 @@
-
-.open-horizontal-market {
-    width: 40% !important;
-}
-
-.close-horizontal-market {
-    width: 20% !important;
-}
-
-accordion.markets_index {
-    width: 100%;
-    height: 460px;
-    display: block;
-    section.market_items {
-        width: 25%;
-        height: 450px;
-        display: block;
-        float: left;
-        border: 1px solid black;
-        transition: all 0.5s;
-        h5 {
-            padding: 0.25rem;
-        }
+// Web view
+@media only screen and (min-width: 64.063em) {
+    .open-horizontal-market {
+        width: 40% !important;
     }
-    .market_summary_area{
-        ul.marketapps_list{
-            list-style: none;
-            margin: 0;
-            li.marketapps_items{
-                width: 50%;
-                float: left;
-                padding: 1rem;
+    .close-horizontal-market {
+        width: 20% !important;
+    }
+    accordion.markets_index {
+        width: 100%;
+        height: 460px;
+        display: block;
+        section.market_items {
+            width: 25%;
+            height: 450px;
+            display: block;
+            float: left;
+            border: 1px solid black;
+            transition: all 0.5s;
+            h5 {
+                padding: 0.25rem;
+            }
+            .market_summary_area{
+                ul.marketapps_list{
+                    list-style: none;
+                    margin: 0;
+                    li.marketapps_items{
+                        width: 50%;
+                        float: left;
+                        padding: 1rem;
+                        font-weight: bold;
+                    }
+                }
+            }
+            &:hover {
+                .market_summary_area{
+                    background-color: rgba(0,0,0,0.7);
+                }
+            }
+        }
+
+    }
+}
+// Mobile medium and smaller view
+@media only screen and (max-width: 64rem) {
+    accordion.markets_index {
+        height: auto;
+        width: 100%;
+        display: block;
+        min-height: 400px;
+        margin-bottom: 0.5rem;
+        section.market_items {
+            width: 100% ;
+            height: 50px ;
+            clear: both ;
+            transition: all 0.5s;
+            border: 1px solid;
+            overflow: hidden;
+            h5 {
+                padding: 0.25rem;
+            }
+            .market_summary_area{
+                ul.marketapps_list{
+                    list-style: none;
+                    li.marketapps_items{
+                        float: left;
+                        width: 50%;
+                    }
+                }
+            }
+            &:hover {
+                height: 200px;
             }
         }
     }

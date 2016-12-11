@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SamTra International</title>
+    <title>샘트라인터네셔널</title>
+    <meta name="description" content="MOOG 슬립링, Axon' 케이블, Airborn 커넥터, ODU 커넥터, STOCKO 터미널 이외 커넥션 솔루션" />
     <%= favicon_link_tag 'favicon.png' %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -143,7 +144,7 @@
         <div class="copyright">
         Copyright &copy; SamTra International all rights reserved
         </div>
-        <div class="misc menu">
+        <div class="misc menu show-for-large">
           <div class="quick_links">
             <ul class="quick_links_menu">
               <span>Quick Links</span>
@@ -181,5 +182,6 @@
         $(document).on('page:load ready', ready);
       </script>
     <![endif]-->
+    <%= javascript_include_tag 'ga' %>
   </body>
 </html>

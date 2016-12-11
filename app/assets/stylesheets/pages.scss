@@ -132,7 +132,6 @@
         padding-bottom: 0.5rem;
     }
 }
-
 .orbit.homepage {
     @include photo-ratio(45%);
     margin-bottom: 0.75rem;
@@ -159,6 +158,69 @@
             border-radius: 0;
             vertical-align: middle;
             border-radius: 2px;
+        }
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+.marquee-area {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    height: 10rem;
+    overflow: hidden;
+    .marquee {
+        height: 100%;
+        width: 1170rem;
+        animation: marquee 300s linear infinite;
+        &:hover {
+            animation-play-state: paused;
+        }
+        .marquee-links {
+            height: 10rem;
+            width: 10rem;
+            display: block;
+            float: left;
+            position: relative;
+            .marquee-photos {
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+            }
+            .marquee-name-area {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                background-color: rgba(0, 0, 0, 0.7);
+                opacity: 0;
+                z-index: 1;
+                transition: all 0.5s;
+                .marquee-name {
+                    color: white;
+                    font-size: 1.5rem;
+                    line-height: 1.5rem;
+                    font-weight: bold;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 100%;
+                    height: auto;
+                    text-align: center;
+                }
+                &:hover{
+                    z-index: 3;
+                    opacity: 1;
+                }
+            }
         }
     }
 }

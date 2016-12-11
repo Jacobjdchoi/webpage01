@@ -7,6 +7,7 @@
 //= require jquery.Jcrop
 //= require_tree .
 //= stub rem
+//= stub ga
 
 var ready;
 ready = function() {
@@ -94,7 +95,7 @@ ready = function() {
 $(document).on('turbolinks:load', ready);
 
 // contact us page select
-$(document.body).delegate('select', 'change', function() {
+$(document).delegate('select', 'change', function() {
     var value = $(this).val().toLowerCase();
     if (value == "slip rings") {
         $('fieldset.slipring_options').addClass('show');
@@ -113,10 +114,10 @@ $(document).on('scroll', function() {
     }
 });
 // Web Search
-$(document.body).delegate('#web_search_button', 'click', function() {
+$(document).delegate('#web_search_button', 'click', function() {
     $('form.top_bar_search_form').addClass('show_search');
 });
-$(document.body).delegate('form.top_bar_search_form', 'submit', function() {
+$(document).delegate('form.top_bar_search_form', 'submit', function() {
     var form = $(this),
         input = form.find('input#query');
     if (input.val().trim().length == 0) {
@@ -126,7 +127,7 @@ $(document.body).delegate('form.top_bar_search_form', 'submit', function() {
     }
 });
 // Mobile Search
-$(document.body).delegate('form.mobile_search_form', 'submit', function() {
+$(document).delegate('form.mobile_search_form', 'submit', function() {
     var form = $(this),
         input = form.find('input#query');
     if (input.val().trim().length == 0) {
