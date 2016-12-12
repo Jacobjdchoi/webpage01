@@ -1,4 +1,4 @@
-
+// large and up
 @media only screen and (min-width: 64.063em) {
     //index
     .content-container {
@@ -9,6 +9,7 @@
             -js-display: flex;
             display: flex;
             flex-wrap: wrap;
+            padding: 0 0.3rem;
             .customer-box {
                 width: 14%;
                 display: block;
@@ -53,7 +54,7 @@
         }
     }
 }
-
+// Med and down
 @media only screen and (max-width: 64rem) {
     //index
     .content-container {
@@ -64,6 +65,7 @@
             -js-display: flex;
             display: flex;
             flex-wrap: wrap;
+            padding: 0 0.3rem;
             .customer-box {
                 width: 33%;
                 display: block;
@@ -87,6 +89,7 @@
                         img.customer-logo {
                             width: 89.5%;
                             position: absolute;
+                            height: auto !important;
                             transform: translateY(-50%);
                             top: 50% !important;
                             padding: 5%;

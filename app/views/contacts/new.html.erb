@@ -1,4 +1,4 @@
-<h1><%= t(".title") %></h1>
+<h2 class="page-title"><%= t(".title") %></h2>
 <div class="contact row">
     <h3><%= notice %></h3>
     <div class="large-8 columns">
@@ -22,7 +22,7 @@
               </label>
           </div>
           <fieldset class="large-12 columns slipring_options">
-            <p>Slip Ring Design Option Request</p>
+            <p class="slip-rings-description">슬립링 디자인 옵션</p>
             <div class="large-4 columns">
               <%= f.label :amp %>
               <%= f.text_field :amp %>
@@ -85,7 +85,24 @@
       <% end %>
     </div>
     <div class="large-4 columns">
-      <p>전화번호</p>
-      <p>이메일주소</p>
+      <table>
+        <thead>
+            <tr>
+              <th colspan="2" class="contact-tel-table-thead">
+                <%= t('.telInfo') %>
+              </th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= t('.hqTel') %></td>
+            <td><%= t('pages.locations.hq.tel') %></td>
+          </tr>
+          <tr>
+            <td><%= t('.branchTel') %></td>
+            <td><%= t('pages.locations.bs.tel') %></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 </div>

@@ -400,9 +400,14 @@ a:hover {
 
 //global
 .content-container {
-    padding: 0.5rem;
+    padding: 0;
 }
-
+.page-title {
+    border-bottom: 3px solid #222222;
+    margin: 0.5rem;
+    color: #222222;
+    font-weight: 200;
+}
 #text_field {
     user-select: initial;
 }

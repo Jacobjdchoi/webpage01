@@ -39,7 +39,7 @@ en:
         address: "Hoseo Venture Tower 1001 Ho, 70 Gasandigital 1-ro, Geumcheon-gu, Seoul 08590, Republic of Korea(SOUTH KOREA)"
         fax: "+82-2-2627-5629"
         tel: "+82-2-2627-5625"
-        title: "HEADQUARTER"
+        title: "HEADQUARTERS"
       telTitle: "TEL"
       faxTitle: "FAX"
     careers:
@@ -92,6 +92,10 @@ en:
         email: "E-mail Address"
         message: "How may we help you?"
         submitButton: "Submit!"
+      telInfo: "Contact Information"
+      hqTel: 'Headquarters'
+      branchTel: 'Branch(Busan)'
+      select_menu: 'Select Topic (optional)'
     saved:
       title: "The message has been sent successfully!"
       message: "Thank you for contacting us. We will get back to you as soon as possible."
@@ -102,9 +106,6 @@ en:
       tableDate: "Date"
   navigation:
     back: "Back"
-  product_browser:
-    browser:
-      title: "Product browser"
   customers:
     index:
       title: "Our Customers"
@@ -117,3 +118,6 @@ en:
   markets:
     index:
       title: "Applications"
+  product_browser:
+    browser:
+      title: "Product browser"

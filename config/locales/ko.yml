@@ -63,6 +63,10 @@ ko:
         email: "이메일"
         message: "문의사항"
         submitButton: "전송하기"
+      telInfo: "전화 문의"
+      hqTel: "본사"
+      branchTel: "부산지점"
+      select_menu: "문의주제(선택)"
     saved:
       title: "이메일이 성공적으로 발송 되었습니다."
       message: "문의해 주셔서 감사합니다. 최대한 빠른 시일 내에 답변을 드리겠습니다."
@@ -73,12 +77,9 @@ ko:
       tableDate: "날짜"
   navigation:
     back: "뒤로가기"
-  product_browser:
-    browser:
-      title: "제품 브라우저"
   customers:
     index:
-      title: "대표  고객사"
+      title: "대표 고객사"
   brands:
     show_products:
       instruction: "제품이름을 선택하시면 세부정보를 보실 수 있습니다."
@@ -95,4 +96,6 @@ ko:
   markets:
     index:
       title: "주요 시장"
-
+  product_browser:
+    browser:
+      title: "제품 브라우저"
