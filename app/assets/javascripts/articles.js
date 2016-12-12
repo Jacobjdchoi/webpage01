@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function() {
-    //text editor
-    tinymce.remove();
+    // //text editor
+    // tinymce.remove();
 
-    tinymce.init({ selector: '.articleBody', height: "500px" });
+    // tinymce.init({ selector: 'textarea.articleBody', height: "500px" });
 })

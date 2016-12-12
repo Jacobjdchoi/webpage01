@@ -14,11 +14,11 @@ ready = function() {
 
     flexibility(document.body);
     // foundation
-    $(function() { $(document.body).foundation(); });
+    $(function() { $(document).foundation(); });
     // text editor
     tinymce.remove();
     tinymce.init({
-        selector: '.articleBody',
+        selector: 'textarea.articleBody',
         height: "500px",
         browser_spellcheck: true,
         plugins: [
@@ -135,6 +135,7 @@ $(document).delegate('form.mobile_search_form', 'submit', function() {
         return false;
     }
 });
+
 //flash
 function flashMessage(text, time) {
     var flashDiv = document.createElement("div"),
