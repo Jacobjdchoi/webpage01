@@ -1,0 +1,25 @@
+<% if admin_signed_in? %>
+<h2>어플리케이션 리스트</h2>
+<%= link_to "새 어플리케이션", new_marketapp_path %>
+<table>
+  <thead>
+    <tr>
+      <th>이름</th>
+      <th>관련 마켓</th>
+      <th>수정</th>
+      <th>삭제</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @marketapps.each do |marketapp| %>
+    <tr>
+      <td><%= marketapp.name %></td>
+      <td><%= marketapp.market.name %></td>
+      <td><%= link_to "수정", edit_marketapp_path(marketapp) %></td>
+      <td><%= link_to "삭제", marketapp_path(marketapp), method: :delete, data:{confirm: "정말 삭제 하시겠습니까?"} %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>

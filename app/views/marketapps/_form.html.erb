@@ -1,0 +1,17 @@
+<%= form_for(@marketapp) do |f| %>
+  <div class="field">
+    <%= f.label :name_en, "영문이름"%>
+    <%= f.text_field :name_en, required: :true %>
+  </div>
+  <div class="field">
+    <%= f.label :name_ko, "한글 이름" %>
+    <%= f.text_field :name_ko, required: true %>
+  </div>
+  <div class="field">
+    <%= f.label :market_id, "해당 마켓" %>
+    <%= f.collection_select :market_id, Market.all, :id, :name, required: true, prompt: true %>
+  </div>
+  <div class="field">
+    <%= f.submit %>
+  </div>
+<% end %>

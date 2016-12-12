@@ -1,0 +1,11 @@
+<%= form_for(@attachment) do |f| %>
+  <p>추후 파일 검색이 좀 더 순조로히 될 수 있게 업로드 하실 파일 이름에 검색 키워드를 추가 해주세요.
+  <i>예) sr3422 -> MOOG Slip Rings....</i>
+  </p>
+  <div class="field">
+    <%= f.file_field :file_path %>
+  </div>
+  <div class="field">
+    <%= f.submit %>
+  </div>
+<% end %>

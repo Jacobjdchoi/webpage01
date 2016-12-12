@@ -18,7 +18,7 @@
           </div>
           <div class="large-12 columns">
               <label><%= t('.select_menu') %>
-                <%= f.grouped_collection_select :topic, Brand.all, :product_types, :name, :name, :name, include_blank: true %>
+                <%= f.grouped_collection_select :topic, Brand.all, :product_types, :name, :name, :name, prompt: true,include_blank: true %>
               </label>
           </div>
           <fieldset class="large-12 columns slipring_options">

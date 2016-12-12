@@ -1,4 +1,7 @@
 <h2>제품 타입 리스트</h2>
+<% if admin_signed_in? %>
+<%= link_to "제품 타입 추가", new_product_type_path %>
+<% end %>
 <table>
   <thead>
   <tr>
@@ -8,6 +11,7 @@
   </tr>
   </thead>
   <tbody>
+  <% if admin_signed_in? %>
   <% @pt.each do |pt| %>
   <tr>
     <td><%= link_to(pt.name, pt) %></td>
@@ -15,5 +19,7 @@
     <td><%= link_to("삭제하기", product_type_path(pt), method: :DELETE, confirm: "삭제하시면 연결된 제품들도 삭제됩니다. 정말 삭제하시겠습니까?") %></td>
   </tr>
   <% end %>
+  <% end %>s
   </tbody>
+
 </table>

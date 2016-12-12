@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     resources :articles
     resources :photos
     resources :products
-
+    resources :attachments, except: :show
+    resources :marketapps, except: :show
     #contact
     get 'contacts/new' => 'contacts#new', as: 'new_contact'
     post 'contacts' => 'contacts#create', as: 'contacts'

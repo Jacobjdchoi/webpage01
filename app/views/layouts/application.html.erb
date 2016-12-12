@@ -149,13 +149,12 @@
             <ul class="quick_links_menu">
               <span>Quick Links</span>
               <% if admin_signed_in? %>
-              <li><%= link_to "제품 타입 추가", new_product_type_path %></li>
               <li><%= link_to "제품 타입 리스트", admin_product_types_path %></li>
-              <li><%= link_to "브랜드 추가", new_brand_path %></li>
               <li><%= link_to "브랜드 리스트", brands_path %></li>
               <li><%= link_to "고객 리스트", admin_customers_path %></li>
-              <li><%= link_to "고객 추가", new_customer_path %></li>
-              <li><%= link_to "기사 추가", new_article_path %></li>
+              <li><%= link_to "뉴스 리스트", articles_path %></li>
+              <li><%= link_to "다운로드 리스트", attachments_path %></li>
+              <li><%= link_to "어플리케이션 리스트", marketapps_path %></li>
               <li><%= link_to "Admin", rails_admin_path %></li>
               <li><%= link_to "Log out", destroy_admin_session_path %></li>
               <% else %>
