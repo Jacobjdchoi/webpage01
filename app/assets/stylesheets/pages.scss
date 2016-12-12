@@ -132,6 +132,7 @@
         padding-bottom: 0.5rem;
     }
 }
+
 .orbit.homepage {
     @include photo-ratio(45%);
     margin-bottom: 0.75rem;
@@ -168,6 +169,65 @@
     }
     100% {
         transform: translate(-100%, 0);
+    }
+}
+
+// Mobile medium view
+@media only screen and (min-width: 25.01rem) and (max-width: 64rem) {
+    .marquee-area {
+        height: 7rem !important;
+        .marquee {
+            width: 819rem !important;
+            .marquee-links {
+                height: 7rem !important;
+                width: 7rem !important;
+            }
+            .marquee-name-area{
+                .marquee-name{
+                    font-size: 1rem !important;
+                }
+            }
+        }
+    }
+
+}
+
+// Mobile small view
+@media only screen and (max-width: 25.01rem) {
+    .marquee-area {
+        height: 5rem !important;
+        .marquee {
+            width: 585rem !important;
+            .marquee-links {
+                height: 5rem !important;
+                width: 5rem !important;
+            }
+            .marquee-name-area{
+                .marquee-name{
+                    font-size: 0.75rem !important;
+                }
+            }
+        }
+    }
+    .copyright{
+        width: 60%;
+    }
+    .photo-area {
+        @include photo-ratio(30%);
+        > .contents {
+            > .page-title-ceoLetter {
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+                margin-top: -2.5rem;
+                padding-left: 1rem;
+            }
+            > .page-title {
+                font-size: 3rem;
+                line-height: 3rem;
+                margin-top: -4rem;
+                padding-left: 1rem;
+            }
+        }
     }
 }
 
@@ -216,7 +276,7 @@
                     height: auto;
                     text-align: center;
                 }
-                &:hover{
+                &:hover {
                     z-index: 3;
                     opacity: 1;
                 }
@@ -275,23 +335,7 @@ h1.locations {
 /* Small only */
 
 @media screen and (max-width: 39.9375em) {
-    .photo-area {
-        @include photo-ratio(30%);
-        > .contents {
-            > .page-title-ceoLetter {
-                font-size: 1.5rem;
-                line-height: 1.5rem;
-                margin-top: -2.5rem;
-                padding-left: 1rem;
-            }
-            > .page-title {
-                font-size: 3rem;
-                line-height: 3rem;
-                margin-top: -4rem;
-                padding-left: 1rem;
-            }
-        }
-    }
+
 }
 
 

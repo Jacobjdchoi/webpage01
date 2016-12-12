@@ -8,39 +8,79 @@
     }
     accordion.markets_index {
         width: 100%;
-        height: 460px;
+        height: 360px;
         display: block;
+        padding: 0 0.5rem;
         section.market_items {
             width: 25%;
-            height: 450px;
+            height: 350px;
             display: block;
             float: left;
-            border: 1px solid black;
-            transition: all 0.5s;
+            transition: all 1s;
+            position: relative;
             h5 {
                 padding: 0.25rem;
+                margin: 0;
+                height: 50px;
+                line-height: 40px;
+                font-weight: 1.5rem;
+                border-top: 1px solid;
+                border-left: 1px solid;
+                border-color: lightgray;
             }
-            .market_summary_area{
-                ul.marketapps_list{
+            img.market_banner {
+                position: absolute;
+                width: 373px;
+                max-width: 1000rem;
+                height: auto;
+                top: 50px;
+            }
+            .market_summary_area {
+                display: block;
+                width: 100%;
+                height: 300px;
+                transition: all 0.5s;
+                z-index: 1000;
+                position: absolute;
+                top: 50px;
+                ul.marketapps_list {
                     list-style: none;
                     margin: 0;
-                    li.marketapps_items{
+                    li.marketapps_items {
                         width: 50%;
                         float: left;
                         padding: 1rem;
                         font-weight: bold;
+                        opacity: 0;
+                        font-size: 1rem;
                     }
                 }
             }
             &:hover {
-                .market_summary_area{
-                    background-color: rgba(0,0,0,0.7);
+                h5 {
+                    text-align: left;
+                }
+                .market_summary_area {
+                    background-color: rgba(0, 0, 0, 0.8);
+                    ul.marketapps_list {
+                        li.marketapps_items {
+                            color: white;
+                            opacity: 1;
+                        }
+                    }
                 }
             }
+            &.last {
+                h5 {
+                    border-right: 1px solid;
+                    border-color: lightgray;
+                }
+                overflow: hidden;
+            }
         }
-
     }
 }
+
 // Mobile medium and smaller view
 @media only screen and (max-width: 64rem) {
     accordion.markets_index {
@@ -49,22 +89,46 @@
         display: block;
         min-height: 400px;
         margin-bottom: 0.5rem;
+        padding: 0 0.5rem;
         section.market_items {
-            width: 100% ;
-            height: 50px ;
-            clear: both ;
+            width: 100%;
+            height: 50px;
+            clear: both;
             transition: all 0.5s;
-            border: 1px solid;
+            border: 1px solid darkgray;
             overflow: hidden;
+            margin: 0.5rem 0;
+            position: relative;
             h5 {
                 padding: 0.25rem;
+                margin: 0;
+                height: 50px;
+                line-height: 40px;
+                font-size: 1.5rem;
             }
-            .market_summary_area{
-                ul.marketapps_list{
+            img.market_banner {
+                height: 300px;
+                position: absolute;
+                top: 50px;
+                left: 0;
+            }
+            .market_summary_area {
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                height: 150px;
+                background-color: rgba(0, 0, 0, 0.7);
+                ul.marketapps_list {
                     list-style: none;
-                    li.marketapps_items{
+                    li.marketapps_items {
                         float: left;
                         width: 50%;
+                        color: white;
+                        font-size: 1.25rem;
+                        font-weight: bold;
+                        margin-top: 0.5rem;
+                        line-height: 1.25rem;
                     }
                 }
             }

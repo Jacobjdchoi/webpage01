@@ -241,10 +241,10 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
     @customerYURATech = Customer.create(id: 14, name_en: 'YURA Tech', name_ko: '유라테크')
     @customerSEMIKRON = Customer.create(id: 15, name_en: 'SEMIKRON', name_ko: '세미크론')
 # Markets
-  @aeromilitrayMarket = Market.create(name_en: "Aerospace & Military", name_ko: "우주항공 & 군수")
-  @industrialMarket = Market.create(name_en: "Industrial", name_ko: "공업 & 산업")
-  @automotiveMarket = Market.create(name_en: "Automotive", name_ko: "자동차")
-  @medicalMarket = Market.create(name_en: "Medical", name_ko: "의료")
+  @aeromilitrayMarket = Market.create(name_en: "Aerospace & Military", name_ko: "우주항공 & 군수", banner: File.open(File.join(Rails.root, 'public/markets_banner/defense.jpg')))
+  @industrialMarket = Market.create(name_en: "Industrial", name_ko: "공업 & 산업", banner: File.open(File.join(Rails.root, 'public/markets_banner/industrial.jpg')))
+  @automotiveMarket = Market.create(name_en: "Automotive", name_ko: "자동차", banner: File.open(File.join(Rails.root, 'public/markets_banner/automotive.jpg')))
+  @medicalMarket = Market.create(name_en: "Medical", name_ko: "의료", banner: File.open(File.join(Rails.root, 'public/markets_banner/medical.jpg')))
 # MarketApps
   5.times{@aeromilitrayMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}
 5.times{  @industrialMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}

@@ -21,6 +21,7 @@ ko:
         mccs: "모션컨트롤제품"
         terminals: "터미널"
         title: "제품소개"
+  footerAddress: "서울특별시 금천구 가산디지털1로 70 호서대벤처타워 1001호, 우편번호-08590. TEL 02-2627-5625 | FAX 02-2627-5629"
   pages:
     locations:
       title: "회사위치"
@@ -47,6 +48,8 @@ ko:
       title: "역사"
     home:
       title:
+      mobileWelcomeHeader: ""
+      mobileWelcomeMessage: ""
     aboutUs:
       title: "회사소개"
     downloads:

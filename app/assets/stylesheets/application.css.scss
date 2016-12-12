@@ -306,7 +306,8 @@ ul.language.menu li a {
 }
 
 footer {
-    height: 6rem;
+    height: auto;
+    min-height: 6rem;
     background-color: #001641;
     color: white;
     .row.main {

@@ -26,17 +26,21 @@ en:
         mccs: "Motion Control Components"
         terminals: "Terminals"
         title: "Products"
+  footerAddress: "Hoseo Venture Tower 1001 Ho, 70 Gasandigital 1-ro, Geumcheon-gu, Seoul 153-711, KOREA
+          TEL: 82-2-2627-5625 / FAX: 82-2-2627-5629"
   pages:
     locations:
       title: "Locations"
       addressTitle: "ADDRESS"
       bs:
-        address: "T-Plex Main Building 403 Ho, 41 Yutongdanji1-ro, Gangseo-gu, Busan 46721, Republic of Korea(SOUTH KOREA)"
+        address: "T-Plex Main Building 403 Ho, 41 Yutongdanji1-ro, Gangseo-gu,
+                  Busan 46721, Republic of Korea(SOUTH KOREA)"
         fax: "+82-51-796-0625"
         tel: "+82-51-991-3373"
         title: "BRANCH OFFICE (BUSAN)"
       hq:
-        address: "Hoseo Venture Tower 1001 Ho, 70 Gasandigital 1-ro, Geumcheon-gu, Seoul 08590, Republic of Korea(SOUTH KOREA)"
+        address: "Hoseo Venture Tower 1001 Ho, 70 Gasandigital 1-ro, Geumcheon-gu,
+                   Seoul 08590, Republic of Korea(SOUTH KOREA)"
         fax: "+82-2-2627-5629"
         tel: "+82-2-2627-5625"
         title: "HEADQUARTERS"
@@ -46,28 +50,31 @@ en:
       title: "Careers"
     ceoLetter:
       title: "A Letter from the CEO"
-      letterBody: "<p>
-         SamTra International was established as a privately owned trading company in Seoul Korea on March 17, 1995, specialized
+      letterBody: "<p> SamTra International was established as a privately
+        owned trading company in Seoul Korea on March 17, 1995, specialized
         in selling various type of cables, connectors and cable assemblies.
-        </p>
-        <p>
-        Various extreme cable interconnection problems in terms of flexibility, flex life, EMI, signal loss, temperature, space and weight in various Korean military programs have been solved through our professional consultancy sales with innovative
-        technical expertise.
-        </p>
-        <p>
-        In response to our clients' continuous suggestions and/or repeated requests, we have also supplied other various mil-spec
-        part-numbered components to various military programs, in addition to the cable related products from Axon' Cable SAS and
-        the connectors from AirBorn Inc.
-        </p>
-        <p>
-        In recent years, we have also been more and more successfully involved in the business areas of test &amp; measurements,
-        medical electronics, automotive electronics, Wifi applications, robotic and semiconductor equipment cables and harnesses.
-        </p>
-        <p>
-        We are very proud of being a sales engineering-based trading company, specialized in listening to our customers exact
-        needs and providing perfect technical solutions and/or components, rather than taking easy orders.
-        </p>
-        <p>
+        </p><p>
+        Various extreme cable interconnection problems in terms of flexibility,
+        flex life, EMI, signal loss, temperature, space and weight in various
+        Korean military programs have been solved through our professional
+        consultancy sales with innovative technical expertise.
+        </p><p>
+        In response to our clients' continuous suggestions and/or repeated
+        requests, we have also supplied other various mil-spec
+        part-numbered components to various military programs, in addition to
+        the cable related products from Axon' Cable SAS and the connectors from
+        AirBorn Inc.
+        </p><p>
+        In recent years, we have also been more and more successfully involved
+        in the business areas of test &amp; measurements, medical electronics,
+        automotive electronics, Wifi applications, robotic and semiconductor
+        equipment cables and harnesses.
+        </p><p>
+        We are very proud of being a sales engineering-based trading company,
+        specialized in listening to our customers exact needs and providing
+        perfect technical solutions and/or components, rather than taking easy
+        orders.
+        </p><p>
         Sincerely Yours,
         </p>"
       letterSign: " Sammy Yeunsung Choi "
@@ -75,6 +82,12 @@ en:
       title: "History"
     home:
       title:
+      mobileWelcomeHeader: "Welcome to Samtra International!"
+      mobileWelcomeMessage: "If you need a reliable supplier who can find the
+      perfect solution at the right time, you are in the right place. From last
+      minute purchasing to projects with long-term planning period, we can assist
+       you. With more than 20 years of experience in the field, we are confident
+        in what we do."
     aboutUs:
       title: "About us"
     downloads:

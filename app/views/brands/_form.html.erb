@@ -24,6 +24,7 @@
     <%= f.link_to_add "추가하기", :photos, class: "photoButton button", type: "remove" %>
   </div>
   <div class="field">
+    <p>사진의 높이(height) 와 폭(width)의 비율은 1.1 이여야 합니다<i>예)높이/폭 -> 1.1 </i></p>
     <%= f.label :background_pic,"바탕 사진" %>
     <%= f.file_field :background_pic %>
   </div>
