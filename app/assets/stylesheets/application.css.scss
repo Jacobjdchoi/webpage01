@@ -22,7 +22,7 @@
 
 @font-face {
     font-family: 'IcoMoon-Ultimate';
-    src: font-url('/assets/IcoMoon-Ultimate.ttf') format("truetype");
+    src: asset_url('fonts/IcoMoon-Ultimate.ttf') format("truetype");
 }
 
 .icomoon:before {
