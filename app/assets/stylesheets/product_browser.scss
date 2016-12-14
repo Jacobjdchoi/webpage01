@@ -5,9 +5,9 @@
 $box-shadow: rgb(148, 148, 148) 0 0 5px;
 $box-shadow-hover: rgb(111, 111, 111) 0 0 5px;
 $imp: !important;
-@mixin wah($width: auto, $height: auto) {
-    width: unquote($width);
-    height: unquote($height);
+@mixin wah($width: 'auto', $height: 'auto') {
+    width: #{$width};
+    height: #{$height};
 }
 
 .product_browser_title {
