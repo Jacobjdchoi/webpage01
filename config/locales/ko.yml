@@ -56,6 +56,11 @@ ko:
       title: "다운로드 센터"
     search:
       title: '검색결과'
+      brands: '브랜드'
+      product_types: '제품 카테고리'
+      products: '제품'
+      attachments: '다운로드'
+      articles: '뉴스'
   contacts:
     new:
       title: "견적문의"
@@ -85,9 +90,6 @@ ko:
   customers:
     index:
       title: "대표 고객사"
-  brands:
-    show_products:
-      instruction: "제품이름을 선택하시면 세부정보를 보실 수 있습니다."
   views:
     pagination:
       truncate: "…"

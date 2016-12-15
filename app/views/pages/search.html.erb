@@ -6,7 +6,7 @@
 <div class="12-large columns search_results_area">
   <% if @brands.present? %>
     <div class="search_result brands">
-      <h4 class="search_category">Brands</h4>
+      <h4 class="search_category"><%= t('.brands') %></h4>
       <% @brands.each do |brand| %>
         <p><%= link_to brand.name, pb_pt_path(brand.product_types.first) %></p>
       <% end %>
@@ -14,7 +14,7 @@
   <% end %>
   <% if @product_types.present? %>
     <div class="search_result product_types">
-      <h4 class="search_category">Product Categories</h4>
+      <h4 class="search_category"><%= t('.product_types') %></h4>
       <% @product_types.each do |product_type| %>
         <p><%= link_to product_type.name, pb_pt_path(product_type) %></p>
       <% end %>
@@ -22,7 +22,7 @@
   <% end %>
   <% if @products.present? %>
     <div class="search_result products">
-      <h4 class="search_category">Products</h4>
+      <h4 class="search_category"><%= t('.products') %></h4>
       <% @products.each do |product| %>
         <p><%= link_to product.name, pb_pt_path(product.product_type) %></p>
       <% end %>
@@ -30,7 +30,7 @@
   <% end %>
   <% if @attachments.present? %>
     <div class="search_result attachments">
-      <h4 class="search_category">Attachments</h4>
+      <h4 class="search_category"><%= t('.attachments') %></h4>
       <table class="attachments-table">
         <thead>
           <tr>
@@ -45,7 +45,7 @@
   <% end %>
   <% if @articles.present? %>
     <div class="search_result articles">
-      <h4 class="search_category">Articles</h4>
+      <h4 class="search_category"><%= t('.articles') %></h4>
       <% @articles.each do |article| %>
         <p><%= link_to article.title, article_path(article) %></p>
       <% end %>

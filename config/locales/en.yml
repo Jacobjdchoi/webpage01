@@ -94,6 +94,11 @@ en:
       title: "Downloads"
     search:
       title: "Search results for"
+      brands: 'Brands'
+      product_types: 'Product Categories'
+      products: 'Products'
+      attachments: 'Attachments'
+      articles: 'Articles'
   contacts:
     new:
       title: "Contact us"
@@ -124,9 +129,6 @@ en:
   customers:
     index:
       title: "Our Customers"
-  brands:
-    show_products:
-      instruction: "Click product name to view its contents"
   product_browser:
     product_types:
       learnmore: "Learn More"
