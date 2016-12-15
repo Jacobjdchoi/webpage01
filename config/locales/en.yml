@@ -92,6 +92,8 @@ en:
       title: "About us"
     downloads:
       title: "Downloads"
+    search:
+      title: "Search results for"
   contacts:
     new:
       title: "Contact us"

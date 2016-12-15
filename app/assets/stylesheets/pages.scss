@@ -20,7 +20,11 @@
 .search_results_area {
     min-height: 500px;
 }
-
+.search_category {
+    border-bottom: 2px solid #444444;
+    color: #444444;
+    font-weight: 300;
+}
 // Download page serach form
 #paginator {
     width: 100%;

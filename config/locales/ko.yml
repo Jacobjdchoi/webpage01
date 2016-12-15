@@ -54,6 +54,8 @@ ko:
       title: "회사소개"
     downloads:
       title: "다운로드 센터"
+    search:
+      title: '검색결과'
   contacts:
     new:
       title: "견적문의"

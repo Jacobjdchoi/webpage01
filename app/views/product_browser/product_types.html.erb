@@ -25,7 +25,7 @@
         <% end %>
       </div>
       <div class="product_details">
-        <%= product.summary.html_safe %>
+        <%= raw(product.summary) %>
       </div>
       <p class="product_links">
         <%= link_to product.url, target: '_blank' do %>
