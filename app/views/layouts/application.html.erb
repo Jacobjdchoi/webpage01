@@ -43,9 +43,12 @@
           </ul>
           <ul class="dropdown menu" data-dropdown-menu>
             <li class="menu_items">
-              <%= link_to t(".about"), about_us_path %>
+              <%# link_to t(".about"), about_us_path %>
+              <a><%= t('.about') %></a>
               <ul class="menu vertical" id="top-bar-dropdown-menu">
+                <% unless request.path.include?('/en') %>
                 <li class="submenu_items"><%= link_to t(".history"), history_path %></li>
+                <% end %>
                 <li class="divider-horizontal"></li>
                 <li class="submenu_items"><%= link_to t(".ceoLetter"), ceo_letter_path %></li>
                 <% unless request.path.include?('/en') %>
@@ -110,8 +113,9 @@
             <li>
               <a><%= t(".about") %></a>
               <ul class="menu vertical nested">
-                <li><%= link_to t(".aboutUs"), about_us_path %></li>
+                <% unless request.path.include?('/en') %>
                 <li><%= link_to t(".history"), history_path %></li>
+                <% end %>
                 <li><%= link_to t(".ceoLetter"), ceo_letter_path %></li>
                 <li><%= link_to t(".locations"), locations_path %></li>
                 <% if request.path.include?('/ko') %>

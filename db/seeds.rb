@@ -246,10 +246,10 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
   @automotiveMarket = Market.create(name_en: "Automotive", name_ko: "자동차", banner: File.open(File.join(Rails.root, 'public/markets_banner/automotive.jpg')))
   @medicalMarket = Market.create(name_en: "Medical", name_ko: "의료", banner: File.open(File.join(Rails.root, 'public/markets_banner/medical.jpg')))
 # MarketApps
-  5.times{@aeromilitrayMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}
-5.times{  @industrialMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}
-5.times{  @automotiveMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}
-5.times{  @medicalMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}
+# 5.times{@aeromilitrayMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}
+# 5.times{  @industrialMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}
+# 5.times{  @automotiveMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}
+# 5.times{  @medicalMarket.marketapps.create(name_en: 'test', name_ko:'테스트')}
 
 
 

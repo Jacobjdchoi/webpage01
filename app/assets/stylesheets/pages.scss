@@ -113,19 +113,7 @@
     }
 }
 
-//all pages
-.photo-area {
-    .contents {
-        img {
-            @include widthAndHeight(100%, 100%);
-        }
-        .page-title,
-        .page-title-ceoLetter {
-            color: white;
-            font-weight: bold;
-        }
-    }
-}
+
 
 //homepage
 .info_area.homepage {
@@ -265,15 +253,34 @@ h1.locations {
 
 //ceoLetter
 .ceoLetter-body {
-    margin: 1rem 0;
+    margin: 0.75rem 0.5rem;
     p {
         font-size: 1rem;
         line-height: 1.5rem;
+        word-break: keep-all;
     }
     strong {
         font-size: 1rem;
         line-height: 1.5rem;
     }
+}
+// career page
+.career-contents-container{
+    margin: 0.5rem;
+    p {
+        word-break: keep-all;
+        font-size: 15px;
+    }
+    .career-exp-list{
+        font-size: 15px;
+        li {
+            font-size: 15px;
+        }
+    }
+}
+// history page
+.history-contents-container {
+    margin: 0.5rem;
 }
 
 //media queries (foundation limits)

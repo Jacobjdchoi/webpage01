@@ -18,7 +18,13 @@ class PagesController < ApplicationController
 
 #Company history page
   def history
-
+    @milestone1 = DateTime.new(1995,3,17)
+    @milestone2 = DateTime.new(1995,3)
+    @milestone3 = DateTime.new(2001,8)
+    @milestone4 = DateTime.new(2004,1)
+    @milestone5 = DateTime.new(2005,9)
+    @milestone6 = DateTime.new(2012,5)
+    @milestone7 = DateTime.new(2014,9)
   end
 
 #Contact Us page

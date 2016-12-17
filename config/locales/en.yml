@@ -50,36 +50,56 @@ en:
       title: "Careers"
     ceoLetter:
       title: "A Letter from the CEO"
-      letterBody: "<p> SamTra International was established as a privately
-        owned trading company in Seoul Korea on March 17, 1995, specialized
-        in selling various type of cables, connectors and cable assemblies.
+      letterBody: "<p>SamTra International was established as a privately owned
+      trading company in Seoul Korea on March 17, 1995, specialized in selling
+      various type of special cables, connectors and cable assemblies for high
+      reliable, high life time & mission-critical applications, and recently
+      in supplying high performance electro-mechanical & optical components,
+      such as air moving low noise level fans & blowers, and brushless motors
+      and DC torque motors, actuators, slip rings, rotary joints, optical
+      transceivers and ethernet switches for optical network communication
+      in aero-mil applications.
         </p><p>
         Various extreme cable interconnection problems in terms of flexibility,
-        flex life, EMI, signal loss, temperature, space and weight in various
-        Korean military programs have been solved through our professional
-        consultancy sales with innovative technical expertise.
+        flex life, EMI, signal loss, cryogenic and extreme high temperature,
+        space saving and weight reduction (light weight) in various Korean
+        aero-mil  programs have been solved through our professional consultancy
+        sales, based on innovative technical expertise.
         </p><p>
-        In response to our clients' continuous suggestions and/or repeated
-        requests, we have also supplied other various mil-spec
-        part-numbered components to various military programs, in addition to
-        the cable related products from Axon' Cable SAS and the connectors from
-        AirBorn Inc.
+        In response to our clients' continuous suggestions and/or repeated requests,
+        we have also supplied other various mil-spec part-numbered and customized
+        components & subsystems to various Aero-mil & space programs in Korea,
+        such as active & passive components and subsystems.
         </p><p>
-        In recent years, we have also been more and more successfully involved
-        in the business areas of test &amp; measurements, medical electronics,
-        automotive electronics, Wifi applications, robotic and semiconductor
-        equipment cables and harnesses.
+        We have been very active and successfully involved in more diversified
+        business areas of test & measurements, medical electronics, automotive
+        electronics & high current charging EV, robotics and semiconductor equipment,
+        navy & shipbuilding, plant engineering, iron & steel mills, railway
+        (high speed trains) and white goods electronics, and machine tool and
+        factory automations.
         </p><p>
-        We are very proud of being a sales engineering-based trading company,
-        specialized in listening to our customers exact needs and providing
-        perfect technical solutions and/or components, rather than taking easy
-        orders.
+        We are very proud of being an engineering-based trading company,
+        specialized in listening carefully to our customers’ detailed requirements
+        and providing perfect technical solutions and/or components, utilizing our
+        high level technical understanding and expertise in electronic
+        (high speed signal transmission, EMC, Optic networks & RF), electrical,
+        mechanical & chemical and material engineering, rather than taking easy
+        orders of standard part numbered products.
         </p><p>
         Sincerely Yours,
-        </p>"
-      letterSign: " Sammy Yeunsung Choi "
+        </p>
+        "
+      letterSign1: "Yeunsung Sammy Choi"
+      letterSign2: "President"
     history:
       title: "History"
+      milestone1: 'Samtra International established.'
+      milestone2: ''
+      milestone3: ''
+      milestone4: ''
+      milestone5: ''
+      milestone6: ''
+      milestone7: ''
     home:
       title:
       mobileWelcomeHeader: "Welcome to Samtra International!"
@@ -138,3 +158,6 @@ en:
   product_browser:
     browser:
       title: "Product browser"
+  time:
+    formats:
+      short: "%Y, %b"
