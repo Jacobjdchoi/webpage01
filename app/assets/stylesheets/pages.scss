@@ -20,11 +20,13 @@
 .search_results_area {
     min-height: 500px;
 }
+
 .search_category {
     border-bottom: 2px solid #444444;
     color: #444444;
     font-weight: 300;
 }
+
 // Download page serach form
 #paginator {
     width: 100%;
@@ -112,8 +114,6 @@
         }
     }
 }
-
-
 
 //homepage
 .info_area.homepage {
@@ -264,23 +264,28 @@ h1.locations {
         line-height: 1.5rem;
     }
 }
+
 // career page
-.career-contents-container{
+.career-contents-container {
     margin: 0.5rem;
     p {
         word-break: keep-all;
         font-size: 15px;
     }
-    .career-exp-list{
+    .career-exp-list {
         font-size: 15px;
         li {
             font-size: 15px;
         }
     }
 }
+
 // history page
 .history-contents-container {
     margin: 0.5rem;
+    .history_date {
+        width: 11%;
+    }
 }
 
 //media queries (foundation limits)
@@ -308,7 +313,7 @@ h1.locations {
     .copyright {
         width: 60%;
     }
-    .mobile_articles_area{
+    .mobile_articles_area {
         margin-bottom: 0.25rem;
         .mobile_articles {
             position: relative;
@@ -335,6 +340,9 @@ h1.locations {
                 }
             }
         }
+    }
+    .history-contents-container .history_date {
+        width: 30%;
     }
 }
 
@@ -373,6 +381,9 @@ h1.locations {
                 }
             }
         }
+    }
+    .history-contents-container .history_date {
+        width: 16%;
     }
 }
 

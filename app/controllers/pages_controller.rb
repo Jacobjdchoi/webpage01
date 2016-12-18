@@ -24,7 +24,7 @@ class PagesController < ApplicationController
     @milestone4 = DateTime.new(2004,1)
     @milestone5 = DateTime.new(2005,9)
     @milestone6 = DateTime.new(2012,5)
-    @milestone7 = DateTime.new(2014,9)
+    @milestone7 = DateTime.new(2014,6)
   end
 
 #Contact Us page
