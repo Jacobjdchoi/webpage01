@@ -18,6 +18,7 @@
 
 .env
 
+/public/assets/*
 /public/uploads/*
 /public/catalogues
 .DS_Store
