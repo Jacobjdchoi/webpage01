@@ -127,15 +127,16 @@ en:
       select_menu: "Please Select Topic"
       email:
         leaveAnEmail: "Or Leave an E-Mail"
-        name: "Full Name"
-        company: "Company Name"
-        email: "E-mail Address"
-        message: "How may we help you?"
+        name: "*Full Name"
+        company: "*Company Name"
+        email: "*E-mail Address"
+        contact_number: "*Contact Number"
+        message: "*How may we help you?"
         submitButton: "Submit!"
       telInfo: "Contact Information"
       hqTel: 'Headquarters'
       branchTel: 'Branch(Busan)'
-      select_menu: 'Select Topic (optional)'
+      select_menu: 'Topic (Select)'
     saved:
       title: "The message has been sent successfully!"
       message: "Thank you for contacting us. We will get back to you as soon as possible."
