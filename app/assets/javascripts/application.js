@@ -82,6 +82,9 @@ ready = function() {
         });
     }
     // contact us form submit
+    if ($('form#new_contact').length > 0){
+        $('#contact_ethernet').val("");
+    }
     $('form#new_contact').submit(function(e) {
         if ($('input:checkbox[id=100BaseT]').is(':checked')) {
             $('#contact_ethernet').val($('#contact_ethernet').val() + "100 Base T;");
@@ -91,6 +94,10 @@ ready = function() {
         }
         return true;
     });
+    if ($('#contact_location').length > 0) {
+    var input = document.getElementById('contact_location');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    }
 };
 $(document).on('turbolinks:load', ready);
 

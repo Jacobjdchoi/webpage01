@@ -3,17 +3,15 @@ class ContactMailer < ApplicationMailer
 
   def contact_created(contact)
     mail(to: ENV['ADMIN_EMAIL'],
-      subject: '샘트라 웹페이지 컨택',
-      body: "[성명: #{contact.name}]\n
-      [연락처: #{contact.contact_number}]\n
-      [소속회사: #{contact.company}]\n
+      subject: "샘트라 웹페이지 컨택 | #{contact.name.titleize()} | #{contact.company.titleize()}",
+      body: "[성명: #{contact.name}] [소속회사: #{contact.company}]\n
+      [연락처: #{contact.contact_number}][소재지: #{contact.location}]\n
       [이메일주소: #{contact.email}]\n
-      [문의주제: #{contact.topic}]\n"
-      if contact.topic == "Slip Rings"
-      + "[amp:#{contact.amp}][ckts:#{contact.ckts}][rpm:#{contact.rpm}]\n
-      [bore?:#{contact.bore}][ehthernet?:#{contact.ethernet}]\n"
-      end
-      + "문의사항:\n
+      [문의주제: #{contact.topic}]
+      #{'[ AMP: '+contact.amp+' | CKTS: '+contact.ckts+' | RPM: '+contact.rpm+
+      ' | BORE: '+contact.bore.to_s+' | ETHERNET: '+contact.ethernet+' ]' if contact.topic == 'Slip Rings'}
+      \n
+      문의사항:\n
       #{contact.body}"
     )
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170407060642) do
+ActiveRecord::Schema.define(version: 20170407114819) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20170407060642) do
     t.string   "ethernet"
     t.string   "rpm"
     t.string   "contact_number"
+    t.string   "location"
   end
 
   create_table "customer_translations", force: :cascade do |t|
