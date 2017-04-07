@@ -131,6 +131,7 @@ en:
         company: "*Company Name"
         email: "*E-mail Address"
         contact_number: "*Contact Number"
+        location: "Location"
         message: "*How may we help you?"
         submitButton: "Submit!"
       telInfo: "Contact Information"

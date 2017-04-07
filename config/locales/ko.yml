@@ -101,6 +101,7 @@ ko:
         email: "*이메일"
         contact_number: "*연락처"
         message: "*문의사항"
+        location: "소재지"
         submitButton: "전송하기"
       telInfo: "전화 문의"
       hqTel: "본사"
