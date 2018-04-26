@@ -10,6 +10,6 @@ services:
     expose:
       - "3000"
 
-
+# building image & running -> docker-compose -f docker-compose.dev.yml up
 # on bash -> docker run -it -p 3000:3000 -v $(pwd):/app samtra_devapp
 # on fish -> docker run -it -p 3000:3000 -v (pwd):/app samtra_devapp
