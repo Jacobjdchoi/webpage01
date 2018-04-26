@@ -81,3 +81,5 @@ gem 'globalize-accessors'
 gem 'devise-i18n'
 
 gem "kaminari"
+
+gem 'puma'
