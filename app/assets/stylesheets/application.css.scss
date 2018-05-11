@@ -50,7 +50,7 @@ body {
     &#pageYield {
         padding-right: 0.25rem;
         padding-left: 0.25rem;
-        height: auto;
+        min-height: 100vh;
         overflow: hidden;
         min-height: 400px;
     }
@@ -100,32 +100,12 @@ body {
                 transition: bottom 0.5s;
                 text-align: right;
                 display: table;
-                li ul.vertical.submenu {
-                    margin-top: 0.75rem;
-                    transition: margin-top 0.5s;
-                    text-align: left !important;
-                    li.submenu_items {
-                        height: 2rem;
-                        line-height: 2rem;
-                        display: block;
-                        a {
-                            display: block;
-                            text-align: left;
-                            line-height: 2rem;
-                            width: 100%;
-                            height: 100%;
-                            &:hover {
-                                color: #111111 !important;
-                                background: linear-gradient(#ffffff, #fafafa, #e0e0e0);
-                            }
-                        }
-                    }
-                }
-                li.menu_items {
+                li.menu_items{
                     height: 1.5rem;
                     line-height: 1.5rem;
                     display: table-cell;
                     text-align: center;
+                    position: relative;
                     a {
                         height: inherit;
                         line-height: inherit;
@@ -133,6 +113,44 @@ body {
                         text-align: center;
                         i {
                             vertical-align: inherit;
+                        }
+                    }
+                    &.is-dropdown-submenu-parent{
+                        &:hover > ul.vertical.submenu {
+                            visibility: visible !important; /* shows sub-menu */
+                            opacity: 1;
+                            z-index: 1000;
+                            transform: translateY(0%);
+                            transition-delay: 0s, 0s, 0.3s !important; /* this removes the transition delay so the menu will be visible while the other styles transition */
+                        }
+                        ul.vertical.submenu {
+                            margin-top: 0.75rem;
+                            transition: margin-top 0.5s;
+                            text-align: left !important;
+                            border-top: none !important;
+                            /* From plugin start */
+                            visibility: hidden !important; /* hides sub-menu */
+                            opacity: 0;
+                            transform: translateY(-2em);
+                            z-index: -1;
+                            transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s !important;
+                            // /* From plugin end */
+                            li.submenu_items {
+                                height: 2rem;
+                                line-height: 2rem;
+                                display: block;
+                                a {
+                                    display: block;
+                                    text-align: left;
+                                    line-height: 2rem;
+                                    width: 100%;
+                                    height: 100%;
+                                    &:hover {
+                                        color: #111111 !important;
+                                        background: linear-gradient(#ffffff, #fafafa, #e0e0e0);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -380,6 +398,7 @@ a:hover {
 
 .off-canvas-content {
     margin-top: -1rem;
+    min-height: 100vh;
 }
 
 //navigation withing pages (markets/products)

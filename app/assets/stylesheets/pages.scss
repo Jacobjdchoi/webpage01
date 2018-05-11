@@ -129,15 +129,22 @@
     @include photo-ratio(45%);
     margin-bottom: 0.75rem;
     .contents {
-        li {
-            img.orbit-image {
-                @include widthAndHeight(100%, 100%);
-            }
-            div {
+        li.orbit-slide {
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            div.orbit-caption {
+                opacity: 0;
+                transition: all 0.3s ease-in-out 0.2s, opacity 0.2s linear 0.3s;
                 a {
                     color: white;
                     size: 16px;
                     font-weight: bold;
+                }
+            }
+            &:hover{
+                div.orbit-caption {
+                    opacity: 1;
                 }
             }
         }
@@ -184,35 +191,40 @@
             display: block;
             float: left;
             position: relative;
-            .marquee-photos {
-                width: 100%;
-                height: 100%;
-                z-index: 2;
-            }
             .marquee-name-area {
                 width: 100%;
                 height: 100%;
                 position: absolute;
                 top: 0;
-                background-color: rgba(0, 0, 0, 0.7);
-                opacity: 0;
-                z-index: 1;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                z-index: 3;
                 transition: all 0.5s;
                 .marquee-name {
-                    color: white;
-                    font-size: 1.5rem;
-                    line-height: 1.5rem;
-                    font-weight: bold;
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
+                    position: relative;
                     width: 100%;
-                    height: auto;
-                    text-align: center;
+                    height: 100%;
+                    opacity: 0;
+                    transition: opacity 0.5s;
+                    .marquee-text {
+                        position: absolute;
+                        color: white;
+                        font-size: 1.5rem;
+                        line-height: 1.5rem;
+                        font-weight: bold;
+                        text-align: center;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 100%;
+                        padding: 5px;
+                    }
                 }
                 &:hover {
-                    z-index: 3;
-                    opacity: 1;
+                    .marquee-name {
+                        opacity: 1 !important;
+                        background: rgba(0, 0, 0, 0.7)
+                    }
                 }
             }
         }
@@ -318,6 +330,11 @@ h1.locations {
         margin-bottom: 0.25rem;
         .mobile_articles {
             position: relative;
+            width: 100%;
+            height: 200px;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
             .mobile_article_caption {
                 width: 100%;
                 max-width: 100%;

@@ -16,44 +16,6 @@ $imp: !important;
 
 // Web view
 @media only screen and (min-width: 64.063em) {
-    .open-horizontal {
-        width: 40% $imp;
-        .brand_logo_and_name {
-            .brand_logo {
-                img {
-                    left: 10px $imp;
-                    transform: none $imp;
-                }
-            }
-        }
-        .product_types_list_area {
-            background-color: rgba(0, 0, 0, 0.7) $imp;
-            .product_type_list {
-                .product_type_items {
-                    opacity: 1 $imp;
-                }
-            }
-        }
-    }
-    .close-horizontal {
-        width: 15% $imp;
-        .brand_logo_and_name {
-            .brand_logo {
-                img {
-                    left: 50% $imp;
-                    transform: translateX(-50%) $imp;
-                }
-            }
-        }
-        .product_types_list_area {
-            background-color: rgba(0, 0, 0, 0) $imp;
-            .product_type_list {
-                .product_type_items {
-                    opacity: 0 $imp;
-                }
-            }
-        }
-    }
     // Browser page
     .browser_container {
         @include wah(100%, 450px);
@@ -65,15 +27,22 @@ $imp: !important;
             display: inline-block;
             accordion.brands_index {
                 @include wah(100%, 100%);
-                float: left;
+                // float: left;
+                // flex-flow: row nowrap;
+                // justify-content: center;
+                // display: flex;
+                // align-items: center;
+                display: flex;
+                flex-flow: row nowrap;
                 section.brand_items {
-                    //flex-grow: 1;
-                    display: block;
-                    float: left;
-                    @include wah($width: 20%, $height: 100%);
-                    transition: all 1s;
+                    flex: 1;
+                    height: 100%;
+                    transition: all 0.7s;
                     position: relative;
                     overflow: hidden;
+                    max-width: 20%;
+                    min-width: 10%;
+                    position: relative;
                     .brand_logo_and_name {
                         @include wah(100%, 2.5rem);
                         position: relative;
@@ -117,6 +86,7 @@ $imp: !important;
                         background-color: rgba(0, 0, 0, 0);
                         transition: all 0.5s;
                         position: relative;
+                        z-index: -10;
                         ul.product_type_list {
                             list-style: none;
                             opacity: 1;
@@ -137,10 +107,26 @@ $imp: !important;
                         }
                     }
                     &:hover {
-                        flex-grow: 3;
+                        -webkit-box-flex: 3;
+                        -ms-flex-positive: 3;
+                        transition: .7s;
+                        max-width: 40% !important;
+                        flex-grow: 4;
+                        .brand_logo_and_name {
+                            .brand_logo {
+                                img {
+                                    left: 10px $imp;
+                                    transform: none $imp;
+                                }
+                            }
+                        }
                         .product_types_list_area {
-                            ul.product_type_list {
-                                opacity: 1;
+                            background-color: rgba(0, 0, 0, 0.7) $imp;
+                            z-index: 100;
+                            .product_type_list {
+                                .product_type_items {
+                                    opacity: 1 $imp;
+                                }
                             }
                         }
                     }

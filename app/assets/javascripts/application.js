@@ -53,33 +53,6 @@ ready = function() {
             not_target.removeClass('open-vertical');
         });
     } else {
-        //web
-        $(document.body).delegate('.brand_items', 'mouseenter', function() {
-            //console.log('mouse entered');
-            var target = $(this),
-                not_target = $('.brand_items').not(target);
-            target.addClass('open-horizontal');
-            not_target.addClass('close-horizontal');
-        });
-        $(document.body).delegate('.brand_items', 'mouseleave', function() {
-            //console.log('mouse left');
-            var target = $(this),
-                not_target = $('.brand_items').not(target);
-            target.removeClass('open-horizontal');
-            not_target.removeClass('close-horizontal');
-        });
-        $(document.body).delegate('.market_items', 'mouseenter', function() {
-            var target = $(this),
-                not_target = $('.market_items').not(target);
-            target.addClass('open-horizontal-market');
-            not_target.addClass('close-horizontal-market');
-        });
-        $(document.body).delegate('.market_items', 'mouseleave', function() {
-            var target = $(this),
-                not_target = $('.market_items').not(target);
-            target.removeClass('open-horizontal-market');
-            not_target.removeClass('close-horizontal-market');
-        });
     }
     // contact us form submit
     if ($('form#new_contact').length > 0){

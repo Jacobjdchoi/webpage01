@@ -2,46 +2,57 @@
   <ul class="orbit-container contents">
     <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
     <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-    <% @articles.each.with_index do |article, index| %>
-      <% if index == 0 %>
-      <li class="orbit-slide is-active">
-      <% else %>
-      <li class="orbit-slide">
-      <% end %>
-        <%= image_tag article.photos.first.pics.url(:large), class: "orbit-image" %>
-        <div class="orbit-caption"><%= link_to article.title.titleize, article_path(article) %></div>
-      </li>
-    <% end %>
+    <%# slide 1 %>
+    <li class="orbit-slide is-active" style="background: url('http://www.armaholic.com/datas/users/f-22-raptor-version-01-1_4.jpg');">
+      <%# <img class="orbit-image" src="http://www.armaholic.com/datas/users/f-22-raptor-version-01-1_4.jpg"> %>
+      <div class="orbit-caption"><a href="https://google.com">test test test</a></div>
+    </li>
+    <%# slide 2 %>
+    <li class="orbit-slide" style="background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Defense.gov_News_Photo_041027-F-2034C-010.jpg/1200px-Defense.gov_News_Photo_041027-F-2034C-010.jpg')">
+      <%# <img class="orbit-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Defense.gov_News_Photo_041027-F-2034C-010.jpg/1200px-Defense.gov_News_Photo_041027-F-2034C-010.jpg"> %>
+      <div class="orbit-caption"><a href="https://google.com">test test test</a></div>
+    </li>
   </ul>
+  
   <nav class="orbit-bullets">
-  <% @articles.each.with_index do |article, index| %>
-    <% if index == 0 %>
-    <button class="is-active" data-slide="<%= index %>"><span class="show-for-sr"><%= article.title %></span></button>
-    <% else %>
-    <button data-slide="<%= index %>"><span class="show-for-sr"><%= article.title %></span></button>
-    <% end %>
-  <% end %>
+    <%# slide 1 %>
+    <button class="is-active" data-slide="1"><span class="show-for-sr">test1</span></button>
+    <%# slide 2 %>
+    <button data-slide="2"><span class="show-for-sr">test2</span></button>
   </nav>
 </div><!--orbit-->
+
+
 <div class="mobile_articles_area show-for-small-only">
-  <% @articles.each do |article| %>
-  <div class="mobile_articles">
-    <%= image_tag article.photos.first.pics.url(:large), class: "mobile_article_image" %>
+  <%# slide 1 %>
+  <div class="mobile_articles" style="background: url('http://www.armaholic.com/datas/users/f-22-raptor-version-01-1_4.jpg');">
+    <%# <img class="mobile_article_image" src="http://www.armaholic.com/datas/users/f-22-raptor-version-01-1_4.jpg"> %>
     <div class="mobile_article_caption">
-      <%= link_to article.title.titleize, article_path(article), class: 'mobile_article_link' %>
+      <a class="mobile_article_link" href="https://google.com">test1 test1 test1</a>
     </div>
   </div>
-  <% end %>
+  <%# slide 2 %>
+  <div class="mobile_articles" style="background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Defense.gov_News_Photo_041027-F-2034C-010.jpg/1200px-Defense.gov_News_Photo_041027-F-2034C-010.jpg')">
+    <%# <img class="mobile_article_image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Defense.gov_News_Photo_041027-F-2034C-010.jpg/1200px-Defense.gov_News_Photo_041027-F-2034C-010.jpg"> %>
+    <div class="mobile_article_caption">
+      <a class="mobile_article_link" href="https://google.com">test2 test2 test2</a>
+    </div>
+  </div>
 </div>
+
+
+
 <div class="marquee-area hide-for-small-only">
   <div class="marquee" id="marquee">
     <% @products.each do |product| %>
       <%= link_to pb_pt_path(product.product_type), class: "marquee-links" do %>
-        <%= image_tag product.photos.first.pics.url(:logo), class: "marquee-photos" %>
-        <div class="marquee-name-area">
-          <span class="marquee-name">
-            <%= product.name %>
-          </span>
+        <!-- <%= image_tag product.photos.first.pics.url(:logo), class: "marquee-photos" %> -->
+        <div class="marquee-name-area" style="background-image: url('<%= product.photos.first.pics.url(:logo) %>')">
+          <div class="marquee-name">
+            <span class="marquee-text">
+              <%= product.name %>
+            </span>
+          </div>
         </div>
       <% end %>
     <% end %>
