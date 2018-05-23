@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Brands</h1>
+<h1>Brands List</h1>
 <% if admin_signed_in? %>
   <%= link_to "브랜드 추가", new_brand_path %>
 <% end %>
@@ -9,6 +9,7 @@
     <tr>
       <th>이름</th>
       <th>로고</th>
+      <th>제품 페이지 배경</th>
       <th colspan="2">액션</th>
     </tr>
   </thead>
@@ -19,7 +20,18 @@
         <td><%= link_to brand.name, brand %></td>
         <td>
           <% if brand.photos.present? %>
-            유
+            <% brand.photos.each do |photo| %>
+              <%= image_tag photo.pics.url(:logo), class: 'brand-logo', style: "-ms-transform: translateY(-50%);" %>
+            <% end %>
+          <% else %>
+            무
+          <% end %>
+        </td>
+        <td>
+          <% if brand.background_pic.present? %>
+            <div>
+              <%= image_tag brand.background_pic_url(:large) %>
+            </div>
           <% else %>
             무
           <% end %>

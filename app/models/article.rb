@@ -3,10 +3,10 @@ class Article < ActiveRecord::Base
   has_many :photos, as: :images ,dependent: :destroy
   accepts_nested_attributes_for :photos, allow_destroy: true
   # validation
-  validates :title, :body, presence: true
+  validates :title, :summary, presence: true
   # globalize
   translates :title, :string
-  translates :body, :text
+  translates :summary, :text
   # globalize form attr
-  globalize_accessors attributes: [:title, :body]
+  globalize_accessors attributes: [:title, :summary]
 end

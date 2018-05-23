@@ -18,7 +18,7 @@
             </div>
             <div>
                 <label for="body">한글 내용</label>
-                <%= f.text_area :body_ko, class: "articleBody" %>
+                <%= f.text_area :summary_ko, class: "articleBody" %>
             </div>
         </div>
         <div class="enlgishForm">
@@ -29,18 +29,9 @@
             </div>
             <div>
                 <label for="body">영문 내용</label>
-                <%= f.text_area :body_en, class: "articleBody" %>
+                <%= f.text_area :summary_en, class: "articleBody" %>
             </div>
         </div>
-    </div>
-    <div class="photoForm">
-        <h3>부수 사진</h3>
-        <i>사진추가시 등록이후 아미지 사이즈 조정 페이지로 넘어감.</i>
-        <%= f.fields_for :photos do |pf| %>
-            <%= pf.file_field :pics, class: "photoInfo" %>
-            <%= pf.link_to_remove "삭제하기", class: "photoButton", type: "remove" %>
-        <% end %>
-        <%= f.link_to_add "추가하기", :photos, class: "photoButton", type: "add" %>
     </div>
     <div>
         <%= f.submit "등록하기" %>

@@ -7,4 +7,9 @@ class ProductType < ActiveRecord::Base
 
     validates :name, presence: true
 
+    # globalize
+    translates :name, :string
+    # globalize form attr
+    globalize_accessors attributes: [:name]
+
 end

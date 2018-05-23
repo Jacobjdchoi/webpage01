@@ -2,8 +2,16 @@ class PagesController < ApplicationController
 
 #Home page
   def home
-    @articles = Article.all.includes(:photos).order(created_at: :desc).limit(5)
-    @products = Product.all.includes(:photos)
+    # Photo dimension 952 X 428
+     helper = ActionController::Base.helpers
+     locale = params[:locale] || "ko/"
+     aboutus   = {pics_url: ActionController::Base.helpers.asset_path("about_us_img2.png"), title: "About Us - A Letter from the CEO", site_url: locale + "/pages/a-letter-from-the-ceo"}
+     products  = {pics_url: ActionController::Base.helpers.asset_path("home_brands.png"), title: "Brands we represent", site_url: locale + "/product-browser"}
+     brands    = {pics_url: ActionController::Base.helpers.asset_path("home_majorC.png"), title: "Trusted by major companies", site_url: locale + "/customers"}
+     markets   = {pics_url: ActionController::Base.helpers.asset_path("home_market.png"), title: "Applications", site_url: locale + "/markets"}
+     contactus = {pics_url: ActionController::Base.helpers.asset_path("contact_us_img2.png"), title: "Contact Us", site_url: locale + "/contacts/new"}
+     @items = [aboutus, products, brands, markets, contactus]
+     @products = Product.all
   end
 
 #About us page
@@ -42,6 +50,11 @@ class PagesController < ApplicationController
 
   end
 
+#Page not found
+  def not_found
+
+  end
+
   def downloads
     @attachments = Attachment.all.page(params[:page]).per(10)
     respond_to do |format|
@@ -49,6 +62,7 @@ class PagesController < ApplicationController
       format.js
     end
   end
+
   def downloads_search
     @query = params[:query]
     @attachments_array = []

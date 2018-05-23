@@ -20,7 +20,8 @@ module Workspace
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ko
     config.i18n.available_locales = [:en, :ko]
-    #config.i18n.default_locale = :"#{request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first}"
+    # config.i18n.default_locale = :"#{request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first}"
+    config.i18n.fallbacks =[:en, :ko]
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true

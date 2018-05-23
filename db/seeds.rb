@@ -240,6 +240,9 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
     @customerFIRSTEC = Customer.create(id: 13, name_en: 'FIRSTEC CO. LTD.', name_ko: '퍼스텍')
     @customerYURATech = Customer.create(id: 14, name_en: 'YURA Tech', name_ko: '유라테크')
     @customerSEMIKRON = Customer.create(id: 15, name_en: 'SEMIKRON', name_ko: '세미크론')
+    # [16-20]
+    @customerHYUNDAIDymos = Customer.create(id: 15, name_en: 'HYUNDAIDymos', name_ko: '현대다이모스')
+
 # Markets
   @aeromilitrayMarket = Market.create(name_en: "Aerospace & Military", name_ko: "우주항공 & 군수", banner: File.open(File.join(Rails.root, 'public/markets_banner/defense.jpg')))
   @industrialMarket = Market.create(name_en: "Industrial", name_ko: "공업 & 산업", banner: File.open(File.join(Rails.root, 'public/markets_banner/industrial.jpg')))
@@ -273,7 +276,8 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
       @customerLIGNEX1.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/lig_nex1.png')))
       @customerFIRSTEC.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/firstec.png')))
       @customerYURATech.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/yura_tech.png')))
-      @customerSEMIKRON.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/semikron.png')))
+      # [16-20]
+      @customerHYUNDAIDymos.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/hyundai_dymos.png')))
   # Brand
       # [1-5]
       @moog.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/moog.png')))

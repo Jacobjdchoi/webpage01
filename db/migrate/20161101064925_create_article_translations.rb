@@ -4,7 +4,7 @@ class CreateArticleTranslations < ActiveRecord::Migration
       dir.up do
         Article.create_translation_table!({
           title: :string,
-          body: :text
+          summary: :text
         }, {
           migrate_data: true
         })

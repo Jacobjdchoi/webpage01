@@ -1,19 +1,20 @@
 version: '3'
 services:
-  app:
+  prodbe:
     build: 
       context: .
       dockerfile: docker/prod/app/Dockerfile
-    command: bundle exec puma -C config/puma.rb
-    volumes:
-      - /var/www/samtra
-    expose:
-      - "3000"
-  web:
+    # entrypoint: ./docker-entrypoint.dev.sh    
+    # command: "bundle exec puma -C config/puma.rb"
+    # volumes:
+    #   - /var/www/samtra
+    ports:
+      - 3000:3000
+  prodfe:
     build:
       context: .
       dockerfile: docker/prod/web/Dockerfile
-    links:
-      - app
+    depends_on:
+      - prodbe
     ports:
-      - "80:80"
+      - 80:80

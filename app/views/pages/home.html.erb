@@ -2,42 +2,48 @@
   <ul class="orbit-container contents">
     <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
     <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-    <%# slide 1 %>
-    <li class="orbit-slide is-active" style="background: url('http://www.armaholic.com/datas/users/f-22-raptor-version-01-1_4.jpg');">
-      <%# <img class="orbit-image" src="http://www.armaholic.com/datas/users/f-22-raptor-version-01-1_4.jpg"> %>
-      <div class="orbit-caption"><a href="https://google.com">test test test</a></div>
-    </li>
-    <%# slide 2 %>
-    <li class="orbit-slide" style="background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Defense.gov_News_Photo_041027-F-2034C-010.jpg/1200px-Defense.gov_News_Photo_041027-F-2034C-010.jpg')">
-      <%# <img class="orbit-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Defense.gov_News_Photo_041027-F-2034C-010.jpg/1200px-Defense.gov_News_Photo_041027-F-2034C-010.jpg"> %>
-      <div class="orbit-caption"><a href="https://google.com">test test test</a></div>
-    </li>
+    <% @items.each_with_index do |item, index|%>
+      <% if index == 0 %>
+        <%# slide 1 %>
+        <li class="orbit-slide is-active" style="background: url('<%= item[:pics_url] %>');">
+      <% else %>
+        <%# slide n %>
+          <li class="orbit-slide" style="background: url('<%= item[:pics_url] %>');">
+      <% end %>
+          <div class="orbit-caption">
+            <%= link_to item[:site_url] do %>
+              <%= item[:title] %> <%# GLOBALIZE??%>
+            <% end %>
+          </div>
+        </li>
+    <% end %>
   </ul>
   
   <nav class="orbit-bullets">
-    <%# slide 1 %>
-    <button class="is-active" data-slide="1"><span class="show-for-sr">test1</span></button>
-    <%# slide 2 %>
-    <button data-slide="2"><span class="show-for-sr">test2</span></button>
+    <% @items.each_with_index do |item, index| %>
+      <% if index == 0 %>
+        <%# slide 1 %>
+        <button class="is-active" data-slide="<%= index %>"><span class="show-for-sr"><%= item[:title] %></span></button>
+      <% else %>
+        <%# slide 2 %>
+        <button data-slide="<%= index %>"><span class="show-for-sr"><%= item[:title] %></span></button>
+      <% end %>
+    <% end %>
   </nav>
 </div><!--orbit-->
 
 
 <div class="mobile_articles_area show-for-small-only">
-  <%# slide 1 %>
-  <div class="mobile_articles" style="background: url('http://www.armaholic.com/datas/users/f-22-raptor-version-01-1_4.jpg');">
-    <%# <img class="mobile_article_image" src="http://www.armaholic.com/datas/users/f-22-raptor-version-01-1_4.jpg"> %>
+  <% @items.each_with_index do |item, index| %>
+  <%# slide n %>
+  <div class="mobile_articles" style="background: url('<%= item[:pics_url] %>');">
     <div class="mobile_article_caption">
-      <a class="mobile_article_link" href="https://google.com">test1 test1 test1</a>
+      <%= link_to item[:site_url], class: "mobile_article_link" do %>
+              <%= item[:title] %> <%# GLOBALIZE??%>
+      <% end %>
     </div>
   </div>
-  <%# slide 2 %>
-  <div class="mobile_articles" style="background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Defense.gov_News_Photo_041027-F-2034C-010.jpg/1200px-Defense.gov_News_Photo_041027-F-2034C-010.jpg')">
-    <%# <img class="mobile_article_image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Defense.gov_News_Photo_041027-F-2034C-010.jpg/1200px-Defense.gov_News_Photo_041027-F-2034C-010.jpg"> %>
-    <div class="mobile_article_caption">
-      <a class="mobile_article_link" href="https://google.com">test2 test2 test2</a>
-    </div>
-  </div>
+  <% end %>
 </div>
 
 

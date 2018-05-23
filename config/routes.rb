@@ -44,7 +44,7 @@ Rails.application.routes.draw do
     get 'heritages/:heritage' => 'products#index', as: :heritage
 
     # locale redirect
-    get "*path", to: "locale#not_found"
+    get "*path", to: "pages#not_found"
   end
 
   # locale redirect

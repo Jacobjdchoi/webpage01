@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170407114819) do
+ActiveRecord::Schema.define(version: 20180517023207) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -35,14 +35,14 @@ ActiveRecord::Schema.define(version: 20170407114819) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "title"
-    t.text     "body"
+    t.text     "summary"
     t.index ["article_id"], name: "index_article_translations_on_article_id"
     t.index ["locale"], name: "index_article_translations_on_locale"
   end
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
-    t.text     "body"
+    t.text     "summary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -158,6 +158,16 @@ ActiveRecord::Schema.define(version: 20170407114819) do
     t.datetime "updated_at",  null: false
     t.integer  "images_id"
     t.string   "images_type"
+  end
+
+  create_table "product_type_translations", force: :cascade do |t|
+    t.integer  "product_type_id", null: false
+    t.string   "locale",          null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "name"
+    t.index ["locale"], name: "index_product_type_translations_on_locale"
+    t.index ["product_type_id"], name: "index_product_type_translations_on_product_type_id"
   end
 
   create_table "product_types", force: :cascade do |t|

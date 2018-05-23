@@ -78,6 +78,6 @@ class CustomersController < ApplicationController
     end
 
     def customer_params
-      params.require(:customer).permit(*ProductType.globalize_attribute_names, photos_attributes: [:id, :pics, :_destroy, :customer_id])
+      params.require(:customer).permit(*Customer.globalize_attribute_names, photos_attributes: [:id, :pics, :_destroy, :customer_id])
     end
 end

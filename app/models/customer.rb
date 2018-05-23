@@ -8,5 +8,6 @@ class Customer < ActiveRecord::Base
   # globalize
   translates :name, :string
   # globalize form attr
-  globalize_accessors attribute: [:name]
+  globalize_accessors :locales => [:en, :ko], :attributes => [:name]
+
 end

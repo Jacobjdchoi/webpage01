@@ -1,15 +1,18 @@
-version: '3'
+version: '3.2'
 services:
   devapp:
     build: 
       context: .
       dockerfile: docker/dev/Dockerfile
-    command: "bundle exec rails server -b 0.0.0.0"
     volumes:
-      - /app
-    expose:
-      - "3000"
+      - type: bind
+        source: .
+        target: /app
+    ports:
+      - "3000:3000"
+    entrypoint: ./docker-entrypoint.dev.sh
+    command: "bundle exec rails server -b 0.0.0.0"
 
 # building image & running -> docker-compose -f docker-compose.dev.yml up
 # on bash -> docker run -it -p 3000:3000 -v $(pwd):/app samtra_devapp
-# on fish -> docker run -it -p 3000:3000 -v (pwd):/app samtra_devapp
+# on fish -> docker run -it -p 3000:3000 -v (pwd):/app --name samtra_devapp samtra_devapp
