@@ -6,7 +6,6 @@ class ProductTypesController < ApplicationController
   before_action :all_brands, only: [:new, :edit]
 
   # GET /product_types
-  # GET /product_types.json
   def index
     if admin_signed_in?
       redirect_to "/ko/admin_product_types"
@@ -21,7 +20,6 @@ class ProductTypesController < ApplicationController
   end
 
   # GET /product_types/1
-  # GET /product_types/1.json
   def show
     @brands = @product_type.brands
     respond_to do |format|
@@ -40,7 +38,6 @@ class ProductTypesController < ApplicationController
   end
 
   # POST /product_types
-  # POST /product_types.json
   def create
    @product_type = ProductType.new(product_type_params)
     if @product_type.save
@@ -56,7 +53,6 @@ class ProductTypesController < ApplicationController
   end
 
   # PATCH/PUT /product_types/1
-  # PATCH/PUT /product_types/1.json
   def update
     if @product_type.update(product_type_params)
       if @product_type.photos.present?
@@ -74,7 +70,6 @@ class ProductTypesController < ApplicationController
   end
 
   # DELETE /product_types/1
-  # DELETE /product_types/1.json
   def destroy
     @product_type.destroy
     respond_to do |format|

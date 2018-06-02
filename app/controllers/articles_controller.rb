@@ -4,13 +4,11 @@ class ArticlesController < ApplicationController
   before_action :to_crop_obj, only: [:edit, :update]
   before_action :crop_ratio, only: [:create, :update]
   # GET /articles
-  # GET /articles.json
   def index
     @articles = Article.all
   end
 
   # GET /articles/1
-  # GET /articles/1.json
   def show
   end
 

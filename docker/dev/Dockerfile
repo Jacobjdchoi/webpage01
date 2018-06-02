@@ -19,11 +19,11 @@ COPY Gemfile Gemfile.lock . ./
 RUN bundle install --jobs 20 --retry 5 --without test
 # COPY config/puma.rb config/puma.rb
 
-RUN rake db:migrate RAILS_ENV=development \
+RUN rake db:migrate RAILS_ENV=${RAILS_ENV} \
     && ./docker-entrypoint.dev.sh
 
 EXPOSE 3000
 
 CMD [ "bundle", "exec", "rails", "server", "-b", "0.0.0.0" ]
 
-# bundle exec rails server -b 0.0.0.0 
+# bundle exec rails server -b 0.0.0.0

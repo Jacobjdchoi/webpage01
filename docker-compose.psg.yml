@@ -1,6 +1,6 @@
 version: '3'
 services:
-  prodbe:
+  app:
     build: 
       context: .
       dockerfile: docker/prod/app/Dockerfile
@@ -9,12 +9,4 @@ services:
     # volumes:
     #   - /var/www/samtra
     ports:
-      - 3000:3000
-  prodfe:
-    build:
-      context: .
-      dockerfile: docker/prod/web/Dockerfile
-    depends_on:
-      - prodbe
-    ports:
-      - 80:80
+      - "80:80"

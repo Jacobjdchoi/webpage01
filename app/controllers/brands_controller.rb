@@ -6,13 +6,11 @@ class BrandsController < ApplicationController
   before_action :all_product_types, only: [:new, :edit]
 
   # GET /brands
-  # GET /brands.json
   def index
     @brands = Brand.all
   end
 
   # GET /brands/1
-  # GET /brands/1.json
   def show
     respond_to do |format|
       format.js
@@ -30,7 +28,6 @@ class BrandsController < ApplicationController
   end
 
   # POST /brands
-  # POST /brands.json
   def create
     @brand = Brand.new(brand_params)
     if @brand.save
@@ -46,7 +43,6 @@ class BrandsController < ApplicationController
   end
 
   # PATCH/PUT /brands/1
-  # PATCH/PUT /brands/1.json
   def update
     if @brand.update(brand_params)
       if @brand.photos.present?
@@ -62,7 +58,6 @@ class BrandsController < ApplicationController
 
   end
   # DELETE /brands/1
-  # DELETE /brands/1.json
   def destroy
     @brand.destroy
     respond_to do |format|

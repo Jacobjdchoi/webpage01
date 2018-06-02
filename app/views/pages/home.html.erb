@@ -3,49 +3,106 @@
     <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
     <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
     <% @items.each_with_index do |item, index|%>
-      <% if index == 0 %>
-        <%# slide 1 %>
-        <li class="orbit-slide is-active" style="background: url('<%= item[:pics_url] %>');">
-      <% else %>
-        <%# slide n %>
-          <li class="orbit-slide" style="background: url('<%= item[:pics_url] %>');">
-      <% end %>
-          <div class="orbit-caption">
-            <%= link_to item[:site_url] do %>
-              <%= item[:title] %> <%# GLOBALIZE??%>
+          <% if item[:type] != 'Applications' %>
+              <% if index == 0 %>
+                <%# slide 1 %>
+                <li class="orbit-slide is-active" style="background: url('<%= item[:pics_url] %>');">
+              <% else %>
+                <%# slide n %>
+                <li class="orbit-slide" style="background: url('<%= item[:pics_url] %>');">
+              <% end %>
+              <div class="orbit-caption">
+                <%= link_to item[:site_url] do %>
+                  <%= item[:title] %> <%# GLOBALIZE??%>
+                <% end %>
+              </div>
+              </li>
+          <% else %>
+            <% item[:markets].each do |market| %>
+              <li class="orbit-slide" style="background: url('<%= market[:pics_url] %>');">
+                <div class="orbit-caption">
+                  <%= link_to market[:site_url] do %>
+                    <%= market[:title] %> <%# GLOBALIZE??%>
+                  <% end %>
+                </div>
+              </li>
             <% end %>
-          </div>
-        </li>
+          <% end %>
     <% end %>
   </ul>
   
   <nav class="orbit-bullets">
     <% @items.each_with_index do |item, index| %>
-      <% if index == 0 %>
-        <%# slide 1 %>
-        <button class="is-active" data-slide="<%= index %>"><span class="show-for-sr"><%= item[:title] %></span></button>
+      <% if item[:type] != 'Applications' %>
+        <% if index == 0 %>
+          <%# slide 1 %>
+          <button class="is-active" data-slide="<%= index %>"><span class="show-for-sr"><%= item[:title] %></span></button>
+        <% else %>
+          <%# slide 2 %>
+          <button data-slide="<%= index %>"><span class="show-for-sr"><%= item[:title] %></span></button>
+        <% end %>
       <% else %>
-        <%# slide 2 %>
-        <button data-slide="<%= index %>"><span class="show-for-sr"><%= item[:title] %></span></button>
+        <% item[:markets].each_with_index do |market, idx| %>
+          <button data-slide="<%= idx %>"><span class="show-for-sr"><%= market[:title] %></span></button>
+        <% end %>
       <% end %>
     <% end %>
   </nav>
 </div><!--orbit-->
 
 
+
+<!-- MOBILE !!!! -->
 <div class="mobile_articles_area show-for-small-only">
   <% @items.each_with_index do |item, index| %>
-  <%# slide n %>
-  <div class="mobile_articles" style="background: url('<%= item[:pics_url] %>');">
-    <div class="mobile_article_caption">
-      <%= link_to item[:site_url], class: "mobile_article_link" do %>
-              <%= item[:title] %> <%# GLOBALIZE??%>
-      <% end %>
-    </div>
-  </div>
+    <% if item[:type] != 'Applications' %>
+      <%# slide n %>
+      <div class="mobile_articles" style="background: url('<%= item[:pics_url] %>');">
+        <div class="contents">
+          <div class="mobile_article_caption">
+            <%= link_to item[:site_url], class: "mobile_article_link" do %>
+                    <%= item[:title] %> <%# GLOBALIZE??%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="orbit orbit-area homepage mobile" role="region" aria-label="Samtra Home Page Slides" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+        <ul class="orbit-container contents">
+          <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+          <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+          <% item[:markets].each_with_index do |market, idx| %>
+            <% if idx == 0 %>
+              <%# slide 1 %>
+              <li class="orbit-slide is-active" style="background: url('<%= market[:pics_url] %>');">
+            <% else %>
+              <%# slide n %>
+              <li class="orbit-slide" style="background: url('<%= market[:pics_url] %>');">
+            <% end %>
+                <div class="orbit-caption">
+                  <%= link_to market[:site_url] do %>
+                    <%= market[:title] %> <%# GLOBALIZE??%>
+                  <% end %>
+                </div>
+              </li>
+          <% end %>   
+        </ul>
+        <nav class="orbit-bullets mobile">
+          <% item[:markets].each_with_index do |market, idx| %>
+            <% if idx == 0 %>
+              <%# slide 1 %>
+              <button class="is-active" data-slide="<%= idx %>"><span class="show-for-sr"><%= market[:title] %></span></button>
+            <% else %>
+              <%# slide n %>
+              <button data-slide="<%= idx %>"><span class="show-for-sr"><%= market[:title] %></span></button>
+            <% end %>
+          <% end %>
+        </nav>
+      </div>
+    <% end %>
+      
   <% end %>
 </div>
-
 
 
 <div class="marquee-area hide-for-small-only">

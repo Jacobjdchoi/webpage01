@@ -1,5 +1,5 @@
 <ul class="brands_nav_area">
-    <li class="brand_links_description">Other Brands:</li>
+    <li class="brand_links_description"></li>
   <% @brands.each do |brand| %>
     <li class="brand_links"><%= link_to_unless_current brand.name, pb_pt_path(brand.product_types.first) %></li>
   <% end %>

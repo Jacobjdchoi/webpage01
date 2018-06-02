@@ -12,7 +12,7 @@ gem 'compass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+# gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'execjs'
 
@@ -28,6 +28,8 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'tzinfo-data', '~> 1.2017', '>= 1.2017.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -57,6 +59,8 @@ gem 'rails_admin-i18n'
 
 # Devise authentication
 gem 'devise'
+# Devise i18n
+gem 'devise-i18n'
 
 # File upload must use the master branch to enable multiple uploads
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
@@ -76,9 +80,6 @@ gem 'globalize', github: 'globalize/globalize'
 gem 'activemodel-serializers-xml'
 # forms with translations
 gem 'globalize-accessors'
-
-# devise
-gem 'devise-i18n'
 
 gem "kaminari"
 

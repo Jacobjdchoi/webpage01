@@ -124,8 +124,7 @@
         padding-bottom: 0.5rem;
     }
 }
-
-.orbit.homepage {
+.orbit.homepage.hide-for-small-only {
     @include photo-ratio(45%);
     margin-bottom: 0.75rem;
     .contents {
@@ -162,6 +161,7 @@
         }
     }
 }
+
 
 @keyframes marquee {
     0% {
@@ -306,23 +306,7 @@ h1.locations {
 /* Small only */
 
 @media screen and (max-width: 39.9375em) {
-    .photo-area {
-        @include photo-ratio(30%);
-        > .contents {
-            > .page-title-ceoLetter {
-                font-size: 1.5rem;
-                line-height: 1.5rem;
-                margin-top: -2.5rem;
-                padding-left: 1rem;
-            }
-            > .page-title {
-                font-size: 3rem;
-                line-height: 3rem;
-                margin-top: -4rem;
-                padding-left: 1rem;
-            }
-        }
-    }
+    $slideHeight: 200px;
     .copyright {
         width: 60%;
     }
@@ -330,31 +314,74 @@ h1.locations {
         margin-bottom: 0.25rem;
         .mobile_articles {
             position: relative;
-            width: 100%;
-            height: 200px;
+            @include photo-ratio(45%);
             background-position: center !important;
             background-repeat: no-repeat !important;
             background-size: cover !important;
-            .mobile_article_caption {
-                width: 100%;
-                max-width: 100%;
-                height: 1.75rem;
-                position: absolute;
-                bottom: 0;
-                background-color: rgba(0, 0, 0, 0.7);
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                .mobile_article_link {
-                    color: white;
-                    line-height: 1.75rem;
-                    display: inline-block;
-                    width: 100%;
+            .contents{
+                .mobile_article_caption {
+                    @include widthAndHeight(100%, 1.75rem);
+                    max-width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    .mobile_article_link {
+                        color: white;
+                        line-height: 1.75rem;
+                        display: inline-block;
+                        @include widthAndHeight(100%, 100%);
+                        font-size: 0.875rem;
+                        padding: 0 0.5rem;
+                        color: white !important;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        .orbit.homepage.mobile {
+            @include photo-ratio(45%);
+            .contents {
+                li.orbit-slide {
                     height: 100%;
-                    font-size: 0.875rem;
-                    padding: 0 0.5rem;
-                    color: white !important;
-                    font-weight: bold;
+                    background-position: center !important;
+                    background-size: cover !important;
+                    div.orbit-caption {
+                        padding: 0;
+                        @include widthAndHeight(100%, 1.75rem);
+                        max-width: 100%;
+                        position: absolute;
+                        bottom: 0;
+                        background-color: rgba(0, 0, 0, 0.7);
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        a {
+                            color: white;
+                            line-height: 1.75rem;
+                            display: inline-block;
+                            @include widthAndHeight(100%, 100%);
+                            font-size: 0.875rem;
+                            padding: 0 0.5rem;
+                            color: white !important;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            .orbit-bullets.mobile {
+                @include widthAndHeight(45%, 1.75rem);
+                text-align: right;
+                padding-right: 1rem;
+                line-height: 1.75rem;
+                float: right;
+                margin-top: -1.75rem;
+                button {
+                    border-radius: 0;
+                    vertical-align: middle;
+                    border-radius: 2px;
                 }
             }
         }
