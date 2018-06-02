@@ -28,7 +28,7 @@
           <%= link_to root_path do %><%= image_tag("new_logo.png", :class => "logo-samtra") %><% end %>
           </div>
         </div>
-        <div class="top-bar-left">
+        <div class="top-bar-left" id="top-bar-left">
           <ul class="language menu" id="language-menu">
             <% if request.path.include?('/search') %>
               <li><%= link_to "한글", params.permit(:utf8, :query).merge(locale: "ko") %></li>

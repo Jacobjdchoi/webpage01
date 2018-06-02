@@ -95,8 +95,9 @@ body {
             height: 100%;
             float: right;
             position: relative;
-            color: #111111 !important;
             font-weight: bold;
+            opacity: 0;
+            transition: opacity 1s;
             ul.dropdown.menu {
                 position: absolute;
                 bottom: 0rem;
@@ -153,8 +154,8 @@ body {
                                     line-height: 2rem;
                                     width: 100%;
                                     height: 100%;
+                                    color: #444444 !important;
                                     &:hover {
-                                        color: #444444 !important;
                                         background: linear-gradient(#ffffff, #fafafa, #e0e0e0);
                                     }
                                 }
@@ -222,30 +223,13 @@ body {
     }
 }
 
-.scrolldown-header {
-    height: 4rem;
-    .top-bar {
-        .top-bar-title {
-            padding: 0.5rem 0.5rem 0.5rem 0;
-        }
-        .top-bar-left {
-            ul.dropdown.menu {
-                bottom: 0.5rem;
-                li #top-bar-dropdown-menu {
-                    margin-top: 1.25rem;
-                }
-            }
-        }
-    }
-}
 
 //Capitalize dropdown menus in general
 ul.dropdown li a,
 #top-bar-dropdown-menu li a {
-    color: gray !important;
+    color: #444444 !important;
     font-size: 15px;
 }
-
 ul.dropdown li {
     a {
         padding: 0 1rem;
@@ -253,10 +237,6 @@ ul.dropdown li {
     ul li a {
         padding: 0.75rem;
     }
-}
-
-ul.language.menu li a {
-    
 }
 
 .divider-vertical {
@@ -348,6 +328,14 @@ footer {
             float: left;
             padding: 0.5rem;
         }
+        .footerAddress {
+            user-select: text;
+            -webkit-webkit-user-select: text;
+            -moz-webkit-user-select: text;
+            -ms-webkit-user-select: text;
+            -o-webkit-user-select: text;
+            -webkit-user-select: text;
+        }
         .copyright {
             float: left;
         }
@@ -419,7 +407,7 @@ textarea {
     -moz-webkit-user-select: text;
     -ms-webkit-user-select: text;
     -o-webkit-user-select: text;
-    webkit-user-select: text;
+    -webkit-user-select: text;
 }
 
 .flash_message {
@@ -437,12 +425,13 @@ textarea {
     text-align: center;
     padding: 10px 0;
 }
+
+// small
 @media screen and (max-width: 39.9375em) {
     .page-title {
         font-size: 2rem;
     }
 }
-
 
 /* Medium only */
 

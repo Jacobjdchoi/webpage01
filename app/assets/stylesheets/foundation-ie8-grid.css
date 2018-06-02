@@ -76,7 +76,7 @@
 .row .large-offset-11 { margin-left: 91.66667%; }
 .row .large-offset-12 { margin-left: 100%;      }
 
-.push-1  { position: relative; right: auto; left: 8.33333%;  }
+/* .push-1  { position: relative; right: auto; left: 8.33333%;  }
 .push-2  { position: relative; right: auto; left: 16.66667%; }
 .push-3  { position: relative; right: auto; left: 25%;       }
 .push-4  { position: relative; right: auto; left: 33.33333%; }
@@ -100,7 +100,7 @@
 .pull-9  { position: relative; left: auto; right: 75%;       }
 .pull-10 { position: relative; left: auto; right: 83.33333%; }
 .pull-11 { position: relative; left: auto; right: 91.66667%; }
-.pull-12 { position: relative; left: auto; right: 100%;      }
+.pull-12 { position: relative; left: auto; right: 100%;      } */
 
 .column.small-centered,
 .columns.small-centered,

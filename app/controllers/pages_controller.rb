@@ -99,7 +99,6 @@ class PagesController < ApplicationController
     @articles_array = []
     # first filter
     unless params[:query].strip.blank?
-      
       @query.split(' ').map{|q| "%#{q}%"}.each do |split_query|
         ProductType.where("name LIKE ?", split_query).each {|obj| @product_types_array << obj }
         Brand.where("name LIKE ?", split_query).each {|obj| @brands_array << obj}
