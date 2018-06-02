@@ -19,7 +19,7 @@ private
     if I18n.available_locales.include?(browser_locale)
       browser_locale
     else
-      :en
+      :ko
     end
   end
 

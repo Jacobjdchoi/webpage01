@@ -98,21 +98,26 @@ class PagesController < ApplicationController
     @attachments_array = []
     @articles_array = []
     # first filter
-    @query.split(' ').map{|q| "%#{q}%"}.each do |split_query|
-      ProductType.where("name LIKE ?", split_query).each {|obj| @product_types_array << obj }
-      Brand.where("name LIKE ?", split_query).each {|obj| @brands_array << obj}
-      Product.where("name LIKE ?", split_query).each {|obj| @products_array << obj}
-      Attachment.where("file_path LIKE ?", split_query).each {|obj| @attachments_array << obj}
-      Article.includes(:translations).
-        where(article_translations: {locale: params[:locale]}).
-        where("article_translations.title LIKE ?", split_query).each {|obj| @articles_array << obj}
-    end
+    unless params[:query].strip.blank?
+      
+      @query.split(' ').map{|q| "%#{q}%"}.each do |split_query|
+        ProductType.where("name LIKE ?", split_query).each {|obj| @product_types_array << obj }
+        Brand.where("name LIKE ?", split_query).each {|obj| @brands_array << obj}
+        Product.where("name LIKE ?", split_query).each {|obj| @products_array << obj}
+        Attachment.where("file_path LIKE ?", split_query).each {|obj| @attachments_array << obj}
+        Article.includes(:translations).
+          where(article_translations: {locale: params[:locale]}).
+          where("article_translations.title LIKE ?", split_query).each {|obj| @articles_array << obj}
+      end
     # outcome
-    @product_types = @product_types_array.uniq
-    @brands = @brands_array.uniq
-    @products = @products_array.uniq
-    @attachments = @attachments_array.uniq
-    @articles = @articles_array.uniq
+      @product_types = @product_types_array.uniq
+      @brands = @brands_array.uniq
+      @products = @products_array.uniq
+      @attachments = @attachments_array.uniq
+      @articles = @articles_array.uniq
+    else
+      redirect_to "/"
+    end
   end
 
 end

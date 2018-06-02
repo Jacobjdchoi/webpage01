@@ -102,6 +102,7 @@ ko:
         contact_number: "*연락처"
         message: "*문의사항"
         location: "소재지"
+        enterLocation: "소재지를 입력해주세요"
         submitButton: "전송하기"
       telInfo: "전화 문의"
       hqTel: "본사"

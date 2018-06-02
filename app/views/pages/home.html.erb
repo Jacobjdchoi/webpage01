@@ -37,13 +37,15 @@
         <% if index == 0 %>
           <%# slide 1 %>
           <button class="is-active" data-slide="<%= index %>"><span class="show-for-sr"><%= item[:title] %></span></button>
+        <% elsif index == 4 %>
+          <button data-slide="8"><span class="show-for-sr"><%= item[:title] %></span></button>
         <% else %>
           <%# slide 2 %>
           <button data-slide="<%= index %>"><span class="show-for-sr"><%= item[:title] %></span></button>
         <% end %>
-      <% else %>
+      <% else %> <!-- item[:type] == Applications -->
         <% item[:markets].each_with_index do |market, idx| %>
-          <button data-slide="<%= idx %>"><span class="show-for-sr"><%= market[:title] %></span></button>
+          <button data-slide="<%= index + idx %>"><span class="show-for-sr"><%= market[:title] %></span></button>
         <% end %>
       <% end %>
     <% end %>

@@ -132,6 +132,7 @@ en:
         email: "*E-mail Address"
         contact_number: "*Contact Number"
         location: "Location"
+        enterLocation: "Enter Location"
         message: "*How may we help you?"
         submitButton: "Submit!"
       telInfo: "Contact Information"
