@@ -101,13 +101,12 @@ en:
       milestone6: 'Exclusive Korean sales agent/distributorship agreement with Stocko Contact GmbH & Co. KG'
       milestone7: 'Exclusive Korean sales agent/distributorship agreement with Moog Components Group for defense market and also distrutorship for commercial market.'
     home:
-      title:
+      title: "A partner you can trust."
       mobileWelcomeHeader: "Welcome to Samtra International!"
       mobileWelcomeMessage: "If you need a reliable supplier who can find the
       perfect solution at the right time, you are in the right place. From last
-      minute purchasing to projects with long-term planning period, we can assist
-       you. With more than 20 years of experience in the field, we are confident
-        in what we do."
+      minute purchasing to purchasing for long-term projects, we can assist you. 
+      With more than 20 years of experience in the industry, we are confident in what we do."
     aboutUs:
       title: "About us"
     downloads:
@@ -164,3 +163,13 @@ en:
   time:
     formats:
       short: "%Y, %b"
+  homeSlides:
+    aboutUs: 'About Us - A Letter from the CEO'
+    brands: 'Brands We Represent'
+    customers: 'Trusted by Major Corporations'
+    applications: 'Applications'
+    contactUs: 'Contact Us via Email or Phone'
+  seo:
+    site_title: 'Samtra International'
+    site_desc: "Official Korean Agency for Axon' Cable, MOOG, Airborn, ODU Connectors, AirBorn Interconnectors, STOCKO Contact, and PAVE Technology Co. With over 20 years of experience in the industry, we are confident that we can help you find the right solutions for your challenging engineering problems."
+    keywords: "Axon Cable, ODU Connectors, MOOG Slipring, AirBorn Interconnectors, PAVE Technology products, STOCKO Contacts"

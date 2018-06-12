@@ -84,3 +84,8 @@ gem 'globalize-accessors'
 gem "kaminari"
 
 gem 'puma'
+
+# meta tags for SEO 
+gem 'meta-tags'
+# sitemap
+gem 'sitemap_generator'

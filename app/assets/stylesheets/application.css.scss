@@ -96,7 +96,7 @@ body {
             float: right;
             position: relative;
             font-weight: bold;
-            opacity: 0;
+            // opacity: 0;
             transition: opacity 1s;
             ul.dropdown.menu {
                 position: absolute;
@@ -218,6 +218,15 @@ body {
                         padding: 0 1rem;
                     }
                 }
+            }
+        }
+    }
+    // for reducing the size of the header on scroll down
+    &.scrolldown-header {
+        height: 50px !important;
+        nav.top-bar{
+            div.top-bar-title{
+                padding: 0.5rem 0.5rem 0.5rem 0 !important;
             }
         }
     }

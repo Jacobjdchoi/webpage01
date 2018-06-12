@@ -5,16 +5,16 @@ class PagesController < ApplicationController
     # Photo dimension 952 X 428
      helper = ActionController::Base.helpers
      locale = params[:locale] || "ko/"
-     aboutus   = {pics_url: ActionController::Base.helpers.asset_path("about_us_img2.png"), subid: 0, type: 'About Us', title: "About Us - A Letter from the CEO", site_url: locale + "/pages/a-letter-from-the-ceo"}
-     products  = {pics_url: ActionController::Base.helpers.asset_path("home_brands.png"), subid: 0, type: 'Products', title: "Brands we represent", site_url: locale + "/product-browser"}
-     brands    = {pics_url: ActionController::Base.helpers.asset_path("home_majorC.png"), subid: 0, type: 'Customers', title: "Trusted by major companies", site_url: locale + "/customers"}
-     market0  = {pics_url: ActionController::Base.helpers.asset_path("home_market0.png"), subid: 0, title: "Applications", site_url: locale + "/markets"}
-     market1  = {pics_url: ActionController::Base.helpers.asset_path("home_market1.jpg"), subid: 1, title: "Applications", site_url: locale + "/markets"}
-     market2  = {pics_url: ActionController::Base.helpers.asset_path("home_market2.jpg"), subid: 2, title: "Applications", site_url: locale + "/markets"}
-     market3  = {pics_url: ActionController::Base.helpers.asset_path("home_market3.jpg"), subid: 3, title: "Applications", site_url: locale + "/markets"}
-     market4  = {pics_url: ActionController::Base.helpers.asset_path("home_market4.png"), subid: 4, title: "Applications", site_url: locale + "/markets"}
+     aboutus   = {pics_url: helper.asset_path("about_us_img2.png"), subid: 0, type: 'About Us', title:  I18n.t('homeSlides.aboutUs'), site_url: locale + "/pages/a-letter-from-the-ceo"}
+     products  = {pics_url: helper.asset_path("home_brands.png"), subid: 0, type: 'Products', title: I18n.t('homeSlides.brands'), site_url: locale + "/product-browser"}
+     brands    = {pics_url: helper.asset_path("home_majorC.png"), subid: 0, type: 'Customers', title: I18n.t('homeSlides.customers'), site_url: locale + "/customers"}
+     market0  = {pics_url: helper.asset_path("home_market0.png"), subid: 0, title: I18n.t('homeSlides.applications'), site_url: locale + "/markets"}
+     market1  = {pics_url: helper.asset_path("home_market1.jpg"), subid: 1, title: I18n.t('homeSlides.applications'), site_url: locale + "/markets"}
+     market2  = {pics_url: helper.asset_path("home_market2.jpg"), subid: 2, title: I18n.t('homeSlides.applications'), site_url: locale + "/markets"}
+     market3  = {pics_url: helper.asset_path("home_market3.jpg"), subid: 3, title: I18n.t('homeSlides.applications'), site_url: locale + "/markets"}
+     market4  = {pics_url: helper.asset_path("home_market4.png"), subid: 4, title: I18n.t('homeSlides.applications'), site_url: locale + "/markets"}
      markets   = {type: 'Applications', markets: [market0, market1, market2, market3, market4]}
-     contactus = {pics_url: ActionController::Base.helpers.asset_path("contact_us_img2.png"), subid: 0, type: 'Contact Us', title: "Contact Us", site_url: locale + "/contacts/new"}
+     contactus = {pics_url: helper.asset_path("contact_us_img2.png"), subid: 0, type: 'Contact Us', title: I18n.t('homeSlides.contactUs'), site_url: locale + "/contacts/new"}
      @items = [aboutus, products, brands, markets, contactus]
      @products = Product.all
   end

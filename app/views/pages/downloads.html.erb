@@ -1,4 +1,4 @@
-<h2 class="page-title"><%= t(".title") %></h2>
+<h2 class="page-title"><%= title t(".title") %></h2>
 <div class="12-large columns downloads_page">
   <%= form_tag downloads_search_path, method: :get, class: "downloads_search_form", remote: true do %>
     <%= text_field_tag :query, params[:query], class: "downloads_search_input" %>

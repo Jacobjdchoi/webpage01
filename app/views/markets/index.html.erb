@@ -1,4 +1,4 @@
-<h2 class="page-title"><%= t(".title") %></h2>
+<h2 class="page-title"><%= title t(".title") %></h2>
 <accordion class="markets_index">
   <% @markets.each.with_index do |market, index| %>
     <% if index == @markets.count - 1 %>

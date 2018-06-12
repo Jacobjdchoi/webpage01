@@ -9,7 +9,7 @@
     <% end %>
     <%= link_to t("navigation.back"), articles_path %>
 
-    <h3 class="article-title"><%= @article.title.titleize %></h3>
+    <h3 class="article-title"><%= title @article.title.titleize %></h3>
     <p class="article-date"><%= @article.updated_at.strftime("%Y-%m-%d") %></p>
     <!--if image is not nil-->
     <% if @article.photos.present? %>

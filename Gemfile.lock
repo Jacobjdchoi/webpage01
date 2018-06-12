@@ -145,6 +145,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    meta-tags (2.10.0)
+      actionpack (>= 3.2.0, < 5.3)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -288,6 +290,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   kaminari
+  meta-tags
   nested_form
   pry-rails
   puma

@@ -10,13 +10,15 @@
 //= stub ga
 
 var ready;
+
+
 ready = function() {
 
     flexibility(document.body);
     // foundation
     $(function() {
         $(document).foundation();
-        $('#top-bar-left').css('opacity', 1);
+        // $('#top-bar-left').css('opacity', 1);
     });
     // text editor
     tinymce.remove();

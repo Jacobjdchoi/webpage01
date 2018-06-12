@@ -14,6 +14,11 @@ ko:
       downloads: "다운로드"
       markets:
         title: "주요시장"
+        allMarkets: "모든시장"
+        automotive: "자동차시장"
+        industrialMachinery: "산업용기계시장"
+        medical: "의료시장"
+        military: "군수시장"
       products:
         allProducts: "모든 제품"
         cables: "케이블"
@@ -75,7 +80,7 @@ ko:
       milestone6: '독일 Stocko contact GmbH & Co. KG 국내 총판대리점 계약.'
       milestone7: '미국 MOOG Components Group 국내 총판대리점 계약.'
     home:
-      title:
+      title: "홈페이지"
       mobileWelcomeHeader: ""
       mobileWelcomeMessage: ""
     aboutUs:
@@ -140,3 +145,13 @@ ko:
   time:
     formats:
       short: "%Y년 %m월"
+  homeSlides:
+    aboutUs: '회사소개 - CEO인사말'
+    brands: '대표제품브랜드'
+    customers: '주요고객'
+    applications: '주요어플리케이션'
+    contactUs: '견적문의'
+  seo:
+    site_title: '샘트라인터내셔널'
+    site_desc: "Axon'공식한국대리점, MOOG한국대리점, ODU공식한국대리점, AirBorn공식한국대리점, STOCKO공식한국대리점. PAVE Technology공식한국대리점. 샘트라인터내셔널은 민·군수용 케이블, 커넥터, 슬립링, 인터커넥터 등 다양한 고성능 제품 시장에서 얻은 20년이 넘는 경험과 노하우를 통해 고객들에게 가장 적합한 솔루션을 제공합니다. 수 많은 대기업, 공기업, 그리고 시장주도업체들이 선택한 신뢰할수 있는 맞춤형 솔루션을 제공해드립니다."
+    keywords: "Axon 케이블, ODU 커넥터, MOOG 슬립링, AirBorn 인터커넥터, PAVE Technology 제품, STOCKO컨택"

@@ -3,8 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>샘트라인터내셔널</title>
-    <meta name="description" content="MOOG 슬립링, Axon' 케이블, Airborn 커넥터, ODU 커넥터, STOCKO 터미널 이외 커넥션 솔루션" />
+    <%= display_meta_tags site: t('seo.site_title') %>
+    <%= display_meta_tags og: {site_name: t('seo.site_title'), title: :title, type: 'website'} %>
+    <%= display_meta_tags canonical: 'http://www.samtra.co.kr' %>
+    <%= display_meta_tags image_src: 'http://www.samtra.co.kr'+asset_path("new_logo.png") %>
+    <%= display_meta_tags description: t('seo.site_desc') %>
+    <%= display_meta_tags keywords: t('seo.keywords') %>
     <%= favicon_link_tag 'favicon.png' %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
