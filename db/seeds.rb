@@ -4,20 +4,14 @@
 
 
 # Admin ids
-Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], password_confirmation: ENV['ADMIN_PASSWORD'])
+Admin.create!(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], password_confirmation: ENV['ADMIN_PASSWORD'])
 
 # Brands (1-5)
-@moog = Brand.create(id: 1, name: 'MOOG', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/moog.jpg')))
-@axon = Brand.create(id: 2, name: "Axon'", background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/axon.jpg')))
-@airborn = Brand.create(id: 3, name: 'AirBorn', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/airborn.jpg')))
-@odu = Brand.create(id: 4, name: 'ODU', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/odu.jpg')))
-@stocko = Brand.create(id: 5, name: 'STOCKO', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/stocko.jpg')))
-
-@moog.save!
-@axon.save!
-@airborn.save!
-@odu.save!
-@stocko.save!
+@moog = Brand.create(id: 1, name: 'MOOG', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/moog.jpg')), photos_attributes: [{pics:File.open(File.join(Rails.root, 'public/suppliers_logo/moog.png'))}])
+@axon = Brand.create(id: 2, name: "Axon'", background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/axon.jpg')), photos_attributes: [{pics:File.open(File.join(Rails.root, 'public/suppliers_logo/axon.png'))}])
+@airborn = Brand.create(id: 3, name: 'AirBorn', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/airborn.jpg')), photos_attributes: [{pics:File.open(File.join(Rails.root, 'public/suppliers_logo/airborn.png'))}])
+@odu = Brand.create(id: 4, name: 'ODU', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/odu.jpg')), photos_attributes: [{pics:File.open(File.join(Rails.root, 'public/suppliers_logo/odu.png'))}])
+@stocko = Brand.create(id: 5, name: 'STOCKO', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/stocko.jpg')), photos_attributes: [{pics:File.open(File.join(Rails.root, 'public/suppliers_logo/stocko.png'))}])
 
 
 # Product Types
@@ -255,7 +249,7 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
     @customerYURATech = Customer.create(id: 14, name_en: 'YURA Tech', name_ko: '유라테크')
     @customerSEMIKRON = Customer.create(id: 15, name_en: 'SEMIKRON', name_ko: '세미크론')
     # [16-20]
-    @customerHYUNDAIDymos = Customer.create(id: 15, name_en: 'HYUNDAIDymos', name_ko: '현대다이모스')
+    @customerHYUNDAIDymos = Customer.create(id: 16, name_en: 'HYUNDAIDymos', name_ko: '현대다이모스')
 
 # Markets
   @aeromilitrayMarket = Market.create(name_en: "Aerospace & Military", name_ko: "우주항공 & 군수", banner: File.open(File.join(Rails.root, 'public/markets_banner/defense.jpg')))
@@ -284,21 +278,22 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
       @customerHanwhaSystem.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/hanwha_system.png')))
       @customerHYUNDAISTEEL.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/hyundai_steel.png')))
       @customerAgencyforDefenseDepartment.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/add.png')))
-      @customerKoreaAerospaceIndustriesLtd.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/kai.png')))
+      @customerKoreaAerospaceIndustriesLtd.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/semikron.png')))
       # [11-15]
       @customerKARI.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/kari.png')))
       @customerLIGNEX1.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/lig_nex1.png')))
       @customerFIRSTEC.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/firstec.png')))
       @customerYURATech.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/yura_tech.png')))
+      @customerSEMIKRON.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/hyundai_dymos.png')))
       # [16-20]
       @customerHYUNDAIDymos.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/hyundai_dymos.png')))
   # Brand
       # [1-5]
-      @moog.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/moog.png')))
-      @axon.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/axon.png')))
-      @airborn.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/airborn.png')))
-      @odu.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/odu.png')))
-      @stocko.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/stocko.png')))
+      # @moog.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/moog.png')))
+      # @axon.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/axon.png')))
+      # @airborn.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/airborn.png')))
+      # @odu.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/odu.png')))
+      # @stocko.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/stocko.png')))
   # Products
     # Moog
       # Slip Ring
@@ -699,14 +694,14 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
     @milestone5 = History.create(title_en: @milestone5_en, title_ko: @milestone5_ko,event_date: DateTime.new(2005,9))
     @milestone6 = History.create(title_en: @milestone6_en, title_ko: @milestone6_ko,event_date: DateTime.new(2012,5))
     @milestone7 = History.create(title_en: @milestone7_en, title_ko: @milestone7_ko,event_date: DateTime.new(2014,6))
-    # save
-    @milestone1.save
-    @milestone2.save
-    @milestone3.save
-    @milestone4.save
-    @milestone5.save
-    @milestone6.save
-    @milestone7.save
+    # # save
+    # @milestone1.save
+    # @milestone2.save
+    # @milestone3.save
+    # @milestone4.save
+    # @milestone5.save
+    # @milestone6.save
+    # @milestone7.save
 
 # Attachment
   Dir.glob("#{Rails.root}/public/catalogues/*.pdf") do |filepath|

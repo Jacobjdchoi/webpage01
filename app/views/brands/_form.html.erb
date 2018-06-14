@@ -28,14 +28,7 @@
     <%= f.label :background_pic,"제품페이지 배경 사진" %>
     <%= f.file_field :background_pic %>
   </div>
-  <div class="field">
-    <%= f.label :summary_ko, "한글 설명" %>
-    <%= f.text_area :summary_ko, class: "articleBody" %>
-  </div>
-  <div class="field">
-    <%= f.label :summary_en, "영문 설명" %>
-    <%= f.text_area :summary_en, class: "articleBody" %>
-  </div>
+  
   <div class="actions">
     <%= f.submit "등록하기", class: "button" %>
   </div>

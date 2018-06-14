@@ -82,7 +82,7 @@ class BrandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brand_params
-      params.require(:brand).permit(:name, :url, :background_pic, *Brand.globalize_attribute_names, {photos_attributes: [:id, :pics, :_destroy, :brand_id]}, {product_type_ids: []})
+      params.require(:brand).permit(:name, :url, :background_pic, {photos_attributes: [:id, :pics, :_destroy, :brand_id]}, {product_type_ids: []})
     end
 
     def all_product_types
