@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
     resources :brands
     resources :product_types
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
     resources :products
     resources :attachments, except: :show
     resources :marketapps, except: :show
+    resources :histories, except: [:show, :index]
     #contact
     get 'contacts/new' => 'contacts#new', as: 'new_contact'
     post 'contacts' => 'contacts#create', as: 'contacts'
@@ -29,7 +31,7 @@ Rails.application.routes.draw do
     root 'pages#home'
     get 'pages/about-us' => 'pages#aboutUs', as: 'about_us'
     get 'pages/a-letter-from-the-ceo' => 'pages#ceoLetter', as: 'ceo_letter'
-    get 'pages/company-history' => 'pages#history', as: 'history'
+    get 'pages/company-history' => 'histories#index', as: 'company_history'
     get 'pages/contact-us' => 'pages#contactUs', as: 'contact_us'
     get 'pages/careers' => 'pages#careers', as: 'careers'
     get 'pages/locations' => 'pages#locations', as: 'locations'

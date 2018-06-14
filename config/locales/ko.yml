@@ -72,13 +72,6 @@ ko:
       letterSign2: "대표 최연성."
     history:
       title: "연혁"
-      milestone1: '개인회사 샘트라인터내셔널 설립.'
-      milestone2: '프랑스 Axon’ Cable SAS 국내 총판대리점 계약.'
-      milestone3: '미국 AirBorn Inc 국내 총판대리점 계약.'
-      milestone4: '미국 Pave Technology Co. 국내 총판대리점 계약.'
-      milestone5: '독일 ODU GmbH & Co. KG 국내 대리점 계약.'
-      milestone6: '독일 Stocko contact GmbH & Co. KG 국내 총판대리점 계약.'
-      milestone7: '미국 MOOG Components Group 국내 총판대리점 계약.'
     home:
       title: "홈페이지"
       mobileWelcomeHeader: ""
@@ -142,9 +135,9 @@ ko:
   product_browser:
     browser:
       title: "제품 브라우저"
-  time:
+  date:
     formats:
-      short: "%Y년 %m월"
+      year_month: "%Y년 %m월"
   homeSlides:
     aboutUs: '회사소개 - CEO인사말'
     brands: '대표제품브랜드'

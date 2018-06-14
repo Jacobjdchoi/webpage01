@@ -1,0 +1,39 @@
+<%= form_for(history) do |f| %>
+  <% if history.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(history.errors.count, "error") %> prohibited this history from being saved:</h2>
+
+      <ul>
+      <% history.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="koreanForm">
+        <h3>한글</h3>
+        <div>
+            <%= f.label :title_ko, "한글 제목" %>
+            <%= f.text_field :title_ko %>
+        </div>
+    </div>
+    <div class="enlgishForm">
+        <h3>영문</h3>
+        <div>
+            <%= f.label :title_en, "영문 제목" %>
+            <%= f.text_field :title_en %>
+        </div>
+    </div>
+  </div>
+  
+  <div class="field">
+    <%= f.label :event_date %>
+    <%= f.date_select :event_date, start_year: 1985, discard_day: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

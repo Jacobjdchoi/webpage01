@@ -1,11 +1,25 @@
+#  This is all Fucked up!!!!
+#  You need to invest a fuck load of time to change the whole fucking thing
+
+
+
 # Admin ids
 Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], password_confirmation: ENV['ADMIN_PASSWORD'])
+
 # Brands (1-5)
 @moog = Brand.create(id: 1, name: 'MOOG', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/moog.jpg')))
 @axon = Brand.create(id: 2, name: "Axon'", background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/axon.jpg')))
 @airborn = Brand.create(id: 3, name: 'AirBorn', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/airborn.jpg')))
 @odu = Brand.create(id: 4, name: 'ODU', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/odu.jpg')))
 @stocko = Brand.create(id: 5, name: 'STOCKO', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/stocko.jpg')))
+
+@moog.save!
+@axon.save!
+@airborn.save!
+@odu.save!
+@stocko.save!
+
+
 # Product Types
   # Moog (1-5)
   @moogSlipRing = @moog.product_types.create(name: 'Slip Rings')
@@ -659,7 +673,44 @@ Admin.create(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwor
     @oduSingleContactLAMTAC.save
     @oduSingleContactFLAT.save
     @oduOthersHeavy.save
+
+# History
+    # ko
+    @milestone1_ko = '개인회사 샘트라인터내셔널 설립.'
+    @milestone2_ko = "프랑스 Axon’ Cable SAS 국내 총판대리점 계약."
+    @milestone3_ko = '미국 AirBorn Inc 국내 총판대리점 계약.'
+    @milestone4_ko = '미국 Pave Technology Co. 국내 총판대리점 계약.'
+    @milestone5_ko = '독일 ODU GmbH & Co. KG 국내 대리점 계약.'
+    @milestone6_ko = '독일 Stocko contact GmbH & Co. KG 국내 총판대리점 계약.'
+    @milestone7_ko = '미국 MOOG Components Group 국내 총판대리점 계약.'
+    # en
+    @milestone1_en = 'SamTra International, a privately-owned trading company, was established.'
+    @milestone2_en = "Exclusive Korean sales agent/distributorship agreement with Axon’ Cable SAS."
+    @milestone3_en = 'Exclusive Korean sales agent/distributorship agreement with AirBorn, Inc.'
+    @milestone4_en = 'Exclusive Korean sales agent/distributorship agreement with Pave Technology Co.'
+    @milestone5_en = 'Korean sales agent/distributorship agreement with ODU GmbH & Co. KG.'
+    @milestone6_en = 'Exclusive Korean sales agent/distributorship agreement with Stocko Contact GmbH & Co. KG'
+    @milestone7_en = 'Exclusive Korean sales agent/distributorship agreement with Moog Components Group for defense market and also distrutorship for commercial market.'
+    # create
+    @milestone1 = History.create(title_en: @milestone1_en, title_ko: @milestone1_ko,event_date: DateTime.new(1995,3,17))
+    @milestone2 = History.create(title_en: @milestone2_en, title_ko: @milestone2_ko,event_date: DateTime.new(1995,3))
+    @milestone3 = History.create(title_en: @milestone3_en, title_ko: @milestone3_ko,event_date: DateTime.new(2001,8))
+    @milestone4 = History.create(title_en: @milestone4_en, title_ko: @milestone4_ko,event_date: DateTime.new(2004,1))
+    @milestone5 = History.create(title_en: @milestone5_en, title_ko: @milestone5_ko,event_date: DateTime.new(2005,9))
+    @milestone6 = History.create(title_en: @milestone6_en, title_ko: @milestone6_ko,event_date: DateTime.new(2012,5))
+    @milestone7 = History.create(title_en: @milestone7_en, title_ko: @milestone7_ko,event_date: DateTime.new(2014,6))
+    # save
+    @milestone1.save
+    @milestone2.save
+    @milestone3.save
+    @milestone4.save
+    @milestone5.save
+    @milestone6.save
+    @milestone7.save
+
 # Attachment
   Dir.glob("#{Rails.root}/public/catalogues/*.pdf") do |filepath|
     Attachment.create(file_path: File.open(filepath))
   end
+
+

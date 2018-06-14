@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180517023207) do
+ActiveRecord::Schema.define(version: 20180614091907) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 20180517023207) do
     t.string   "name"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.text     "summary"
     t.string   "background_pic"
   end
 
@@ -111,6 +110,23 @@ ActiveRecord::Schema.define(version: 20180517023207) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "histories", force: :cascade do |t|
+    t.string   "title"
+    t.date     "event_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "history_translations", force: :cascade do |t|
+    t.integer  "history_id", null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.index ["history_id"], name: "index_history_translations_on_history_id"
+    t.index ["locale"], name: "index_history_translations_on_locale"
   end
 
   create_table "market_translations", force: :cascade do |t|
