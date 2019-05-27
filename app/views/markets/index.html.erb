@@ -1,20 +1,27 @@
-<h2 class="page-title"><%= title t(".title") %></h2>
-<accordion class="markets_index">
-  <% @markets.each.with_index do |market, index| %>
-    <% if index == @markets.count - 1 %>
-    <section class="market_items last">
-    <% else %>
-    <section class="market_items">
+<div class="markets">
+  <div class="page-image-container">
+    <div class="page-image markets">
+      <h2 class="page-image-title"><%= title t(".title") %></h2>
+    </div>
+  </div>
+  <h2 class="page-title"><%= title t(".title") %></h2>
+  <accordion class="markets_index">
+    <% @markets.each.with_index do |market, index| %>
+      <% if index == @markets.count - 1 %>
+      <section class="market_items last">
+      <% else %>
+      <section class="market_items">
+      <% end %>
+        <h5 class="market_header"><%= market.name %></h5>
+        <%= image_tag market.banner.url(:raw), class: 'market_banner' %>
+        <div class="market_summary_area">
+          <ul class="marketapps_list">
+            <% market.marketapps.each do |app| %>
+              <li class="marketapps_items"><%= app.name %></li>
+            <% end %>
+          </ul>
+        </div>
+      </section>
     <% end %>
-      <h5 class="market_header"><%= market.name %></h5>
-      <%= image_tag market.banner.url(:raw), class: 'market_banner' %>
-      <div class="market_summary_area">
-        <ul class="marketapps_list">
-          <% market.marketapps.each do |app| %>
-            <li class="marketapps_items"><%= app.name %></li>
-          <% end %>
-        </ul>
-      </div>
-    </section>
-  <% end %>
-</accordion>
+  </accordion>
+</div>

@@ -1,35 +1,42 @@
-<h2 class="page-title"><%= title t(".title") %></h2>
-<div class="browser_container">
-  <div class="index_container browser">
-    <accordion class="brands_index">
-      <% @brands.each.with_index do |brand, index| %>
-        <section class="brand_items" id="<%= index %>">
-          <div class="brand_logo_and_name">
-            <a>
-            <% if index == @brands.count - 1 %>
-              <div class="brand_logo last">
-            <% else %>
-              <div class="brand_logo">
-            <% end %>
-                <% brand.photos.each do |photo| %>
-                  <%= image_tag photo.pics.url(:logo), style: "-ms-transform: translateX(-50%);" %>
-                <% end %>
-              </div>
-              <div class="drop_sign_area hide-for-large">
-                <span class="icomoon drop_sign" data-icon="&#xedc0;"></span>
-              </div>
-            </a>
-          </div>
-          <%= image_tag brand.background_pic.url(:raw), class: 'background_pics' %>
-          <div class="product_types_list_area">
-            <ul class="product_type_list">
-              <% brand.product_types.each do |product_type| %>
-                <li class="product_type_items"><%= link_to product_type.name, pb_pt_path(product_type) %></li>
+<div class="product_browser">
+  <div class="page-image-container">
+    <div class="page-image product_browser">
+      <h2 class="page-image-title"><%= title t(".title") %></h2>
+    </div>
+  </div>
+  <h2 class="page-title"><%= title t(".title") %></h2>
+  <div class="browser_container">
+    <div class="index_container browser">
+      <accordion class="brands_index">
+        <% @brands.each.with_index do |brand, index| %>
+          <section class="brand_items" id="<%= index %>">
+            <div class="brand_logo_and_name">
+              <a>
+              <% if index == @brands.count - 1 %>
+                <div class="brand_logo last">
+              <% else %>
+                <div class="brand_logo">
               <% end %>
-            </ul>
-          </div>
-        </section>
-      <% end%>
-    </accordion>
+                  <% brand.photos.each do |photo| %>
+                    <%= image_tag photo.pics.url(:logo), style: "-ms-transform: translateX(-50%);" %>
+                  <% end %>
+                </div>
+                <div class="drop_sign_area hide-for-large">
+                  <span class="icomoon drop_sign" data-icon="&#xedc0;"></span>
+                </div>
+              </a>
+            </div>
+            <%= image_tag brand.background_pic.url(:raw), class: 'background_pics' %>
+            <div class="product_types_list_area">
+              <ul class="product_type_list">
+                <% brand.product_types.each do |product_type| %>
+                  <li class="product_type_items"><%= link_to product_type.name, pb_pt_path(product_type) %></li>
+                <% end %>
+              </ul>
+            </div>
+          </section>
+        <% end%>
+      </accordion>
+    </div>
   </div>
 </div>

@@ -138,6 +138,9 @@ ko:
   date:
     formats:
       year_month: "%Y년 %m월"
+  histories:
+    index:
+      title: "연혁"
   homeSlides:
     aboutUs: '회사소개 - CEO인사말'
     brands: '대표제품브랜드'

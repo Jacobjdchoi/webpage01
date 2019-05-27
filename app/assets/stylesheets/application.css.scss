@@ -50,7 +50,7 @@ body {
 }
 
 .main {
-    max-width: 60rem;
+    max-width: 1200px;
     &#pageYield {
         padding-right: 0.25rem;
         padding-left: 0.25rem;
@@ -118,7 +118,7 @@ body {
                         line-height: inherit;
                         padding: 0 0.8rem;
                         text-align: center;
-                        color: #444444 !important;
+                        color: #515151 !important;
                         font-weight: bold;
                         i {
                             vertical-align: inherit;
@@ -154,7 +154,7 @@ body {
                                     line-height: 2rem;
                                     width: 100%;
                                     height: 100%;
-                                    color: #444444 !important;
+                                    color: #515151 !important;
                                     &:hover {
                                         background: linear-gradient(#ffffff, #fafafa, #e0e0e0);
                                     }
@@ -214,7 +214,7 @@ body {
                 right: 0;
                 li {
                     a {
-                        color: #444444 !important;
+                        color: #515151 !important;
                         padding: 0 1rem;
                     }
                 }
@@ -251,14 +251,14 @@ ul.dropdown li {
 .divider-vertical {
     width: 1px !important;
     height: 100% !important;
-    border-right: 1px solid #444444;
+    border-right: 1px solid #515151;
 }
 
 .divider-horizontal {
     height: 1px !important;
     width: 100% !important;
     display: block !important;
-    border-bottom: 1px solid #444444;
+    border-bottom: 1px solid #515151;
 }
 
 .title-bar {
@@ -330,6 +330,7 @@ footer {
     height: auto;
     min-height: 6rem;
     background-color: #001641;
+    padding-top: 1%;
     color: white;
     .row.main {
         .the_best_taxpayer {
@@ -401,7 +402,7 @@ footer {
 }
 .page-title {
     border-bottom: 3px solid #222222;
-    margin: 0.5rem;
+    margin: 0.5rem 0;
     color: #222222;
     font-weight: 200;
 }
@@ -437,7 +438,7 @@ textarea {
 
 // small
 @media screen and (max-width: 39.9375em) {
-    .page-title {
+    .page-title, .page-image-title {
         font-size: 2rem;
     }
 }
@@ -445,7 +446,7 @@ textarea {
 /* Medium only */
 
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-    .page-title {
+    .page-title, .page-image-title {
         font-size: 2.25rem;
     }
 

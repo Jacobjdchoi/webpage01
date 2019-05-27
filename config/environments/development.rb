@@ -55,4 +55,8 @@ Rails.application.configure do
     enable_starttls_auto: true,
     ssl: true
   }
+
+  # Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1 - Solution
+  config.web_console.whitelisted_ips = '172.19.0.1'
+
 end

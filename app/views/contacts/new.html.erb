@@ -1,122 +1,128 @@
-<h2 class="page-title"><%= t(".title") %></h2>
-<div class="contact row">
-    <h3><%= notice %></h3>
-    <div class="large-8 columns">
-      <%= form_for(@contact) do |f| %>
-          <div class="large-12 columns">
-              <% if @contact.errors.any? %>
-                  <div id="error_explanation">
-                    <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
-                    <ul>
-                    <% @contact.errors.full_messages.each do |message| %>
-                      <li><%= message %></li>
-                    <% end %>
-                    </ul>
-                  </div>
-              <% end %>
-          </div>
-          <div class="large-12 columns">
-              <label><%= t('.select_menu') %>
-                <%= f.grouped_collection_select :topic, Brand.all, :product_types, :name, :name, :name, prompt: true,include_blank: true %>
-              </label>
-          </div>
-          <fieldset class="large-12 columns slipring_options">
-            <p class="slip-rings-description">슬립링 디자인 옵션</p>
-            <div class="large-4 columns">
-              <%= f.label :amp %>
-              <%= f.text_field :amp %>
-            </div>
-            <div class="large-4 columns">
-              <%= f.label :ckts %>
-              <%= f.text_field :ckts %>
-            </div>
-            <div class="large-4 columns">
-              <%= f.label :rpm %>
-              <%= f.text_field :rpm %>
-            </div>
-            <div class="large-4 columns">
-              <%= f.label :bore, "Bore?" %>
-              <%= f.check_box :bore %>
-            </div>
-            <div class="large-8 columns">
-              <label for="ethernet">Ethernet?
-              <div class="ethernet options">
-                <label for="100BaseT">100 Base T
-                <input data-value="100BaseT" id="100BaseT" type="checkbox" name="100BaseT">
-                </label>
-              </div>
-              <div class="ethernet options">
-                <label for="1000BaseT">1000 Base T
-                <input data-value="1000BaseT" id="1000BaseT" type="checkbox" name="1000BaseT">
-                </label>
-              </div>
-              </label>
-              <%= f.hidden_field :ethernet %>
-            </div>
-          </fieldset>
-          <div class="large-4 columns">
-              <div>
-                  <label for="name"><%= t(".email.name") %></label>
-                  <%= f.text_field :name, required: true %>
-              </div>
-          </div>
-          <div class="large-4 columns">
-              <div>
-                  <label for="company"><%= t(".email.company") %></label>
-                  <%= f.text_field :company, required: true %>
-              </div>
-          </div>
-          <div class="large-4 columns">
-              <div>
-                  <label for="email"><%= t(".email.email") %></label>
-                  <%= f.email_field :email, required: true %>
-              </div>
-          </div>
-          <div class="large-4 columns">
-              <div>
-                  <label for="contact_number"><%= t(".email.contact_number") %></label>
-                  <%= f.text_field :contact_number, required: true %>
-              </div>
-          </div>
-          <div class="large-4 columns">
-              <div>
-                  <label for="location"><%= t(".email.location") %></label>
-                  <%= f.text_field :location, placeholder: t('.email.enterLocation') %>
-              </div>
-          </div>
-          <div class="large-12 columns">
-              <div>
-                  <label for="body"><%= t(".email.message") %></label>
-                  <%= f.text_area :body, required: true %>
-              </div>
-              <div class="contact actions">
-                  <%= f.submit "#{t('.email.submitButton')}", :class => "button" %>
-              </div>
-          </div>
-      <% end %>
+<div class="contact row">
+  <div class="page-image-container">
+    <div class="page-image contact">
+        <h2 class="page-image-title"><%= title t(".title") %></h2>
     </div>
-    <div class="large-4 columns">
-      <table>
-        <thead>
-            <tr>
-              <th colspan="2" class="contact-tel-table-thead">
-                <%= t('.telInfo') %>
-              </th>
-            </tr>
-        </thead>
-        <tbody>
+  <div class="page-image-container">
+  <h2 class="page-title"><%= t(".title") %></h2>
+  <h3><%= notice %></h3>
+  <div class="large-8 columns">
+    <%= form_for(@contact) do |f| %>
+        <div class="large-12 columns">
+            <% if @contact.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+                  <ul>
+                  <% @contact.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+            <% end %>
+        </div>
+        <div class="large-12 columns">
+            <label><%= t('.select_menu') %>
+              <%= f.grouped_collection_select :topic, Brand.all, :product_types, :name, :name, :name, prompt: true,include_blank: true %>
+            </label>
+        </div>
+        <fieldset class="large-12 columns slipring_options">
+          <p class="slip-rings-description">슬립링 디자인 옵션</p>
+          <div class="large-4 columns">
+            <%= f.label :amp %>
+            <%= f.text_field :amp %>
+          </div>
+          <div class="large-4 columns">
+            <%= f.label :ckts %>
+            <%= f.text_field :ckts %>
+          </div>
+          <div class="large-4 columns">
+            <%= f.label :rpm %>
+            <%= f.text_field :rpm %>
+          </div>
+          <div class="large-4 columns">
+            <%= f.label :bore, "Bore?" %>
+            <%= f.check_box :bore %>
+          </div>
+          <div class="large-8 columns">
+            <label for="ethernet">Ethernet?
+            <div class="ethernet options">
+              <label for="100BaseT">100 Base T
+              <input data-value="100BaseT" id="100BaseT" type="checkbox" name="100BaseT">
+              </label>
+            </div>
+            <div class="ethernet options">
+              <label for="1000BaseT">1000 Base T
+              <input data-value="1000BaseT" id="1000BaseT" type="checkbox" name="1000BaseT">
+              </label>
+            </div>
+            </label>
+            <%= f.hidden_field :ethernet %>
+          </div>
+        </fieldset>
+        <div class="large-4 columns">
+            <div>
+                <label for="name"><%= t(".email.name") %></label>
+                <%= f.text_field :name, required: true %>
+            </div>
+        </div>
+        <div class="large-4 columns">
+            <div>
+                <label for="company"><%= t(".email.company") %></label>
+                <%= f.text_field :company, required: true %>
+            </div>
+        </div>
+        <div class="large-4 columns">
+            <div>
+                <label for="email"><%= t(".email.email") %></label>
+                <%= f.email_field :email, required: true %>
+            </div>
+        </div>
+        <div class="large-4 columns">
+            <div>
+                <label for="contact_number"><%= t(".email.contact_number") %></label>
+                <%= f.text_field :contact_number, required: true %>
+            </div>
+        </div>
+        <div class="large-4 columns">
+            <div>
+                <label for="location"><%= t(".email.location") %></label>
+                <%= f.text_field :location, placeholder: t('.email.enterLocation') %>
+            </div>
+        </div>
+        <div class="large-12 columns">
+            <div>
+                <label for="body"><%= t(".email.message") %></label>
+                <%= f.text_area :body, required: true %>
+            </div>
+            <div class="contact actions">
+                <%= f.submit "#{t('.email.submitButton')}", :class => "button" %>
+            </div>
+        </div>
+    <% end %>
+  </div>
+  <div class="large-4 columns">
+    <table>
+      <thead>
           <tr>
-            <td><%= t('.hqTel') %></td>
-            <td><%= t('pages.locations.hq.tel') %></td>
+            <th colspan="2" class="contact-tel-table-thead">
+              <%= t('.telInfo') %>
+            </th>
           </tr>
-          <tr>
-            <td><%= t('.branchTel') %></td>
-            <td><%= t('pages.locations.bs.tel') %></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= t('.hqTel') %></td>
+          <td><%= t('pages.locations.hq.tel') %></td>
+        </tr>
+        <!-- <tr>
+          <td><%= t('.branchTel') %></td>
+          <td><%= t('pages.locations.bs.tel') %></td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
 </div>
 <script>
 

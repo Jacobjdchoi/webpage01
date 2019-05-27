@@ -278,13 +278,13 @@ Admin.create!(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwo
       @customerHanwhaSystem.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/hanwha_system.png')))
       @customerHYUNDAISTEEL.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/hyundai_steel.png')))
       @customerAgencyforDefenseDepartment.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/add.png')))
-      @customerKoreaAerospaceIndustriesLtd.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/semikron.png')))
+      @customerKoreaAerospaceIndustriesLtd.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/kai.png')))
       # [11-15]
       @customerKARI.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/kari.png')))
       @customerLIGNEX1.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/lig_nex1.png')))
       @customerFIRSTEC.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/firstec.png')))
       @customerYURATech.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/yura_tech.png')))
-      @customerSEMIKRON.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/hyundai_dymos.png')))
+      @customerSEMIKRON.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/semikron.png')))
       # [16-20]
       @customerHYUNDAIDymos.photos.create(pics: File.open(File.join(Rails.root, 'public/customers_logo/hyundai_dymos.png')))
   # Brand
@@ -695,13 +695,13 @@ Admin.create!(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwo
     @milestone6 = History.create(title_en: @milestone6_en, title_ko: @milestone6_ko,event_date: DateTime.new(2012,5))
     @milestone7 = History.create(title_en: @milestone7_en, title_ko: @milestone7_ko,event_date: DateTime.new(2014,6))
     # # save
-    # @milestone1.save
-    # @milestone2.save
-    # @milestone3.save
-    # @milestone4.save
-    # @milestone5.save
-    # @milestone6.save
-    # @milestone7.save
+    @milestone1.save
+    @milestone2.save
+    @milestone3.save
+    @milestone4.save
+    @milestone5.save
+    @milestone6.save
+    @milestone7.save
 
 # Attachment
   Dir.glob("#{Rails.root}/public/catalogues/*.pdf") do |filepath|

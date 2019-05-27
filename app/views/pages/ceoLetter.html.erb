@@ -1,6 +1,13 @@
-<h2 class="page-title"><%= title t(".title") %></h2>
-<div class="ceoLetter-body">
-    <%= t(".letterBody").html_safe %>
-    <strong class="letterSign"><%= t(".letterSign1") %></strong> <br>
-    <strong class="letterSign"><%= t(".letterSign2") %></strong> <br>
+<div class="ceoLetter">
+    <div class="page-image-container">
+        <div class="page-image ceoLetter">
+            <h2 class="page-image-title"><%= title t(".title") %></h2>
+        </div>
+    </div>
+    <h2 class="page-title"><%= title t(".title") %></h2>
+    <div class="ceoLetter-body">
+        <%= t(".letterBody").html_safe %>
+        <strong class="letterSign"><%= t(".letterSign1") %></strong> <br>
+        <strong class="letterSign"><%= t(".letterSign2") %></strong> <br>
+    </div>
 </div>

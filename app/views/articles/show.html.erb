@@ -3,6 +3,11 @@
 <!--    <h1><%# t("articles.index.title") %></h1>-->
 <!--</div>-->
 <div class="content-container articles">
+    <div class="page-image-container">
+        <div class="page-image articles">
+            <h2 class="page-image-title"><%= title t(".title") %></h2>
+        </div>
+    </div>
     <% if admin_signed_in? %>
         <%= link_to '삭제하기', article_path(@article), method: :DELETE, data:{ confirm: "이 뉴스를 삭제 하시겠습니까?"}%> |
         <%= link_to '수정하기', edit_article_path(@article) %> |

@@ -1,5 +1,10 @@
-<h2 class="page-title"><%= title t(".title") %></h2>
 <div class="content-container articles">
+  <div class="page-image-container">
+    <div class="page-image articles">
+      <h2 class="page-image-title"><%= title t(".title") %></h2>
+    </div>
+  </div>
+  <h2 class="page-title"><%= title t(".title") %></h2>
   <% if admin_signed_in? %>
     <div><%= link_to "뉴스 추가하기", new_article_path %></div>
   <% end %>

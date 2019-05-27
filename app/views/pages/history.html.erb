@@ -1,33 +1,46 @@
-<h2 class="page-title"><%= title t(".title") %></h2>
-<div class="history-contents-container">
-  <table>
-    <tr>
-      <td class="history_date"><strong><%= l @milestone1, format: :short %></strong></td>
-      <td class="history_brief"><%= t('.milestone1') %></td>
-    </tr>
-    <tr>
-      <td class="history_date"><strong><%= l @milestone2, format: :short %></strong></td>
-      <td class="history_brief"><%= t('.milestone2') %></td>
-    </tr>
-    <tr>
-      <td class="history_date"><strong><%= l @milestone3, format: :short %></strong></td>
-      <td class="history_brief"><%= t('.milestone3') %></td>
-    </tr>
-    <tr>
-      <td class="history_date"><strong><%= l @milestone4, format: :short %></strong></td>
-      <td class="history_brief"><%= t('.milestone4') %></td>
-    </tr>
-    <tr>
-      <td class="history_date"><strong><%= l @milestone5, format: :short %></strong></td>
-      <td class="history_brief"><%= t('.milestone5') %></td>
-    </tr>
-    <tr>
-      <td class="history_date"><strong><%= l @milestone6, format: :short %></strong></td>
-      <td class="history_brief"><%= t('.milestone6') %></td>
-    </tr>
-    <tr>
-      <td class="history_date"><strong><%= l @milestone7, format: :short %></strong></td>
-      <td class="history_brief"><%= t('.milestone7') %></td>
-    </tr>
-  </table>
+<!-- 
+Moved to History Controller and dedicated pages
+-->
+
+<div class="history">
+  <div class="page-image-container">
+    <div class="page-image history">
+      <h2 class="page-image-title"><%= title t(".title") %></h2>
+    </div>
+  </div>
+  <!--
+  <h2 class="page-title"><%= title t(".title") %></h2>
+  -->
+  <div class="history-contents-container">
+    <table>
+      <tr>
+        <td class="history_date"><strong><%= l @milestone1, format: :short %></strong></td>
+        <td class="history_brief"><%= t('.milestone1') %></td>
+      </tr>
+      <tr>
+        <td class="history_date"><strong><%= l @milestone2, format: :short %></strong></td>
+        <td class="history_brief"><%= t('.milestone2') %></td>
+      </tr>
+      <tr>
+        <td class="history_date"><strong><%= l @milestone3, format: :short %></strong></td>
+        <td class="history_brief"><%= t('.milestone3') %></td>
+      </tr>
+      <tr>
+        <td class="history_date"><strong><%= l @milestone4, format: :short %></strong></td>
+        <td class="history_brief"><%= t('.milestone4') %></td>
+      </tr>
+      <tr>
+        <td class="history_date"><strong><%= l @milestone5, format: :short %></strong></td>
+        <td class="history_brief"><%= t('.milestone5') %></td>
+      </tr>
+      <tr>
+        <td class="history_date"><strong><%= l @milestone6, format: :short %></strong></td>
+        <td class="history_brief"><%= t('.milestone6') %></td>
+      </tr>
+      <tr>
+        <td class="history_date"><strong><%= l @milestone7, format: :short %></strong></td>
+        <td class="history_brief"><%= t('.milestone7') %></td>
+      </tr>
+    </table>
+  </div>
 </div>

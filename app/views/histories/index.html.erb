@@ -2,19 +2,26 @@
   <%= link_to '새로 추가하기', new_history_path %>
   <p id="notice"><%= notice %></p>
 <% end %>
-<h2 class="page-title"><%= title t("pages.history.title") %></h2>
-<div class="history-contents-container">
-  <table>
-    <% @histories.each do |history| %>
-      <tr>
-        <td class="history_date"><strong><%= I18n.localize history.event_date, format: :year_month %></strong></td>
-        <td class="history_brief"><%= history.title %></td>
-        <% if admin_signed_in? %>
-          <td class="history_edit"><%= link_to 'Edit', edit_history_path(history) %></td>
-          <td class="history_delete"><%= link_to 'Destroy', history, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' } %></td>
-        <% end %>
+<div class="history">
+  <div class="page-image-container">
+    <div class="page-image history">
+        <h2 class="page-image-title"><%= title t(".title") %></h2>
+    </div>
+  </div>
+  <h2 class="page-title"><%= title t(".title") %></h2>
+  <div class="history-contents-container">
+    <table>
+      <% @histories.each do |history| %>
+        <tr>
+          <td class="history_date"><strong><%= I18n.localize history.event_date, format: :year_month %></strong></td>
+          <td class="history_brief"><%= history.title %></td>
+          <% if admin_signed_in? %>
+            <td class="history_edit"><%= link_to 'Edit', edit_history_path(history) %></td>
+            <td class="history_delete"><%= link_to 'Destroy', history, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
       </tr>
-    <% end %>
-    </tr>
-  </table>
+    </table>
+  </div>
 </div>

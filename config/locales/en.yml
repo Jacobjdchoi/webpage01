@@ -155,7 +155,10 @@ en:
       title: "Product browser"
   date:
     formats:
-      year_month: "%Y, %b"
+      year_month: "%B %Y"
+  histories:
+    index:
+      title: "History"
   homeSlides:
     aboutUs: 'About Us - A Letter from the CEO'
     brands: 'Brands We Represent'
