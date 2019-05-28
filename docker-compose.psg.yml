@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    image: 'jacobjdchoi/samtra'
+    image: 'jacobjdchoi/samtra:latest'
     build: 
       context: .
       dockerfile: docker/prod/app/Dockerfile
