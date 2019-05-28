@@ -11,3 +11,6 @@ services:
     #   - /var/www/samtra
     ports:
       - "80:80"
+
+# Connect to AWS -> ssh -i "samtra.pem" ubuntu@IP
+# Using Docker on AWS -> sudo [docker commands]
