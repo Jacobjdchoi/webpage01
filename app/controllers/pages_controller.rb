@@ -13,9 +13,9 @@ class PagesController < ApplicationController
      market2  = {pics_url: helper.asset_path("home_market2.jpg"), subid: 2, title: I18n.t('homeSlides.applications'), site_url: locale + "/markets"}
      market3  = {pics_url: helper.asset_path("home_market3.jpg"), subid: 3, title: I18n.t('homeSlides.applications'), site_url: locale + "/markets"}
      market4  = {pics_url: helper.asset_path("home_market4.png"), subid: 4, title: I18n.t('homeSlides.applications'), site_url: locale + "/markets"}
-     markets   = {type: 'Applications', markets: [market0, market1, market2, market3, market4]}
+     markets_list   = {type: 'Applications', markets: [market0, market1, market2, market3, market4]}
      contactus = {pics_url: helper.asset_path("contact_us_img2.png"), subid: 0, type: 'Contact Us', title: I18n.t('homeSlides.contactUs'), site_url: locale + "/contacts/new"}
-     @items = [aboutus, products, brands, markets, contactus]
+     @items = [aboutus, products, brands, markets_list, contactus]
      @products = Product.all
   end
 
