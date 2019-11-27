@@ -14,5 +14,5 @@ services:
 
 # Connect to AWS -> ssh -i "samtra.pem" ubuntu@IP
 # Using Docker on AWS -> sudo [docker commands]
-# Run Docker and project it to the IP -> sudo docker container run -d -p 80:80
+# Run Docker and project it to the IP -> sudo docker container run -d -p 80:80 [image tag]
 # Bash on running container -> sudo docker exec -it [container_name] /bin/bash
