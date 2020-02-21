@@ -1,8 +1,9 @@
-FROM ruby:2.3.1
+# FROM ruby:2.3.1
+FROM ruby:2.5.0
 
 RUN apt-get update -qq \
     && apt-get install -y build-essential libpq-dev nodejs --no-install-recommends \
-    && gem install rails -v 5.0.0.1 --no-ri --no-rdoc \
+    && gem install rails -v 5.0.1 --no-ri --no-rdoc \
     && gem install bundler --no-ri --no-rdoc \
     && rm -rf /var/lib/apt/lists/*
 
