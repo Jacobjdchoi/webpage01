@@ -50,7 +50,7 @@ body {
 }
 
 .main {
-    max-width: 1200px;
+    max-width: 1500px;
     &#pageYield {
         padding-right: 0.25rem;
         padding-left: 0.25rem;
@@ -102,14 +102,14 @@ body {
             ul.dropdown.menu {
                 position: absolute;
                 bottom: 0rem;
-                height: 3rem;
+                max-height: 3rem;
                 width: 100%;
                 padding: 0.75rem 0;
                 transition: bottom 0.5s;
                 text-align: right;
                 display: table;
                 li.menu_items{
-                    height: 1.5rem;
+                    max-height: 1.5rem;
                     line-height: 1.5rem;
                     display: table-cell;
                     text-align: center;
@@ -435,6 +435,15 @@ textarea {
     font-size: 30px;
     text-align: center;
     padding: 10px 0;
+}
+
+// Prevent Fixed Height for Carousel in home
+ul.orbit-container {
+    height: auto !important;
+}
+
+li.orbit-slide {
+    max-height: auto !important;
 }
 
 // small
