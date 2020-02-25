@@ -28,7 +28,7 @@ RUN cat /dev/null > log/production.log \
     && bundle exec rake db:migrate RAILS_ENV=${RAILS_ENV} \
     && bundle exec rake assets:precompile RAILS_ENV=${RAILS_ENV}\
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*\
-    && chown -R app:app ${RAILS_ROOT}\
+    && chown -R app:app ${RAILS_ROOT}
 
 # RUN chown -R app:app ${RAILS_ROOT}\
 #     && setuser app cat /dev/null > production.log \
