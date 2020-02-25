@@ -35,3 +35,8 @@ RUN cat /dev/null > log/production.log \
 #     && setuser app bundle exec rake db:migrate RAILS_ENV=${RAILS_ENV} \
 #     && setuser app bundle exec rake assets:precompile RAILS_ENV=${RAILS_ENV}\
 #     && setuser app apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Locale Issue
+#     On requesting to server without locale, server responds with 500 error
+#     default_lang function (in controllers/application_controller.rb) needs to be changed
+#     'browser_locale' might be undefined
