@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '>= 5.0.0', '< 5.1'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.3.13'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0'
 # Compass
@@ -46,10 +46,10 @@ group :development do
 end
 
 # Zurb foundation css/js framework
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 6.3.0.0'
 
 # Automatically add vendor specific prefixers
-gem "autoprefixer-rails"
+gem "autoprefixer-rails", '~> 8.6.5'
 
 # Rails admin
 gem 'rails_admin', '~> 1.0'

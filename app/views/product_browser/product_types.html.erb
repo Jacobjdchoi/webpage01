@@ -28,7 +28,7 @@
         <%= raw(product.summary) %>
       </div>
       <p class="product_links">
-        <%= link_to product.url, target: '_blank' do %>
+        <%= link_to "/contacts/new", target: '_blank' do %>
           <%= t(".learnmore") %> <span class="icomoon" data-icon="&#xeec9;"></span>
         <% end %>
       </p>

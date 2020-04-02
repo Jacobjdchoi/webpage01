@@ -11,7 +11,6 @@ Admin.create!(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwo
 @axon = Brand.create(id: 2, name: "Axon'", background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/axon.jpg')), photos_attributes: [{pics:File.open(File.join(Rails.root, 'public/suppliers_logo/axon.png'))}])
 @airborn = Brand.create(id: 3, name: 'AirBorn', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/airborn.jpg')), photos_attributes: [{pics:File.open(File.join(Rails.root, 'public/suppliers_logo/airborn.png'))}])
 @odu = Brand.create(id: 4, name: 'ODU', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/odu.jpg')), photos_attributes: [{pics:File.open(File.join(Rails.root, 'public/suppliers_logo/odu.png'))}])
-@stocko = Brand.create(id: 5, name: 'STOCKO', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/stocko.jpg')), photos_attributes: [{pics:File.open(File.join(Rails.root, 'public/suppliers_logo/stocko.png'))}])
 
 
 # Product Types
@@ -48,10 +47,6 @@ Admin.create!(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwo
   @oduPrintedCircuitBoardsConnectors = @odu.product_types.create(name:'Printed Circuit Boards Connectors')
   @oduSingleContactConnectors = @odu.product_types.create(name:'Single Contact Connectors')
   @oduOthers = @odu.product_types.create(name: 'Other ODU products')
-  # Stocko (1-5)
-  @stockoMultiwayconnectorsystems = @stocko.product_types.create(name:'Multi-way connector systems')
-  @stockoOthers = @stocko.product_types.create(name: 'Other STOCKO Products')
-
 
 # Products
   # Moog
@@ -217,19 +212,7 @@ Admin.create!(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwo
     @oduSingleContactFLAT = @oduSingleContactConnectors.products.create(name: "ODU SPRINGTAC® FLATSOCKET", url:"http://www.odu-usa.com/products-solutions/single-contact-connectors/odu-springtac-flatsocket.html")
     # Others
     @oduOthersHeavy = @oduOthers.products.create(name: "Heavy Duty Connectors", url:"http://www.odu-usa.com/products-solutions/heavy-duty-connectors.html")
-  # STOCKO
-    # Multi-way connector systems
-    @stockoMultiwayconnectorsystemsPitch25 = @stockoMultiwayconnectorsystems.products.create(name: "Pitch 2.5 mm", url:"https://www.yumpu.com/xx/document/fullscreen/55565154/steckverbindersystem-raster-25-mm")
-    @stockoMultiwayconnectorsystemsPitch254 = @stockoMultiwayconnectorsystems.products.create(name: "Pitch 2.54 mm", url:"https://www.yumpu.com/xx/document/fullscreen/55600572/steckverbindersystem-raster-254-mm")
-    @stockoMultiwayconnectorsystemsSpecial = @stockoMultiwayconnectorsystems.products.create(name: "Special Versions / Pin Strips", url:"https://www.yumpu.com/xx/document/fullscreen/55600616/steckverbinder-sonderprogramm")
-    @stockoMultiwayconnectorsystemsHighCurrent = @stockoMultiwayconnectorsystems.products.create(name: "High-Current ", url:"https://www.yumpu.com/xx/document/fullscreen/55600713/steckverbinder-leistungsbereich")
-    @stockoMultiwayconnectorsystemsSFit = @stockoMultiwayconnectorsystems.products.create(name: "S-FIT 4.20", url:"https://www.yumpu.com/xx/document/fullscreen/55565235/steckverbindersystem-s-fit")
-    @stockoMultiwayconnectorsystemsSLock = @stockoMultiwayconnectorsystems.products.create(name: "S-LOCK 6.35", url:"https://www.yumpu.com/xx/document/fullscreen/55601444/steckverbindersystem-s-lock")
-    # Other
-    @stockoOthersSolderless = @stockoOthers.products.create(name: "Solderless terminals", url:"https://www.yumpu.com/xx/document/fullscreen/55601453/loetfreie-verbindungen")
-    @stockoOthersCrimp = @stockoOthers.products.create(name: "Crimp contacts", url:"https://www.yumpu.com/xx/document/fullscreen/55601476/crimpkontakte-de-en")
-    @stockoOthersHVAC = @stockoOthers.products.create(name: "HVAC Industry Products", url:"https://www.yumpu.com/en/document/fullscreen/55601938/heizungsindustrie-en")
-# Customers
+ # Customers
     # [1-5]
     @customerLGElectronics = Customer.create(id: 1, name_en: 'LG Electronics', name_ko: 'LG전자')
     @customerHYUNDAIMotor = Customer.create(id: 2, name_en: 'HYUNDAI Motor', name_ko: '현대자동차')
@@ -293,7 +276,6 @@ Admin.create!(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwo
       # @axon.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/axon.png')))
       # @airborn.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/airborn.png')))
       # @odu.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/odu.png')))
-      # @stocko.photos.create(pics: File.open(File.join(Rails.root, 'public/suppliers_logo/stocko.png')))
   # Products
     # Moog
       # Slip Ring
@@ -436,19 +418,6 @@ Admin.create!(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwo
       @oduSingleContactFLAT.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/SingleContacts/flat.jpg')))
       # Others
       @oduOthersHeavy.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/odu/others/heavyduty.jpg')))
-    # STOCKO
-      # Multi-way connector systems
-      @stockoMultiwayconnectorsystemsPitch25.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/multiways/pitch25.jpg')))
-      @stockoMultiwayconnectorsystemsPitch254.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/multiways/pitch254.jpg')))
-      @stockoMultiwayconnectorsystemsSpecial.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/multiways/special.jpg')))
-      @stockoMultiwayconnectorsystemsHighCurrent.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/multiways/highcurrent.jpg')))
-      @stockoMultiwayconnectorsystemsSFit.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/multiways/sfit.jpg')))
-      @stockoMultiwayconnectorsystemsSLock.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/multiways/slock.jpg')))
-      # Other
-      @stockoOthersSolderless.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/others/solderless.jpg')))
-      @stockoOthersCrimp.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/others/crimp.jpg')))
-      @stockoOthersHVAC.photos.create(pics: File.open(File.join(Rails.root, 'public/product_photos/stocko/others/hvac.jpg')))
-
 # product summary
   # assignment
     @moogSlipRingAerospace.summary = "Moog's slip rings have been successfully performing in aerospace and military applications for over 50 years.  These products are developed for rugged environments and demanding requirements.  Typical applications include FLIR systems, blade de-ice, target acquisition systems, tank turrets and manned / unmanned vehicles."
@@ -676,7 +645,6 @@ Admin.create!(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwo
     @milestone3_ko = '미국 AirBorn Inc 국내 총판대리점 계약.'
     @milestone4_ko = '미국 Pave Technology Co. 국내 총판대리점 계약.'
     @milestone5_ko = '독일 ODU GmbH & Co. KG 국내 대리점 계약.'
-    @milestone6_ko = '독일 Stocko contact GmbH & Co. KG 국내 총판대리점 계약.'
     @milestone7_ko = '미국 MOOG Components Group 국내 총판대리점 계약.'
     # en
     @milestone1_en = 'SamTra International, a privately-owned trading company, was established.'
@@ -684,7 +652,6 @@ Admin.create!(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwo
     @milestone3_en = 'Exclusive Korean sales agent/distributorship agreement with AirBorn, Inc.'
     @milestone4_en = 'Exclusive Korean sales agent/distributorship agreement with Pave Technology Co.'
     @milestone5_en = 'Korean sales agent/distributorship agreement with ODU GmbH & Co. KG.'
-    @milestone6_en = 'Exclusive Korean sales agent/distributorship agreement with Stocko Contact GmbH & Co. KG'
     @milestone7_en = 'Exclusive Korean sales agent/distributorship agreement with Moog Components Group for defense market and also distrutorship for commercial market.'
     # create
     @milestone1 = History.create(title_en: @milestone1_en, title_ko: @milestone1_ko,event_date: DateTime.new(1995,3,17))
@@ -692,7 +659,6 @@ Admin.create!(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwo
     @milestone3 = History.create(title_en: @milestone3_en, title_ko: @milestone3_ko,event_date: DateTime.new(2001,8))
     @milestone4 = History.create(title_en: @milestone4_en, title_ko: @milestone4_ko,event_date: DateTime.new(2004,1))
     @milestone5 = History.create(title_en: @milestone5_en, title_ko: @milestone5_ko,event_date: DateTime.new(2005,9))
-    @milestone6 = History.create(title_en: @milestone6_en, title_ko: @milestone6_ko,event_date: DateTime.new(2012,5))
     @milestone7 = History.create(title_en: @milestone7_en, title_ko: @milestone7_ko,event_date: DateTime.new(2014,6))
     # # save
     @milestone1.save
