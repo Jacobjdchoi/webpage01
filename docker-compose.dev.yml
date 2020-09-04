@@ -20,3 +20,5 @@ services:
 # open bash on the image -> docker run -it samtra_devapp /bin/bash
 
 # Remove all the images -> docker image prune -a
+
+# Stop all the running containers -> docker stop (docker ps -a -q)

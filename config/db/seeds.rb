@@ -11,6 +11,7 @@ Admin.create!(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASSWORD'], passwo
 @axon = Brand.create(id: 2, name: "Axon'", background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/axon.jpg')), photos_attributes: [{pics:File.open(File.join(Rails.root, 'public/suppliers_logo/axon.png'))}])
 @airborn = Brand.create(id: 3, name: 'AirBorn', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/airborn.jpg')), photos_attributes: [{pics:File.open(File.join(Rails.root, 'public/suppliers_logo/airborn.png'))}])
 @odu = Brand.create(id: 4, name: 'ODU', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/odu.jpg')), photos_attributes: [{pics:File.open(File.join(Rails.root, 'public/suppliers_logo/odu.png'))}])
+@adels = Brand.create(id: 4, name: 'Adels-Contact', background_pic: File.open(File.join(Rails.root, 'public/suppliers_banner/adels-contact.jpg')), photos_attributes: [{pics:File.open(File.join(Rails.root, 'public/suppliers_logo/adels-contact.jpg'))}])
 
 
 # Product Types

@@ -12,7 +12,7 @@ services:
     ports:
       - "80:80"
   
-
+# building image & running -> docker-compose -f docker-compose.psg.yml up
 # Connect to AWS -> ssh -i "samtra.pem" ubuntu@IP
 # Using Docker on AWS -> sudo [docker commands]
 # Run Docker and project it to the IP -> sudo docker container run -d -p 80:80 [image tag]
