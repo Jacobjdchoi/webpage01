@@ -22,3 +22,5 @@ services:
 # Remove all the images -> docker image prune -a
 
 # Stop all the running containers -> docker stop (docker ps -a -q)
+
+# Rake db:seed 따로 해야할수 있음.
