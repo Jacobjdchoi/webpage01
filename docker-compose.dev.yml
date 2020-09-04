@@ -23,4 +23,4 @@ services:
 
 # Stop all the running containers -> docker stop (docker ps -a -q)
 
-# Rake db:seed 따로 해야할수 있음.
+# bundle exec rake db:seed는 개발 환결에서 따로 만들어놔야함
