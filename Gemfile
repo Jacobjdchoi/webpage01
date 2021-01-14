@@ -52,7 +52,7 @@ gem 'foundation-rails', '~> 6.3.0.0'
 gem "autoprefixer-rails", '~> 8.6.5'
 
 # Rails admin
-gem 'rails_admin', '~> 1.0'
+gem 'rails_admin', '~> 2.0'
 
 # rails admin translation
 gem 'rails_admin-i18n'
